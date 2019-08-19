@@ -1,6 +1,6 @@
-class CreateStatusApps < ActiveRecord::Migration[5.2]
+class CreateEngagements < ActiveRecord::Migration[5.2]
   def change
-    create_table :status_apps do |t|
+    create_table :engagements do |t|
       t.string :status
       t.text :request
       t.references :project, foreign_key: true

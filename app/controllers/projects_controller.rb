@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :update, :edit]
-  before_action :set_status_app
+  before_action :set_organization, only: [:show, :update, :edit]
 
   def index
     @projects = Project.all
@@ -14,8 +14,10 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    @project = Project.new(project_params)
+    @project.organization = set_organization
     if @project.save
-      redirect_to root_path(@status_app)
+      redirect_to project_path(@project)
     else
       render :new
     end
@@ -42,7 +44,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
-  def set_status_app
-    @status_app = StatusApp.find(params[:status_app_id])
+  def set_organization
+    @organization = Organization.find(@project.organization.id)
   end
 end
