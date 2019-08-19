@@ -1,6 +1,13 @@
-<%= simple_form_for  [@project, @user] do |f| %>
-  <%= f.input :id %>
+<%= simple_form_for  [@organization, @project] do |f| %>
+  <% if @project.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @project.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <%= f.input :description %>
-  <%= f.input :organization %>
   <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>

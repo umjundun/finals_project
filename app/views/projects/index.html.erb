@@ -1,0 +1,5 @@
+<% @projects.each do |project| %>
+  <p><%= project.id %></p>
+  <p><%= project.description %></p>
+  <p><%= project.organization.name %></p>
+<% end %>
