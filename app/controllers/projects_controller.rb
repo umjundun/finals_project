@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :update, :edit, :update, :destroy]
+  before_action :set_project, only: [:show, :update, :edit, :destroy]
 
   def index
     @projects = Project.all
@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
 
      if @project.save
-       redirect_to root_path(@project)
+       redirect_to organization_path(@project)
     else
       render :new
     end
