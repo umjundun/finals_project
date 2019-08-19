@@ -1,0 +1,6 @@
+<%= simple_form_for  [@project, @user] do |f| %>
+  <%= f.input :id %>
+  <%= f.input :description %>
+  <%= f.input :organization %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
