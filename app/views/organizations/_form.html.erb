@@ -1,0 +1,14 @@
+<%= simple_form_for  [@organization] do |f| %>
+  <% if @organization.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @organization.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.input :name %>
+  <%= f.input :mission %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
