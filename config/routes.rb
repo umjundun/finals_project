@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  get 'users/index'
+  get 'users/show'
+  devise_for :users
   # devise_for :users
+
   root to: 'pages#home'
 
 #   resources :user, only: [:index, :show, :update] do
