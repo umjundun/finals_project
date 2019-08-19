@@ -4,12 +4,12 @@ Rails.application.routes.draw do
 
   resources :user, only: [:index, :show, :update, :new, :create] do
     resources :project, only: [:index, :show]
-    resources :application, only [:update, :new, :create]
+    resources :application, only: [:update, :new, :create]
   end
 
   resources :organization, only: [:index, :show, :update, :new, :create] do
     resources :project, only: [:index, :show, :new, :create, :update]
-    resources :application, only [:index, :show, :update]
+    resources :application, only: [:index, :show, :update]
   end
 
   resources :projects, only: [:index, :show]
