@@ -7,12 +7,12 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :update] do
     resources :projects, only: [:index, :show]
-    resources :status_apps, only: [:update, :new, :create]
+    resources :engagements, only: [:update, :new, :create]
   end
 
   resources :organizations, only: [:new, :create, :index, :show, :update] do
     resources :projects, only: [:index, :show, :new, :create, :update]
-    resources :status_apps, only: [:index, :show, :update]
+    resources :engagements, only: [:index, :show, :update]
   end
 
   resources :projects, only: [:new, :create, :index, :show] # remove new and create later

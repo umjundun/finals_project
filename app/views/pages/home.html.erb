@@ -1,8 +1,8 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 <%= link_to "Show Page", users_show_path%>
-<%= link_to "All users", users_index_path %>
-<%= link_to "All organizations", organizations_index_path %>
-<%= link_to "All projects", users_projects_index_path %>
-<%= link_to "All engagements", users_engagements_index_path %>
+<%= link_to "All users", users_path %>
+<%= link_to "All organizations", organizations_path %>
+<%= link_to "All projects", organization_projects_path(current_user) %>
+<%= link_to "All engagements", user_engagements_path(current_user) %>
 <div><%= render 'shared/projectsCards' %></div>

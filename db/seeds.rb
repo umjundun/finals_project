@@ -18,11 +18,11 @@ end
 
 # Users
 1.times do
-  email = Faker::Internet.email
-  username = Faker::Internet.username
+  email = "john@google.com"
+  username = "JohnGoogle"
   password = "password"
-  first_name = Faker::Name.first_name
-  last_name = Faker::Name.last_name
+  first_name = "John"
+  last_name = "Google"
   User.create(email: email, username: username, password: password, first_name: first_name, last_name: last_name)
   p "1 user created"
 end
