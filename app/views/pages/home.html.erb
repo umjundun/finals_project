@@ -1,9 +1,11 @@
 <%= render 'shared/navbar' %>
 <%= render 'shared/homebanner' %>
-<%= link_to "Show Page*", users_show_path%>
 <%= link_to "All users*", users_path %>
 <%= link_to "All organizations*", organizations_path %>
 <%= link_to "All projects*", projects_path %>
 <%= render 'shared/bannercards' %>
-<%= render 'shared/projectsCards' %>
+<%= render 'shared/midbanner' %>
+<div class="mid-title"><h2>Recent projects</h2></div>
+<% @card_num = 6 %>
+<%= render 'shared/projectCards' %>
 <%= render 'shared/footer' %>
