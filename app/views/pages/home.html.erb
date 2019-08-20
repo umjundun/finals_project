@@ -1,9 +1,12 @@
-<%= render 'shared/navbar' %>
 <%= render 'shared/homebanner' %>
 <%= link_to "Show Page*", users_show_path%>
 <%= link_to "All users*", users_path %>
 <%= link_to "All organizations*", organizations_path %>
 <%= link_to "All projects*", projects_path %>
 <%= render 'shared/bannercards' %>
-<%= render 'shared/projectsCards' %>
-<%= render 'shared/footer' %>
+<div class="container d-flex justify-content-around my-5" >
+  <div class="cards">
+    <%= render 'shared/projectsCards' %>
+  </div>
+</div>
+
