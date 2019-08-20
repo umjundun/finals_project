@@ -17,7 +17,7 @@ class EngagementsController < ApplicationController
   def create
     @engagement = Engagement.new(engagement_params)
     @engagement.project = @project
-    @engagement.user = @user
+    @engagement.user = current_user
     @engagement.status = "Pending"
     if @engagement.save
       redirect_to user_path(@user)
@@ -40,11 +40,7 @@ class EngagementsController < ApplicationController
   private
 
   def engagement_params
-    params.require(:engagement).permit(:status)
-  end
-
-  def set_engagement
-    @engagement = Engagement.find(params[:id])
+    params.require(:engagement).permit(:status, :request)
   end
 
   def set_project
@@ -52,6 +48,6 @@ class EngagementsController < ApplicationController
   end
 
   def set_user
-    @user = User.find(current_user)
+    @user = current_user
   end
 end
