@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :show]
+
   def index
     @users = policy_scope(User).order(created_at: :asc)
   end

@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :update, :edit]
   before_action :set_organization, only: [:show, :update, :edit]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @projects = policy_scope(Project).order(created_at: :desc)
