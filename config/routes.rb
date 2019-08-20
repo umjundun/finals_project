@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     resources :engagements, only: [:index, :show, :update]
   end
 
-  resources :projects, only: [:new, :create, :index, :show] # remove new and create later
+  resources :projects, only: [:new, :create, :index, :show] do
+    resources :engagements, only: [:update, :new, :create]
+  end
 
 end

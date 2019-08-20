@@ -3,6 +3,5 @@
 <%= link_to "Show Page", users_show_path%>
 <%= link_to "All users", users_path %>
 <%= link_to "All organizations", organizations_path %>
-<%= link_to "All projects", organization_projects_path(current_user) %>
-<%= link_to "All engagements", user_engagements_path(current_user) %>
+<%= link_to "All projects", projects_path %>
 <div><%= render 'shared/projectsCards' %></div>
