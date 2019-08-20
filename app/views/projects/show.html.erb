@@ -1,10 +1,17 @@
 <div>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-    <div class="container">
-      <h1> <%= @organization.name %></h1>
-      <p> <%= @organization.mission %></p>
-      <%= link_to "Apply Now", new_project_engagement_path(params[:id]), class: "btn btn-primary" %>
-    </div>
+      <div class="container align-self-center">
+        <h1> <%= @organization.name %></h1>
+        <p> <%= @organization.mission %></p>
+        <%= link_to "Apply Now", new_project_engagement_path(params[:id]), class: "btn btn-primary" %>
+      </div>
+      <div class="pr-5 align-self-end" >
+        <%= link_to "About NGO", organization_path(@organization), class: "btn btn-primary" %>
+      </div>
+  </div>
+
+  <div>
+    <%= @project.description %>
   </div>
 
 </div>
