@@ -1,3 +1,11 @@
 <p><%= @organization.id %></p>
 <p><%= @organization.name %></p>
 <p><%= @organization.mission %></p>
+Representatives:
+<% @representatives.each do |rep| %>
+<p>
+  <%= rep %>
+  <% if rep.primary %>
+    <%= (Organizational focal point) %>
+  <% end %>
+</p>
