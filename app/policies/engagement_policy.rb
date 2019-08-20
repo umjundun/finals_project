@@ -9,6 +9,10 @@ class EngagementPolicy < ApplicationPolicy
     true
   end
 
+  def new?
+    @user.developer?
+  end
+
   def index?
     true
   end
