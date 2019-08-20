@@ -1,6 +1,5 @@
 class EngagementsController < ApplicationController
   before_action :set_engagement, only: [:show, :update, :edit]
-  before_action :set_user
   before_action :set_project
 
   def index
@@ -17,7 +16,7 @@ class EngagementsController < ApplicationController
   end
 
   def create
-    @engagement = Engagements.new(engagement_params)
+    @engagement = Engagement.new(engagement_params)
     @engagement.project = @project
     @engagement.user = current_user
     @engagement.status = "Pending"
