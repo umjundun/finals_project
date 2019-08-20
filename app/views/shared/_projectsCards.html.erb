@@ -1,9 +1,0 @@
-<% @projects.first(@card_num).each do |project| %>
-  <div class="card-product">
-    <img src="<%= project.organization.logo %>"/>
-    <div class="card-product-infos">
-      <h2><%= project.title %></h2>
-      <p><strong><%= project.description %></strong></p>
-    </div>
-  </div>
-<% end %>
