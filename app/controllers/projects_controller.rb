@@ -3,19 +3,23 @@ class ProjectsController < ApplicationController
   before_action :set_organization, only: [:show, :update, :edit]
 
   def index
-    @projects = Project.all
+    @projects = policy_scope(Project).order(created_at: :desc)
   end
 
   def show
+    authorize @project
   end
 
   def new
-    @project = Project.new
+    @project = current_user.projects.new
+    authorize @project
   end
 
   def create
-    @project = Project.new(project_params)
+    @project = current_user.projects.new(project_params)
     @project.organization = set_organization
+    authorize @project
+
     if @project.save
       redirect_to project_path(@project)
     else
@@ -24,9 +28,11 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    authorize @project
   end
 
   def update
+    authorize @project
     if @project.update(project_params)
       redirect_to root_path(@project)
     else
@@ -42,6 +48,7 @@ class ProjectsController < ApplicationController
 
   def set_project
     @project = Project.find(params[:id])
+    authorize @project
   end
 
   def set_organization

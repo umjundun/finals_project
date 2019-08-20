@@ -2,18 +2,22 @@ class OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :update, :edit]
 
   def index
-    @organizations = Organization.all
+    @organizations = policy_scope(Organization).order(created_at: :desc)
   end
 
   def show
+    authorize @organization
+    @representatives = Representative.where("organization = ?", @organization)
   end
 
   def new
-    @organization = Organization.new
+    @organization = current_user.organizations.new
+    authorize @organization
   end
 
   def create
-    @organization = Organization.new(organization_params)
+    @organization = current_user.organizations.new(organization_params)
+    authorize @organization
     if @organization.save
       redirect_to organizations_path
     else

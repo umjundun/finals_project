@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_19_163812) do
+ActiveRecord::Schema.define(version: 2019_08_20_140820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,16 @@ ActiveRecord::Schema.define(version: 2019_08_19_163812) do
     t.index ["organization_id"], name: "index_projects_on_organization_id"
   end
 
+  create_table "representatives", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "organization_id"
+    t.boolean "primary"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organization_id"], name: "index_representatives_on_organization_id"
+    t.index ["user_id"], name: "index_representatives_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -58,6 +68,8 @@ ActiveRecord::Schema.define(version: 2019_08_19_163812) do
     t.string "linkedn"
     t.string "bio"
     t.string "github"
+    t.boolean "admin"
+    t.boolean "developer"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -65,4 +77,6 @@ ActiveRecord::Schema.define(version: 2019_08_19_163812) do
   add_foreign_key "engagements", "projects"
   add_foreign_key "engagements", "users"
   add_foreign_key "projects", "organizations"
+  add_foreign_key "representatives", "organizations"
+  add_foreign_key "representatives", "users"
 end
