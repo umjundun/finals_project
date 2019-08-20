@@ -1,5 +1,5 @@
 .footer {
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
   height: 100px;
-  padding: 0px 50px;
+  padding: 0px 50px 50px auto;
   color: rgba(0,0,0,0.3);
   height: 2.5rem;
 }

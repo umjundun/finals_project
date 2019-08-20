@@ -1,7 +1,16 @@
+
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 <%= link_to "Show Page", users_show_path%>
 <%= link_to "All users", users_path %>
 <%= link_to "All organizations", organizations_path %>
 <%= link_to "All projects", projects_path %>
+
 <div><%= render 'shared/projectsCards' %></div>
+
+
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/homebanner' %>
+    <%= render 'shared/bannercards' %>
+    <%= render 'shared/projectscards' %>
+    <%= render 'shared/footer' %>
