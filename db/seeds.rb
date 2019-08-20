@@ -2,7 +2,8 @@
 10.times do
   name = Faker::Company.name
   mission = Faker::Company.catch_phrase
-  Organization.create(name: name, mission: mission)
+  logo = Faker::Company.logo
+  Organization.create(name: name, mission: mission, logo: logo)
   p "10 organizations created"
 end
 
@@ -10,7 +11,8 @@ end
 5.times do
   Organization.all.each do |org|
     organization = org
-    description = Faker::Company.bs
+    title = Faker::Company.bs
+    description = Faker::Movies::HitchhikersGuideToTheGalaxy.quote
     Project.create(organization: organization, description: description)
   end
   p "5 projects created"
