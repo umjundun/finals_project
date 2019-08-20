@@ -1,17 +1,18 @@
 class EngagementsController < ApplicationController
   before_action :set_engagement, only: [:show, :update, :edit]
-  before_action :set_user
   before_action :set_project
 
   def index
-    @engagements = Engagement.all
+    @engagements = policy_scope(Engagement).order(created_at: :desc)
   end
 
   def show
+    authorize @engagement
   end
 
   def new
-    @engagement = Engagement.new
+    @engagement = Engagements.new
+    authorize @engagement
   end
 
   def create
@@ -20,7 +21,7 @@ class EngagementsController < ApplicationController
     @engagement.user = current_user
     @engagement.status = "Pending"
     if @engagement.save
-      redirect_to user_path(@user)
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -30,6 +31,7 @@ class EngagementsController < ApplicationController
   end
 
   def update
+    @engagement.authorize
     if @engagement.update(engagement_params)
       redirect_to project_path(@engagement)
     else
@@ -45,9 +47,5 @@ class EngagementsController < ApplicationController
 
   def set_project
     @project = Project.find(params[:project_id])
-  end
-
-  def set_user
-    @user = current_user
   end
 end
