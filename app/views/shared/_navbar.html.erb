@@ -8,6 +8,10 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+<!-- We need to incorporate user avatar below:
+  <%= cl_image_tag @user.photo %>
+-->
+
   <%= simple_form_for :search, url: root_path, method: :get do |f| %>
     <div class="search-form-control form-group">
       <input class="form-control nav-search-input string required" placeholder="Search Projects" type="text" name="search[query]" id="search_query" />
