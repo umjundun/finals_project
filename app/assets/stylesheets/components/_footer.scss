@@ -1,5 +1,5 @@
 .footer {
-  position: relative;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -28,4 +28,8 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+.footer-copyright {
+  padding-right: 10px;
 }
