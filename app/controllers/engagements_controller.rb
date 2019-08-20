@@ -12,12 +12,12 @@ class EngagementsController < ApplicationController
   end
 
   def new
-    @engagement = current_user.engagements.new
+    @engagement = Engagements.new
     authorize @engagement
   end
 
   def create
-    @engagement = current_user.engagements.new(engagement_params)
+    @engagement = Engagements.new(engagement_params)
     @engagement.project = @project
     @engagement.user = current_user
     @engagement.status = "Pending"

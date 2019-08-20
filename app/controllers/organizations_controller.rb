@@ -11,12 +11,12 @@ class OrganizationsController < ApplicationController
   end
 
   def new
-    @organization = current_user.organizations.new
+    @organization = Organizations.new
     authorize @organization
   end
 
   def create
-    @organization = current_user.organizations.new(organization_params)
+    @organization = Organizations.new(organization_params)
     authorize @organization
     if @organization.save
       redirect_to organizations_path

@@ -11,12 +11,12 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @project = current_user.projects.new
+    @project = Projects.new
     authorize @project
   end
 
   def create
-    @project = current_user.projects.new(project_params)
+    @project = Projects.new(project_params)
     @project.organization = set_organization
     authorize @project
 
