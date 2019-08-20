@@ -15,15 +15,14 @@ ActiveRecord::Schema.define(version: 2019_08_20_212558) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "engagements", force: :cascade do |t|
+  create_table "applications", force: :cascade do |t|
     t.string "status"
-    t.text "request"
     t.bigint "project_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_engagements_on_project_id"
-    t.index ["user_id"], name: "index_engagements_on_user_id"
+    t.index ["project_id"], name: "index_applications_on_project_id"
+    t.index ["user_id"], name: "index_applications_on_user_id"
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -77,8 +76,8 @@ ActiveRecord::Schema.define(version: 2019_08_20_212558) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "engagements", "projects"
-  add_foreign_key "engagements", "users"
+  add_foreign_key "applications", "projects"
+  add_foreign_key "applications", "users"
   add_foreign_key "projects", "organizations"
   add_foreign_key "representatives", "organizations"
   add_foreign_key "representatives", "users"

@@ -1,5 +1,6 @@
-<% @projects.each do |project| %>
-  <%= link_to project.id, project_path(project) %>
-  <p><%= project.description %></p>
-  <p><%= project.organization.name %></p>
-<% end %>
+<div class="container d-flex justify-content-around my-5" >
+  <div class="cards">
+    <% @card_num = @projects.count %>
+    <%= render 'shared/projectCards' %>
+  </div>
+</div>
