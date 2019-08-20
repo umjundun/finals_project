@@ -43,15 +43,10 @@ class EngagementsController < ApplicationController
   private
 
   def engagement_params
-    params.require(:engagement).permit(:status)
-  end
-
-  def set_engagement
-    @engagement = Engagement.find(params[:id])
+    params.require(:engagement).permit(:status, :request)
   end
 
   def set_project
     @project = Project.find(params[:project_id])
   end
-
 end
