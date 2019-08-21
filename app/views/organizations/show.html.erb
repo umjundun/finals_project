@@ -1,11 +1,14 @@
-<p><%= @organization.id %></p>
-<p><%= @organization.name %></p>
-<p><%= @organization.mission %></p>
-Representatives:
-<%# @representatives.each do |rep| %>
-<p>
-  <%#= rep %>
-  <%# if rep.primary %>
-    <%#= (Organizational focal point) %>
-  <%# end %>
-</p>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <div class="container">
+    <h1><%= @organization.name %></h1>
+    <p><%= @organization.mission %></p>
+    <p>Representatives:</p>
+    <%# @representatives.each do |rep| %>
+      <p>
+        <%#= rep %>
+        <%# if rep.primary %>
+          <%#= (Organizational focal point) %>
+      </p>
+    <%# end %>
+  </div>
+</div>
