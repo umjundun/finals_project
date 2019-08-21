@@ -1,5 +1,12 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
-<% @users.each do |user| %>
-  <p><%= user.first_name %></p>
-<% end %>
+<div class="container d-flex justify-content-around py-5">
+  <div class="row">
+    <% @users.each do |user| %>
+      <div class="card-product mb-3 mr-1 ml-1">
+        <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+        <div class="card-product-infos">
+          <h2><%= user.first_name %></h2>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
