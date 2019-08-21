@@ -31,8 +31,9 @@
 
 .search-form-control .form-control {
   height: 2.625rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border: 1px solid #E7E7E7;
+  box-shadow: 0 2px 3px rgba(240,240,240,0.2);
+  border: 1px solid rgba(200,200,200,0.4);
+  border-radius: 2px;
 }
 
 .search-form-control .form-control:focus {
@@ -41,13 +42,11 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-.circle {
-  border-radius: 50%;
-  line-height: 10px;
-  font-size: 15px;
-  color: rgb(100,100,100);
-  text-align: center;
-  background: rgba(240,240,240,0.5);
-  padding: 10px;
-  margin: 20px 10px 0 10px;
+.dropdown-menu {
+  border: 0px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.dropdown-item {
+  padding: 5px 0px 8px 15px;
 }
