@@ -11,7 +11,7 @@ class EngagementsController < ApplicationController
   end
 
   def new
-    @engagement = Engagements.new
+    @engagement = Engagement.new
     authorize @engagement
   end
 
