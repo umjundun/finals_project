@@ -1,11 +1,11 @@
 # Organizations
-5.times do
+15.times do
   name = Faker::Company.name
   mission = Faker::Company.catch_phrase
   logo = Faker::Company.logo
   Organization.create(name: name, mission: mission, logo: logo)
-  p "5 organizations created"
 end
+p "15 organizations created"
 
 # 2 Projects per organization
 2.times do
