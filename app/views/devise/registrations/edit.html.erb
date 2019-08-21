@@ -30,6 +30,12 @@
     <%= f.input :bio,
                 hint: "Bio: Tell us about yourself.",
                 required: false %>
+    <%= f.input :photo,
+                hint: "Upload a photo of yourself.",
+                required: false %>
+    <%= f.input :hibernate,
+                hint: "Hibernate your account.",
+                required: false %>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
@@ -54,6 +60,8 @@
 
 <h3>Cancel my account</h3>
 
+<!--
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+-->
 
 <%= link_to "Back", :back %>
