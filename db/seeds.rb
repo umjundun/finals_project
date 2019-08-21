@@ -11,7 +11,7 @@ p "15 organizations created"
 4.times do
   Organization.all.each do |org|
     organization = org
-    title = Faker::Company.bs
+    title = Faker::Job.title
     description = Faker::Movies::HitchhikersGuideToTheGalaxy.quote
     Project.create(organization: organization, description: description, title: title)
   end
@@ -56,3 +56,7 @@ test_ngo = Organization.find(3)
 p "test_org created: #{test_ngo}"
 test_rep = Representative.create(organization: test_ngo, user: new_rep)
 p "test_rep created: #{test_rep}"
+
+Project.all.each do |project|
+  p project.title
+end
