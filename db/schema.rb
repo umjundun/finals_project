@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2019_08_20_214715) do
     t.string "bio"
     t.string "github"
     t.boolean "admin"
-    t.boolean "developer"
+    t.boolean "developer", default: true
     t.string "photo"
     t.boolean "hibernate"
     t.index ["email"], name: "index_users_on_email", unique: true
