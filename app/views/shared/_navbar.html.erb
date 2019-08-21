@@ -8,9 +8,6 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-<!-- We need to incorporate user avatar below:
-  <%= cl_image_tag @user.photo %>
--->
 
   <%= simple_form_for :search, url: root_path, method: :get do |f| %>
     <div class="search-form-control form-group nav-search-form">
@@ -34,7 +31,11 @@
           <%= link_to "NGOs", "#", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% if @user.photo.present? %>
+              <%= cl_image_tag @user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+            <%= cl_image_tag "https://res.cloudinary.com/caitlinsnyder/image/upload/v1566401024/avatar_blank_hmbgqy.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+         <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Dashboard", "#", class: "dropdown-item" %>
             <%= link_to "My Projects", "#", class: "dropdown-item" %>
@@ -51,4 +52,5 @@
     </ul>
   </div>
 </div>
+
 
