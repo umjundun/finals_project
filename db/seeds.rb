@@ -8,14 +8,14 @@
 end
 
 # 2 Projects per organization
-2.times do
+4.times do
   Organization.all.each do |org|
     organization = org
     title = Faker::Company.bs
     description = Faker::Movies::HitchhikersGuideToTheGalaxy.quote
     Project.create(organization: organization, description: description, title: title)
   end
-  p "2 projects created"
+  p "20 projects created"
 end
 
 # Users - Admin
