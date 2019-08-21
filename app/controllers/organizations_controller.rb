@@ -9,7 +9,8 @@ class OrganizationsController < ApplicationController
 
   def show
     authorize @organization
-    @representatives = Representative.where("organization = ?", @organization)
+    @representatives = Representative.where("organization_id = ?", @organization)
+    @projects = Project.where("organization_id = ?", @organization)
   end
 
   def new

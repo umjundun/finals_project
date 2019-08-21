@@ -52,14 +52,27 @@
 
 .card-product img {
   margin: 5px;
+  padding: 0 0 0 5px;
   width: 100px;
   object-fit: cover;
+}
+
+.card-product .card-product-infos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 10px 25px 16px 15px;
+  height: 100px;
+  color: rgba(80,80,80,1);
 }
 
 .card-product h2 {
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin: 5px 0;
+  flex-grow:0;
 }
 
 .card-product p {
@@ -67,8 +80,5 @@
   line-height: 1.4;
   opacity: .7;
   margin:0;
-}
-
-.card-product .card-product-infos {
-  padding: 16px;
+  flex-grow:1;
 }
