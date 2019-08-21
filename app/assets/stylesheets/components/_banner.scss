@@ -1,23 +1,24 @@
-.banner {
+.landing-banner {
   background-size: cover;
   background-position: center;
   margin: 0px 0 40px 0;
   height: 500px;
   position: relative;
+  padding: 40px 0 0 0;
 }
 
-.banner .banner-text {
+.landing-banner .banner-text {
   margin: 0;
   padding: 140px 0 0 65px;
 }
 
-.banner-text h1 {
+.landing-banner h1 {
   padding: 0 0 10px 0;
   color: white;
   letter-spacing: 3px;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
-  font-size: 85px;
   font-weight: bold;
+  font-size: 85px;
 }
 
 .highlight {
