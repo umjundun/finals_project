@@ -3,6 +3,7 @@
   background-position: center;
   margin: 0 0 40px 0;
   height: 500px;
+  position: relative;
 }
 
 .banner .banner-text {
@@ -75,4 +76,10 @@
   font-size: 35px;
   font-weight: bold;
   padding: 5px 0 7px 0;
+}
+
+#about {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }

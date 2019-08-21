@@ -8,7 +8,6 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-
   <%= simple_form_for :search, url: root_path, method: :get do |f| %>
     <div class="search-form-control form-group nav-search-form">
       <input class="form-control string required" placeholder="Enter Project name or NGO" type="text" name="search[query]" id="search_query" size="80" />
@@ -22,13 +21,13 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "DevForGood", "#", class: "nav-link" %>
+          <%= link_to "Devs", users_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Projects", "#", class: "nav-link" %>
+          <%= link_to "Projects", projects_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "NGOs", "#", class: "nav-link" %>
+          <%= link_to "NGOs", organizations_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <% if @user.photo.present? %>
