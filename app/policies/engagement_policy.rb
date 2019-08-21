@@ -14,7 +14,7 @@ class EngagementPolicy < ApplicationPolicy
   end
 
   def index?
-    true
+    @user
   end
 
   def create?
