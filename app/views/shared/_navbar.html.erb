@@ -33,7 +33,7 @@
           <% if @user.photo.present? %>
               <%= cl_image_tag @user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
-            <%= cl_image_tag "https://res.cloudinary.com/caitlinsnyder/image/upload/v1566401024/avatar_blank_hmbgqy.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= cl_image_tag "avatar_blank_hmbgqy.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
          <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Dashboard", "#", class: "dropdown-item" %>
