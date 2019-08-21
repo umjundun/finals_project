@@ -1,5 +1,5 @@
-<% @organizations.each do |organization| %>
-  <p><%= organization.id %></p>
-  <p><%= organization.name %></p>
-  <p><%= organization.mission %></p>
-<% end %>
+<div class="container d-flex justify-content-around py-5">
+  <div class="row">
+    <%= render 'shared/ngoCards' %>
+  </div>
+</div>

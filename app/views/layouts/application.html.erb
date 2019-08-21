@@ -13,7 +13,9 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <%= render 'shared/navbar' %>
     <%= yield %>
+    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

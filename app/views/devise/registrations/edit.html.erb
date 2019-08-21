@@ -30,6 +30,12 @@
     <%= f.input :bio,
                 hint: "Bio: Tell us about yourself.",
                 required: false %>
+    <%= f.input :photo,
+                hint: "Upload a photo of yourself.",
+                required: false %>
+    <%= f.input :hibernate,
+                hint: "Hibernate your account.",
+                required: false %>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
@@ -48,7 +54,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", class: "btn btn-primary" %>
   </div>
 <% end %>
 
