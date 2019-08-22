@@ -1,9 +1,13 @@
 class EngagementsController < ApplicationController
   before_action :set_engagement, only: [:show, :update, :edit]
-  before_action :set_project
+  before_action :set_project, except: [:index, :edit, :update]
 
   def index
-    @engagements = policy_scope(Engagement).order(created_at: :desc)
+    if current_user.organization_id != 1
+      @engagements = policy_scope(current_user.organization.engagements).order(created_at: :desc)
+    else
+      @engagements = policy_scope(current_user.engagements).order(created_at: :desc)
+    end
   end
 
   def show
@@ -28,12 +32,13 @@ class EngagementsController < ApplicationController
   end
 
   def edit
+    @user = current_user
   end
 
   def update
-    @engagement.authorize
+    authorize @engagement
     if @engagement.update(engagement_params)
-      redirect_to project_path(@engagement)
+      redirect_to user_engagements_path(current_user)
     else
       render :edit
     end
@@ -43,6 +48,10 @@ class EngagementsController < ApplicationController
 
   def engagement_params
     params.require(:engagement).permit(:status, :request)
+  end
+
+  def set_engagement
+    @engagement = Engagement.find(params[:id])
   end
 
   def set_project

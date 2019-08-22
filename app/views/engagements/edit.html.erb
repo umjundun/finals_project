@@ -1,1 +1,15 @@
-<%= render "form" %>
+<%= simple_form_for [@user, @engagement] do |f| %>
+  <% if @engagement.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @engagement.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= @engagement.request %>
+  <%= f.select :status, ['Accept', 'Reject'] %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
