@@ -59,9 +59,6 @@ developer = false
 new_rep = User.create!(organization: Organization.find(2), email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
 p "1 ngo_rep user created"
 
-
-
-
 # 2 Projects per organization
 2.times do
   Organization.all.each do |org|

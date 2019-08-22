@@ -1,29 +1,29 @@
 @import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 
-.page-header{
+.page-header {
   text-align: center;
 }
 
 /*social buttons*/
-.btn-social{
+.btn-social {
   color: white;
-  opacity:0.9;
+  opacity: 0.9;
 }
 .btn-social:hover {
   color: white;
-    opacity:1;
+  opacity: 1;
 }
 .btn-facebook {
-background-color: #3b5998;
-opacity:0.9;
+  background-color: #3b5998;
+  opacity:0.9;
 }
 .btn-twitter {
-background-color: #00aced;
-opacity:0.9;
+  background-color: #00aced;
+  opacity:0.9;
 }
 .btn-linkedin {
-background-color:#0e76a8;
-opacity:0.9;
+  background-color:#0e76a8;
+  opacity:0.9;
 }
 .btn-github{
   background-color:#000000;
@@ -41,32 +41,32 @@ opacity:0.9;
 /* resume stuff */
 
 .bs-callout {
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    border-color: white;
-    border-image: none;
-    border-radius: 3px;
-    border-style: solid;
-    border-width: 1px 1px 1px 5px;
-    margin-bottom: 5px;
-    padding: 20px;
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: white;
+  border-image: none;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px 1px 1px 5px;
+  margin-bottom: 5px;
+  padding: 20px;
 }
 .bs-callout:last-child {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 .bs-callout h4 {
-    margin-bottom: 10px;
-    margin-top: 0;
+  margin-bottom: 10px;
+  margin-top: 0;
 }
 
 .bs-callout-danger {
-    border-left-color: olive;
+  border-left-color: olive;
 }
 
 .bs-callout-danger h4{
-    color: olive;
+  color: olive;
 }
 
 .dashboard .list-group-item:first-child, .dashboard .list-group-item:last-child{
@@ -154,7 +154,7 @@ opacity:0.9;
 }
 
 .dashboard-container {
- background-color: #e5ede3;
+  background-color: #e5ede3;
 }
 
 h1{
@@ -248,6 +248,7 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=2,Color=#3300000
 }
 
 .img-circle{
-  width: 100px;
-  height: 100px;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
 }
