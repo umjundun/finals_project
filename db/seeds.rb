@@ -33,7 +33,7 @@ first_name = "Admin"
 last_name = "Test"
 admin = true
 developer = false
-new_admin = User.create!(organization: Organization.all.sample, email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
+new_admin = User.create!(organization: Organization.find(2), email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
 p "1 admin user created"
 # new_admin = User.new(organization_id: Organization.all.sample, email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
 
@@ -45,7 +45,7 @@ first_name = "Dev"
 last_name = "Test"
 admin = false
 developer = true
-new_dev = User.create!(organization: Organization.all.sample, email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
+new_dev = User.create!(organization: Organization.find(2), email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
 p "1 developer user created"
 
 # Users - NGO
@@ -56,7 +56,7 @@ first_name = "NGO"
 last_name = "Test"
 admin = false
 developer = false
-new_rep = User.create!(organization: Organization.all.sample, email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
+new_rep = User.create!(organization: Organization.find(2), email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
 p "1 ngo_rep user created"
 
 

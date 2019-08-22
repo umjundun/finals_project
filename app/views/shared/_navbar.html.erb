@@ -20,9 +20,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li>
-          <%= link_to "New Project", new_project_path, class: "nav-link" %>
-        </li>
+        <% if current_user.organization_id != 1 %>
+          <li>
+            <%= link_to "New Project", new_project_path, class: "nav-link" %>
+          </li>
+        <% end %>
         <li class="nav-item">
           <%= link_to "Devs", users_path, class: "nav-link" %>
         </li>

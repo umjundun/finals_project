@@ -10,6 +10,6 @@
   <% end %>
   <%= f.input :title %>
   <%= f.input :description %>
-  <%= f.association :organization, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
+  <%= f.association :organization, collection: Organization.where.not(id: 1), input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
   <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>
