@@ -7,7 +7,7 @@
     <% @organizations.each do |organization| %>
       <%= link_to organization_path(organization) do %>
 
-        <%= render 'shared/org-cards', organization: organization %>
+        <%= render 'shared/org_card', organization: organization %>
 
       <% end %>
     <% end %>
