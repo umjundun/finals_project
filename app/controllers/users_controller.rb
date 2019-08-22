@@ -19,11 +19,7 @@ class UsersController < ApplicationController
 
   def update
     authorize @user
-    if @user.update(user_params)
-      redirect_to root_path(@user)
-    else
-      render :edit
-    end
+    @user.update(user_params)
   end
 
   private
