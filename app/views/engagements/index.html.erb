@@ -1,0 +1,15 @@
+<% @engagements.each do |eng| %>
+  <p><%= eng.status %></p>
+  <p><%= eng.request %></p>
+  <p><%= eng.project.title %></p>
+  <div class="card-product">
+    <img src="<%= eng.project.organization.logo %>"/>
+    <div class="card-product-infos">
+      <h2><%= eng.status %></h1>
+      <h2><%= eng.project.title %></h2>
+      <p><strong><%= eng.project.description %></strong></p>
+    </div>
+    <%= f.select :eng.status, ['Accept', 'Reject'] %>
+  </div>
+<% end %>
+

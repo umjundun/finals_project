@@ -1,6 +1,6 @@
 class EngagementsController < ApplicationController
   before_action :set_engagement, only: [:show, :update, :edit]
-  before_action :set_project
+  before_action :set_project, except: [:index]
 
   def index
     @engagements = policy_scope(Engagement).order(created_at: :desc)

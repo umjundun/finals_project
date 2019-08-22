@@ -1,14 +1,14 @@
 # Organizations
-15.times do
+4.times do
   name = Faker::Company.name
   mission = Faker::Company.catch_phrase
   logo = Faker::Company.logo
   Organization.create(name: name, mission: mission, logo: logo)
 end
-p "15 organizations created"
+p "4 organizations created"
 
 # 2 Projects per organization
-4.times do
+2.times do
   Organization.all.each do |org|
     organization = org
     title = Faker::Job.title
@@ -16,7 +16,7 @@ p "15 organizations created"
     Project.create(organization: organization, description: description, title: title)
   end
 end
-p "60 projects created"
+p "2 projects created"
 
 # Users - Admin
 email = "admin@test.com"

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get 'projects'
     end
     resources :projects, only: [:show]
-    resources :engagements, only: [:update, :new, :create]
+    resources :engagements, only: [:index, :update, :new, :create]
   end
 
   resources :organizations, only: [:new, :create, :index, :show, :update] do
