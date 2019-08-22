@@ -98,7 +98,7 @@
 /* skill meter in resume. copy pasted from http://bootsnipp.com/snippets/featured/progress-bar-meter */
 
 .progress-bar {
-    text-align: left;
+  text-align: left;
   white-space: nowrap;
   white-space: nowrap;
   overflow: hidden;
@@ -173,7 +173,6 @@ p{
 }
 
 .button {
-
   display: inline-block;
   height: 40px;
   line-height: 40px;
@@ -209,13 +208,13 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=2,Color=#3300000
   width: 50px;
   font-size:30px;
   -webkit-border-top-left-radius: 5px;
--webkit-border-bottom-left-radius: 5px;
--moz-border-radius-topleft: 5px;
--moz-border-radius-bottomleft: 5px;
-border-top-left-radius: 5px;
-border-bottom-left-radius: 5px;
-border-right: 1px solid  rgba(0,0,0,0.15);
-    text-decoration: none;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: 1px solid  rgba(0,0,0,0.15);
+  text-decoration: none;
 }
 
 .button.twitter {

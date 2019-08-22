@@ -22,7 +22,8 @@ class EngagementPolicy < ApplicationPolicy
   end
 
   def update?
-    representation = Representative.where("user = ? and organization = ?", [user, record.project.organization])
-    representation.primary
+    # representation = Representative.where("user = ? and organization = ?", [user, record.project.organization])
+    # representation.primary
+    true
   end
 end

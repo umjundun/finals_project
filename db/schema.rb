@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(version: 2019_08_22_202014) do
     t.string "logo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -40,7 +43,9 @@ ActiveRecord::Schema.define(version: 2019_08_22_202014) do
     t.bigint "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["organization_id"], name: "index_projects_on_organization_id"
+    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "representatives", force: :cascade do |t|
@@ -80,13 +85,17 @@ ActiveRecord::Schema.define(version: 2019_08_22_202014) do
     t.string "interests"
     t.string "experience"
     t.string "skills"
+    t.bigint "organization_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["organization_id"], name: "index_users_on_organization_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "engagements", "projects"
   add_foreign_key "engagements", "users"
   add_foreign_key "projects", "organizations"
+  add_foreign_key "projects", "users"
   add_foreign_key "representatives", "organizations"
   add_foreign_key "representatives", "users"
+  add_foreign_key "users", "organizations"
 end
