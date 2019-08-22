@@ -4,7 +4,7 @@
       <div class="card-product mb-3 mr-1 ml-1">
         <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
         <div class="card-product-infos">
-          <h2><%= user.first_name %></h2>
+          <h2><%= link_to user.first_name, user_path(user) %></h2>
         </div>
       </div>
     <% end %>
