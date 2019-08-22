@@ -12,13 +12,13 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @project = Projects.new
+    @project = Project.new
     authorize @project
   end
 
   def create
-    @project = Projects.new(project_params)
-    @project.organization = set_organization
+    @project = Project.new(project_params)
+    @project.user = current_user
     authorize @project
 
     if @project.save
@@ -44,7 +44,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:description)
+    params.require(:project).permit(:title, :description, :organization_id)
   end
 
   def set_project

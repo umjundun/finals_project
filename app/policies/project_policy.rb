@@ -14,8 +14,9 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def create?
-    representation = Representative.where("user = ?", user) # need to include current org in query
-    representation.primary
+    # representation = Representative.where("user = ?", user) # need to include current org in query
+    # representation.primary
+    user
   end
 
   def update?
