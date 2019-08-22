@@ -9,7 +9,7 @@
     </div>
   <% end %>
 
-  <%= f.input :request, hint: "Tell a little about yourself and why you want to work on this project" %>
+  <%= @engagement.request %>
   <%= f.select :status, ['Accept', 'Reject'] %>
   <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>

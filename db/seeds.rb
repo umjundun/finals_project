@@ -1,3 +1,4 @@
+#Default Organization for Dev users
 Organization.create!(name: 'default', mission: 'none')
 
 # Organizations
@@ -5,28 +6,24 @@ Organization.create!(name: 'default', mission: 'none')
   name = Faker::Company.name
   mission = Faker::Company.catch_phrase
   logo = Faker::Company.logo
-<<<<<<< HEAD
   address = Faker::Address.full_address
   lat = Faker::Address.latitude
   long = Faker::Address.longitude
   Organization.create(name: name, mission: mission, latitude: lat, longitude: long, logo: logo, address: address)
 end
-p "15 organizations created"
+p "4 organizations created"
 
 # 2 Projects per organization
-4.times do
+2.times do
   Organization.all.each do |org|
     organization = org
     title = Faker::Job.title
     description = Faker::Movies::HitchhikersGuideToTheGalaxy.quote
     Project.create(organization: organization, description: description, title: title)
   end
-=======
-  Organization.create!(name: name, mission: mission, logo: logo)
->>>>>>> engagment_logic
 end
 # Organization.create(name: 'Valve', mission: "make money", logo: Faker::Company.logo)
-p "4 organizations created"
+p "2 organizations created"
 
 # Users - Admin
 email = "admin@test.com"
@@ -36,7 +33,7 @@ first_name = "Admin"
 last_name = "Test"
 admin = true
 developer = false
-new_admin = User.create!(organization: Organization.all.sample, email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
+new_admin = User.create!(organization: Organization.find(2), email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
 p "1 admin user created"
 # new_admin = User.new(organization_id: Organization.all.sample, email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
 
@@ -48,7 +45,7 @@ first_name = "Dev"
 last_name = "Test"
 admin = false
 developer = true
-new_dev = User.create!(organization: Organization.all.sample, email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
+new_dev = User.create!(organization: Organization.find(2), email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
 p "1 developer user created"
 
 # Users - NGO
@@ -59,7 +56,7 @@ first_name = "NGO"
 last_name = "Test"
 admin = false
 developer = false
-new_rep = User.create!(organization: Organization.all.sample, email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
+new_rep = User.create!(organization: Organization.find(2), email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
 p "1 ngo_rep user created"
 
 

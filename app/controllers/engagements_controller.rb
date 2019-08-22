@@ -3,7 +3,11 @@ class EngagementsController < ApplicationController
   before_action :set_project, except: [:index, :edit, :update]
 
   def index
-    @engagements = policy_scope(Engagement).order(created_at: :desc)
+    if current_user.organization_id != 1
+      @engagements = policy_scope(current_user.organization.engagements).order(created_at: :desc)
+    else
+      @engagements = policy_scope(current_user.engagements).order(created_at: :desc)
+    end
   end
 
   def show
