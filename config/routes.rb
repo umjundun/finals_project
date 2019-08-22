@@ -19,4 +19,6 @@ Rails.application.routes.draw do
     resources :engagements, only: [:update, :new, :create]
   end
 
+  get "/results", to: "pages#search", as: "search"
+
 end

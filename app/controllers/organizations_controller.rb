@@ -3,9 +3,10 @@ class OrganizationsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
 
-  def index
-    @organizations = policy_scope(Organization).order(created_at: :desc)
-  end
+      def index
+        @organizations = policy_scope(Organization).order(created_at: :desc)
+      end
+
 
   def show
     authorize @organization
