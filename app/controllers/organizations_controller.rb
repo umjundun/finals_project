@@ -2,9 +2,15 @@ class OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :update, :edit]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-
   def index
-    @organizations = policy_scope(Organization).order(created_at: :desc)
+    @organizations = policy_scope(Organization).order(created_at: :desc).geocoded
+    @markers = @organizations.map do |organization| {
+      lat: organization.latitude,
+      lng: organization.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { organization: organization }),
+      image_url: organization.logo
+    }
+    end
   end
 
   def show

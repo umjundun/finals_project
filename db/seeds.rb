@@ -3,7 +3,10 @@
   name = Faker::Company.name
   mission = Faker::Company.catch_phrase
   logo = Faker::Company.logo
-  Organization.create(name: name, mission: mission, logo: logo)
+  address = Faker::Address.full_address
+  lat = Faker::Address.latitude
+  long = Faker::Address.longitude
+  Organization.create(name: name, mission: mission, latitude: lat, longitude: long, logo: logo, address: address)
 end
 p "15 organizations created"
 
@@ -57,6 +60,3 @@ p "test_org created: #{test_ngo}"
 test_rep = Representative.create(organization: test_ngo, user: new_rep)
 p "test_rep created: #{test_rep}"
 
-Project.all.each do |project|
-  p project.title
-end
