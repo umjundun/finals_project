@@ -9,7 +9,7 @@
       <h2><%= eng.project.title %></h2>
       <p><strong><%= eng.project.description %></strong></p>
     </div>
-    <%= f.select :eng.status, ['Accept', 'Reject'] %>
+    <%= link_to "Edit", edit_user_engagement_path(current_user, eng)%>
   </div>
 <% end %>
 
