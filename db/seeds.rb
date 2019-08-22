@@ -1,3 +1,4 @@
+#Default Organization for Dev users
 Organization.create!(name: 'default', mission: 'none')
 
 # Organizations
@@ -5,10 +6,24 @@ Organization.create!(name: 'default', mission: 'none')
   name = Faker::Company.name
   mission = Faker::Company.catch_phrase
   logo = Faker::Company.logo
-  Organization.create!(name: name, mission: mission, logo: logo)
+  address = Faker::Address.full_address
+  lat = Faker::Address.latitude
+  long = Faker::Address.longitude
+  Organization.create(name: name, mission: mission, latitude: lat, longitude: long, logo: logo, address: address)
+end
+p "4 organizations created"
+
+# 2 Projects per organization
+2.times do
+  Organization.all.each do |org|
+    organization = org
+    title = Faker::Job.title
+    description = Faker::Movies::HitchhikersGuideToTheGalaxy.quote
+    Project.create(organization: organization, description: description, title: title)
+  end
 end
 # Organization.create(name: 'Valve', mission: "make money", logo: Faker::Company.logo)
-p "4 organizations created"
+p "2 organizations created"
 
 # Users - Admin
 email = "admin@test.com"

@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(version: 2019_08_22_165852) do
     t.string "logo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "projects", force: :cascade do |t|
