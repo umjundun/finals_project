@@ -29,8 +29,6 @@
         <li class="nav-item">
           <%= link_to "NGOs", organizations_path, class: "nav-link" %>
         </li>
-          <%= link_to "Dashboard", users_show_path, class: "nav-link" %>
-        </li>
         <li class="nav-item dropdown">
           <% if current_user.photo.present? %>
               <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
