@@ -1,3 +1,5 @@
+Organization.create!(name: 'default', mission: 'none')
+
 # Organizations
 4.times do
   name = Faker::Company.name
