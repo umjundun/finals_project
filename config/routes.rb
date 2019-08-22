@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :users, only: [:index, :show, :update] do
-    resources :projects, only: [:index, :show]
+    member do
+      get 'projects'
+    end
+    resources :projects, only: [:show]
     resources :engagements, only: [:update, :new, :create]
   end
 

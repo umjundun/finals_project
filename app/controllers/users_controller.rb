@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def projects
+    @projects = current_user.projects
+  end
+
   def edit
     authorize @user
   end

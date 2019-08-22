@@ -15,8 +15,8 @@ p "15 organizations created"
     description = Faker::Movies::HitchhikersGuideToTheGalaxy.quote
     Project.create(organization: organization, description: description, title: title)
   end
-  p "20 projects created"
 end
+p "60 projects created"
 
 # Users - Admin
 email = "admin@test.com"
