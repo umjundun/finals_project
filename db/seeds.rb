@@ -4,7 +4,7 @@ Organization.create!(name: 'default', mission: 'none')
 
 # Organizations for users associated with an organization
 Organization.create(name: 'Valve', mission: 'To help the hungry people!', address: "561 Bannerman Ave, Winnipeg", logo: Faker::Company.logo)
-Organization.create(name: 'Ubisoft', mission: 'To provide electricity to people!', address: '5505 Boul St-Laurent #2000, Montreal', logo: Faker::Company.logo)
+Organization.create(name: 'Ubisoft', mission: 'To provide electricity to people!', address: '5505 St Laurent Blvd, Montreal', logo: Faker::Company.logo)
 p "2 organizations created"
 
 # Users - Admin
@@ -15,7 +15,7 @@ first_name = "Admin"
 last_name = "Test"
 admin = true
 developer = false
-new_admin = User.create!(organization: Organization.find(1), email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
+new_admin = User.create!(organization: Organization.find(2), email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
 p "1 admin user created"
 # new_admin = User.new(organization_id: Organization.all.sample, email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
 

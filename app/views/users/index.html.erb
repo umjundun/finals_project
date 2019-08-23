@@ -2,12 +2,14 @@
 <div class="container d-flex justify-content-around py-4">
   <div class="row" >
     <% @users.each do |user| %>
-      <div class="card-project mb-3 mr-1 ml-1">
-        <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
-        <div class="card-project-infos">
-          <h2><%= link_to user.first_name, user_path(user) %></h2>
+      <% if user.organization_id == 1 %>
+        <div class="card-project mb-3 mr-1 ml-1">
+          <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+          <div class="card-project-infos">
+            <h2><%= link_to user.first_name, user_path(user) %></h2>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
