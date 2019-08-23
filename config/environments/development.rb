@@ -1,4 +1,7 @@
 Rails.application.configure do
+
+  ## Caitlin adding in for uglifier
+  config.assets.js_compressor = Uglifier.new(harmony: true)
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
