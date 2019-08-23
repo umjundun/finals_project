@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @projects = Project.all
+    @devs = User.where("developer = true")
   end
 
   def search

@@ -10,6 +10,6 @@
   <% end %>
 
   <%= @engagement.request %>
-  <%= f.select :status, ['Accept', 'Reject'] %>
+  <%= f.select :status, ['Accepted', 'Rejected', 'Complete'] %>
   <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>
