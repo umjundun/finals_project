@@ -1,5 +1,5 @@
-<div class="projeccontainer d-flex justify-content-around my-5" >
-  <div class="cards">
+<div class="project-container d-flex justify-content-around my-5" >
+  <div class="cards-project">
     <% current_user.projects.each do |project| %>
       <%= render 'shared/project_card', project: project %>
     <% end %>
