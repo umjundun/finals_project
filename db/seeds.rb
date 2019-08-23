@@ -1,3 +1,15 @@
+Engagement.destroy_all
+Project.destroy_all
+Representative.destroy_all
+User.destroy_all
+Organization.destroy_all
+
+ActiveRecord::Base.connection.reset_pk_sequence!(:engagements)
+ActiveRecord::Base.connection.reset_pk_sequence!(:projects)
+ActiveRecord::Base.connection.reset_pk_sequence!(:representatives)
+ActiveRecord::Base.connection.reset_pk_sequence!(:users)
+ActiveRecord::Base.connection.reset_pk_sequence!(:organizations)
+
 #Default Dummy Organization for Dev users
 Organization.create!(name: 'default', mission: 'none')
 # Organizations for users associated with an organization
