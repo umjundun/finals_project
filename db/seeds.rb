@@ -4,7 +4,7 @@ Organization.create!(name: 'default', mission: 'none')
 
 # Organizations for users associated with an organization
 Organization.create(name: 'Valve', mission: 'To help the hungry people!', address: "561 Bannerman Ave, Winnipeg", logo: Faker::Company.logo)
-Organization.create(name: 'Ubisoft', mission: 'To provide electricity to people!', address: '5505 Boul St-Laurent #2000, Montreal', logo: Faker::Company.logo)
+Organization.create(name: 'Ubisoft', mission: 'To provide electricity to people!', address: '5505 St Laurent Blvd, Montreal', logo: Faker::Company.logo)
 p "2 organizations created"
 
 # Users - Admin
