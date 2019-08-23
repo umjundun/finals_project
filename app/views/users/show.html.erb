@@ -55,21 +55,124 @@
             <p class="list-group-item"><%= @user.experience %></p>
           </ul>
         </div>
+        <!-- If user is part of org displays their project infos -->
+        <% if current_user.organization_id != 1 %>
+          <div class="bs-callout bs-callout-danger">
+            <h4>Current Project</h4>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <% current_user.projects.each do |proj| %>
+                  <% proj.engagements.each do |eng| %>
+                    <% if eng.status == "Accepted" %>
+                      <li class="list-group-item">
+                        <div class="card-product mb-3 mr-1 ml-1">
+                          <img src="<%= eng.project.organization.logo %>"/>
+                          <div class="card-product-infos">
+                            <h2><%= proj.title %></h2>
+                            <p><strong><%= proj.description %></strong></p>
+                          </div>
+                        </div>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              </li>
+            </ul>
+            <h4 class="mt-4">Past Projects</h4>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <% current_user.projects.each do |proj| %>
+                  <% proj.engagements.each do |eng| %>
+                    <% if eng.status == "Complete" %>
+                      <li class="list-group-item">
+                        <div class="card-product mb-3 mr-1 ml-1">
+                          <img src="<%= eng.project.organization.logo %>"/>
+                          <div class="card-product-infos">
+                            <h2><%= proj.title %></h2>
+                            <p><strong><%= proj.description %></strong></p>
+                          </div>
+                        </div>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              </li>
+            </ul>
+            <h4 class="mt-4">Pending Project</h4>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <% current_user.projects.each do |proj| %>
+                  <% proj.engagements.each do |eng| %>
+                    <% if eng.status == "Pending" %>
+                      <li class="list-group-item">
+                        <div class="card-product mb-3 mr-1 ml-1">
+                          <img src="<%= eng.project.organization.logo %>"/>
+                          <div class="card-product-infos">
+                            <h2><%= proj.title %></h2>
+                            <p><strong><%= proj.description %></strong></p>
+                          </div>
+                        </div>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        <% end %>
 
-        <div class="bs-callout bs-callout-danger">
-          <h4>Current Project</h4>
-          <ul class="list-group">
-            <li class="list-group-item">NEED TO CODE user.current_projects?</li>
-          </ul>
-          <h4 class="mt-4">Past Projects</h4>
-          <ul class="list-group">
-            <li class="list-group-item">NEED TO CODE user.past_projects?</li>
-          </ul>
-          <h4 class="mt-4">Pending Project</h4>
-          <ul class="list-group">
-            <li class="list-group-item">NEED TO CODE user.pending_projects?s</li>
-          </ul>
-        </div>
+        <!-- If user is a developer shows their engagements -->
+        <% if current_user.organization_id == 1 %>
+          <div class="bs-callout bs-callout-danger">
+            <h4>Current Engagements</h4>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <% current_user.engagements.each do |eng| %>
+                  <% if eng.status == "Accepted" %>
+                    <li class="list-group-item">
+                      <div class="card-product mb-3 mr-1 ml-1">
+                        <img src="<%= eng.project.organization.logo %>"/>
+                        <div class="card-product-infos">
+                          <h2><%= eng.project.title %></h2>
+                          <p><strong><%= eng.project.description %></strong></p>
+                        </div>
+                      </div>
+                    <% end %>
+                <% end %>
+              </li>
+            </ul>
+            <h4 class="mt-4">Past Engagements</h4>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <% current_user.engagements.each do |eng| %>
+                  <% if eng.status == "Complete" %>
+                    <li class="list-group-item">
+                      <div class="card-product mb-3 mr-1 ml-1">
+                        <img src="<%= eng.project.organization.logo %>"/>
+                        <div class="card-product-infos">
+                          <h2><%= eng.project.title %></h2>
+                          <p><strong><%= eng.project.description %></strong></p>
+                        </div>
+                      </div>
+                    <% end %>
+                <% end %>
+              </li>
+            </ul>
+            <h4 class="mt-4">Pending Engagements</h4>
+            <ul class="list-group">
+              <% current_user.engagements.each do |eng| %>
+                <% if eng.status == "Pending" %>
+                  <li class="list-group-item">
+                    <div class="card-product mb-3 mr-1 ml-1">
+                      <img src="<%= eng.project.organization.logo %>"/>
+                      <div class="card-product-infos">
+                        <h2><%= eng.project.title %></h2>
+                        <p><strong><%= eng.project.description %></strong></p>
+                      </div>
+                    </div>
+                  <% end %>
+              <% end %>
+              </li>
+            </ul>
+          </div>
+        <% end %>
 
         <div class="bs-callout bs-callout-danger">
           <h4>Language and Platform Skills</h4>
