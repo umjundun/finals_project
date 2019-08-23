@@ -4,15 +4,16 @@
     <%= image_tag "logo.png" %>
     <% end %>
 
-<%= form_tag("/search", method: "get", class: "my_class") do %>
+<%= form_tag("/search", method: "get", class: "search-bar") do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
         placeholder: "Find your next project"
       %>
 
-      <%= submit_tag "Search", class: "btn btn-primary btn-sm" %>
+      <%= submit_tag "Search", class: "search-button" %>
     <% end %>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
