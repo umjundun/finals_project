@@ -3,5 +3,12 @@ class PagesController < ApplicationController
 
   def home
     @projects = Project.all
+    @devs = User.where("developer = true")
+  end
+
+  def search
+    PgSearch::Multisearch.rebuild(Organization)
+    PgSearch::Multisearch.rebuild(Project)
+    @results = PgSearch.multisearch(params[:query])
   end
 end

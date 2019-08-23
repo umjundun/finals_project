@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(version: 2019_08_22_202014) do
     t.float "longitude"
   end
 
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text "content"
+    t.string "searchable_type"
+    t.bigint "searchable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -79,13 +88,13 @@ ActiveRecord::Schema.define(version: 2019_08_22_202014) do
     t.boolean "developer", default: true
     t.string "photo"
     t.boolean "hibernate"
+    t.bigint "organization_id"
     t.string "job_title"
     t.string "contact_number"
     t.string "contact_email"
     t.string "interests"
     t.string "experience"
     t.string "skills"
-    t.bigint "organization_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["organization_id"], name: "index_users_on_organization_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

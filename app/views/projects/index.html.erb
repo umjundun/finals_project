@@ -1,7 +1,8 @@
-<div class="container d-flex justify-content-around my-5" >
-  <div class="cards">
+<div class="section-container">
+  <div class="cards-project" >
     <% @projects.each do |project| %>
-      <%= render 'shared/project_cards' %>
+      <%= render 'shared/project_card', project: project %>
     <% end %>
   </div>
 </div>
+

@@ -14,7 +14,8 @@ class RegistrationsController < Devise::RegistrationsController
       :last_name,
       :email,
       :password,
-      :password_confirmation
+      :password_confirmation,
+      :organization_id
     )
   end
 

@@ -1,10 +1,8 @@
-<div class="home-section-container">
+<div class="section-container">
   <div class="section-heading">
-    <div class="subsection-title">Meaningful partnerships</div>
+    <div class="subsection-title">Recent projects for good</div>
   </div>
-</div>
-<div class="container d-flex justify-content-around my-5" >
-  <div class="cards">
+  <div class="cards-project">
     <% @projects.first(6).each do |project| %>
       <%= render 'shared/project_card', project: project %>
     <% end %>

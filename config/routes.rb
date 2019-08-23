@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   root to: 'pages#home'
+  get "/search", to: "pages#search", as: "search"
 
   resources :users, only: [:index, :show, :update] do
     member do

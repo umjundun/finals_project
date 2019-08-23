@@ -1,0 +1,12 @@
+<div class="container-search">
+ <% @results.each do |result| %>
+    <div class="card-search">
+      <div class="card-body">
+        <h5 class="card-title"><%= result.searchable.name %></h5>
+          <p class="card-text"><%= result.searchable.mission %></p>
+            <a class="card-link">More about this NGO</a>
+            <a class="card-link">Current projects</a>
+        </div>
+</div>
+ <% end %>
+      </div>
