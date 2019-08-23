@@ -5,7 +5,7 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
     <div class="org-cards d-flex">
-      <div class="subsection-title">Learn about our NGOs</div>
+      <div class="subsection-title col-10">Learn about our NGOs</div>
       <div class="projeccontainer d-flex justify-content-around row" >
         <% @organizations.each do |organization| %>
           <%= link_to organization_path(organization) do %>

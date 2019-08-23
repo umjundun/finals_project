@@ -65,9 +65,9 @@
                   <% proj.engagements.each do |eng| %>
                     <% if eng.status == "Accepted" %>
                       <li class="list-group-item">
-                        <div class="card-product mb-3 mr-1 ml-1">
+                        <div class="card-project mb-3 mr-1 ml-1">
                           <img src="<%= eng.project.organization.logo %>"/>
-                          <div class="card-product-infos">
+                          <div class="card-project-infos">
                             <h2><%= proj.title %></h2>
                             <p><strong><%= proj.description %></strong></p>
                           </div>
@@ -84,9 +84,9 @@
                   <% proj.engagements.each do |eng| %>
                     <% if eng.status == "Complete" %>
                       <li class="list-group-item">
-                        <div class="card-product mb-3 mr-1 ml-1">
+                        <div class="card-project mb-3 mr-1 ml-1">
                           <img src="<%= eng.project.organization.logo %>"/>
-                          <div class="card-product-infos">
+                          <div class="card-project-infos">
                             <h2><%= proj.title %></h2>
                             <p><strong><%= proj.description %></strong></p>
                           </div>
@@ -103,9 +103,9 @@
                   <% proj.engagements.each do |eng| %>
                     <% if eng.status == "Pending" %>
                       <li class="list-group-item">
-                        <div class="card-product mb-3 mr-1 ml-1">
+                        <div class="card-project mb-3 mr-1 ml-1">
                           <img src="<%= eng.project.organization.logo %>"/>
-                          <div class="card-product-infos">
+                          <div class="card-project-infos">
                             <h2><%= proj.title %></h2>
                             <p><strong><%= proj.description %></strong></p>
                           </div>
@@ -127,9 +127,9 @@
                 <% current_user.engagements.each do |eng| %>
                   <% if eng.status == "Accepted" %>
                     <li class="list-group-item">
-                      <div class="card-product mb-3 mr-1 ml-1">
+                      <div class="card-project mb-3 mr-1 ml-1">
                         <img src="<%= eng.project.organization.logo %>"/>
-                        <div class="card-product-infos">
+                        <div class="card-project-infos">
                           <h2><%= eng.project.title %></h2>
                           <p><strong><%= eng.project.description %></strong></p>
                         </div>
@@ -144,9 +144,9 @@
                 <% current_user.engagements.each do |eng| %>
                   <% if eng.status == "Complete" %>
                     <li class="list-group-item">
-                      <div class="card-product mb-3 mr-1 ml-1">
+                      <div class="card-project mb-3 mr-1 ml-1">
                         <img src="<%= eng.project.organization.logo %>"/>
-                        <div class="card-product-infos">
+                        <div class="card-project-infos">
                           <h2><%= eng.project.title %></h2>
                           <p><strong><%= eng.project.description %></strong></p>
                         </div>
@@ -160,9 +160,9 @@
               <% current_user.engagements.each do |eng| %>
                 <% if eng.status == "Pending" %>
                   <li class="list-group-item">
-                    <div class="card-product mb-3 mr-1 ml-1">
+                    <div class="card-project mb-3 mr-1 ml-1">
                       <img src="<%= eng.project.organization.logo %>"/>
-                      <div class="card-product-infos">
+                      <div class="card-project-infos">
                         <h2><%= eng.project.title %></h2>
                         <p><strong><%= eng.project.description %></strong></p>
                       </div>

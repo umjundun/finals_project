@@ -1,9 +1,9 @@
 <div class="container d-flex justify-content-around py-5">
-  <div class="row">
+  <div class="section-container row">
     <% @engagements.each do |eng| %>
-      <div class="card-product mb-3 mr-1 ml-1">
+      <div class="card-project mb-3 mr-1 ml-1">
         <img src="<%= eng.project.organization.logo %>"/>
-        <div class="card-product-infos">
+        <div class="card-project-infos">
           <h2><%= eng.status %></h1>
           <h2><%= eng.project.title %></h2>
           <p><strong><%= eng.project.description %></strong></p>
@@ -15,4 +15,3 @@
     <% end %>
   </div>
 </div>
-
