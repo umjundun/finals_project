@@ -1,0 +1,12 @@
+<div class="section-container">
+  <div class="section-heading">
+    <div class="subsection-title">Meet our devs</div>
+  </div>
+  <div class="cards-dev">
+    <% @devs.first(3).each do |user| %>
+      <%= render 'shared/cards/dev_card', user: user %>
+      <%= render 'shared/cards/dev_card', user: user %>
+      <%= render 'shared/cards/dev_card', user: user %>
+    <% end %>
+  </div>
+</div>
