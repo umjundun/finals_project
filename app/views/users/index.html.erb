@@ -1,8 +1,8 @@
-<div class="section-container">
-  <div class="subsection-title text-center mt-4">Meet our Devs :)</div>
-  <div class="cards-dev" >
+<div class="subsection-title text-center mt-4">Meet our Devs :)</div>
+<div class="container d-flex justify-content-around py-4">
+  <div class="row" >
     <% @users.each do |user| %>
-      <div class="card-project">
+      <div class="card-project mb-3 mr-1 ml-1">
         <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
         <div class="card-project-infos">
           <h2><%= link_to user.first_name, user_path(user) %></h2>
