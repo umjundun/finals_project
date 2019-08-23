@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% @organizations.each do |organization| %>
 
     <%= link_to organization_path(organization) do %>
@@ -19,3 +20,12 @@
       <p><%= project.description %></p>
       <% end %>
 <% end %>
+=======
+<div class="projeccontainer d-flex justify-content-around my-5" >
+  <div class="cards">
+    <% @projects.each do |project| %>
+      <%= render 'shared/project_card', project: project %>
+    <% end %>
+  </div>
+</div>
+>>>>>>> origin

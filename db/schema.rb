@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_22_171339) do
+ActiveRecord::Schema.define(version: 2019_08_22_202014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(version: 2019_08_22_171339) do
     t.string "logo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -49,7 +52,9 @@ ActiveRecord::Schema.define(version: 2019_08_22_171339) do
     t.bigint "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["organization_id"], name: "index_projects_on_organization_id"
+    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "representatives", force: :cascade do |t|
@@ -76,20 +81,30 @@ ActiveRecord::Schema.define(version: 2019_08_22_171339) do
     t.string "facebook"
     t.string "twitter"
     t.string "instagram"
-    t.string "linkedn"
+    t.string "linkedin"
     t.string "bio"
     t.string "github"
     t.boolean "admin", default: false
     t.boolean "developer", default: true
     t.string "photo"
     t.boolean "hibernate"
+    t.bigint "organization_id"
+    t.string "job_title"
+    t.string "contact_number"
+    t.string "contact_email"
+    t.string "interests"
+    t.string "experience"
+    t.string "skills"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["organization_id"], name: "index_users_on_organization_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "engagements", "projects"
   add_foreign_key "engagements", "users"
   add_foreign_key "projects", "organizations"
+  add_foreign_key "projects", "users"
   add_foreign_key "representatives", "organizations"
   add_foreign_key "representatives", "users"
+  add_foreign_key "users", "organizations"
 end

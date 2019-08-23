@@ -13,6 +13,10 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
+  def projects?
+    true
+  end
+
   def create?
     user.admin
   end
