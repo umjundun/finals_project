@@ -1,7 +1,7 @@
 
 .card-search{
-  width: 280px;
-  height: 360px;
+  width: 250px;
+  height: 325px;
   border-radius: 15px;
   padding: 1.5rem;
   background: white;
@@ -20,11 +20,14 @@
   transition: background-color 2s ease-out;
 }
 
-.container-search{
-  display: flex;
-  justify-content: space-around;
-}
 
 .my_class {
   display: flex;
+}
+
+.container-search{
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-evenly;
+
 }
