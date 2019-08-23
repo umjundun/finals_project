@@ -15,7 +15,7 @@ first_name = "Admin"
 last_name = "Test"
 admin = true
 developer = false
-new_admin = User.create!(organization: Organization.find(1), email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
+new_admin = User.create!(organization: Organization.find(2), email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
 p "1 admin user created"
 # new_admin = User.new(organization_id: Organization.all.sample, email: email, username: username, password: password, first_name: first_name, last_name: last_name, admin: admin, developer: developer)
 
