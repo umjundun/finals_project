@@ -13,6 +13,7 @@ gem 'redis'
 gem 'devise'
 gem 'faker'
 gem 'pundit'
+gem 'pg_search'
 gem 'geocoder'
 
 gem 'autoprefixer-rails'

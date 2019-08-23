@@ -1,3 +1,26 @@
+<<<<<<< HEAD
+<% @organizations.each do |organization| %>
+
+    <%= link_to organization_path(organization) do %>
+            <!-- Card image -->
+            <!-- Card content -->
+
+    <h3>Organizaions</h3>
+      <h4><%= organization.name %></h4>
+        <p><%= organization.mission %></p>
+<% end %>
+<% end %>
+
+<% @projects.each do |project| %>
+    <%= link_to organization_path(organization) do %>
+            <!-- Card image -->
+            <!-- Card content -->
+    <h3>Projects</h3>
+      <h4><%= project.title %></4>
+      <p><%= project.description %></p>
+      <% end %>
+<% end %>
+=======
 <div class="projeccontainer d-flex justify-content-around my-5" >
   <div class="cards">
     <% @projects.each do |project| %>
@@ -5,3 +28,4 @@
     <% end %>
   </div>
 </div>
+>>>>>>> origin
