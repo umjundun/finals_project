@@ -50,4 +50,14 @@
 
 .hidden {
   display: none;
+
+.search-bar {
+  display: flex;
+  width: 40%;
+  height: 2.625rem;
+  border: 1px solid #E7E7E7;
+  border-radius: 5px;
+}
+.search-button {
+  border-radius: 5px;
 }
