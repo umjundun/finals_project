@@ -1,3 +1,5 @@
 //= require rails-ujs
 //= require_tree
-require .dropdown_menu
+//= require chartkick
+//= require Chart.bundle
+require .tabs_menu

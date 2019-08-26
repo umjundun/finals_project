@@ -1,0 +1,39 @@
+<div class="subsection-title"><%= @user.organization.name %></div>
+
+<%= @user.organization.name %>
+
+
+<%= @user.organization.projects.count %>
+<% @user.organization.projects.each do |project| %>
+  <%= project.title %>
+<% end %>
+
+
+<div class="tab">
+  <button class="tab-links" onclick="tabEvent(event, 'Overview')">Overview</button>
+  <button class="tab-links" onclick="tabEvent(event, 'Pending')">Pending</button>
+  <button class="tab-links" onclick="tabEvent(event, 'Active')">Active</button>
+  <button class="tab-links" onclick="tabEvent(event, 'Archived')">Archived</button>
+</div>
+
+<div id="Overview" class="tab-content active">
+  <h3>Overview</h3>
+  <%= pie_chart Engagement.group(:status).count %>
+  <%= line_chart User.group_by_day(:created_at).count %>
+  <%= bar_chart User.group(:group).count %>
+</div>
+
+<div id="Pending" class="tab-content">
+  <h3>Pending</h3>
+  <p>Pending is the capital city of England.</p>
+</div>
+
+<div id="Active" class="tab-content">
+  <h3>Active</h3>
+  <p>Active is the capital of France.</p>
+</div>
+
+<div id="Archived" class="tab-content">
+  <h3>Archived</h3>
+  <p>Archived is the capital of Japan.</p>
+</div>
