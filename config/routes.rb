@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       get 'projects'
     end
     resources :projects, only: [:show]
-    resources :engagements, only: [:index, :update, :new, :create, :edit, :update]
+    resources :engagements, only: [:show, :index, :update, :new, :create, :edit, :update]
   end
 
   resources :organizations, only: [:new, :create, :index, :show, :update] do
@@ -23,4 +23,7 @@ Rails.application.routes.draw do
     resources :engagements, only: [:update, :new, :create]
   end
 
+  resources :conversations do
+    resources :messages
+  end
 end
