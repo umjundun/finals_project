@@ -4,7 +4,7 @@
   </div>
   <div class="cards-project">
     <% @projects.first(6).each do |project| %>
-      <%= render 'shared/project_card', project: project %>
+      <%= render 'shared/cards/project_card', project: project %>
     <% end %>
   </div>
 </div>

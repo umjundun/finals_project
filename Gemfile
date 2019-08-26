@@ -17,6 +17,8 @@ gem 'pg_search'
 gem 'geocoder'
 gem 'money-rails'
 gem "chartkick"
+gem 'highcharts-rails'
+gem 'groupdate'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'

@@ -1,5 +1,5 @@
-<div class="subsection-title text-center mt-4">Meet our Devs :)</div>
-<div class="container d-flex justify-content-around py-4">
+<div class="subsection-title">Meet our Devs</div>
+<div class="section-container">
   <div class="row" >
     <% @users.each do |user| %>
       <% if user.organization_id == 1 %>
@@ -11,8 +11,8 @@
         </div>
       <% end %>
     <% end %>
-
-    <%= pie_chart User.group(:username).count %>
-
   </div>
+  <%= pie_chart User.group(:group).count %>
+  <%#= line_chart User.group_by_day(:created_at).count %>
+  <%#= bar_chart @users.user_chart %>
 </div>
