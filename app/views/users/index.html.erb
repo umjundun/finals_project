@@ -11,5 +11,8 @@
         </div>
       <% end %>
     <% end %>
+
+    <%= pie_chart User.group(:username).count %>
+
   </div>
 </div>
