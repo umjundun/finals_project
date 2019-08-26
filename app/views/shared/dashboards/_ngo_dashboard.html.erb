@@ -8,36 +8,32 @@
   <%= project.title %>
 <% end %>
 
-<%= pie_chart User.group(:group).count %>
-<%= line_chart User.group_by_day(:created_at).count %>
-<%= bar_chart User.group(:group).count %>
-
-
-
 
 <div class="tab">
-  <button class="tab-links" onclick="tabEvent(event, 'pending')">Pending</button>
-  <button class="tab-links" onclick="tabEvent(event, 'active')">Active</button>
-  <button class="tab-links" onclick="tabEvent(event, 'archived')">Archived</button>
+  <button class="tab-links" onclick="tabEvent(event, 'Overview')">Overview</button>
+  <button class="tab-links" onclick="tabEvent(event, 'Pending')">Pending</button>
+  <button class="tab-links" onclick="tabEvent(event, 'Active')">Active</button>
+  <button class="tab-links" onclick="tabEvent(event, 'Archived')">Archived</button>
 </div>
 
-TABS
-PENDING
-ACTIVE
-ARCHIVED
-
-
-<div id="pending" class="tab-content">
-  <h3>PENDING</h3>
-  <p>London is the capital city of England.</p>
+<div id="Overview" class="tab-content active">
+  <h3>Overview</h3>
+  <%= pie_chart Engagement.group(:status).count %>
+  <%= line_chart User.group_by_day(:created_at).count %>
+  <%= bar_chart User.group(:group).count %>
 </div>
 
-<div id="active" class="tab-content">
-  <h3>ACTIVE</h3>
-  <p>Paris is the capital of France.</p>
+<div id="Pending" class="tab-content">
+  <h3>Pending</h3>
+  <p>Pending is the capital city of England.</p>
 </div>
 
-<div id="archived" class="tab-content">
-  <h3>ARCHIVED</h3>
-  <p>Tokyo is the capital of Japan.</p>
+<div id="Active" class="tab-content">
+  <h3>Active</h3>
+  <p>Active is the capital of France.</p>
+</div>
+
+<div id="Archived" class="tab-content">
+  <h3>Archived</h3>
+  <p>Archived is the capital of Japan.</p>
 </div>
