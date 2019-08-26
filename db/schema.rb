@@ -113,7 +113,6 @@ ActiveRecord::Schema.define(version: 2019_08_26_161225) do
     t.string "experience"
     t.string "skills"
     t.string "group", default: "developer"
-    t.string "affiliation", default: "Independent volunteer"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["organization_id"], name: "index_users_on_organization_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
