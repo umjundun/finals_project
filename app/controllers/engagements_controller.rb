@@ -1,6 +1,6 @@
 class EngagementsController < ApplicationController
   before_action :set_engagement, only: [:show, :update, :edit]
-  before_action :set_project, except: [:index, :edit, :update]
+  before_action :set_project, except: [:show, :index, :edit, :update]
 
   def index
     if current_user.organization_id != 1
