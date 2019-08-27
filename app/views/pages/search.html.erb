@@ -1,19 +1,14 @@
+<%if @results.empty? %>
+ <p>  No results found, please search again.</p>
+ <% else  %>
+  <% @results.each do |result| %>
+    <h3> org results</h3>
+      <h5><%=result.searchable.name %></h5>
+        <p><%= result.searchable.mission %></p>
 
+ <h3> project results</h3>
+      <p><%= result.searchable.title %></p>
+        <p><%= result.searchable.description %></p>
 
-  <%if @results.empty? %>
-   <p>  No results found, please search again.</p>
-   <% else  %>
-    <% @results.each do |result| %>
-      <h3> org results</h3>
-        <h5><%=result.searchable.name %></h5>
-          <p><%= result.searchable.mission %></p>
-
-   <h3> project results</h3>
-        <p><%= result.searchable.title %></p>
-          <p><%= result.searchable.description %></p>
-
-    <% end %>
   <% end %>
-
-
-
+<% end %>
