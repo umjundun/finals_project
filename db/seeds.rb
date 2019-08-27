@@ -24,7 +24,7 @@ Organization.create!(
                   )
 # Organizations for users associated with an organization
 # ID 3
-Organization.create!(
+clothes_closet = Organization.create!(
                     name: 'Montreal Clothes Closet',
                     mission: 'To help everyone dress for success',
                     address: "5505 St Laurent Blvd, Montreal",
@@ -32,7 +32,7 @@ Organization.create!(
                   )
 
 # ID 4
-Organization.create!(
+food_pantry = Organization.create!(
                     name: 'The Winnipeg Food Pantry',
                     mission: 'Food is a human right!',
                     address: '561 Bannerman Ave, Winnipeg',
@@ -63,15 +63,35 @@ new_admin = User.create!(
                       )
 p "1 admin user created"
 
-# Users - NGO
+# Users - NGO Montreal Clothes Closet
 email = "ngo@test.com"
 username = "ngo"
 password = "password"
 first_name = "NGO"
 last_name = "Test"
 group = "ngo"
-organization = Organization.find(3)
-new_rep = User.create!(
+organization = clothes_closet
+clothes_closet_rep = User.create!(
+                      email: email, username: username,
+                      password: password,
+                      first_name: first_name,
+                      last_name: last_name,
+                      admin: admin,
+                      developer: developer,
+                      group: group,
+                      organization: organization,
+                    )
+p "1 ngo user created"
+
+# Users - NGO The Winnipeg Food Pantry
+email = "food_pantry@test.com"
+username = "food_pantry"
+password = "password"
+first_name = "Winnipeg"
+last_name = "Food Pantry"
+group = "ngo"
+organization = food_pantry
+food_pantry_rep = User.create!(
                       email: email, username: username,
                       password: password,
                       first_name: first_name,
@@ -85,26 +105,41 @@ p "1 ngo user created"
 
 # 2 Projects per organization
 Project.create(
-              organization: Organization.find(4), # The Winnipeg Food Pantry
+              organization: food_pantry, # The Winnipeg Food Pantry
               description: "Website to get new clients",
               title: "Food pantry website",
-              user: new_rep
+              user: food_pantry_rep,
+              active: true
             )
 
 Project.create(
-              organization: Organization.find(4), # The Winnipeg Food Pantry
+              organization: food_pantry, # The Winnipeg Food Pantry
               description: "Database to organize our inventory",
               title: "Food pantry database",
-              user: new_rep
+              user: food_pantry_rep,
+              active: true
             )
 
 Project.create(
-              organization: Organization.find(3), # Montreal Clothes Closet
+              organization: clothes_closet, # Montreal Clothes Closet
               description: "Website to highlight our beautiful clothes",
               title: "Beautiful clothing website",
-              user: new_rep
+              user: clothes_closet_rep,
+              active: true
             )
 
-Project.all.each do |project|
-  p project.title
-end
+Project.create(
+              organization: clothes_closet, # Montreal Clothes Closet
+              description: "Banner image",
+              title: "Banner image",
+              user: clothes_closet_rep,
+              active: false
+            )
+
+Project.create(
+              organization: clothes_closet, # Montreal Clothes Closet
+              description: "Another project",
+              title: "Another project",
+              user: clothes_closet_rep,
+              active: true
+            )
