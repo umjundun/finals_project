@@ -2,8 +2,7 @@
 <div class="section-container">
   <div class="cards-project" >
     <% @projects.each do |project| %>
-      <%= render 'shared/project_card', project: project %>
+      <%= render 'shared/cards/project_card', project: project %>
     <% end %>
   </div>
 </div>
-

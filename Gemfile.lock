@@ -85,6 +85,10 @@ GEM
     geocoder (1.5.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    groupdate (4.1.2)
+      activesupport (>= 4.2)
+    highcharts-rails (6.0.3)
+      railties (>= 3.1)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (1.6.0)
@@ -242,6 +246,8 @@ DEPENDENCIES
   faker
   font-awesome-sass (~> 5.6.1)
   geocoder
+  groupdate
+  highcharts-rails
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
   money-rails
