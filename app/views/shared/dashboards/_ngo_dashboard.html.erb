@@ -1,6 +1,6 @@
 <div class="subsection-title"><%= @user.organization.name %></div>
 
-<div class="dashboard-subsection">
+<div class="dash-subsection">
   <div class="dash-announce-row">
     <!-- ACTIVE PROJECTS -->
     <div class="dash-announce">
@@ -32,29 +32,30 @@
   </div>
 </div>
 
-<div class="subsection-title dash-subheader">Activity</div>
+<div class="subsection-title dash-subheader">Your activity</div>
 
 <div class="graphs-container">
   <div class="graph">
-    <%= line_chart User.group_by_day(:created_at).count %>
+    <%= line_chart @my_active_projects.group_by_day(:created_at).count %>
+    <!-- add in series with engagements -->
   </div>
 </div>
 
 <div class="subsection-title dash-subheader">Open projects</div>
-
-<div class="dashboard-subsection">
+<div class="dash-subsection">
   <div class="graphs-grid">
     <% @my_active_projects.each do |project| %>
       <div class="graph">
-        <%= project.title %>
-        <%= @user.project_engagements(project).group_by_day(:created_at).count %>
+        <%#= @user.my_engagements_by_project(project) %>
+        <%= line_chart @user.my_engagements_by_project(project).group_by_day(:created_at).count %>
       </div>
     <% end %>
   </div>
 </div>
 
 
-<div class="dashboard-subsection">
+<div class="subsection-title dash-subheader">All projects</div>
+<div class="dash-subsection">
   <div class="dash-tabs-container">
 
     <div class="dash-tab">
@@ -63,19 +64,19 @@
     </div>
 
     <div id="active" class="dash-tab-content" style="display: block;">
-        <div class="cards-project" >
-          <% @my_active_projects.each do |project| %>
-            <%= render 'shared/cards/project_card', project: project %>
-          <% end %>
-        </div>
+      <div class="cards-project" >
+        <% @my_active_projects.each do |project| %>
+          <%= render 'shared/cards/project_card', project: project %>
+        <% end %>
+      </div>
     </div>
 
-    <div id="inactive" class="dash-tab-content" style="display: none;"">
-        <div class="cards-project" >
-          <% @my_inactive_projects.each do |project| %>
-            <%= render 'shared/cards/project_card', project: project %>
-          <% end %>
-        </div>
+    <div id="inactive" class="dash-tab-content" style="display: none;">
+      <div class="cards-project" >
+        <% @my_inactive_projects.each do |project| %>
+          <%= render 'shared/cards/project_card', project: project %>
+        <% end %>
+      </div>
 
     </div>
   </div>

@@ -28,12 +28,6 @@ class UsersController < ApplicationController
     @user.update(user_params)
   end
 
-  def project_engagements(project)
-    if current_user.group == "ngo"
-      my_engagements.where("project = ?", project)
-    end
-  end
-
   private
 
   def set_user

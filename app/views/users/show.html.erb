@@ -1,5 +1,5 @@
 <div class="section-container">
-  <div class="dashboard-container">
+  <div class="dash-container">
     <% if @user.group == "developer" %>
       <%= render 'shared/dashboards/dev_dashboard', user: @user %>
     <% elsif @user.group == "ngo" %>

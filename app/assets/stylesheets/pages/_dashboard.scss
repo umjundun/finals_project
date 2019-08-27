@@ -1,12 +1,13 @@
-.dashboard-container {
+.dash-container {
   padding: 30px 50px;
   width: 80vw;
   background-color: white;
 }
 
-.dashboard-subsection {
+.dash-subsection {
   display: flex;
   flex-direction: row;
+  padding: 0 0 20px 0;
 }
 
 .dash-subheader {
