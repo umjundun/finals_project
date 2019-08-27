@@ -1,6 +1,7 @@
 class EngagementsController < ApplicationController
   before_action :set_engagement, only: [:show, :update, :edit]
   before_action :set_project, except: [:show, :index, :edit, :update]
+  after_action :create_notifications, only: [:create]
 
   def index
     if current_user.organization_id != 1
@@ -56,5 +57,13 @@ class EngagementsController < ApplicationController
 
   def set_project
     @project = Project.find(params[:project_id])
+  end
+
+  def recipient
+    @engagement.project.user
+  end
+
+  def create_notifications
+    Notification.create(recipient: recipient, actor: current_user, action: 'engagement', notifiable: @engagement)
   end
 end
