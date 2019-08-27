@@ -2,6 +2,7 @@
     <div class="container">
           <h1><%= link_to @organization.name, organization_path(@organization) %></h1>
           <p><%= @organization.mission %></p>
+          <p><%= @project.title %></p>
           <p><%= @project.description %></p>
           <%= link_to "Apply Now", new_project_engagement_path(params[:id]), class: "btn btn-primary" %>
     </div>
