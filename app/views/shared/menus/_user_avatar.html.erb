@@ -6,7 +6,7 @@
 
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
   <%= link_to "Dashboard", user_path(current_user), class: "dropdown-item" %>
-  <% if current_user.affiliation != "ngo" %>
+  <% if current_user.group != "ngo" %>
     <%= link_to "New Project", new_project_path, class: "dropdown-item" %>
     <%= link_to "My Projects", projects_user_path(current_user), class: "dropdown-item" %>
   <% end %>

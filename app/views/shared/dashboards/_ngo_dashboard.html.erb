@@ -1,39 +1,84 @@
 <div class="subsection-title"><%= @user.organization.name %></div>
 
-<%= @user.organization.name %>
-
-
-<%= @user.organization.projects.count %>
-<% @user.organization.projects.each do |project| %>
-  <%= project.title %>
-<% end %>
-
-
-<div class="tab">
-  <button class="tab-links" onclick="tabEvent(event, 'Overview')">Overview</button>
-  <button class="tab-links" onclick="tabEvent(event, 'Pending')">Pending</button>
-  <button class="tab-links" onclick="tabEvent(event, 'Active')">Active</button>
-  <button class="tab-links" onclick="tabEvent(event, 'Archived')">Archived</button>
+<div class="dash-subsection">
+  <div class="dash-announce-row">
+    <!-- ACTIVE PROJECTS -->
+    <div class="dash-announce">
+      <div class="dash-announce-number">
+        <%= @my_active_projects.count %>
+      </div>
+      <div class="dash-announce-text">
+        active projects
+      </div>
+    </div>
+    <!-- ACTIVE ENGAGEMENTS -->
+    <div class="dash-announce">
+      <div class="dash-announce-number">
+        <%= @my_active_engagements.count %>
+      </div>
+      <div class="dash-announce-text">
+        engagements
+      </div>
+    </div>
+    <!-- ACTIVE DEVS -->
+    <div class="dash-announce">
+      <div class="dash-announce-number">
+        <%= @my_pending_engagements.count %>
+      </div>
+      <div class="dash-announce-text">
+        pending
+      </div>
+    </div>
+  </div>
 </div>
 
-<div id="Overview" class="tab-content active">
-  <h3>Overview</h3>
-  <%= pie_chart Engagement.group(:status).count %>
-  <%= line_chart User.group_by_day(:created_at).count %>
-  <%= bar_chart User.group(:group).count %>
+<div class="subsection-title dash-subheader">Your activity</div>
+
+<div class="graphs-container">
+  <div class="graph">
+    <%= line_chart @my_active_projects.group_by_day(:created_at).count %>
+    <!-- add in series with engagements -->
+  </div>
 </div>
 
-<div id="Pending" class="tab-content">
-  <h3>Pending</h3>
-  <p>Pending is the capital city of England.</p>
+<div class="subsection-title dash-subheader">Open projects</div>
+<div class="dash-subsection">
+  <div class="graphs-grid">
+    <% @my_active_projects.each do |project| %>
+      <div class="graph">
+        <%#= @user.my_engagements_by_project(project) %>
+        <%= line_chart @user.my_engagements_by_project(project).group_by_day(:created_at).count %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
-<div id="Active" class="tab-content">
-  <h3>Active</h3>
-  <p>Active is the capital of France.</p>
-</div>
 
-<div id="Archived" class="tab-content">
-  <h3>Archived</h3>
-  <p>Archived is the capital of Japan.</p>
+<div class="subsection-title dash-subheader">All projects</div>
+<div class="dash-subsection">
+  <div class="dash-tabs-container">
+
+    <div class="dash-tab">
+      <button class="dash-tab-links active" onclick="tabEvent(event, 'active')">My active projects</button>
+      <button class="dash-tab-links" onclick="tabEvent(event, 'inactive')">My inactive projects</button>
+    </div>
+
+    <div id="active" class="dash-tab-content" style="display: block;">
+      <div class="cards-project" >
+        <% @my_active_projects.each do |project| %>
+          <%= render 'shared/cards/project_card', project: project %>
+        <% end %>
+      </div>
+    </div>
+
+    <div id="inactive" class="dash-tab-content" style="display: none;">
+      <div class="cards-project" >
+        <% @my_inactive_projects.each do |project| %>
+          <%= render 'shared/cards/project_card', project: project %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+
 </div>
