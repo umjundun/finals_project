@@ -15,9 +15,7 @@ class User < ApplicationRecord
   end
 
 
-
-
-### FOR USER DASHBOARD
+### FOR NGO DASHBOARD
   def my_projects
     if current_user.group == "developer"
       @user.projects

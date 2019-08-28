@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_142207) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.boolean "active", default: true
     t.index ["organization_id"], name: "index_projects_on_organization_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
