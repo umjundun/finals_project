@@ -2,6 +2,13 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png');
+}
+
+.project-banner .banner-text {
+  margin: 0;
+  padding: 0px 0 0 150px;
+  text-align: left;
 }
 
 .project-banner h1 {
