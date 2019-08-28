@@ -8,8 +8,27 @@
       </ul>
     </div>
   <% end %>
-  <%= f.input :title %>
-  <%= f.input :description %>
+  <p> Please select project type: <%= f.select :category, ['Website', 'Other'], required: true %></p>
+  <p> Please choose a deadline for each developper: <%= f.select :deadline, [1, 2, 3, 4, 5, 6, 7], required: true %> day(s)</p>
+  <%= f.input :title, required: true %>
+  <%= f.input :description, required: true %>
   <%= f.hidden_field :organization_id, value: current_user.organization_id, required: true %>
+  <p id="upload_widget_opener">Upload multiple images</p>
   <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>
+
+<script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  cloudinary.applyUploadWidget(document.getElementById('upload_widget_opener'),
+    { cloud_name: 'dev4good', upload_preset: 'z8ork2gk', field_name: 'project[documents]', multiple: true },
+      function(error, results) {
+        console.log(error, results)
+        results.forEach((result, index) => {
+          const form = document.querySelector("#new_project")
+          form.insertAdjacentHTML('beforeend', `<input name="files[${index}][url]" type="hidden" value="${result.secure_url}">`)
+          form.insertAdjacentHTML('beforeend', `<input name="files[${index}][name]" type="hidden" value="${result.original_filename}">`)
+          form.insertAdjacentHTML('beforeend', `<input name="files[${index}][format]" type="hidden" value="${result.resource_type}">`)
+        })
+      });
+</script>
