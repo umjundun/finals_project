@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_172743) do
+ActiveRecord::Schema.define(version: 2019_08_27_143150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_08_28_172743) do
   end
 
   create_table "engagements", force: :cascade do |t|
-    t.string "status"
+    t.string "status", default: "developer"
     t.text "request"
     t.bigint "project_id"
     t.bigint "user_id"
@@ -43,15 +43,27 @@ ActiveRecord::Schema.define(version: 2019_08_28_172743) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.integer "recipient_id"
+    t.integer "actor_id"
+    t.datetime "read_at"
+    t.string "action"
+    t.integer "notifiable_id"
+    t.string "notifiable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "organizations", force: :cascade do |t|
     t.string "name"
     t.text "mission"
     t.string "logo"
+    t.string "longitude"
+    t.float "float"
+    t.float "latitude"
+    t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "address"
-    t.float "latitude"
-    t.float "longitude"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -75,7 +87,8 @@ ActiveRecord::Schema.define(version: 2019_08_28_172743) do
 
   create_table "projects", force: :cascade do |t|
     t.string "title"
-    t.text "description"
+    t.string "description"
+    t.boolean "active", default: true
     t.bigint "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -88,9 +101,9 @@ ActiveRecord::Schema.define(version: 2019_08_28_172743) do
   end
 
   create_table "representatives", force: :cascade do |t|
+    t.boolean "primary"
     t.bigint "user_id"
     t.bigint "organization_id"
-    t.boolean "primary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["organization_id"], name: "index_representatives_on_organization_id"
@@ -114,18 +127,18 @@ ActiveRecord::Schema.define(version: 2019_08_28_172743) do
     t.string "linkedin"
     t.string "bio"
     t.string "github"
-    t.boolean "admin", default: false
-    t.boolean "developer", default: true
-    t.string "photo"
-    t.boolean "hibernate"
-    t.bigint "organization_id"
     t.string "job_title"
     t.string "contact_number"
     t.string "contact_email"
     t.string "interests"
     t.string "experience"
     t.string "skills"
+    t.string "photo"
+    t.boolean "hibernate"
+    t.boolean "admin", default: false
+    t.boolean "developer", default: true
     t.string "group", default: "developer"
+    t.bigint "organization_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["organization_id"], name: "index_users_on_organization_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

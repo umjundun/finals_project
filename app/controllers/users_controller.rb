@@ -8,17 +8,6 @@ class UsersController < ApplicationController
   def show
     authorize @user
     @organization = Organization.where("name = ?", @user.organization.name)
-
-  end
-
-  def projects
-    if current_user.group == "developer"
-      @projects = @user.projects
-    elsif current_user.group == "ngo"
-      @my_projects = @user.organization.projects
-    else
-      @my_projects = Project.all
-    end
   end
 
   def edit
@@ -34,5 +23,39 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def my_projects
+    if @user.group == "developer"
+      @user.projects
+    elsif @user.group == "ngo"
+      @user.organization.projects
+    else
+      Project.all
+    end
+  end
+
+  def active_projects
+    if @user.group == "ngo"
+      @user.organization.projects.where("active = true")
+    end
+  end
+
+  def my_engagements
+    if @user.group == "ngo"
+      @user.organization.engagements
+    end
+  end
+
+  def my_active_engagements
+    if @user.group == "ngo"
+      my_engagements.where("status = 'accepted'")
+    end
+  end
+
+  def my_pending_engagements
+    if @user.group == "ngo"
+      my_engagements.where("status = 'pending'")
+    end
   end
 end

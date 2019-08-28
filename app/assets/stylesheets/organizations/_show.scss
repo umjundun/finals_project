@@ -1,6 +1,7 @@
 .organization-banner {
   background-size: cover;
   background-position: center;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg');
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -52,4 +53,3 @@
 .organization-card-container {
   padding-bottom: 50px;
 }
-

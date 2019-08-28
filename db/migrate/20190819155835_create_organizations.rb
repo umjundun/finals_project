@@ -4,6 +4,9 @@ class CreateOrganizations < ActiveRecord::Migration[5.2]
       t.string :name
       t.text :mission
       t.string :logo
+      t.float :longitude
+      t.float :latitude
+      t.string :address
 
       t.timestamps
     end

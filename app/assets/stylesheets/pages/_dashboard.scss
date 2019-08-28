@@ -1,40 +1,83 @@
-.dashboard-container {
-  padding: 30px auto;
+.dash-container {
+  padding: 30px 50px;
   width: 80vw;
   background-color: white;
 }
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+
+.dash-subsection {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 20px 0;
 }
 
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
+.dash-subheader {
+  font-size: 25px;
 }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
+.graphs-container {
+  padding: 0px 0 30px 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: top;
 }
 
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
+.graphs-grid {
+  margin: 0;
+  padding: 0px 0 0px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  flex-wrap: wrap;
 }
 
-/* Style the tab content */
-.tab-content {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
+.graph {
+  margin: 15px;
+  flex-grow: 1;
+}
+
+.dash-announce-row {
+  padding: 30px 0;
+  margin: 0px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.dash-announce {
+  margin: 0 20px;
+  height: 20vw;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  text-shadow: 2px 2px 2px rgba(80,80,80,0.1);
+  border: 7px solid rgba(80,80,80,.3);
+  background-color: rgba(80,80,80,0.04);
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(200,200,200,0.2);
+}
+
+.dash-announce-number {
+  margin: -10px 0 0 0;
+  font-size: 200px;
+  line-height: 50px;
+  text-align: center;
+  color: rgba(80,80,80,0.3);
+}
+
+.dash-announce-text {
+  font-size: 30px;
+  line-height: 35px;
+  text-align: center;
+  color: rgba(80,80,80,.7);
+  text-shadow: 2px 2px 2px rgba(80,80,80,0.1);
+  background-color: rgba(255,255,255,0.5);
+  padding: 7px 0px;
+  width: 18vw;
+  border-radius: 4%;
+  margin: -30px 0 0 0;
 }
