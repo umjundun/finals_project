@@ -17,9 +17,9 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <!-- Notifications -->
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" id="bell-icon">
           <div id="notifications">
-
+          <%= render 'shared/menus/notification' %>
           </div>
         </li>
         <!-- Hamburger nav button -->
