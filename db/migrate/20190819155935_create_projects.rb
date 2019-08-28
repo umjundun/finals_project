@@ -3,6 +3,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
     create_table :projects do |t|
       t.string :title
       t.string :description
+      t.boolean :active, :default => true
       t.references :organization, foreign_key: true
 
       t.timestamps

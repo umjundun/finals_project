@@ -1,31 +1,28 @@
+
 <div class="panel panel-default">
 
   <div class="panel-heading">
   <% if @results_organizations.empty? %>
    <h3>No results for Organixations</h3>
-   <% else %>
+  <% else %>
       <h3>Results for organizations</h3>
       </div>
-       <div class="panel-body">
+  <div class="panel-body">
 </div>
  <% @results_organizations.each do |result| %>
-        <h5><%= result.searchable.name %></h5>
-          <p><%= result.searchable.mission %></p>
-        <% end %>
+    <h5><%= result.searchable.name %></h5>
+    <p><%= result.searchable.mission %></p>
+  <% end %>
  <% end %>
 </div>
-
-
 
   <% if  @results_projects.empty? %>
-   <h3>No results for Projects</h3>
-   <% else %>
-<h3>Results for Projects</h3>
- <%  @results_projects.each do |result| %>
-        <h5><%= result.searchable.title %></h5>
-          <p><%= result.searchable.description %></p>
-
-        <% end %>
-</div>
- <% end %>
-
+    <h3>No results for Projects</h3>
+  <% else %>
+    <h3>Results for Projects</h3>
+    <% @results_projects.each do |result| %>
+      <h5><%= result.searchable.title %></h5>
+      <p><%= result.searchable.description %></p>
+    <% end %>
+  <% end %>
+  </div>

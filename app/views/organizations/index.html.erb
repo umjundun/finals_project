@@ -1,18 +1,17 @@
-<div class="container-fluid">
-  <div class="orgs-index-container">
-    <div id="map"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-    <div class="org-cards d-flex">
-      <div class="subsection-title">Learn about our NGOs</div>
-      <div class="projeccontainer d-flex justify-content-around row" >
+<!-- Requires special container because of map -->
+<div class="orgs-index-container">
+  <div id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  <div class="orgs-panel">
+    <div class="subsection-title">Learn about our NGOs</div>
+      <div class="org-cards">
         <% @organizations.each do |organization| %>
           <%= link_to organization_path(organization) do %>
-            <%= render 'shared/org_card', organization: organization %>
+            <%= render 'shared/cards/org_card', organization: organization %>
           <% end %>
         <% end %>
-      </div>
     </div>
   </div>
 </div>

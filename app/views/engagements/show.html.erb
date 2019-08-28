@@ -1,0 +1,30 @@
+<div class="subsection-title"><%= @engagement.project.title %></div>
+<div class="section-container">
+  <div class="">
+    <p class="text-align-left f6">Description: <%= @engagement.project.description %></p>
+    <p class="text-align-left f6">Organization focal point: <%= @engagement.user.full_name %></p>
+  </div>
+
+  <p class="pb3 border-bottom">Last post <%= time_ago_in_words(@engagement.created_at) %> ago</p>
+
+
+  <div class="column is-3 is-offset-1">
+    <% if engage_author(@engagement) %>
+      <div class="bg-light pa3 mb4 border-radius-3">
+        <p class="f6 pb1">Author actions:</p>
+        <div class="button-group">
+          <%= link_to "Edit engagement", edit_user_engagement_path(@engagement), class: 'button is-small' %>
+          <%= link_to "Back", user_engagements_path(current_user), class: "button is-small" %>
+        </div>
+      </div>
+    <% end %>
+    <% if user_signed_in? && current_user.id != @engagement.user_id %>
+      <%= link_to "Message #{@engagement.user.full_name}", conversations_path(sender_id: current_user.id, recipient_id: @engagement.user.id), method: 'post', class:"button is-link" %>
+    <% elsif user_signed_in? && current_user.id == @engagement.user_id  %>
+      <%= link_to "Conversations", conversations_path %>
+    <% else %>
+
+    <%= link_to "Sign up to message #{@engagement.user.name}", new_user_registration_path %>
+    <% end %>
+  </div>
+</div>

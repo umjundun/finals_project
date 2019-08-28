@@ -1,9 +1,8 @@
-<div class="subsection-title text-center mt-4">Discover our exiting projects!</div>
 <div class="section-container">
+  <div class="subsection-title">Discover our exiting projects!</div>
   <div class="cards-project" >
     <% @projects.each do |project| %>
-      <%= render 'shared/project_card', project: project %>
+      <%= render 'shared/cards/project_card', project: project %>
     <% end %>
   </div>
 </div>
-
