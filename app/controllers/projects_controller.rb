@@ -1,5 +1,4 @@
 class ProjectsController < ApplicationController
-  require "down"
   before_action :set_project, only: [:show, :update, :edit]
   before_action :set_organization, only: [:show, :update, :edit]
   skip_before_action :authenticate_user!, only: [:index, :show]
