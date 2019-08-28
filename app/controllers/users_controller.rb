@@ -8,17 +8,6 @@ class UsersController < ApplicationController
   def show
     authorize @user
     @organization = Organization.where("name = ?", @user.organization.name)
-
-  end
-
-  def projects
-    if current_user.group == "developer"
-      @projects = @user.projects
-    elsif current_user.group == "ngo"
-      @my_projects = @user.organization.projects
-    else
-      @my_projects = Project.all
-    end
   end
 
   def edit

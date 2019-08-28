@@ -63,25 +63,90 @@ new_admin = User.create!(
                       )
 p "1 admin user created"
 
-# Users - NGO
-email = "ngo@test.com"
-username = "ngo"
-password = "password"
-first_name = "NGO"
-last_name = "Test"
-group = "ngo"
-organization = Organization.find(3)
-new_rep = User.create!(
-                      email: email, username: username,
-                      password: password,
-                      first_name: first_name,
-                      last_name: last_name,
-                      admin: admin,
-                      developer: developer,
-                      group: group,
-                      organization: organization,
+# Users - NGO Montreal Clothes Closet
+clothes_closet_rep = User.create!(
+                      email: "ngo@test.com",
+                      username: "ngo",
+                      password: "password",
+                      first_name: "NGO",
+                      last_name: "Test",
+                      admin: false,
+                      organization: clothes_closet,
+                      developer: false,
+                      group: "ngo",
                     )
-p "1 ngo user created"
+
+# Users - NGO The Winnipeg Food Pantry
+food_pantry_rep = User.create!(
+                      email: "food_pantry@test.com",
+                      username: "food_pantry",
+                      password: "password",
+                      first_name: "Winnipeg",
+                      last_name: "Food Pantry",
+                      admin: false,
+                      developer: false,
+                      group: "ngo",
+                      organization: food_pantry,
+                    )
+p "2 NGO users created"
+
+# Users - Devs
+User.create!(
+              email: "dev@test.com",
+              username: "dev",
+              password: "password",
+              first_name: "dev",
+              last_name: "test",
+              admin: false,
+              organization: dev_org,
+              developer: true,
+              group: "developer",
+            )
+User.create!(
+              email: "dev2@test.com",
+              username: "dev2",
+              password: "password",
+              first_name: "dev",
+              last_name: "test",
+              admin: false,
+              organization: dev_org,
+              developer: true,
+              group: "developer",
+            )
+User.create!(
+              email: "dev3@test.com",
+              username: "dev3",
+              password: "password",
+              first_name: "dev",
+              last_name: "test",
+              admin: false,
+              organization: dev_org,
+              developer: true,
+              group: "developer",
+            )
+User.create!(
+              email: "dev4@test.com",
+              username: "dev4",
+              password: "password",
+              first_name: "dev",
+              last_name: "test",
+              admin: false,
+              organization: dev_org,
+              developer: true,
+              group: "developer",
+            )
+User.create!(
+              email: "dev5@test.com",
+              username: "dev5",
+              password: "password",
+              first_name: "dev",
+              last_name: "test",
+              admin: false,
+              organization: dev_org,
+              developer: true,
+              group: "developer",
+            )
+p "5 devs created"
 
 # 2 Projects per organization
 Project.create(
@@ -105,6 +170,4 @@ Project.create(
               user: new_rep
             )
 
-Project.all.each do |project|
-  p project.title
-end
+ p "5 engagements created"

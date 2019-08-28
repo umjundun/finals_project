@@ -58,15 +58,28 @@ a:hover {
   text-decoration: none;
 }
 
-@media(max-width: 992px) {
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
   .cards-dev {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-@media(max-width: 768px) {
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards-dev {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media(max-width: 992px) {
   .cards-dev {
     grid-template-columns: 1fr;
   }
 }
 
+@media(max-width: 1200px) {
+  .cards-dev {
+    grid-template-columns: 1fr;
+  }
+}
