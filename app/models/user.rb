@@ -19,35 +19,35 @@ class User < ApplicationRecord
 
 ### FOR NGO DASHBOARD
   def my_projects
-    if current_user.group == "developer"
-      @user.projects
-    elsif current_user.group == "ngo"
-      @user.organization.projects
+    if self.group == "developer"
+      self.projects
+    elsif self.group == "ngo"
+      self.organization.projects
     else
       Project.all
     end
   end
 
-  def active_projects
-    if current_user.group == "ngo"
-      @user.organization.projects.where("active = true")
+  def my_active_projects
+    if self.group == "ngo"
+      self.organization.projects.where("active = true")
     end
   end
 
   def my_engagements
-    if current_user.group == "ngo"
-      @user.organization.engagements
+    if self.group == "ngo"
+      self.organization.engagements
     end
   end
 
   def my_active_engagements
-    if current_user.group == "ngo"
+    if self.group == "ngo"
       my_engagements.where("status = 'accepted'")
     end
   end
 
   def my_pending_engagements
-    if current_user.group == "ngo"
+    if self.group == "ngo"
       my_engagements.where("status = 'pending'")
     end
   end

@@ -5,7 +5,7 @@
     <!-- ACTIVE PROJECTS -->
     <div class="dash-announce">
       <div class="dash-announce-number">
-        <%= @my_active_projects.count %>
+        <%= @user.my_active_projects.count %>
       </div>
       <div class="dash-announce-text">
         active projects
@@ -14,7 +14,7 @@
     <!-- ACTIVE ENGAGEMENTS -->
     <div class="dash-announce">
       <div class="dash-announce-number">
-        <%= @my_active_engagements.count %>
+        <%= @user.my_active_engagements.count %>
       </div>
       <div class="dash-announce-text">
         engagements
@@ -23,7 +23,7 @@
     <!-- ACTIVE DEVS -->
     <div class="dash-announce">
       <div class="dash-announce-number">
-        <%= @my_pending_engagements.count %>
+        <%= @user.my_pending_engagements.count %>
       </div>
       <div class="dash-announce-text">
         pending
@@ -46,7 +46,7 @@
   <div class="graphs-grid">
     <% @user.my_active_projects.each do |project| %>
       <div class="graph">
-        <%#= @user.my_engagements_by_project(project) %>
+        <%#= @user.engagements_by_project(project) %>
         <%= line_chart @user.my_engagements_by_project(project).group_by_day(:created_at).count %>
       </div>
     <% end %>
@@ -59,7 +59,7 @@
 
 <div class="graphs-container">
   <div class="graph">
-    <%= line_chart @my_active_projects.group_by_day(:created_at).count %>
+    <%= line_chart @user.my_active_projects.group_by_day(:created_at).count %>
     <!-- add in series with engagements -->
   </div>
 </div>
@@ -67,9 +67,9 @@
 <div class="subsection-title dash-subheader">Open projects</div>
 <div class="dash-subsection">
   <div class="graphs-grid">
-    <% @my_active_projects.each do |project| %>
+    <% @user.my_active_projects.each do |project| %>
       <div class="graph">
-        <%#= @user.my_engagements_by_project(project) %>
+        <%#= @user.engagements_by_project(project) %>
         <%= line_chart @user.my_engagements_by_project(project).group_by_day(:created_at).count %>
       </div>
     <% end %>
@@ -87,7 +87,7 @@
 
     <div id="active" class="dash-tab-content" style="display: block;">
       <div class="cards-project" >
-        <% @my_active_projects.each do |project| %>
+        <% @user.my_active_projects.each do |project| %>
           <%= render 'shared/cards/project_card', project: project %>
         <% end %>
       </div>
@@ -95,9 +95,9 @@
 
     <div id="inactive" class="dash-tab-content" style="display: none;">
       <div class="cards-project" >
-        <% @my_inactive_projects.each do |project| %>
-          <%= render 'shared/cards/project_card', project: project %>
-        <% end %>
+        <%# @user.my_inactive_projects.each do |project| %>
+          <%#= render 'shared/cards/project_card', project: project %>
+        <%# end %>
       </div>
 
     </div>

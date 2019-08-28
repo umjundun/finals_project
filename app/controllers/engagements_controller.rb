@@ -4,7 +4,7 @@ class EngagementsController < ApplicationController
   after_action :create_notifications, only: [:create]
 
   def index
-    if current_user.organization_id != 1
+    if current_user.group == "ngo"
       @engagements = policy_scope(current_user.organization.engagements).order(created_at: :desc)
     else
       @engagements = policy_scope(current_user.engagements).order(created_at: :desc)
