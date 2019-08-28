@@ -55,7 +55,7 @@ p "1 admin user created"
 
 # Users - NGO Montreal Clothes Closet
 clothes_closet_rep = User.create!(
-                      email: "ngo@test.com", 
+                      email: "ngo@test.com",
                       username: "ngo",
                       password: "password",
                       first_name: "NGO",
@@ -68,7 +68,7 @@ clothes_closet_rep = User.create!(
 
 # Users - NGO The Winnipeg Food Pantry
 food_pantry_rep = User.create!(
-                      email: "food_pantry@test.com", 
+                      email: "food_pantry@test.com",
                       username: "food_pantry",
                       password: "password",
                       first_name: "Winnipeg",
@@ -82,8 +82,8 @@ p "2 NGO users created"
 
 # Users - Devs
 User.create!(
-              email: "dev1@test.com", 
-              username: "dev1",
+              email: "dev@test.com",
+              username: "dev",
               password: "password",
               first_name: "dev",
               last_name: "test",
@@ -93,7 +93,7 @@ User.create!(
               group: "developer",
             )
 User.create!(
-              email: "dev2@test.com", 
+              email: "dev2@test.com",
               username: "dev2",
               password: "password",
               first_name: "dev",
@@ -104,7 +104,7 @@ User.create!(
               group: "developer",
             )
 User.create!(
-              email: "dev3@test.com", 
+              email: "dev3@test.com",
               username: "dev3",
               password: "password",
               first_name: "dev",
@@ -115,7 +115,7 @@ User.create!(
               group: "developer",
             )
 User.create!(
-              email: "dev4@test.com", 
+              email: "dev4@test.com",
               username: "dev4",
               password: "password",
               first_name: "dev",
@@ -126,7 +126,7 @@ User.create!(
               group: "developer",
             )
 User.create!(
-              email: "dev5@test.com", 
+              email: "dev5@test.com",
               username: "dev5",
               password: "password",
               first_name: "dev",

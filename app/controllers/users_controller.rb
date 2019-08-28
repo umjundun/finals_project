@@ -8,15 +8,6 @@ class UsersController < ApplicationController
   def show
     authorize @user
     @organization = Organization.where("name = ?", @user.organization.name)
-
-    # PROJECT CONSTS
-    @my_total_projects = my_projects
-    @my_active_projects = active_projects
-    @my_inactive_projects = my_projects - active_projects
-
-    # ENGAGEMENT CONSTS
-    @my_active_engagements = my_active_engagements
-    @my_pending_engagements = my_pending_engagements
   end
 
   def edit
