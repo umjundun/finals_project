@@ -8,6 +8,8 @@ function tabEvent(event, tabName) {
   for (i = 0; i < tabLinks.length; i++) {
     tabLinks[i].className = tabLinks[i].className.replace(" active", "");
   }
-  document.getElementById(tabName).style.display = "block";
-  event.currentTarget.className += " active";
+  if (document.getElementById(tabName)) {
+    document.getElementById(tabName).style.display = "block";
+    event.currentTarget.className += " active";
+  }
 }
