@@ -2,7 +2,20 @@
   <div class="banner-text">
     <h1><%= link_to @organization.name, organization_path(@organization) %></h1>
     <p><%= @organization.mission %></p>
-    <p><%#= @project.description %></p>
+    <p><%= @project.title %></p>
+    <p><%= @project.description %></p>
+    <p>Category: <%= @project.category %></p>
+    <p>Deadline: <%= @project.deadline %> day(s)</p>
     <%= link_to "Apply Now", new_project_engagement_path(params[:id]), class: "btn btn-primary" %>
   </div>
+</div>
+<div class="section-container mt-2">
+  <h4>Project documents</h4>
+  <ul class="list-group">
+    <% @project.project_files.each do |file| %>
+      <li class="list-group-item">
+        <a href="<%= file.file_url %>"> - <%= file.name %><%= file.format %></a>
+      </li>
+    <% end %>
+  </ul>
 </div>

@@ -75,6 +75,16 @@ ActiveRecord::Schema.define(version: 2019_08_27_143150) do
     t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
   end
 
+  create_table "project_files", force: :cascade do |t|
+    t.string "file_url"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "format"
+    t.index ["project_id"], name: "index_project_files_on_project_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -83,6 +93,9 @@ ActiveRecord::Schema.define(version: 2019_08_27_143150) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.boolean "status", default: false
+    t.string "category"
+    t.integer "deadline"
     t.index ["organization_id"], name: "index_projects_on_organization_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
@@ -133,6 +146,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_143150) do
 
   add_foreign_key "engagements", "projects"
   add_foreign_key "engagements", "users"
+  add_foreign_key "project_files", "projects"
   add_foreign_key "projects", "organizations"
   add_foreign_key "projects", "users"
   add_foreign_key "representatives", "organizations"
