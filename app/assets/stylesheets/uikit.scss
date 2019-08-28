@@ -1,0 +1,178 @@
+body {
+   font-family: Montsserat, sans-serif;
+}
+
+h2 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 35px;
+  line-height: 50px;
+  color: #3f9bab;
+}
+
+h3 {
+   color: grey;
+}
+
+h4{
+  padding:  20px 20px ;
+}
+
+/* ***********************PRIMARY BTN *******************/
+.btnlogin {
+   margin-left: 10px ;
+  padding : 15px 35px;
+  border-radius: 4px;
+  background-color: #3f9bab;
+  -webkit-transition: background-color 400ms ease, opacity 400ms ease,color 400ms ease;
+  transition: background-color 400ms ease, opcaity 400ms ease, color 400ms ease;
+  color: #fff;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-decoration:none;
+  text-transform: uppercase;
+  font-family: Montsserat, sans-serif;
+  font-weight: 100;
+}
+
+.btnlogin:hover{
+  background-color: #32343a;
+  color: #fff;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+/* ***********************SECONDARY BTN *******************/
+.btnsignup{
+  margin-left: 10px ;
+  padding : 15px 35px;
+  border-radius: 4px;
+  background-color: #f8c146;
+  -webkit-transition: background-color 400ms ease, opacity 400ms ease,color 400ms ease;
+  transition: background-color 400ms ease, opcaity 400ms ease, color 400ms ease;
+  color: black;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-decoration:none;
+  text-transform: uppercase;
+  font-family: Montsserat, sans-serif;
+  font-weight: lighter;
+}
+
+.btnsignup:hover{
+  background-color: #32343a;
+  color: #fff;
+  font-weight: lighter;
+  text-decoration: none;
+}
+
+/* ***********************PRIMARY BTN *******************/
+
+.calltoaction-content{
+  background: white;
+  padding : 18px 18px;
+  border-radius: 4px;
+  width: 400px;
+  -webkit-box-shadow:2px 5px 16px 0px grey, 5px 5px 6px 3px rgba(250,250,250,0);
+  box-shadow:2px 5px 16px 0px grey, 5px 5px 6px 3px rgba(250,250,250,0);
+}
+
+
+.container-calltoaction{
+  background-image: url(images/action.png);
+  background-position: center;
+  width: 700px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+  input {
+    width: 40%;
+    font-family: inherit;
+    font-size: 16px;
+    border: 0px;
+    font-weight: 500;
+    border-bottom: 1px solid #C8CCD4;
+    background: none;
+    border-radius: 0;
+    transition: all .15s ease;
+  }
+
+  input ::selection {
+    border: 0px;
+    border-bottom: 2px solid #C8CCD4;
+}
+
+
+.card-3{
+  background-image: url(images/img5.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 800px;
+  -webkit-box-shadow:2px 5px 16px 0px grey, 5px 5px 6px 3px rgba(250,250,250,0);
+  box-shadow:2px 5px 16px 0px grey, 5px 5px 6px 3px rgba(250,250,250,0);
+  margin-bottom: 20px;
+  padding: 10px 10px;
+  border-radius: 4px;
+  width: 500px;
+}
+
+.card-3 h3{
+  font-weight: 200;
+}
+.card-4{
+  background-image: url(images/img6.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 850px;
+  -webkit-box-shadow:2px 5px 16px 0px grey, 5px 5px 6px 3px rgba(250,250,250,0);
+  box-shadow:2px 5px 16px 0px grey, 5px 5px 6px 3px rgba(250,250,250,0);
+  margin-bottom: 20px;
+  padding: 10px 10px;
+  border-radius: 4px;
+   width: 400px;
+}
+
+.card-4 h3{
+  color: white;
+  font-weight: 200;
+}
+
+
+.container-title {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shadows {
+    position: relative;
+    text-shadow: -15px 5px 20px lightgray;
+    color: white;
+    letter-spacing: -0.08em;
+    user-select: none;
+    font-size: 150px;
+    transition: all 0.25s ease-out;
+}
+.shadows:hover {
+    text-shadow: -16px 6px 15px #ced0d3;
+}
+.card-engagement{
+
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 850px;
+  -webkit-box-shadow:2px 5px 16px 0px grey, 5px 5px 6px 3px rgba(250,250,250,0);
+  box-shadow:2px 5px 16px 0px grey, 5px 5px 6px 3px rgba(250,250,250,0);
+  margin-bottom: 20px;
+  padding: 10px 10px;
+  border-radius: 4px;
+   width: 400px;
+}
+
+/* *****************TABS**************** */

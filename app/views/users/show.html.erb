@@ -1,11 +1,12 @@
-<div class="section-container">
-  <div class="dash-container">
-    <% if @user.group == "developer" %>
-      <%= render 'shared/dashboards/dev_dashboard', user: @user %>
-    <% elsif @user.group == "ngo" %>
+<% if @user.group == "developer" %>
+  <%= render 'shared/dashboards/dev_dashboard', user: @user %>
+
+<% elsif @user.group == "ngo" %>
+  <div class="section-container">
+    <div class="dash-container">
       <%= render 'shared/dashboards/ngo_dashboard', user: @user %>
-    <% else %>
-      Dashboards are not currently enabled for <%= @user.group %>s.
-    <% end %>
+    </div>
   </div>
-</div>
+<% else %>
+  Dashboards are not currently enabled for <%= @user.group %>s.
+<% end %>
