@@ -5,11 +5,7 @@
     <!-- ACTIVE PROJECTS -->
     <div class="dash-announce">
       <div class="dash-announce-number">
-<<<<<<< HEAD
-        <%= @user.my_active_projects.count %>
-=======
         <%= @my_active_projects.count %>
->>>>>>> master
       </div>
       <div class="dash-announce-text">
         active projects
@@ -18,11 +14,7 @@
     <!-- ACTIVE ENGAGEMENTS -->
     <div class="dash-announce">
       <div class="dash-announce-number">
-<<<<<<< HEAD
-        <%= @user.my_active_engagements.count %>
-=======
         <%= @my_active_engagements.count %>
->>>>>>> master
       </div>
       <div class="dash-announce-text">
         engagements
@@ -31,11 +23,7 @@
     <!-- ACTIVE DEVS -->
     <div class="dash-announce">
       <div class="dash-announce-number">
-<<<<<<< HEAD
-        <%= @user.my_pending_engagements.count %>
-=======
         <%= @my_pending_engagements.count %>
->>>>>>> master
       </div>
       <div class="dash-announce-text">
         pending
@@ -76,12 +64,6 @@
   </div>
 </div>
 
-<<<<<<< HEAD
-<div id="active" class="dash-tab-content" style="display: block;">
-  <div class="cards-project" >
-    <% @user.my_active_projects.each do |project| %>
-      <%= render 'shared/cards/project_card', project: project %>
-=======
 <div class="subsection-title dash-subheader">Open projects</div>
 <div class="dash-subsection">
   <div class="graphs-grid">
@@ -90,21 +72,9 @@
         <%#= @user.my_engagements_by_project(project) %>
         <%= line_chart @user.my_engagements_by_project(project).group_by_day(:created_at).count %>
       </div>
->>>>>>> master
     <% end %>
   </div>
 </div>
-
-<<<<<<< HEAD
-<div id="inactive" class="dash-tab-content" style="display: none;">
-  <div class="cards-project" >
-    <% @user.my_inactive_projects.each do |project| %>
-      <%= render 'shared/cards/project_card', project: project %>
-    <% end %>
-  </div>
-</div>
-=======
->>>>>>> master
 
 <div class="subsection-title dash-subheader">All projects</div>
 <div class="dash-subsection">

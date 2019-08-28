@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2019_08_27_142207) do
+ActiveRecord::Schema.define(version: 2019_08_27_143150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_142207) do
   end
 
   create_table "engagements", force: :cascade do |t|
-    t.string "status", default: "developer"
+    t.string "status"
     t.text "request"
     t.bigint "project_id"
     t.bigint "user_id"
@@ -82,15 +81,14 @@ ActiveRecord::Schema.define(version: 2019_08_27_142207) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.boolean "active", default: true
     t.index ["organization_id"], name: "index_projects_on_organization_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "representatives", force: :cascade do |t|
-    t.boolean "primary"
     t.bigint "user_id"
     t.bigint "organization_id"
+    t.boolean "primary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["organization_id"], name: "index_representatives_on_organization_id"
@@ -114,18 +112,18 @@ ActiveRecord::Schema.define(version: 2019_08_27_142207) do
     t.string "linkedin"
     t.string "bio"
     t.string "github"
-    t.string "job_title"
+    t.boolean "admin", default: false
+    t.boolean "developer", default: true
     t.string "photo"
     t.boolean "hibernate"
-    t.boolean "developer", default: true
-    t.boolean "admin", default: false
+    t.bigint "organization_id"
+    t.string "job_title"
     t.string "contact_number"
     t.string "contact_email"
     t.string "interests"
     t.string "experience"
     t.string "skills"
     t.string "group", default: "developer"
-    t.bigint "organization_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["organization_id"], name: "index_users_on_organization_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
