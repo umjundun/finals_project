@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     member do
       get 'projects'
     end
-    resources :projects, only: [:show]
+    resources :projects, only: [:show, :edit, :update]
     resources :engagements, only: [:show, :index, :update, :new, :create, :edit, :update]
   end
 
