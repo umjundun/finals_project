@@ -28,7 +28,6 @@
           const form = document.querySelector("#new_project")
           form.insertAdjacentHTML('beforeend', `<input name="files[${index}][url]" type="hidden" value="${result.secure_url}">`)
           form.insertAdjacentHTML('beforeend', `<input name="files[${index}][name]" type="hidden" value="${result.original_filename}">`)
-          form.insertAdjacentHTML('beforeend', `<input name="files[${index}][format]" type="hidden" value="${result.resource_type}">`)
         })
       });
 </script>

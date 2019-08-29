@@ -10,6 +10,6 @@
   <% end %>
 
   <%= f.input :request, hint: "Tell a little about yourself and why you want to work on this project" %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
+  <%= f.submit "Submit", class: "btn btn-primary", data: { confirm: "We will notify #{@project.organization.name} of your request. Once you've been approuved, you'll be able to start developping for good!" } %>
 
 <% end %>
