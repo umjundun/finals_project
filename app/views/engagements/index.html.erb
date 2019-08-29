@@ -1,7 +1,8 @@
 <div class="section-container">
   <% @engagements.each do |eng| %>
     <%= link_to user_engagement_path(current_user, eng) do %>
-      <div class="card-project mb-3 mr-1 ml-1">
+    <div class="col-md-4">
+      <div class="card card-3">
         <img src="<%= eng.project.organization.logo %>"/>
         <div class="card-project-infos">
           <h2><%= eng.status %></h1>
@@ -12,6 +13,9 @@
           <%= link_to "Edit", edit_user_engagement_path(current_user, eng)%>
         <% end %>
       </div>
+    </div>
     <% end %>
   <% end %>
 </div>
+
+
