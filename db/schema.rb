@@ -58,7 +58,8 @@ ActiveRecord::Schema.define(version: 2019_08_28_172743) do
     t.string "name"
     t.text "mission"
     t.string "logo"
-    t.float "longitude"
+    t.string "longitude"
+    t.float "float"
     t.float "latitude"
     t.string "address"
     t.datetime "created_at", null: false
