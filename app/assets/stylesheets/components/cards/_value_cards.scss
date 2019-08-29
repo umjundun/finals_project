@@ -1,15 +1,6 @@
-.home-section-container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 0 30px 0;
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  align-items: center;
-}
 
 .home-value-cards {
-  padding: 0px 0 0 0;
+  padding: 0px 0 40px 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 50px;
@@ -51,15 +42,6 @@
   text-align: justify;
 }
 
-@media(max-width: 992px) {
-  .home-value-cards {
-    grid-template-columns: 1fr 1fr;
-  }
-  .home-project-cards {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media(max-width: 768px) {
   .home-value-cards {
     grid-template-columns: 1fr;
@@ -69,4 +51,11 @@
   }
 }
 
-
+@media(max-width: 992px) {
+  .home-value-cards {
+    grid-template-columns: 1fr;
+  }
+  .home-project-cards {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,39 @@
+<div class="dash-square-cards">
+  <div class="dash-square-card">
+    <%= cl_image_tag "avatar_k93z6t.jpg", class: "dash-avatar" %>
+    <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+    <p class="user-title"><%= @user.job_title %></p>
+    <p><%= @user.email %></p>
+    <div class="dash-social-links">
+      <a href="<%= @user.github %>"><i class="fab fa-github"></i></a>
+      <a href="<%= @user.twitter %>"><i class="fab fa-twitter"></i></a>
+      <a href="<%= @user.linkedin %>"><i class="fab fa-linkedin"></i></a>
+      <a href="https://<%= @user.facebook %>"><i class="fab fa-facebook"></i></a>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="dash-square-card dash-square-card-msg">
+    <h3>Messages</h3>
+  </div>
+</div>
+
+<div class="dash-stats-card">
+
+  <div class="bookend-item">
+    <h5>About me</h5>
+    <p><%= @user.bio %></p>
+  </div>
+
+  <div class="bookend-item">
+    <h5>Project Interests</h5>
+    <p><%= @user.interests %></p>
+  </div>
+
+  <div class="bookend-item">
+    <h5>Experience</h5>
+    <p><%= @user.experience %></p>
+  </div>
+
+</div>

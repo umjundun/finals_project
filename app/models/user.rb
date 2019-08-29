@@ -34,6 +34,12 @@ class User < ApplicationRecord
     end
   end
 
+  def my_inactive_projects
+    if self.group == "ngo"
+      self.organization.projects.where("active = false")
+    end
+  end
+
   def my_engagements
     if self.group == "ngo"
       self.organization.engagements

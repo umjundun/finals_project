@@ -1,12 +1,13 @@
-<div class="organization-banner">
-  <h1><%= @organization.name %></h1>
-  <h2><%= @organization.mission %></h2>
+<div class="banner-background minor-banner" id="organization-banner">
+  <div class="banner-text">
+    <h1><%= @organization.name %></h1>
+    <h2><%= @organization.mission %></h2>
+  </div>
 </div>
 
 <div class="section-container">
-  <div class="subsection-title">
-    <% @card_num = @projects.count %>
-    <%= @organization.name %> has <%= @card_num %> active projects:
+  <div class="section-heading">
+    <div class="subsection-title">Active projects:</div>
   </div>
 
   <div class="cards-project" >
