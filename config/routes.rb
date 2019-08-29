@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
   get 'users/index'
   get 'users/show'
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
   root to: 'pages#home'
   get "/search", to: "pages#search", as: "search"

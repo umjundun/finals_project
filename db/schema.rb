@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+
+ActiveRecord::Schema.define(version: 2019_08_28_172743) do
+=======
 ActiveRecord::Schema.define(version: 2019_08_29_152418) do
+>>>>>>> 17efeb1f3ad94c1fd5bfa10ff1213b3eae095a4c
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,8 +68,12 @@ ActiveRecord::Schema.define(version: 2019_08_29_152418) do
     t.string "name"
     t.text "mission"
     t.string "logo"
+<<<<<<< HEAD
+    t.float "longitude"
+=======
     t.string "longitude"
     t.float "float"
+>>>>>>> master
     t.float "latitude"
     t.string "address"
     t.datetime "created_at", null: false
@@ -91,15 +101,22 @@ ActiveRecord::Schema.define(version: 2019_08_29_152418) do
 
   create_table "projects", force: :cascade do |t|
     t.string "title"
+<<<<<<< HEAD
+    t.string "description"
+=======
     t.text "description"
+>>>>>>> master
     t.boolean "active", default: true
     t.bigint "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+<<<<<<< HEAD
+=======
     t.boolean "status", default: false
     t.string "category"
     t.integer "deadline"
+>>>>>>> master
     t.index ["organization_id"], name: "index_projects_on_organization_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
