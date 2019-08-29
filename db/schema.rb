@@ -61,17 +61,6 @@ ActiveRecord::Schema.define(version: 2019_08_29_152418) do
     t.string "name"
     t.text "mission"
     t.string "logo"
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    t.float "longitude"
-=======
-    t.string "longitude"
-    t.float "float"
->>>>>>> master
-    t.float "latitude"
-    t.string "address"
->>>>>>> origin
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "address"
@@ -100,29 +89,14 @@ ActiveRecord::Schema.define(version: 2019_08_29_152418) do
 
   create_table "projects", force: :cascade do |t|
     t.string "title"
-<<<<<<< HEAD
-    t.string "description"
-=======
     t.text "description"
-<<<<<<< HEAD
-=======
->>>>>>> master
-    t.boolean "active", default: true
->>>>>>> origin
     t.bigint "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-<<<<<<< HEAD
-    t.boolean "active", default: true
-=======
-<<<<<<< HEAD
-=======
->>>>>>> origin
     t.boolean "status", default: false
     t.string "category"
     t.integer "deadline"
->>>>>>> master
     t.index ["organization_id"], name: "index_projects_on_organization_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
