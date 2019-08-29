@@ -2,8 +2,9 @@ body {
   padding-top: 65px;
   padding-right: 0px;
   padding-left: 0px;
-  padding-bottom: 5em;
-  font-family: Montsserat, sans-serif;
+  padding-bottom: 0;
+  font-family: Montserrat, sans-serif;
+  background-color: white;
 }
 
 .full-container {
@@ -16,29 +17,57 @@ body {
 }
 
 .section-container {
-  margin-bottom: 40px;
-  padding: 30px auto;
-  width: 100vw;
+  margin: 0 auto;
+  padding: 3vh 0 10vh 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  background-color: white;
 }
 
 .call-to-action-container {
-  background-image: url(https://res.cloudinary.com/caitlinsnyder/image/upload/v1567086072/action_bnrmyg.png);
-  background-position: center;
   width: 700px;
   height: 400px;
+  background-image: url(https://res.cloudinary.com/caitlinsnyder/image/upload/v1567086072/action_bnrmyg.png);
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .call-to-action-content {
-  background: white;
   padding : 18px 18px;
-  border-radius: 4px;
   width: 400px;
+  background: white;
+  border-radius: 4px;
   -webkit-box-shadow:2px 5px 16px 0px grey, 5px 5px 6px 3px rgba(250,250,250,0);
   box-shadow:2px 5px 16px 0px grey, 5px 5px 6px 3px rgba(250,250,250,0);
+}
+
+
+// RESPONSIVENESS
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .section-container {
+    font-size: 20px;
+  }
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .section-container {
+    font-size: 30px;
+  }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .section-container {
+    font-size: 40px;
+  }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .section-container {
+    font-size: 60px;
+  }
 }

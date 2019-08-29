@@ -1,0 +1,66 @@
+
+.home-value-cards {
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  grid-gap: 50px;
+  flex-wrap: wrap;
+}
+
+.home-value-card {
+  margin: 0;
+  padding: 20px 30px;
+  height: 350px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: $box-shadow;
+  border-radius: 1px;
+}
+.home-value-card-img {
+  height: 120px;
+}
+
+.home-value-card img {
+  margin: 5px 0 15px 0;
+  height: 120px;
+  width: 120px;
+}
+
+.home-value-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.home-value-card-content p {
+  font-size: 12px;
+  text-align: justify;
+}
+
+
+
+
+@media(max-width: 768px) {
+  .home-value-cards {
+    grid-template-columns: 1fr;
+  }
+  .home-project-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width: 992px) {
+  .home-value-cards {
+    grid-template-columns: 1fr;
+  }
+  .home-project-cards {
+    grid-template-columns: 1fr;
+  }
+}
