@@ -42,6 +42,11 @@ class EngagementsController < ApplicationController
   def update
     authorize @engagement
     if @engagement.update(engagement_params)
+      if @engagement.dev_status.include? "Current"
+        @engagement.start_date = Time.now.to_datetime
+      elsif @engagement.dev_status.include? "Completed"
+        @engagement.end_date = Time.now.to_datetime
+      end
       redirect_to user_engagements_path(current_user)
     else
       render :edit
@@ -51,7 +56,7 @@ class EngagementsController < ApplicationController
   private
 
   def engagement_params
-    params.require(:engagement).permit(:status, :request)
+    params.require(:engagement).permit(:status, :request, :dev_status, :ngo_status, :start_date, :end_date)
   end
 
   def set_engagement

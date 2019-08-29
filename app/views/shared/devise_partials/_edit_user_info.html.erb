@@ -1,0 +1,67 @@
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :patch }) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :email, required: true, autofocus: true %>
+
+      <%= f.input :first_name,
+                  required: false %>
+      <%= f.input :last_name,
+                  required: false %>
+      <%= f.input :job_title,
+                  required: false %>
+      <%= f.input :contact_number,
+                  required: false %>
+      <%= f.input :facebook,
+                  required: false %>
+      <%= f.input :twitter,
+                  required: false %>
+      <%= f.input :instagram,
+                  required: false %>
+      <%= f.input :linkedin,
+                  required: false %>
+      <%= f.input :github,
+                  required: false %>
+      <%= f.input :bio,
+                  hint: "Bio: Tell us about yourself.",
+                  required: false %>
+      <%= f.input :interests,
+                  hint: "Interests: Tell us about your professional interests.",
+                  required: false %>
+      <%= f.input :experience,
+                  hint: "Experience: Tell us about your professional experience.",
+                  required: false %>
+      <%= f.input :skills,
+                  hint: "Programming languages and platforms skills",
+                  required: false %>
+      <%= f.input :photo,
+                  hint: "Upload a photo of yourself.",
+                  required: false %>
+      <%= f.input :hibernate,
+                  hint: "Hibernate your account.",
+                  required: false %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% end %>
+
+      <%= f.input :password,
+                  hint: "leave it blank if you don't want to change it",
+                  required: false,
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  required: false,
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :current_password,
+                  hint: "we need your current password to confirm your changes",
+                  required: true,
+                  input_html: { autocomplete: "current-password" } %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Update", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+  <h3>Cancel my account</h3>
+
+  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>

@@ -1,0 +1,37 @@
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <h2 class="text-center font-weight-light text-uppercase text-white">Sign up</h2>
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" }%>
+            <%= f.input :first_name,
+                        required: true,
+                        hint: ("First Name") %>
+            <%= f.input :last_name,
+                        required: true,
+                        hint: ("Last Name") %>
+            <%= f.input :password,
+                        required: true,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password" } %>
+            <%= f.hidden_field :organization_id, value: 1, required: true %>
+            <%= f.input :password_confirmation,
+                        required: true,
+                        input_html: { autocomplete: "new-password" } %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Sign up", class: "btn btn-outline-primary btn-block text-uppercase font-weight-light" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="link my-3"><%= render "devise/shared/links" %></div>
