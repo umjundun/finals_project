@@ -23,17 +23,9 @@
         </div>
       <% end %>
       <% if user_signed_in? && current_user.id != @engagement.user_id %>
-        <%= link_to "Message #{@engagement.user.full_name}", conversations_path(sender_id: current_user.id, recipient_id: @engagement.user.id), method: 'post', class:"button is-link" %>
-      <% elsif user_signed_in? && current_user.id == @engagement.user_id  %>
-        <%= link_to "Conversations", conversations_path %>
-      <% else %>
-
-      <%= link_to "Sign up to message #{@engagement.user.name}", new_user_registration_path %>
+        <%= f.select :status, ['Accepted', 'Rejected', 'Complete'] %>
+        <%= f.submit "Submit", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
-
-  <%= @engagement.request %>
-  <%= f.select :status, ['Accepted', 'Rejected', 'Complete'] %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>
