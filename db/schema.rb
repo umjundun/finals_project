@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-
-ActiveRecord::Schema.define(version: 2019_08_28_172743) do
-=======
 ActiveRecord::Schema.define(version: 2019_08_29_152418) do
->>>>>>> 17efeb1f3ad94c1fd5bfa10ff1213b3eae095a4c
-
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -69,6 +62,8 @@ ActiveRecord::Schema.define(version: 2019_08_29_152418) do
     t.text "mission"
     t.string "logo"
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
     t.float "longitude"
 =======
     t.string "longitude"
@@ -76,8 +71,12 @@ ActiveRecord::Schema.define(version: 2019_08_29_152418) do
 >>>>>>> master
     t.float "latitude"
     t.string "address"
+>>>>>>> origin
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -105,14 +104,21 @@ ActiveRecord::Schema.define(version: 2019_08_29_152418) do
     t.string "description"
 =======
     t.text "description"
+<<<<<<< HEAD
+=======
 >>>>>>> master
     t.boolean "active", default: true
+>>>>>>> origin
     t.bigint "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
 <<<<<<< HEAD
+    t.boolean "active", default: true
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> origin
     t.boolean "status", default: false
     t.string "category"
     t.integer "deadline"
@@ -149,15 +155,15 @@ ActiveRecord::Schema.define(version: 2019_08_29_152418) do
     t.string "bio"
     t.string "github"
     t.string "job_title"
+    t.string "photo"
+    t.boolean "hibernate"
+    t.boolean "developer", default: true
+    t.boolean "admin", default: false
     t.string "contact_number"
     t.string "contact_email"
     t.string "interests"
     t.string "experience"
     t.string "skills"
-    t.string "photo"
-    t.boolean "hibernate"
-    t.boolean "admin", default: false
-    t.boolean "developer", default: true
     t.string "group", default: "developer"
     t.bigint "organization_id"
     t.index ["email"], name: "index_users_on_email", unique: true
