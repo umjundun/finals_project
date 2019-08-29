@@ -1,0 +1,16 @@
+input {
+  width: 40%;
+  font-family: inherit;
+  font-size: 16px;
+  border: 0px;
+  font-weight: 500;
+  border-bottom: 1px solid $marigold;
+  background: none;
+  border-radius: 0;
+  transition: all .15s ease;
+}
+
+input ::selection {
+  border: 0px;
+  border-bottom: 2px solid $marigold;
+}
