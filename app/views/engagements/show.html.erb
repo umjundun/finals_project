@@ -11,9 +11,10 @@
   <div class="column is-3 is-offset-1">
     <% if engage_author(@engagement) %>
       <div class="bg-light pa3 mb4 border-radius-3">
-        <p class="f6 pb1">Author actions:</p>
         <div class="button-group">
-          <%= link_to "Edit engagement", edit_user_engagement_path(@engagement), class: 'button is-small' %>
+          <% if current_user != @engagement.user %>
+            <%= link_to "Edit engagement", edit_user_engagement_path(@engagement), class: 'button is-small' %>
+          <% end %>
           <%= link_to "Back", user_engagements_path(current_user), class: "button is-small" %>
         </div>
       </div>
