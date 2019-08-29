@@ -91,14 +91,11 @@ ActiveRecord::Schema.define(version: 2019_08_29_152418) do
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.text "description"
-
     t.boolean "active", default: true
-
     t.bigint "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-
     t.boolean "status", default: false
     t.string "category"
     t.integer "deadline"
