@@ -1,5 +1,5 @@
 <div class="panel-heading dashboard-heading bs-callout bs-callout-danger">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <h2>Edit <%= current_user.full_name %></h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :patch }) do |f| %>
     <%= f.error_notification %>

@@ -1,8 +1,5 @@
 // Graphical variables
-@import "config/fonts";
-@import "config/colors";
-@import "config/bootstrap_variables";
-@import "config/alignment";
+@import "config/index";
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
@@ -14,11 +11,5 @@
 @import "pages/index";
 @import "projects/index";
 @import "organizations/index";
-@import "pages/search";
-
-body {
-  padding-top: 65px;
-  padding-right: 0px;
-  padding-left: 0px;
-  padding-bottom: 5em;
-}
+@import "users/index";
+@import "pages/index";

@@ -1,9 +1,10 @@
 class EngagementsController < ApplicationController
   before_action :set_engagement, only: [:show, :update, :edit]
   before_action :set_project, except: [:show, :index, :edit, :update]
+  after_action :create_notifications, only: [:create]
 
   def index
-    if current_user.organization_id != 1
+    if current_user.group == "ngo"
       @engagements = policy_scope(current_user.organization.engagements).order(created_at: :desc)
     else
       @engagements = policy_scope(current_user.engagements).order(created_at: :desc)
@@ -24,7 +25,10 @@ class EngagementsController < ApplicationController
     @engagement.project = @project
     @engagement.user = current_user
     @engagement.status = "Pending"
+
     if @engagement.save
+      ActionCable.server.broadcast "notifications:#{@engagement.project.user_id}", project_name: @engagement.project.title, user: current_user.full_name
+
       redirect_to user_path(current_user)
     else
       render :new
@@ -56,5 +60,13 @@ class EngagementsController < ApplicationController
 
   def set_project
     @project = Project.find(params[:project_id])
+  end
+
+  def recipient
+    @engagement.project.user
+  end
+
+  def create_notifications
+    Notification.create(recipient: recipient, actor: current_user, action: 'engagement', notifiable: @engagement)
   end
 end

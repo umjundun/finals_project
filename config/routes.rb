@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  mount ActionCable.server => '/cable'
   get 'users/index'
   get 'users/show'
   devise_for :users, :controllers => { :registrations => "registrations" }
@@ -26,5 +26,11 @@ Rails.application.routes.draw do
 
   resources :conversations do
     resources :messages
+  end
+
+  resources :notifications, only: [:index] do
+    collection do
+      post :mark_as_read
+    end
   end
 end

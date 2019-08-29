@@ -3,6 +3,9 @@ Project.destroy_all
 Representative.destroy_all
 User.destroy_all
 Organization.destroy_all
+Notification.destroy_all
+Message.destroy_all
+Conversation.destroy_all
 
 ActiveRecord::Base.connection.reset_pk_sequence!(:engagements)
 ActiveRecord::Base.connection.reset_pk_sequence!(:projects)
