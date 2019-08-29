@@ -1,5 +1,15 @@
-// SPECIAL HEADINGS
+// BASIC HEADINGS
+h2 {
+  font-size: 35px;
+  line-height: 50px;
+  color: $teal;
+}
 
+h3 {
+   color: grey;
+}
+
+// SPECIAL HEADINGS
 .section-heading {
   padding: 30px 0 30px 0;
   text-align: center;
@@ -14,6 +24,13 @@
   font-size: 35px;
   font-weight: bold;
   text-align: center;
+}
+
+.container-title {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mid-title {
