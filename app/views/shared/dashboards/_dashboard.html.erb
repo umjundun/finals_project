@@ -1,0 +1,33 @@
+<div class="full-container">
+  <div class="dash-container">
+    <div class="dash-welcome-card">
+      <h5 class="dash">MY DASHBOARD</h5>
+      <p>Welcome back <%= @user.full_name %> !</p>
+    </div>
+
+    <div class="dash-tab-container">
+
+      <div class="dash-panel-nav">
+        <p class="dash-nav-links" id="dash-profile-button"><i class="fa fa-user-circle"></i> Profile</p>
+        <p class="dash-nav-links" id="dash-engagements-button"><i class="fa fa-pencil-square-o"></i> Engagements</p>
+        <p class="dash-nav-links" id="dash-settings-button"><i class="fa fa-wrench"></i> Settings</p>
+      </div>
+
+      <div class="dash-panel-content">
+
+        <div class="dash-container-row dash-active" id="dash-profile-content">
+          <%= render 'shared/dashboards/profile', user: @user %>
+        </div>
+
+        <div class="dash-container-column dash-inactive" id="dash-engagements-content">
+          <%= render 'shared/dashboards/engagements', user: @user %>
+        </div>
+
+        <div class="dash-container-column dash-inactive" id="dash-settings-content">
+          <%= render 'shared/dashboards/settings', user: @user %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

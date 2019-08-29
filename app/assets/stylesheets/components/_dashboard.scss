@@ -5,7 +5,6 @@
 }
 
 .user-dashboard h2 {
-  margin-top: 5px;
   font-size: 35px;
   line-height: 50px;
   color: #3f9bab;
@@ -18,10 +17,6 @@
   font-family: Montsserat, sans-serif;
 }
 
-.user-dashboard h4 {
-  padding:  20px 20px ;
-}
-
 .user-dashboard h5 {
   font-family: Montsserat, sans-serif;
   font-weight: 200;
@@ -29,8 +24,6 @@
 }
 
 .user-dashboard p {
-  margin: 0 0 0 0;
-  padding: 0;
   border: 0;
   font-size: 100%;
   font-family: Montsserat, sans-serif;
@@ -53,42 +46,54 @@
   width: 90vw;
   flex-direction: column;
   justify-content: space-around;
-  background-image: url(images/welcomeback.jpg);
+  background-image: url(https://res.cloudinary.com/caitlinsnyder/image/upload/v1567086073/welcomeback_eaktec.jpg);
   background-repeat: no-repeat;
   background-position: right;
   background-size: 200px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 $card-box-shad-h $card-box-shad-v 0 $card-box-shad-color;
   border-radius: 10px;
 }
 
 .dash-tab-container {
   margin: 10px 0;
   width: 90vw;
+  min-height: 60vh;
   display: flex;
   flex-direction: row;
 }
 
 .dash-panel-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;;
   flex-grow: 0;
   width: 15vw;
 }
 
 .dash-panel-content {
   flex-grow: 1;
+  margin: 0 0 20px 0;
+}
+
+.dash-active {
+  display: flex;
+}
+
+.dash-inactive {
+  display: none;
 }
 
 .dash-container-row {
-  display: flex;
-  flex-direction: row;
+  flex-direction: flex;
+}
+
+.dash-container-column {
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 // PROFILE
-#dash-container-profile {
-
-}
-
-/****************************CARD PROFILE******************************** */
-
 .dash-square-cards {
   display: flex;
   flex-direction: column;
@@ -97,14 +102,24 @@
 }
 
 .dash-square-card {
-  margin: 0 0 0px 10px;
-  padding: 5px;
-  height: 25vw;
-  width: 25vw;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 2vw;
+  height: 20vw;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  box-shadow: 0 $card-box-shad-h $card-box-shad-v 0 $card-box-shad-color;
+  background-color: white;
   border-radius: 10px;
   font-size: 15px;
   text-align: center;
+}
+
+.dash-square-card-msg {
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .dash-square-cards .spacer {
@@ -116,25 +131,29 @@
   font-size: 13px;
 }
 
-a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
-}
-
-.avatar-dash {
+.dash-avatar {
+  padding: 0 0 1vw 0;
+  width: 6vw;
+  height: 6vw;
   object-fit: cover;
   border-radius: 60%;
-  width: 120px;
-  height: 120px;
 }
 
-/********************Card STATS************************* */
-.card-stats {
+.dash-social-links {
+  padding: 0px 0px 0 0;
+  font-size: 1.5em;
+}
+
+.dash-social-links a {
+  padding: 0px 5px;
+}
+
+
+.dash-stats-card {
   margin-left: 20px;
-  padding-top: 8px;
+  padding: 20px;
   width: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 $card-box-shad-h $card-box-shad-v 0 $card-box-shad-color;
   font-size: 15px;
   text-align: center;
   border-radius: 10px;
@@ -142,215 +161,58 @@ a {
   text-align: left;
 }
 
-
-
-.dash-container-column {
-  display: flex;
-  flex-direction: column;
-}
-
 // ENGAGEMENTS
-#dash-container-engagements {
-
-}
-
-#dash-container-settings {
-
-}
-
-.dash-nav-panel label {
-  border-radius: 10px;
-  cursor: pointer;
-  display: block;
-  padding: 15px 20px;
-  position: relative;
-  width: 180px;
-  z-index:100;
-}
-
-.tab-title {
-  font-size: 1em;
-  font-family: Montsserat, sans-serif;
-  color: red;
-  padding-left: 10px;
-}
-
-
-
-
-
-
-
-.tabordion {
-  margin: 10px 0;
-  width: 90vw;
-  display: block;
-  position: relative;
-}
-
-.tabordion input[name="sections"] {
-  left: -9999px;
-  position: absolute;
-  top: -9999px;
-}
-
-.tabordion section {
-  display: block;
-}
-
-.tabordion section label {
-  border-radius: 10px;
-  cursor: pointer;
-  display: block;
-  padding: 15px 20px;
-  position: relative;
-  width: 180px;
-  z-index:100;
-  background-color: white;
-  font-size: 20px;
-  //margin: 15px 40px;
-}
-
-.tab-title {
-  font-size: 1em;
-  font-family: Montsserat, sans-serif;
-  color: black;
-  padding-left: 10px;
-}
-
-.tabordion section article {
-  display: none;
-  //left: 230px;
-  // min-width: 300px;
-    // left: 200px;
-    // min-width: 270px;
-  // margin-left: 10px;
-  // padding: 0 0 0 21px;
-  position: absolute;
-  top: 0;
-}
-
-.tabordion section article::after {
-  background-color: white;
-  bottom: 0;
-  content: "";
-  display: block;
-  left:-229px;
-  position: absolute;
-  background-color: white;
-  padding-top: 20px;
-  bottom: 0;
-  content: "";
-  display: block;
-  left:-199px;
-  position: absolute;
-  top: 0;
-  border-radius: 20px;
-}
-
-.tabordion input[name="sections"]:checked + label {
-  background-color: #E1F3FD;
-}
-
-.tabordion input[name="sections"]:checked ~ article {
-  display: block;
-}
-
-.tab-icons {
-  color: #0B2D50;
-}
-
-.fa {
-  color:  #0B2D50;
-}
-
-p.tab-title {
-  margin:  0;
-}
-
-label.tab-icons.fa {
-  display:flex;
-  align-content: flex-start;
-}
-
-
-
-
-
-.profile-elements {
+.card-engagement {
+  margin: 0 0 15px 0;
+  padding: 20px 20px 10px 20px;
+  width: 100%;
+  min-height: 90px;
   display: flex;
   flex-direction: row;
-  flex-grow: 1;
-  align-items: stretch;
-  padding: 15px;
+  justify-content: space-around;
+  align-items:flex-start;
+  box-shadow: 0 $card-box-shad-h $card-box-shad-v 0 $card-box-shad-color;
   border-radius: 10px;
-  width: 1000px;
-}
-
-.engagement-elements{
-  background-color: white;
-  padding: 15px 25px 25px 15px;
-  border-radius: 10px;
-
-}
-
-.bs-callout {
-  margin-left: 15px;
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    border-color: white;
-    -webkit-border-image: none;
-    -o-border-image: none;
-    border-image: none;
-    border-radius: 3px;
-    border-style: solid;
-    border-width: 1px 1px 1px 4px;
-    margin-bottom: 7px;
-  }
-
-.bs-callout-danger {
-    border-left-color: #f8c959;
-}
-
-.profile-content{
-  background-color: white;
-  padding-right: 10px;
-  padding-left: 5px;
-  //margin-left: 5px;
-}
-
-
-.card-engagement{
-  background-color: white;
-  padding-top: 8px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-  padding-left: 0;
-  //margin-bottom: 20px;
-  padding: 10px 10px;
-  border-radius: 10px;
-  width: 940px;
   font-weight: 200;
 }
 
-.btnproject{
-  //margin-left: 1px ;
-  padding : 5px 5px;
+.card-settings {
+  margin: 0;
+  padding: 20px;
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  box-shadow: 0 $card-box-shad-h $card-box-shad-v 0 $card-box-shad-color;
+  border-radius: 10px;
+  font-weight: 200;
+}
+
+.btn-project {
+  margin: 0;
+  padding : 15px 0px;
+  width: 150px;
   border-radius: 4px;
-  background-color: #3f9bab;
-  -webkit-transition: background-color 400ms ease, opacity 400ms ease,color 400ms ease;
-  transition: background-color 400ms ease, opcaity 400ms ease, color 400ms ease;
+  background-color: $teal;
+  -webkit-transition:
+      background-color 400ms ease, opacity 400ms ease, color 400ms ease;
+      transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
   color: #fff;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 2px;
-  text-decoration:none;
-  font-family: Montsserat, sans-serif;
   font-weight: 100;
   text-align: center;
+
+  & :hover {
+    text-decoration: none;
+    color: #fff;
+  }
 }
 
-.card-engagement.card-3 {
-  display: inline-flex;
+.bookend-item {
+  margin: 0 0 20px 0;
+  padding: 5px 0 5px 15px;
+  border-left: $marigold 4px solid;
 }
