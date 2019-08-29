@@ -1,83 +1,290 @@
-.dash-container {
-  padding: 30px 50px;
-  width: 80vw;
+.user-dashboard{
+  margin-left: 10px;
+}
+.user-welcome{
+  display: flex;
+  justify-content: center;
+   margin-top: 20px;
+
+}
+
+.card-welcome{
+  background-image: url(assets/images/welcomeback.jpg);
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 120px;
+  background-size: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  padding: 10px 10px;
+  border-radius: 10px;
+  width: 1170px;
+
+}
+.tab-title {
+  font-size: 100%;
+  font-family: Montsserat, sans-serif;
+  color: black;
+  padding-left: 10px;
+}
+.tabordion {
+  display: block;
+  margin: 10px auto;
+  position: relative;
+}
+
+.tabordion input[name="sections"] {
+  left: -9999px;
+  position: absolute;
+  top: -9999px;
+}
+
+.tabordion section {
+
+  display: block;
+}
+
+.tabordion section label {
+
+  border-radius: 10px;
+  cursor: pointer;
+  display: block;
+  padding: 15px 20px;
+  position: relative;
+  width: 180px;
+  z-index:100;
+
+}
+
+.tabordion section article {
+
+  display: none;
+  left: 230px;
+  min-width: 300px;
+  margin-left: 10px;
+  padding: 0 0 0 21px;
+  position: absolute;
+  top: 0;
+}
+
+.tabordion section article::after {
   background-color: white;
+  bottom: 0;
+  content: "";
+  display: block;
+  left:-229px;
+  position: absolute;
+
 }
 
-.dash-subsection {
-  display: flex;
-  flex-direction: row;
-  padding: 0 0 20px 0;
+.tabordion input[name="sections"]:checked + label {
+background-color: #E1F3FD;
 }
 
-.dash-subheader {
-  font-size: 25px;
+.tabordion input[name="sections"]:checked ~ article {
+  display: block;
 }
 
-.graphs-container {
-  padding: 0px 0 30px 0;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: top;
+
+  .tabordion {
+    width: 100%;
+
+  }
+
+  .tabordion section label {
+     background-color: white;
+    font-size: 20px;
+    margin: 15px 40px;
+
+
+  }
+
+ .tabordion section article {
+
+    min-width: 270px;
+
+  }
+
+  .tabordion section article::after {
+   background-color: white;
+    padding-top: 20px;
+    bottom: 0;
+    content: "";
+    display: block;
+    left:-199px;
+    position: absolute;
+    top: 0;
+    border-radius: 20px;
+
+  }
+
+
+.dash{
+font-weight: 200;
 }
 
-.graphs-grid {
-  margin: 0;
-  padding: 0px 0 0px 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
-  flex-wrap: wrap;
+.tab-icons{
+  color: #0B2D50;
 }
 
-.graph {
-  margin: 15px;
-  flex-grow: 1;
+.fa{
+  color:  #0B2D50;
 }
 
-.dash-announce-row {
-  padding: 30px 0;
-  margin: 0px 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content:space-between;
-  align-items:center;
+p.tab-title {
+  margin:  0;
 }
 
-.dash-announce {
-  margin: 0 20px;
-  height: 20vw;
-  width: 20vw;
-  display: flex;
+label.tab-icons.fa {
+  display:flex;
+  align-content: flex-start;
+}
+
+/* ***********************************************************
+***************************CARD PROFILE******************************** */
+.card-profile {
+  background-color: white;
+  padding-top: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+  height: 300px;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.user-title {
+  color: grey;
+  font-size: 13px;
+}
+
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.avatar-dash{
+  object-fit: cover;
+  border-radius: 60%;
+  width: 120px;
+  height: 120px;
+}
+
+
+
+
+/*
+*****************************************************
+********************Card STATS************************* */
+
+
+.card-stats {
+  padding-top: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  width: 630px;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 10px;
+  margin-left: 20px;
+  background-color: white;
+  height: 615px;
+}
+
+.profile-elements{
+display: flex;
+align-items: flex-start;
+background-color: white;
+padding: 15px 15px 15px 15px;
+border-radius: 10px;
+width: 1000px;
+margin-bottom: 50px;
+}
+
+.engagement-elements{
+background-color: white;
+padding: 15px 25px 25px 15px;
+border-radius: 10px;
+
+}
+
+
+.bs-callout {
+  margin-left: 15px;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: white;
+    -webkit-border-image: none;
+    -o-border-image: none;
+    border-image: none;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px 1px 1px 4px;
+    margin-bottom: 7px;
+
+  }
+.bs-callout-danger {
+    border-left-color: #f8c959;
+}
+
+.profile-content{
+  background-color: white;
+  padding-right: 10px;
+  padding-left: 5px;
+  margin-left: 5px;
+}
+
+
+.card-engagement{
+  background-color: white;
+  padding-top: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  padding-left: 0;
+  margin-bottom: 20px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  width: 940px;
+  font-weight: 200;
+}
+
+.btnproject{
+   margin-left: 1px ;
+  padding : 5px 5px;
+  border-radius: 4px;
+  background-color: #3f9bab;
+  -webkit-transition: background-color 400ms ease, opacity 400ms ease,color 400ms ease;
+  transition: background-color 400ms ease, opcaity 400ms ease, color 400ms ease;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-decoration:none;
+  font-family: Montsserat, sans-serif;
+  font-weight: 100;
+  text-align: center;
+}
+
+.card-engagement.card-3{
+  display: inline-flex;
+}
+
+.small-cards{
   flex-direction: column;
-  align-items: center;
-  justify-content:center;
-  text-shadow: 2px 2px 2px rgba(80,80,80,0.1);
-  border: 7px solid rgba(80,80,80,.3);
-  background-color: rgba(80,80,80,0.04);
-  border-radius: 50%;
-  box-shadow: 0px 0px 10px rgba(200,200,200,0.2);
+  justify-content:space-evenly;
 }
 
-.dash-announce-number {
-  margin: -10px 0 0 0;
-  font-size: 200px;
-  line-height: 50px;
+.card-chat{
+  margin-top: 15px;
+  background-color: white;
+  padding-top: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+  height: 300px;
+  font-size: 15px;
   text-align: center;
-  color: rgba(80,80,80,0.3);
-}
-
-.dash-announce-text {
-  font-size: 30px;
-  line-height: 35px;
-  text-align: center;
-  color: rgba(80,80,80,.7);
-  text-shadow: 2px 2px 2px rgba(80,80,80,0.1);
-  background-color: rgba(255,255,255,0.5);
-  padding: 7px 0px;
-  width: 18vw;
-  border-radius: 4%;
-  margin: -30px 0 0 0;
+  border-radius: 10px;
+  margin-left: 10px;
 }

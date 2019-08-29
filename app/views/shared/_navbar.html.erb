@@ -3,7 +3,7 @@
   <%= link_to root_path, class: "navbar-brand " do %>
     <%= image_tag "logo.png" %>
     <% end %>
-  
+
 <%= form_tag("/search", method: "get", class: "search-bar") do %>
       <%= text_field_tag :query,
         params[:query],
@@ -24,7 +24,7 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+         <a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">login</a>
         </li>
       <% end %>
     </ul>

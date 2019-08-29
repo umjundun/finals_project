@@ -4,7 +4,7 @@
     <h2><span class="highlight">Work on projects that matter.</span></h2>
     <div class="py-2">
       <% unless current_user.present? %>
-        <%= link_to 'Sign Up', new_user_registration_path, :class => " btn btn-primary btn-rounded text-white btn-lg"%>
+        <a href="#myModal2" class="btn btn-lg btn-primary" data-toggle="modal">Sign Up</a>
       <% end %>
    </div>
   </div>
