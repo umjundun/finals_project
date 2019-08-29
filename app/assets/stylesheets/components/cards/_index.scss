@@ -1,8 +1,10 @@
 @import "dev_cards";
 @import "project_cards";
-@import "value_cards";
+// @import "value_cards";
 @import "org_cards";
 
 $card-box-shad-color: rgba(60, 60, 60, 0.1);
 $card-box-shad-v: 6px;
 $card-box-shad-h: 4px;
+
+$box-shadow: $card-box-shad-h $card-box-shad-v 0px $card-box-shad-color

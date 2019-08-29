@@ -10,7 +10,7 @@
         class: "form-control",
         placeholder: "Find your next project"
       %>
-      <%= submit_tag "Search", class: "search-button" %>
+      <%= submit_tag "Search", class: "btnsignup" %>
     <% end %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -32,7 +32,7 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+         <a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">login</a>
         </li>
       <% end %>
     </ul>
