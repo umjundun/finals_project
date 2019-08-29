@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_172743) do
-
+ActiveRecord::Schema.define(version: 2019_08_29_152418) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,6 +28,10 @@ ActiveRecord::Schema.define(version: 2019_08_28_172743) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ngo_status", default: ""
+    t.string "dev_status", default: ""
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.index ["project_id"], name: "index_engagements_on_project_id"
     t.index ["user_id"], name: "index_engagements_on_user_id"
   end
@@ -58,6 +61,17 @@ ActiveRecord::Schema.define(version: 2019_08_28_172743) do
     t.string "name"
     t.text "mission"
     t.string "logo"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    t.float "longitude"
+=======
+    t.string "longitude"
+    t.float "float"
+>>>>>>> master
+    t.float "latitude"
+    t.string "address"
+>>>>>>> origin
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "address"
@@ -86,15 +100,29 @@ ActiveRecord::Schema.define(version: 2019_08_28_172743) do
 
   create_table "projects", force: :cascade do |t|
     t.string "title"
+<<<<<<< HEAD
+    t.string "description"
+=======
     t.text "description"
+<<<<<<< HEAD
+=======
+>>>>>>> master
+    t.boolean "active", default: true
+>>>>>>> origin
     t.bigint "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+<<<<<<< HEAD
     t.boolean "active", default: true
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> origin
     t.boolean "status", default: false
     t.string "category"
     t.integer "deadline"
+>>>>>>> master
     t.index ["organization_id"], name: "index_projects_on_organization_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
