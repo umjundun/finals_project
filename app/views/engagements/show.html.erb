@@ -10,6 +10,11 @@
 
   <div class="column is-3 is-offset-1">
     <% if engage_author(@engagement) %>
+      <% if @engagement.dev_status.include? "Current" %>
+        <p>Engagement started on: <%= @engagement.start_date %></p>
+      <% elsif @engagement.dev_status.include? "Completed" %>
+        <p>Engagement completed on: <%= @engagement.end_date %></p>
+      <% end %>
       <div class="bg-light pa3 mb4 border-radius-3">
         <p class="f6 pb1">Author actions:</p>
         <div class="button-group">

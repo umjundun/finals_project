@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_172743) do
+ActiveRecord::Schema.define(version: 2019_08_29_152418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,10 @@ ActiveRecord::Schema.define(version: 2019_08_28_172743) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ngo_status", default: ""
+    t.string "dev_status", default: ""
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.index ["project_id"], name: "index_engagements_on_project_id"
     t.index ["user_id"], name: "index_engagements_on_user_id"
   end
