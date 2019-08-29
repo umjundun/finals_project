@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2019_08_29_152418) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -62,12 +61,11 @@ ActiveRecord::Schema.define(version: 2019_08_29_152418) do
     t.string "name"
     t.text "mission"
     t.string "logo"
-    t.string "longitude"
-    t.float "float"
-    t.float "latitude"
-    t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -92,7 +90,6 @@ ActiveRecord::Schema.define(version: 2019_08_29_152418) do
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.boolean "active", default: true
     t.bigint "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -132,15 +129,15 @@ ActiveRecord::Schema.define(version: 2019_08_29_152418) do
     t.string "bio"
     t.string "github"
     t.string "job_title"
+    t.string "photo"
+    t.boolean "hibernate"
+    t.boolean "developer", default: true
+    t.boolean "admin", default: false
     t.string "contact_number"
     t.string "contact_email"
     t.string "interests"
     t.string "experience"
     t.string "skills"
-    t.string "photo"
-    t.boolean "hibernate"
-    t.boolean "admin", default: false
-    t.boolean "developer", default: true
     t.string "group", default: "developer"
     t.bigint "organization_id"
     t.index ["email"], name: "index_users_on_email", unique: true
