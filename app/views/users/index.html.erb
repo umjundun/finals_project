@@ -10,7 +10,7 @@
   </div>
   <div class="row" >
     <% @users.each do |user| %>
-      <% if user.organization_id == 1 %>
+      <% if user.group == "developer" %>
         <div class="card-project mb-3 mr-1 ml-1">
           <img class="avatar-large" alt="avatar-large" src="<%= user.photo %>" />
           <div class="card-project-infos">

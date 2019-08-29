@@ -46,7 +46,7 @@
   <div class="graphs-grid">
     <% @user.my_active_projects.each do |project| %>
       <div class="graph">
-        <%#= @user.my_engagements_by_project(project) %>
+        <%#= @user.engagements_by_project(project) %>
         <%= line_chart @user.my_engagements_by_project(project).group_by_day(:created_at).count %>
       </div>
     <% end %>

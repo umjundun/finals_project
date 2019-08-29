@@ -19,6 +19,11 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.user = current_user
+
+    params[:files].values.each do |file|
+      @project.project_files.new(project: @project, name: file[:name], format: (file[:url]).split(//).last(4).join, file_url: file[:url])
+    end
+
     authorize @project
 
     if @project.save
@@ -44,7 +49,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :organization_id)
+    params.require(:project).permit(:category, :deadline, :title, :description, :organization_id)
   end
 
   def set_project

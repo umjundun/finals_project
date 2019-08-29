@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_27_142207) do
+ActiveRecord::Schema.define(version: 2019_08_28_172743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,15 +43,26 @@ ActiveRecord::Schema.define(version: 2019_08_27_142207) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.integer "recipient_id"
+    t.integer "actor_id"
+    t.datetime "read_at"
+    t.string "action"
+    t.integer "notifiable_id"
+    t.string "notifiable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "organizations", force: :cascade do |t|
     t.string "name"
     t.text "mission"
     t.string "logo"
+    t.float "longitude"
+    t.float "latitude"
+    t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "address"
-    t.float "latitude"
-    t.float "longitude"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -63,14 +74,27 @@ ActiveRecord::Schema.define(version: 2019_08_27_142207) do
     t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
   end
 
+  create_table "project_files", force: :cascade do |t|
+    t.string "file_url"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "format"
+    t.index ["project_id"], name: "index_project_files_on_project_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "title"
-    t.string "description"
+    t.text "description"
+    t.boolean "active", default: true
     t.bigint "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.boolean "active", default: true
+    t.boolean "status", default: false
+    t.string "category"
+    t.integer "deadline"
     t.index ["organization_id"], name: "index_projects_on_organization_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
@@ -103,15 +127,15 @@ ActiveRecord::Schema.define(version: 2019_08_27_142207) do
     t.string "bio"
     t.string "github"
     t.string "job_title"
-    t.string "photo"
-    t.boolean "hibernate"
-    t.boolean "developer", default: true
-    t.boolean "admin", default: false
     t.string "contact_number"
     t.string "contact_email"
     t.string "interests"
     t.string "experience"
     t.string "skills"
+    t.string "photo"
+    t.boolean "hibernate"
+    t.boolean "admin", default: false
+    t.boolean "developer", default: true
     t.string "group", default: "developer"
     t.bigint "organization_id"
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -121,6 +145,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_142207) do
 
   add_foreign_key "engagements", "projects"
   add_foreign_key "engagements", "users"
+  add_foreign_key "project_files", "projects"
   add_foreign_key "projects", "organizations"
   add_foreign_key "projects", "users"
   add_foreign_key "representatives", "organizations"
