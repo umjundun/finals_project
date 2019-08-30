@@ -1,33 +1,33 @@
 // DASHBOARD HEADINGS
-.user-dashboard h1 {
-  font-weight: 100;
-  letter-spacing: 3px;
-}
-
-.user-dashboard h2 {
-  font-size: 35px;
-  line-height: 50px;
-  color: #3f9bab;
-  text-transform: uppercase;
-  font-weight: 100;
-}
-
-.user-dashboard h3 {
-  color: grey;
-  font-family: Montsserat, sans-serif;
-}
-
-.user-dashboard h5 {
-  font-family: Montsserat, sans-serif;
-  font-weight: 200;
-  font-size: 15px;
-}
-
-.user-dashboard p {
-  border: 0;
-  font-size: 100%;
-  font-family: Montsserat, sans-serif;
-}
+// .user-dashboard h1 {
+//   font-weight: 100;
+//   letter-spacing: 3px;
+// }
+//
+// .user-dashboard h2 {
+//   font-size: 35px;
+//   line-height: 50px;
+//   color: #3f9bab;
+//   text-transform: uppercase;
+//   font-weight: 100;
+// }
+//
+// .user-dashboard h3 {
+//   color: grey;
+//   font-family: Montsserat, sans-serif;
+// }
+//
+// .user-dashboard h5 {
+//   font-family: Montsserat, sans-serif;
+//   font-weight: 200;
+//   font-size: 15px;
+// }
+//
+// .user-dashboard p {
+//   border: 0;
+//   font-size: 100%;
+//   font-family: Montsserat, sans-serif;
+// }
 
 // DASHBOARD CONTENT
 .dash-container {
@@ -55,11 +55,23 @@
 }
 
 .dash-tab-container {
-  margin: 10px 0;
+  margin: 10px 0 20px 0;
   width: 90vw;
   min-height: 60vh;
   display: flex;
   flex-direction: row;
+}
+
+.dash-tab-container > * {
+  font-size: inherit !important;
+}
+
+.dash-card-nav {
+  margin: 0 20px 20px 0;
+  padding: 20px 25px 25px 25px;
+  width: 16vw;
+  height: 20vw;
+  flex-grow: 0;
 }
 
 .dash-panel-nav {
@@ -68,6 +80,30 @@
   align-items: stretch;;
   flex-grow: 0;
   width: 15vw;
+}
+
+.dash-nav-links {
+  margin: 0;
+  padding: 0 0 5% 0;
+  display: flex;
+  align-items:flex-start;
+  position: relative;
+  line-height: .5em;
+  &:hover {
+    color: $marigold;
+  }
+}
+
+.dash-nav-links p {
+  padding: 0;
+  font-size: .35em;
+  color: $teal;
+}
+
+.dash-nav-links i {
+  padding: 0 10% 0 0;
+  color: $teal;
+  font-size: .5em;
 }
 
 .dash-panel-content {
@@ -115,6 +151,18 @@
   border-radius: 10px;
   font-size: 15px;
   text-align: center;
+}
+
+.dash-social-links {
+  width: 70%;
+  padding: 10px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  a {
+    margin: 0;
+    padding: 0;
+    color: $teal;
+  }
 }
 
 .dash-square-card-msg {
@@ -170,10 +218,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items:flex-start;
+  align-items: flex-start;
   box-shadow: 0 $card-box-shad-h $card-box-shad-v 0 $card-box-shad-color;
   border-radius: 10px;
   font-weight: 200;
+}
+
+.card-engagement-description {
+  padding: 0 15px;
 }
 
 .card-settings {
@@ -215,4 +267,32 @@
   margin: 0 0 20px 0;
   padding: 5px 0 5px 15px;
   border-left: $marigold 4px solid;
+}
+
+
+
+// RESPONSIVENESS
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .dash-container {
+    font-size: 20px;
+  }
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .dash-container {
+    font-size: 30px;
+  }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .dash-container {
+    font-size: 40px;
+  }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .dash-container {
+    font-size: 60px;
+  }
 }

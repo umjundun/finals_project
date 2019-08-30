@@ -55,11 +55,13 @@
 
 .search-bar {
   display: flex;
-  width: 40%;
-  height: 2.625rem;
-  border: 1px solid #E7E7E7;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 40vw;
+  height: 6vh;
   border-radius: 5px;
 }
-.search-button {
-  border-radius: 5px;
+
+#query {
+  height: 100%;
 }
