@@ -3,8 +3,7 @@
   <div class="">
     <h4 class="text-align-left f6">Description: <%= @engagement.project.description %></h4>
     <h4 class="text-align-left f6">Category: <%= @engagement.project.category %></h4>
-    <h4 class="text-align-left f6">Currently assigned to: <%= @engagement.user.full_name %></>
-    <h4>Project documents</h4>
+    <h4>Project documents:</h4>
     <ul class="list-group">
       <% @engagement.project.project_files.each do |file| %>
           <a href="<%= file.file_url %>"> - <%= file.name %><%= file.format %></a>
@@ -12,21 +11,24 @@
     </ul>
   </div>
   <p class="pb3 border-bottom">Last post <%= time_ago_in_words(@engagement.created_at) %> ago</p>
-  <% if engage_author(@engagement) && @engagement.status == "Pending" %>
+
+  <% if @engagement.status == "Pending" && current_user.id == @engagement.project.user_id %>
     <h4>Engagement pending approuval</h4>
+    <%= link_to "Edit engagement", edit_user_engagement_path(@engagement), class: "btnlogin" %>
+
   <% else %>
-    <% if user_signed_in? && current_user.id != @engagement.user_id %>
-      <%= link_to "Message #{@engagement.user.full_name}", conversations_path(sender_id: current_user.id, recipient_id: @engagement.user.id), method: 'post', class: "btnlogin" %>
-      <%= link_to "Edit engagement", edit_user_engagement_path(@engagement), class: "btnlogin" %>
+
+    <% if user_signed_in? && current_user.id == @engagement.project.user_id %>
+      <h4 class="text-align-left f6">Currently assigned to: <%= @engagement.user.full_name %></h4>
+      <%= link_to "Message #{@engagement.user.first_name}", conversations_path(sender_id: current_user.id, recipient_id: @engagement.user.id), method: 'post', class: "btnlogin" %>
 
     <% elsif user_signed_in? && current_user.id == @engagement.user_id  %>
-
       <%= link_to "Conversations", conversations_path %>
       <%= link_to "Edit engagement", edit_user_engagement_path(@engagement), class: "btnlogin" %>
 
-
     <% else %>
       <%= link_to "Sign up to message #{@engagement.user.name}", new_user_registration_path %>
+
     <% end %>
   <% end %>
   </div>
