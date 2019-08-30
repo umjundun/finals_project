@@ -42,11 +42,11 @@ class EngagementsController < ApplicationController
   def update
     authorize @engagement
     if @engagement.update(engagement_params)
-      if @engagement.dev_status.include? "Current"
-        @engagement.start_date = Time.now.to_datetime
-      elsif @engagement.dev_status.include? "Completed"
-        @engagement.end_date = Time.now.to_datetime
-      end
+      # if @engagement.dev_status.include? "Current"
+      #   @engagement.start_date = Time.now.to_datetime
+      # elsif @engagement.dev_status.include? "Completed"
+      #   @engagement.end_date = Time.now.to_datetime
+      # end
       redirect_to user_engagements_path(current_user)
     else
       render :edit

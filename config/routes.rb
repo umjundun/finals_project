@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get 'users/show'
   devise_for :users, :controllers => { registrations: 'registrations' }
 
+  devise_scope :user do
+  get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 
   root to: 'pages#home'
   get "/search", to: "pages#search", as: "search"
@@ -12,7 +15,7 @@ Rails.application.routes.draw do
     member do
       get 'projects'
     end
-    resources :projects, only: [:show]
+    resources :projects, only: [:show, :edit, :update]
     resources :engagements, only: [:show, :index, :update, :new, :create, :edit, :update]
   end
 
