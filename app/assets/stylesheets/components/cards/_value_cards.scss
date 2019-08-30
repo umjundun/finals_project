@@ -1,3 +1,7 @@
+.section-container h2{
+  font-weight:400;
+}
+
 
 .home-value-cards {
   margin: 0 auto;
@@ -5,7 +9,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  grid-gap: 50px;
+  grid-gap: 100px;
   flex-wrap: wrap;
 }
 
@@ -20,7 +24,7 @@
   justify-content: center;
   background-color: white;
   box-shadow: $box-shadow;
-  border-radius: 1px;
+  border-radius: 5px;
 }
 .home-value-card-img {
   height: 120px;
@@ -39,12 +43,20 @@
   text-align: center;
 }
 
-.home-value-card-content p {
-  font-size: 12px;
-  text-align: justify;
+
+.home-value-card-content h3 {
+  font-weight: 400;
+  text-align: left;
+  padding-bottom: 20px;
+  color: black;
+
 }
 
+.home-value-card-content p {
+  font-size: 12px;
+  text-align: left;
 
+}
 
 
 @media(max-width: 768px) {

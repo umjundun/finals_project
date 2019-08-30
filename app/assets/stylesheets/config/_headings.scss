@@ -14,6 +14,7 @@ h2 {
 h3 {
   font-size: .28em;
   color: grey;
+  font-weight:200;
 }
 
 p {
@@ -23,7 +24,7 @@ p {
 .section-heading {
   margin: 30px auto 10px auto;
   padding: 2vh 0 4vh 0;
-  text-shadow: $text-shadow-light;
+
 }
 
 .section-heading > * {
