@@ -27,7 +27,7 @@ class EngagementsController < ApplicationController
     @engagement.status = "Pending"
 
     if @engagement.save
-      ActionCable.server.broadcast "notifications:#{@engagement.project.user_id}", project_name: @engagement.project.title, user: current_user.full_name
+      # ActionCable.server.broadcast "notifications:#{@engagement.project.user_id}", project_name: @engagement.project.title, user: current_user.full_name
 
       redirect_to user_path(current_user)
     else

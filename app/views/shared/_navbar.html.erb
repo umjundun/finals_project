@@ -3,7 +3,7 @@
   <%= link_to root_path, class: "navbar-brand " do %>
     <%= image_tag "logo.png" %>
     <% end %>
-  
+
 <%= form_tag("/search", method: "get", class: "search-bar") do %>
       <%= text_field_tag :query,
         params[:query],
@@ -20,7 +20,7 @@
           <div id="notifications">
           <%#= render 'shared/menus/notification' %>
           </div>
-        </li> -->
+        </li>
         <!-- Hamburger nav button -->
         <li class="nav-item dropdown" id="hamburger-icon">
           <%= render 'shared/menus/hamburger' %>
