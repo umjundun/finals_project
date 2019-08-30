@@ -22,8 +22,11 @@
             <%= f.input :password_confirmation,
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
-            <div class="btnmodals"><%= f.button :submit, "Sign Up", class: "btnsignup" %></div>
+
+<!--             <div class="btnmodals"><%=# f.button :submit, "Sign Up", class: "btnsignup" %></div> -->
+
+            <%= f.button :submit, "Sign Up", class: "yellow-button btnmodals" %>
+
           </div>
         </div>
 <% end %>
-

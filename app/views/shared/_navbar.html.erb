@@ -3,26 +3,24 @@
   <%= link_to root_path, class: "navbar-brand " do %>
     <%= image_tag "logo.png" %>
     <% end %>
+  
+<%= form_tag("/search", method: "get", class: "search-bar") do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find your next project"
+      %>
+      <%= submit_tag "Search", class: "yellow-button" %>
+    <% end %>
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <!-- Search Bar -->
-      <%= form_tag("/search", method: "get", class: "search-bar") do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Find your next project"
-            %>
-            <%= submit_tag "Search", class: "btnsignup" %>
-          <% end %>
-           <!-- Notifications -->
-        <li class="nav-item dropdown" id="bell-icon">
           <div id="notifications">
-          <%= render 'shared/menus/notification' %>
+          <%#= render 'shared/menus/notification' %>
           </div>
-        </li>
+        </li> -->
         <!-- Hamburger nav button -->
         <li class="nav-item dropdown" id="hamburger-icon">
           <%= render 'shared/menus/hamburger' %>
@@ -39,5 +37,3 @@
     </ul>
   </div>
 </div>
-
-
