@@ -75,11 +75,12 @@
 }
 
 .dash-panel-nav {
+  margin: 0;
+  width: 20vw;
   display: flex;
   flex-direction: column;
   align-items: stretch;;
   flex-grow: 0;
-  width: 15vw;
 }
 
 .dash-nav-links {
