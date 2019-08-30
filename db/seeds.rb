@@ -31,14 +31,14 @@ clothes_closet = Organization.create!(
                     name: 'Montreal Clothes Closet',
                     mission: 'To help everyone dress for success',
                     address: "5505 St Laurent Blvd, Montreal",
-                    logo: Faker::Company.logo
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567176760/clothes_closet_w4buuo.webp"
                   )
 # ID 4
 food_pantry = Organization.create!(
                     name: 'The Winnipeg Food Pantry',
                     mission: 'Food is a human right!',
                     address: '561 Bannerman Ave, Winnipeg',
-                    logo: Faker::Company.logo
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567176750/Food_Pantry_xqoodw.jpg"
                 )
 p "2 organizations created"
 
@@ -58,15 +58,16 @@ p "1 admin user created"
 
 # Users - NGO Montreal Clothes Closet
 clothes_closet_rep = User.create!(
-                      email: "ngo@test.com",
+                      email: "becky@clothescloset.com",
                       username: "ngo",
                       password: "password",
-                      first_name: "NGO",
+                      first_name: "Becky",
                       last_name: "Test",
                       admin: false,
                       organization: clothes_closet,
                       developer: false,
                       group: "ngo",
+                      remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567176925/Screen_Shot_2019-08-30_at_10.55.07_AM_obcjks.png"
                     )
 
 # Users - NGO The Winnipeg Food Pantry
@@ -85,61 +86,54 @@ p "2 NGO users created"
 
 # Users - Devs
 User.create!(
-              email: "dev@test.com",
+              email: "bob@newdev.com",
               username: "dev",
               password: "password",
-              first_name: "dev",
-              last_name: "test",
+              first_name: "Bob",
+              last_name: "Sherman",
               admin: false,
               organization: dev_org,
               developer: true,
               group: "developer",
+              remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1566505936/luz9wt7bg6qqzktauf55.jpg",
             )
 User.create!(
               email: "dev2@test.com",
               username: "dev2",
               password: "password",
-              first_name: "dev",
-              last_name: "test",
+              first_name: "Jasmine",
+              last_name: "Princess",
               admin: false,
               organization: dev_org,
               developer: true,
               group: "developer",
+              remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567177208/jasmine_nisamd.jpg"
             )
 User.create!(
               email: "dev3@test.com",
               username: "dev3",
               password: "password",
-              first_name: "dev",
-              last_name: "test",
+              first_name: "Ariel",
+              last_name: "Mermaid",
               admin: false,
               organization: dev_org,
               developer: true,
               group: "developer",
+              remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567177222/ariel_n6vkuz.jpg"
             )
 User.create!(
               email: "dev4@test.com",
               username: "dev4",
               password: "password",
-              first_name: "dev",
-              last_name: "test",
+              first_name: "Elsa",
+              last_name: "Icequeen",
               admin: false,
               organization: dev_org,
               developer: true,
               group: "developer",
+              remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567179770/urpjpugeh6b0uvpksejc.jpg"
             )
-User.create!(
-              email: "dev5@test.com",
-              username: "dev5",
-              password: "password",
-              first_name: "dev",
-              last_name: "test",
-              admin: false,
-              organization: dev_org,
-              developer: true,
-              group: "developer",
-            )
-p "5 devs created"
+p "4 devs created"
 
 # Projects
 Project.create(
