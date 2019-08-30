@@ -3,9 +3,7 @@
   <div class="row">
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
       <h2 class="text-center font-weight-light text-uppercase text-white">Sign up</h2>
-      <div class="card card-signin my-5">
-        <div class="card-body">
-          <div class="form-inputs">
+
             <%= f.input :email,
                         required: true,
                         autofocus: true,
@@ -24,14 +22,8 @@
             <%= f.input :password_confirmation,
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
-         <%= f.button :submit, "Sign Up", class: "btn btn-primary" %>
-          </div>
-          <div class="form-actions">
+            <%= f.button :submit, "Sign Up", class: "btnsignup btnmodals" %>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
 <% end %>
 
-<div class="link my-3"><%= render "devise/shared/links" %></div>
