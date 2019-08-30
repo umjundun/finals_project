@@ -1,8 +1,8 @@
 class Project < ApplicationRecord
   belongs_to :organization
   belongs_to :user
-  has_many :engagements
-  has_many :project_files
+  has_many :engagements, dependent: :destroy
+  has_many :project_files, dependent: :destroy
 
   include PgSearch::Model
   multisearchable against: [:title, :description, :category]
