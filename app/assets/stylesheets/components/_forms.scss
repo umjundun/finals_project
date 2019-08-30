@@ -1,4 +1,67 @@
-input {
+.form-container {
+  margin: 0px;
+  width: 100vw;
+  // padding: 3vh 0 10vh 0;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  // justify-content: space-around;
+  background-image: url('https://res.cloudinary.com/caitlinsnyder/image/upload/v1567111571/export_1_ygcvxa.png');
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.form-content-container {
+  margin: 10vh auto 10vh auto;
+  padding: 7vh;
+  width: 70vw;
+  background-color: rgba(255,255,255,0.7);
+  box-shadow: $card-box-shad-h $card-box-shad-v 0px rgba(100, 100, 100, 0.1);
+  border-radius: 4px;
+}
+
+.form-content-container > * {
+  font-size: inherit !important;
+}
+
+.form-content-container h1 {
+  padding: 5vh 0 3vh 0;
+  font-size: 1em;
+  text-align: center;
+}
+
+.form-content-container p {
+  font-size: .2 em;
+  color: $light-gray;
+}
+
+.form-item {
+  padding:0;
+  margin:0 0 3vh 0;
+}
+
+select {
+  margin: 0 .5vw;
+  padding: 0 3vw;
+  font-size: .35em;
+  line-height: .2em;
+}
+
+label, .inline-label, .label-unit {
+  font-size: .35em;
+  color: $light-gray
+}
+
+.label-one-line {
+  margin: 0;
+  padding: 0;
+  font-size: .35em;
+  color: $light-gray
+}
+
+input, textarea {
   width: 40%;
   font-family: inherit;
   font-size: 16px;
@@ -6,11 +69,144 @@ input {
   font-weight: 500;
   border-bottom: 1px solid $marigold;
   background: none;
-  border-radius: 0;
+  border-radius: 2%;
   transition: all .15s ease;
 }
 
-input ::selection {
-  border: 0px;
-  border-bottom: 2px solid $marigold;
+.input-one-line select {
+  margin: 0;
+  padding: 25px 20px;
+  width: 100%;
+  height: 55px;
+  border: $marigold-trans solid 3px;
+  border-radius: 4px;
+  background-color: rgba(255,255,255,0.7);
+  outline: $marigold;
+}
+
+.input-one-line input, textarea {
+  margin: 0;
+  padding: 25px 20px;
+  width: 100%;
+  height: 45px;
+  background-color: rgba(255,255,255,0.7);
+  border-bottom-width: 3px;
+}
+
+input:focus, textarea:focus {
+  border-bottom: 4px solid $marigold;
+  background-color: white;
+}
+
+.input-circle {
+  // border-radius: 10%;
+}
+
+.input-circle[type=text]:focus {
+  // border: 3px solid $marigold;
+}
+
+.form-button {
+  width: 100%;
+}
+
+.form-button:hover {
+  background-color: white;
+  color: $marigold;
+}
+
+#upload_widget_opener {
+  // background-color: red;
+}
+
+
+
+// SLIDER
+.slider-container {
+  width: 100%; /* Width of the outside container */
+}
+
+.slider-container input {
+  border-bottom: none;
+}
+.slider-container input:focus {
+  background: $marigold-trans
+  // border-bottom: none;
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: $marigold-trans-2; /* Grey background */
+  outline: none; /* Remove outline */
+  border: none;
+}
+
+.slider-values {
+  width: 99%;
+  margin: 0 0px 0 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: .35em;
+  color: $light-gray;
+}
+
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: $marigold; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: $marigold; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// RESPONSIVENESS
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .form-container {
+    font-size: 20px;
+  }
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .form-container {
+    font-size: 30px;
+  }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .form-container {
+    font-size: 40px;
+  }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .form-container {
+    font-size: 50px;
+  }
 }
