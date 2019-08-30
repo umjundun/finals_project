@@ -67,7 +67,7 @@ clothes_closet_rep = User.create!(
                       organization: clothes_closet,
                       developer: false,
                       group: "ngo",
-                      photo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567176925/Screen_Shot_2019-08-30_at_10.55.07_AM_obcjks.png"
+                      remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567176925/Screen_Shot_2019-08-30_at_10.55.07_AM_obcjks.png"
                     )
 
 # Users - NGO The Winnipeg Food Pantry
@@ -95,7 +95,7 @@ User.create!(
               organization: dev_org,
               developer: true,
               group: "developer",
-              photo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1566505936/luz9wt7bg6qqzktauf55.jpg",
+              remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1566505936/luz9wt7bg6qqzktauf55.jpg",
             )
 User.create!(
               email: "dev2@test.com",
@@ -107,7 +107,7 @@ User.create!(
               organization: dev_org,
               developer: true,
               group: "developer",
-              photo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567177208/jasmine_nisamd.jpg"
+              remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567177208/jasmine_nisamd.jpg"
             )
 User.create!(
               email: "dev3@test.com",
@@ -119,7 +119,7 @@ User.create!(
               organization: dev_org,
               developer: true,
               group: "developer",
-              photo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567177222/ariel_n6vkuz.jpg"
+              remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567177222/ariel_n6vkuz.jpg"
             )
 User.create!(
               email: "dev4@test.com",
@@ -131,20 +131,9 @@ User.create!(
               organization: dev_org,
               developer: true,
               group: "developer",
-              photo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567177215/elsa_zt4z0a.jpg"
+              remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567177215/elsa_zt4z0a.jpg"
             )
-User.create!(
-              email: "dev5@test.com",
-              username: "dev5",
-              password: "password",
-              first_name: "dev",
-              last_name: "test",
-              admin: false,
-              organization: dev_org,
-              developer: true,
-              group: "developer",
-            )
-p "5 devs created"
+p "4 devs created"
 
 # Projects
 Project.create(
