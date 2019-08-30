@@ -5,7 +5,7 @@
   border-radius: 4px;
   background-color: $teal;
   -webkit-transition: background-color 400ms ease, opacity 400ms ease,color 400ms ease;
-  transition: background-color 400ms ease, opcaity 400ms ease, color 400ms ease;
+  transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
   color: #fff;
   font-size: 15px;
   line-height: 20px;
@@ -24,26 +24,34 @@
 }
 
 /* ***********************SECONDARY BTN *******************/
-.btnsignup{
-  margin-left: 10px ;
-  padding : 12px 35px;
+.yellow-button {
+  margin-left: 10px;
+  padding : 15px 32px;
+  height: 100%;
   border-radius: 4px;
   background-color: $marigold;
-  -webkit-transition: background-color 400ms ease, opacity 400ms ease,color 400ms ease;
-  transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
-  color: black;
-  font-size: 15px;
-  line-height: 20px;
-  letter-spacing: 2px;
-  text-decoration:none;
-  text-transform: uppercase;
   font-family: Montserrat, sans-serif;
-  font-weight: lighter;
-}
-
-.btnsignup:hover{
-  background-color: $dark-gray;
-  color: #fff;
+  color: white;
+  font-size: 17px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   font-weight: lighter;
   text-decoration: none;
+  text-shadow: $text-shadow-dark;
+  line-height: 20px;
+  border-bottom: none;
+  -webkit-transition:
+    background-color 400ms ease,
+    opacity 400ms ease,
+    color 400ms ease;
+  transition:
+    background-color 400ms ease,
+    opacity 400ms ease,
+    color 400ms ease;
+}
+
+.yellow-button:hover {
+  background-color: white;
+  color: $marigold;
+  box-shadow: 0px 0px 3px 1px rgba(200,200,200,0.1);
 }

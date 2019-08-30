@@ -20,8 +20,10 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.user = current_user
 
-    params[:files].values.each do |file|
-      @project.project_files.new(project: @project, name: file[:name], format: (file[:url]).split(//).last(4).join, file_url: file[:url])
+    if params[:files].present?
+      params[:files].values.each do |file|
+        @project.project_files.new(project: @project, name: file[:name], format: (file[:url]).split(//).last(4).join, file_url: file[:url])
+      end
     end
 
     authorize @project
