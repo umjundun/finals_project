@@ -1,12 +1,24 @@
-<div class="card-engagement">
-  <h5 class="card-engagement-title">Project name</h5>
-  <p class="card-engagement-description">Learn how to easily customize and modify your app’s design to fit your
-  brand across all mobile platform styles.</p>
-  <a href="/" class="btn-project">Project info <i class="fas fa-chevron-right"></i></a>
-</div>
-<div class="card-engagement">
- <h5 class="card-engagement-title">Project name</h5>
-  <p class="card-engagement-description">Learn how to easily customize and modify your app’s design to fit your
-  brand across all mobile platform styles.</p>
-  <a href="/" class="btn-project">Project info <i class="fas fa-chevron-right"></i></a>
-</div>
+<% if @user.engagements %>
+  <% @user.engagements.each do |eng| %>
+    <h2>Status: <%= eng.status %></h2>
+    <div class="card-engagement">
+      <h5 class="card-engagement-title"><%= eng.project.title %></h5>
+      <p class="card-engagement-description"><%= eng.project.description %></p>
+      <a href="<%= user_engagement_path(current_user, eng) %>" class="btn-project">Project info <i class="fas fa-chevron-right"></i></a>
+    </div>
+  <% end %>
+  <% @user.projects.each do |proj| %>
+    <% proj.engagements.each do |eng| %>
+      <% if eng.status != "active" && eng.status != "Active" && eng.status != "Closed" %>
+        <h2>Status: <%= eng.status %></h2>
+        <div class="card-engagement">
+          <h5 class="card-engagement-title"><%= eng.project.title %></h5>
+          <p class="card-engagement-description"><%= eng.project.description %></p>
+          <a href="<%= user_engagement_path(current_user, eng) %>" class="btn-project">Project info <i class="fas fa-chevron-right"></i></a>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+<% else %>
+  <p>You currently have no engagement.</p>
+<% end %>
