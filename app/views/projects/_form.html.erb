@@ -8,12 +8,14 @@
       </ul>
     </div>
   <% end %>
-  <p> Please select project type: <%= f.select :category, ['Website', 'Other'], required: true %></p>
-  <p> Please choose a deadline for each developper: <%= f.select :deadline, [1, 2, 3, 4, 5, 6, 7], required: true %> day(s)</p>
+  <p>Please select project type: <%= f.select :category, ['Website', 'Other'], required: true %></p>
+  <p>Please choose a deadline for each developper: <%= f.select :deadline, [1, 2, 3, 4, 5, 6, 7], required: true %> day(s)</p>
   <%= f.input :title, required: true %>
   <%= f.input :description, required: true %>
   <%= f.hidden_field :organization_id, value: current_user.organization_id, required: true %>
+  <p>Upload project files:</p>
   <p id="upload_widget_opener">Upload multiple images</p>
+  <p class="mt-3">Project status: <%= f.select :status, ['Active', 'Closed'] %></p>
   <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>
 

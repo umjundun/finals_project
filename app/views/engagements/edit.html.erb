@@ -13,7 +13,7 @@
 
   <div class="subsection-title"><%= @engagement.project.title %></div>
     <div class="column is-3 is-offset-1">
-      <% if engage_author(@engagement) %>
+      <% if user_signed_in? && current_user.id == @engagement.user_id %>
         <div class="bg-light pa3 mb4 border-radius-3">
           <p class="f6 pb1">Project status:</p>
           <div class="button-group">
@@ -22,8 +22,8 @@
           </div>
         </div>
       <% end %>
-      <% if user_signed_in? && current_user.id != @engagement.user_id %>
-        <%= f.select :status, ['Accepted', 'Rejected', 'Complete'] %>
+      <% if user_signed_in? && current_user.id == @engagement.project.user_id %>
+        <%= f.select :status, ['Accepted', 'Rejected'] %>
         <%= f.submit "Submit", class: "btn btn-primary" %>
       <% end %>
     </div>
