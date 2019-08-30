@@ -131,7 +131,7 @@ User.create!(
               organization: dev_org,
               developer: true,
               group: "developer",
-              remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567187627/elsa_rdkdms.jpg"
+              remote_photo_url: "https://lumiere-a.akamaihd.net/v1/images/6d7454cea6644379adc7e529c5790a28078a2823.jpeg"
             )
 p "4 devs created"
 
