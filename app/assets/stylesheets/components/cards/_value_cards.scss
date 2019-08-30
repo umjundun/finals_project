@@ -1,7 +1,7 @@
-.section-container h2{
+.section-container h2
+{
   font-weight:400;
 }
-
 
 .home-value-cards {
   margin: 0 auto;
@@ -26,6 +26,7 @@
   box-shadow: $box-shadow;
   border-radius: 5px;
 }
+
 .home-value-card-img {
   height: 120px;
 }
@@ -43,19 +44,16 @@
   text-align: center;
 }
 
-
 .home-value-card-content h3 {
   font-weight: 400;
   text-align: left;
   padding-bottom: 20px;
   color: black;
-
 }
 
 .home-value-card-content p {
   font-size: 12px;
   text-align: left;
-
 }
 
 

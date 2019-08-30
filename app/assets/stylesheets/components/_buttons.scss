@@ -1,6 +1,7 @@
 /* ***********************PRIMARY BTN *******************/
 .btnlogin {
-  padding : 12px 20px 12px 20px;
+   margin-left: 10px ;
+  padding : 15px 35px;
   border-radius: 4px;
   background-color: $teal;
   -webkit-transition: background-color 400ms ease, opacity 400ms ease,color 400ms ease;
@@ -13,21 +14,16 @@
   text-transform: uppercase;
   font-family: Montsserat, sans-serif;
   font-weight: 100;
-
 }
 
 .btnlogin:hover{
-  background-color: $dark-gray;
+  background-color: #32343a;
   color: #fff;
   font-weight: 100;
   text-decoration: none;
 }
 
 /* ***********************SECONDARY BTN *******************/
-
-.btnsignup{
-  padding : 12px 20px 12px 20px;
-
 .yellow-button {
   margin-left: 10px;
   padding : 15px 32px;
@@ -39,7 +35,6 @@
   font-size: 17px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  font-family: Montsserat, sans-serif;
   font-weight: lighter;
   text-decoration: none;
   text-shadow: $text-shadow-dark;
@@ -60,5 +55,3 @@
   color: $marigold;
   box-shadow: 0px 0px 3px 1px rgba(200,200,200,0.1);
 }
-
-
