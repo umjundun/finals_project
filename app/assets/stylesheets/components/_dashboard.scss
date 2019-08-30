@@ -90,8 +90,14 @@
   position: relative;
   line-height: .5em;
   &:hover {
+    cursor: pointer;//fix
     color: $marigold;
   }
+}
+
+.dash-nav-links > *:hover {
+  cursor: pointer;//fix
+  color: $marigold;
 }
 
 .dash-nav-links p {
