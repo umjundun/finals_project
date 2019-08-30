@@ -2,19 +2,17 @@
   margin: 0px 0 0px 0;
   background-image: url('https://res.cloudinary.com/caitlinsnyder/image/upload/v1567111571/export_1_ygcvxa.png');
   position: relative;
-  background-size: 1300px;
   background-repeat: no-repeat;
+  text-align: center;
 }
 
 #landing-banner h1 {
   padding: 0 0 10px 0;
-  color: white;
   letter-spacing: 3px;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
   font-weight: bold;
   font-size: 1em;
 }
-
+// NOT USED FOR THE MOMENT
 .highlight {
   color: $deep-gray;
   background-color: white;

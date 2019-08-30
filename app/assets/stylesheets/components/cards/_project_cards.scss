@@ -1,3 +1,9 @@
+
+.section-container.projects {
+  padding-bottom:0;
+}
+
+
 .cards-project {
   margin: 0;
   padding: 0px 0 40px 0;
@@ -12,9 +18,10 @@
   height: 120px;
   width: 550px;
   background: white;
-  box-shadow: 5px 5px 5px rgba(160,160,160,0.1);
+  box-shadow: $box-shadow;
   display: flex;
   align-items: center;
+  border-radius: 5px;
 }
 
 .card-project img {
