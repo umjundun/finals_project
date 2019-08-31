@@ -1,16 +1,38 @@
-<% if current_user.photo.present? %>
-  <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-<% else %>
-  <%= cl_image_tag "avatar_blank_hmbgqy.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-<% end %>
+<div id="nav-avatar-block">
 
-<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-  <%= link_to "Dashboard", user_path(current_user), class: "dropdown-item" %>
-  <% if current_user.group == "ngo" %>
-    <%= link_to "New Project", new_project_path, class: "dropdown-item" %>
-    <%= link_to "My Projects", projects_user_path(current_user), class: "dropdown-item" %>
+  <% if current_user.photo.present? %>
+    <%= cl_image_tag current_user.photo, class: "user-avatar", id: "nav-user-avatar" %>
+  <% else %>
+    <%= cl_image_tag "avatar_blank_hmbgqy.png", class: "user-avatar", id: "nav-user-avatar" %>
   <% end %>
-  <%= link_to "Engagements", user_engagements_path(current_user), class: "dropdown-item" %>
-  <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %>
-  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+
+  <div id="nav-user-menu">
+
+    <!-- ALL USERS SEE DASHBAORD -->
+    <div class="nav-menu-link">
+      <%= link_to "Dashboard", user_path(current_user), class: "nav-link" %>
+    </div>
+
+    <!-- ONLY NGOS CAN CREATE PROJECT AND VIEW THEIR PROJECTS -->
+    <% if current_user.group == "ngo" %>
+      <div class="nav-menu-link">
+        <%= link_to "New Project", new_project_path, class: "nav-link" %>
+      </div>
+      <div class="nav-menu-link">
+        <%= link_to "My Projects", projects_user_path(current_user), class: "nav-link" %>
+      </div>
+    <% end %>
+
+    <!-- ALL USERS CAN SEE ENGAGEMENTS AND SETTINGS AND LOG OUT-->
+    <div class="nav-menu-link">
+      <%= link_to "Engagements", user_engagements_path(current_user), class: "nav-link" %>
+    </div>
+    <div class="nav-menu-link">
+      <%= link_to "Settings", edit_user_registration_path, class: "nav-link" %>
+    </div>
+    <div class="nav-menu-link">
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+    </div>
+
+  </div>
 </div>
