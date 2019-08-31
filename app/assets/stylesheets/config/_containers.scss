@@ -26,7 +26,10 @@ body {
   background-color: white;
 }
 
-
+// .section-container h2
+// {
+//   font-weight:400;
+// }
 
 
 .call-to-action-container {
@@ -53,13 +56,13 @@ body {
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .section-container {
-    font-size: 20px;
+    font-size: 40px;
   }
 }
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .section-container {
-    font-size: 30px;
+    font-size: 40px;
   }
 }
 // Large devices (desktops, 992px and up)

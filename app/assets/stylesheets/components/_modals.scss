@@ -12,12 +12,15 @@
 }
 
 .modal-content-container {
-  margin: 10% auto; /* 15% from the top and centered */
+  margin: 10% auto;
   padding: 8vh 4vw 7vh 4vw;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   background-color: white;
   box-shadow: $box-shadow;
   border-radius: $border-radius;
-  background-image: url(https://res.cloudinary.com/caitlinsnyder/image/upload/v1567086073/img5_fksiak.png);
+  background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(https://res.cloudinary.com/caitlinsnyder/image/upload/v1567086073/img5_fksiak.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -28,10 +31,12 @@
 
 .modal-content-container h3 {
     padding: 0 0 5px 0;
+    text-align: center;
 }
 
-#signup-submit-button {
-  margin: 5vh 0 0 0;
+.modal-submit-button {
+  margin: 4vh auto 2vh auto;
+  width: 100%;
 }
 
 #modal-signup-button {
@@ -43,25 +48,25 @@
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .modal-container {
-    font-size: 20px;
+    font-size: 40px;
   }
   .modal-content-container {
-    width: 100vw;
+    width: 80vw;
   }
 }
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .modal-container {
-    font-size: 20px;
+    font-size: 40px;
   }
   .modal-content-container {
-    width: 100vw;
+    width: 80vw;
   }
 }
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .modal-container {
-    font-size: 30px;
+    font-size: 40px;
   }
   .modal-content-container {
     width: 50vw;

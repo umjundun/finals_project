@@ -2,16 +2,15 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top scrolling-navbar" id="navbar">
   <%= link_to root_path, class: "navbar-brand " do %>
     <%= image_tag "logo.png" %>
-    <% end %>
+  <% end %>
 
-<%= form_tag("/search", method: "get", class: "search-bar") do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find your next project"
-      %>
-      <%= submit_tag "Search", class: "yellow-button" %>
-    <% end %>
+  <%= form_tag("/search", method: "get", class: "search-bar") do %>
+    <%= text_field_tag :query,
+                        params[:query],
+                        class: "form-control",
+                        placeholder: "Find your next project" %>
+    <%= submit_tag "Search", class: "yellow-button" %>
+  <% end %>
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -29,9 +28,13 @@
         <li class="nav-item dropdown">
           <%= render 'shared/menus/user_avatar' %>
         </li>
+
       <% else %>
         <li class="nav-item">
-         <a href="#login" class="btnlogin" data-toggle="modal">Log In</a>
+          <a href="#" class="teal-button" id="modal-login-button">
+            Log In
+            <%= render "shared/devise_partials/modal_login" %>
+          </a>
         </li>
       <% end %>
     </ul>
