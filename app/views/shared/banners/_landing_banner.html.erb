@@ -4,7 +4,10 @@
       <h2><span>Work on projects that matter.</span></h2>
       <div class="signup-calltoaction">
         <% unless current_user.present? %>
-             <a href="#signup" class="yellow-button" data-toggle="modal">Sign Up</a>
+           <a href="#" class="yellow-button" id="modal-signup-button">
+          <%= render "shared/devise_partials/modal_sign_up" %>
+             Sign Up
+           </a>
         <% end %>
      </div>
   </div>

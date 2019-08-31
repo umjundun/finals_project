@@ -1,4 +1,3 @@
-
 const buttonProfile = document.getElementById('dash-profile-button');
 const buttonEngagements = document.getElementById('dash-engagements-button');
 const buttonSettings = document.getElementById('dash-settings-button');

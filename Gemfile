@@ -38,4 +38,7 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   # gem 'dotenv-rails'
+  # gem 'therubyracer'
+  # gem 'sass-rails', "  ~> 3.1.0"
+  # gem 'coffee-rails', "~> 3.1.0"
 end

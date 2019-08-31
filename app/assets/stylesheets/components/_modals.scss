@@ -1,0 +1,78 @@
+.modal-container {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content-container {
+  margin: 10% auto; /* 15% from the top and centered */
+  padding: 8vh 4vw 7vh 4vw;
+  background-color: white;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  background-image: url(https://res.cloudinary.com/caitlinsnyder/image/upload/v1567086073/img5_fksiak.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.modal-content-container > * {
+  font-size: inherit !important;
+}
+
+.modal-content-container h3 {
+    padding: 0 0 5px 0;
+}
+
+#signup-submit-button {
+  margin: 5vh 0 0 0;
+}
+
+#modal-signup-button {
+  margin-top: 3vh;
+}
+
+
+// RESPONSIVENESS
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .modal-container {
+    font-size: 20px;
+  }
+  .modal-content-container {
+    width: 100vw;
+  }
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .modal-container {
+    font-size: 20px;
+  }
+  .modal-content-container {
+    width: 100vw;
+  }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .modal-container {
+    font-size: 30px;
+  }
+  .modal-content-container {
+    width: 50vw;
+  }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .modal-container {
+    font-size: 40px;
+  }
+  .modal-content-container {
+    width: 50vw;
+  }
+}
