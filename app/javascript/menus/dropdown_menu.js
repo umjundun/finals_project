@@ -1,21 +1,25 @@
-let hamburger = document.getElementById('hamburger-icon');
+const hamburger = document.getElementById('hamburger-icon');
 
-let hamburgerMenu = document.getElementById('hamburger-menu');
+const hamburgerMenu = document.getElementById('hamburger-menu');
+
+const body = document.getElementById('global-content-container');
+
+const navbar = document.getElementById('global-navbar');
 
 export const hamburgerEvent = () => {
+
   if (hamburger) {
     hamburger.addEventListener("click", (event) => {
-      hamburgerMenu.classList.toggle("hidden");
+      hamburgerMenu.style.display = "block";
     });
+    
+    body.addEventListener("click", (event) => {
+      hamburgerMenu.style.display = "none";
+    });
+    //
+    // navbar.addEventListener("click", (event) => {
+    //   hamburgerMenu.style.display = "none";
+    // });
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.addEventListener("click", (event) => {
-      if (event.target == hamburgerMenu) {
-        console.log("window clicked");
-        hamburgerMenu.style.display = "none";
-      }
-    });
   }
 }
-//
-// export { hamburgerEvent };
