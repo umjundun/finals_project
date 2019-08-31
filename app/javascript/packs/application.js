@@ -8,3 +8,6 @@ initMapbox();
 
 import { hamburgerEvent } from '../menus/dropdown_menu.js';
 hamburgerEvent();
+
+import { signUpEvent } from '../modals/modalSignUp.js';
+signUpEvent();

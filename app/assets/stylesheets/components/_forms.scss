@@ -93,6 +93,19 @@ input, textarea {
   border-bottom-width: 3px;
 }
 
+// UDPATE CLASS NAME IF REMOVE BOOTSTRAP
+.form-control:focus {
+  box-shadow: inset 0 0px 3px $marigold, 0 0px 3px $marigold;
+  border: none;
+}
+
+// UDPATE CLASS NAME IF REMOVE BOOTSTRAP
+.form-control-label {
+  padding: 15px 0 0 0;
+  text-align: left;
+  display: block;
+}
+
 input:focus, textarea:focus {
   border-bottom: 4px solid $marigold;
   background-color: white;
@@ -121,9 +134,12 @@ input:focus, textarea:focus {
 
 
 
+
+
+
 // SLIDER
 .slider-container {
-  width: 100%; /* Width of the outside container */
+  width: 100%;
 }
 
 .slider-container input {
@@ -131,17 +147,16 @@ input:focus, textarea:focus {
 }
 .slider-container input:focus {
   background: $marigold-trans
-  // border-bottom: none;
 }
 
 /* The slider itself */
 .slider {
-  -webkit-appearance: none;  /* Override default CSS styles */
+  -webkit-appearance: none;
   appearance: none;
-  width: 100%; /* Full-width */
-  height: 25px; /* Specified height */
-  background: $marigold-trans-2; /* Grey background */
-  outline: none; /* Remove outline */
+  width: 100%;
+  height: 25px;
+  background: $marigold-trans-2;
+  outline: none;
   border: none;
 }
 
@@ -172,6 +187,8 @@ input:focus, textarea:focus {
   background: $marigold; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }
+
+
 
 
 

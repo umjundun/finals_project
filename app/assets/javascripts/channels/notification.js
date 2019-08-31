@@ -26,5 +26,3 @@ App.notifications = App.cable.subscriptions.create("NotificationsChannel", {
     return "<p> <strong>" + data.user + ": </strong>" + data.project_name + "</p>";
   }
 });
-
-
