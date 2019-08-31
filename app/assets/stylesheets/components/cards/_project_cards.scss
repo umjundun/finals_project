@@ -8,14 +8,13 @@
   padding: 0px 0 40px 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 24px;
   flex-wrap: wrap;
 }
 
 .card-project {
   overflow: hidden;
   height: 120px;
-  width: 550px;
   background: white;
   box-shadow: $box-shadow;
   display: flex;
@@ -58,9 +57,12 @@
 
 
 // Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
+@media (max-width: 575px) {
   .cards-project {
     grid-template-columns: 1fr;
+  }
+  .card-project {
+    width: 450px;
   }
 }
 
@@ -69,12 +71,18 @@
   .cards-project {
     grid-template-columns: 1fr;
   }
+  .card-project {
+    width: 470px;
+  }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .cards-project {
     grid-template-columns: 1fr;
+  }
+  .card-project {
+    width: 500px;
   }
 }
 
@@ -83,11 +91,17 @@
   .cards-project {
     grid-template-columns: 1fr 1fr;
   }
+  .card-project {
+    width: 470px;
+  }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .project-cards {
     grid-template-columns: 1fr 1fr;
+  }
+  .card-project {
+    width: 550px;
   }
 }

@@ -11,3 +11,6 @@ hamburgerEvent();
 
 import { signUpEvent } from '../modals/modalSignUp.js';
 signUpEvent();
+
+import { loginEvent } from '../modals/modalLogin.js';
+loginEvent();
