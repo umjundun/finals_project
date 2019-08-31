@@ -1,42 +1,35 @@
+<div id="global-navbar">
 
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top scrolling-navbar" id="global-navbar">
-  <%= link_to root_path, class: "navbar-brand " do %>
+  <!-- LOGO -->
+  <%= link_to root_path, id: "nav-logo-link" do %>
     <%= image_tag "logo.png" %>
   <% end %>
 
-  <%= form_tag("/search", method: "get", class: "search-bar") do %>
-    <%= text_field_tag :query,
-                        params[:query],
-                        class: "form-control",
-                        placeholder: "Find your next project" %>
-    <%= submit_tag "Search", class: "yellow-button" %>
-  <% end %>
+  <!-- SEARCH BAR -->
+  <div class="nav-center-items">
+    <%= form_tag("/search", method: "get", class: "search-bar") do %>
+      <%= text_field_tag :query,
+                          params[:query],
+                          class: "form-control",
+                          placeholder: "Find your next project" %>
+      <%= submit_tag "Search", class: "yellow-button" %>
+    <% end %>
+  </div>
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-          <div id="notifications">
-          <%#= render 'shared/menus/notification' %>
-          </div>
-        </li>
-        <!-- Hamburger nav button -->
-        <li class="nav-item dropdown" id="hamburger-icon">
-          <%= render 'shared/menus/hamburger' %>
-        </li>
-        <!-- User avator dropdown button -->
-        <li class="nav-item dropdown">
-          <%= render 'shared/menus/user_avatar' %>
-        </li>
-
-      <% else %>
-        <li class="nav-item">
-          <a href="#" class="teal-button" id="modal-login-button">
-            Log In
-            <%= render "shared/devise_partials/modal_login" %>
-          </a>
-        </li>
-      <% end %>
-    </ul>
+  <!-- NAVIGATION OPTIONS -->
+  <div class="nav-right-items">
+    <% if user_signed_in? %>
+      <%#= render 'shared/menus/notification' %>
+    <!-- Hamburger nav button -->
+      <%= render 'shared/menus/hamburger' %>
+    <!-- User avator dropdown button -->
+      <%= render 'shared/menus/user_avatar' %>
+    <% else %>
+      <a href="#" class="teal-button" id="modal-login-button">
+        Log In
+        <%= render "shared/devise_partials/modal_login" %>
+      </a>
+    <% end %>
   </div>
 </div>

@@ -8,17 +8,21 @@ const button = document.getElementById("modal-login-button");
 // const close = document.getElementById("modal-signup-close");
 
 export const loginEvent = () => {
-  // When the user clicks the button, open the modal
-  button.addEventListener("click", (event) => {
-    console.log("button clicked");
-    modal.style.display = "block";
-  });
 
-  // When the user clicks anywhere outside of the modal, close it
-  window.addEventListener("click", (event) => {
-    if (event.target == modal) {
-      console.log("window clicked");
-      modal.style.display = "none";
-    }
-  });
+  if (button) {
+  // When the user cli
+  // When the user clicks the button, open the modal
+    button.addEventListener("click", (event) => {
+      console.log("button clicked");
+      modal.style.display = "block";
+    });
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.addEventListener("click", (event) => {
+      if (event.target == modal) {
+        console.log("window clicked");
+        modal.style.display = "none";
+      }
+    });
+  }
 }

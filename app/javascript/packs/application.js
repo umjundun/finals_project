@@ -6,8 +6,13 @@ import { initMapbox } from '../plugins/init_mapbox';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 initMapbox();
 
-import { hamburgerEvent } from '../menus/dropdown_menu.js';
+
+import { hamburgerEvent } from '../menus/hamburger_menu.js';
 hamburgerEvent();
+
+import { avatarEvent } from '../menus/avatar_menu.js';
+avatarEvent();
+
 
 import { signUpEvent } from '../modals/modalSignUp.js';
 signUpEvent();
