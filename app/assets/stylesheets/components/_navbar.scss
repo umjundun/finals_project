@@ -24,14 +24,15 @@
 }
 
 #hamburger-icon {
-  padding: 0px 5px 3px 0px;
+  padding: 0px 10px 3px 0px;
   color: $marigold;
   font-size: 30px;
 }
 
 #hamburger-menu {
+  display: none;
   position: absolute;
-  top: 50px;
+  top: 40px;
   left: -100px;
   width: 120px;
   padding: 7px 0 7px 0px;
@@ -47,10 +48,6 @@
 
 .nav-menu-link:hover {
   background-color: rgb(250,250,250);
-}
-
-.hidden {
-  display: none;
 }
 
 .search-bar {

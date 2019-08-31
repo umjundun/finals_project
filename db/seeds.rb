@@ -58,7 +58,7 @@ p "1 admin user created"
 
 # Users - NGO Montreal Clothes Closet
 clothes_closet_rep = User.create!(
-                      email: "becky@clothescloset.com",
+                      email: "becky@clothescloset.org",
                       username: "ngo",
                       password: "password",
                       first_name: "Becky",
