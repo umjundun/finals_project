@@ -203,27 +203,33 @@ input:focus, textarea:focus {
 
 
 // RESPONSIVENESS
+// Smallest device
+@media (max-width: 575px) {
+  .form-container {
+    font-size: 40px;
+  }
+}
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .form-container {
-    font-size: 20px;
+    font-size: 40px;
   }
 }
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .form-container {
-    font-size: 30px;
+    font-size: 45px;
   }
 }
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .form-container {
-    font-size: 40px;
+    font-size: 55px;
   }
 }
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .form-container {
-    font-size: 50px;
+    font-size: 55px;
   }
 }

@@ -20,7 +20,10 @@
   background-color: white;
   box-shadow: $box-shadow;
   border-radius: $border-radius;
-  background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(https://res.cloudinary.com/caitlinsnyder/image/upload/v1567086073/img5_fksiak.png);
+  background-image: linear-gradient(
+    rgba(255,255,255,0.6),
+    rgba(255,255,255,0.6)), 
+    url(https://res.cloudinary.com/caitlinsnyder/image/upload/v1567086073/img5_fksiak.png);
   background-size: cover;
   background-repeat: no-repeat;
 }

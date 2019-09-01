@@ -31,22 +31,30 @@
 
 // DASHBOARD CONTENT
 .dash-container {
-  margin: 0 auto;
-  width: 90vw;
+  margin: 0;
+  padding: 20px 4vw 0 4vw;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   background-color: white;
-  background-image: url(https://res.cloudinary.com/caitlinsnyder/image/upload/v1567086072/card_u2x2no.png);
+  background-image: linear-gradient(
+    rgba(255,255,255,0),
+    rgba(255,255,255,0)),
+    url(https://res.cloudinary.com/caitlinsnyder/image/upload/v1567086072/card_u2x2no.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right top;
 }
 
 .dash-welcome-card {
-  margin: 0 0 20px 0;
+  margin: 0;
   padding: 20px;
   display: flex;
   width: 90vw;
   flex-direction: column;
   justify-content: space-around;
+  background-color: rgba(255,255,255,0.8);
   background-image: url(https://res.cloudinary.com/caitlinsnyder/image/upload/v1567086073/welcomeback_eaktec.jpg);
   background-repeat: no-repeat;
   background-position: right;
@@ -57,10 +65,10 @@
 
 .dash-tab-container {
   margin: 10px 0 20px 0;
+  padding: 10px 0 0 0;
   width: 90vw;
   min-height: 60vh;
   display: flex;
-  flex-direction: row;
 }
 
 .dash-tab-container > * {
@@ -68,27 +76,24 @@
 }
 
 .dash-card-nav {
-  margin: 0 20px 20px 0;
-  padding: 20px 25px 25px 25px;
-  width: 16vw;
-  height: 20vw;
+  margin: 0;
+  padding: 25px 0 0 25px;
   flex-grow: 0;
 }
 
 .dash-panel-nav {
-  margin: 0;
-  width: 20vw;
+  // margin: 0 20px 0 0;
+  // width: 50px;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: stretch;;
-  flex-grow: 0;
+  align-items: stretch;
 }
 
 .dash-nav-links {
   margin: 0;
-  padding: 0 0 5% 0;
+  padding: 0;
   display: flex;
-  align-items:flex-start;
+  align-items: flex-start;
   position: relative;
   line-height: .5em;
   &:hover {
@@ -109,14 +114,14 @@
 }
 
 .dash-nav-links i {
-  padding: 0 10% 0 0;
+  padding: 0 1.5vw 0 0;
   color: $teal;
   font-size: .5em;
 }
 
 .dash-panel-content {
+  min-height: 70vh;
   flex-grow: 1;
-  margin: 0 0 20px 0;
 }
 
 .dash-active {
@@ -128,34 +133,36 @@
 }
 
 .dash-container-row {
-  flex-direction: flex;
+  flex-grow: 1;
 }
 
 .dash-container-column {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  flex-grow: 1;
 }
 
 // PROFILE
 .dash-square-cards {
   display: flex;
   flex-direction: column;
-  justify-content:space-between;
+  justify-content:space-around;
   flex-grow: 0;
 }
 
 .dash-square-card {
-  margin: 0;
+  margin: auto;
   padding: 2vw;
-  height: 20vw;
-  width: 20vw;
+  height: 275px;
+  width: 285px;
+  flex-grow: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content:center;
   box-shadow: 0 $card-box-shad-h $card-box-shad-v 0 $card-box-shad-color;
-  background-color: white;
+  background-color: rgba(255,255,255,0.8);
   border-radius: 10px;
   font-size: 15px;
   text-align: center;
@@ -204,16 +211,15 @@
   padding: 0px 5px;
 }
 
-
 .dash-stats-card {
-  margin-left: 20px;
-  padding: 20px;
-  width: 100%;
+  margin: 0 0 0 20px;
+  padding: 30px 20px 20px 20px;
+  flex-grow: 1;
   box-shadow: 0 $card-box-shad-h $card-box-shad-v 0 $card-box-shad-color;
   font-size: 15px;
   text-align: center;
   border-radius: 10px;
-  background-color: white;
+  background-color: rgba(255,255,255,0.8);
   text-align: left;
 }
 
@@ -222,14 +228,15 @@
   margin: 0 0 15px 0;
   padding: 20px 20px 10px 20px;
   width: 100%;
-  min-height: 90px;
+  min-height: 80;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-start;
   box-shadow: 0 $card-box-shad-h $card-box-shad-v 0 $card-box-shad-color;
   border-radius: 10px;
-  font-weight: 200;
+  background-color: rgba(255,255,255,0.8);
+  // font-weight: 200;
 }
 
 .card-engagement-description {
@@ -238,15 +245,15 @@
 
 .card-settings {
   margin: 0;
-  padding: 20px;
+  padding: 30px 20px 20px 20px;
   width: 100%;
   min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: left;
+  text-align: center;
   box-shadow: 0 $card-box-shad-h $card-box-shad-v 0 $card-box-shad-color;
   border-radius: 10px;
-  font-weight: 200;
 }
 
 .btn-project {
@@ -262,7 +269,7 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 2px;
-  font-weight: 100;
+  // font-weight: 100;
   text-align: center;
 
   & :hover {
@@ -272,35 +279,106 @@
 }
 
 .bookend-item {
-  margin: 0 0 20px 0;
+  margin: 0 0 30px 0;
   padding: 5px 0 5px 15px;
   border-left: $marigold 4px solid;
 }
 
 
-
 // RESPONSIVENESS
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
+// Smallest device
+@media (max-width: 575px) {
   .dash-container {
-    font-size: 20px;
+    font-size: 40px;
+  }
+  .dash-tab-container, .dash-container-row {
+    flex-direction: column;
+  }
+  .dash-panel-nav {
+    padding: 0 0 0 10px;
+    width: 80vw;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .dash-stats-card, .dash-square-card {
+    width: 80vw;
+    margin: 10px auto;
+  }
+  .dash-card-nav {
+    padding: 20px 0 20px 0;
+  }
+}
+// Small devices (landscape phones, 401px and up)
+@media (min-width: 576px) and (max-width: 768px) {
+  .dash-container {
+    font-size: 40px;
+  }
+  .dash-tab-container, .dash-container-row {
+    flex-direction: column;
+  }
+  .dash-panel-nav {
+    margin: 0 auto;
+    width: 80vw;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .dash-card-nav {
+    padding: 20px 0;
+  }
+  .dash-stats-card, .dash-square-card {
+    width: 80vw;
+    margin: 10px auto;
   }
 }
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
+@media (min-width: 769px) and (max-width: 991px) {
   .dash-container {
-    font-size: 30px;
+    font-size: 40px;
+  }
+  .dash-tab-container {
+    flex-direction: column;
+  }
+  .dash-container-row {
+    flex-direction: row;
+  }
+  .dash-panel-nav {
+    margin: 0 auto;
+    padding: 0 0 0 10px;
+    width: 80vw;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .dash-card-nav {
+    padding: 20px 0;
+    flex-direction: column;
+  }
+  .dash-square-card {
+    width: 285px;
   }
 }
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   .dash-container {
-    font-size: 40px;
+    font-size: 50px;
+  }
+  .dash-tab-container, .dash-container-row {
+    flex-direction: row;
+  }
+  .dash-panel-nav {
+    flex-direction: column;
+    width: 190px;
   }
 }
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .dash-container {
     font-size: 60px;
+  }
+  .dash-tab-container, .dash-container-row {
+    flex-direction: row;
+  }
+  .dash-panel-nav {
+    flex-direction: column;
+    width: 190px;
   }
 }
