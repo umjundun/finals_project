@@ -5,7 +5,7 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
   <div class="orgs-panel">
-    <div class="subsection-title">Learn about our NGOs</div>
+    <h3>Find an organization near you!</h3>
       <div class="org-cards">
         <% @organizations.each do |organization| %>
           <%= link_to organization_path(organization) do %>

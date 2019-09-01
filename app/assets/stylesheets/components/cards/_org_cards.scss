@@ -1,17 +1,16 @@
 .org-cards {
-  padding: 40px 0 20px 30px;
-  margin: 0px 0px 0 0;
+  margin: 0px 0 0 0px;
+  padding: 40px 40px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 15px;
+  grid-gap: 10px;
   flex-wrap: wrap;
-  width: 50vw;
   justify-content: space-around;
 }
 
 .org-card {
+  margin: auto;
   padding: 0px;
-  margin: 0px 0 0 20px;
   background-color: white;
   height: 280px;
   width: 250px;
@@ -43,18 +42,5 @@
   &:hover {
     color: rgb(140,140,140);
     font-weight: bold;
-  }
-}
-
-
-@media(max-width: 992px) {
-  .org-cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media(max-width: 768px) {
-  .org-cards {
-    grid-template-columns: 1fr;
   }
 }

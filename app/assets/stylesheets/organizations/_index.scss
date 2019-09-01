@@ -2,15 +2,108 @@
 @import "map";
 
 .orgs-index-container {
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: top;
+  background-color: white;
 }
 
 .orgs-panel {
+  padding: 70px 0px 0px 0px;
+  flex-grow: 0;
   display: flex;
   flex-direction: column;
-  padding-top: 30px;
-  align-items: top;
+  align-items: center;
+  justify-content: top;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.6),
+    rgba(255,255,255,0.6)),
+    url(https://res.cloudinary.com/caitlinsnyder/image/upload/v1567275331/image_ej5f2s.png);
+  background-size: 150%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.orgs-panel h3 {
+  margin: 0 auto;
+  padding: 0px 0 10px 0;
+  text-align: center;
+}
+
+
+
+
+
+// RESPONSIVENESS
+// Smallest device
+@media (max-width: 575px) {
+  .org-index-container {
+    font-size: 40px;
+    grid-template-columns: 1fr;
+  }
+  #map {
+    width: 100vw;
+  }
+  .org-cards {
+    width: 100vw;
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .org-index-container {
+    font-size: 40px;
+    flex-direction: column;
+  }
+  #map {
+    width: 100vw;
+  }
+  .org-cards {
+    width: 100vw;
+    grid-template-columns: 1fr;
+  }
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .org-index-container {
+    font-size: 45px;
+    flex-direction: column;
+  }
+  #map {
+    width: 100vw;
+  }
+  .org-cards {
+    width: 100vw;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .org-index-container {
+    font-size: 55px;
+    flex-direction: row;
+  }
+  #map {
+    width: 50vw;
+  }
+  .org-cards {
+    width: 50vw;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .org-index-container {
+    font-size: 55px;
+    flex-direction: row;
+  }
+  #map {
+    width: 50vw;
+  }
+  .org-cards {
+    width: 50vw;
+    grid-template-columns: 1fr 1fr;
+  }
 }
