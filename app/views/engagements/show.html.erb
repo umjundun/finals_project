@@ -1,8 +1,9 @@
-<div class="subsection-title"><%= @engagement.project.title %></div>
 <div class="section-container">
   <div class="">
+    <h4 class="text-align-left f6">Project: <%= @engagement.project.title %></h4>
     <h4 class="text-align-left f6">Description: <%= @engagement.project.description %></h4>
     <h4 class="text-align-left f6">Category: <%= @engagement.project.category %></h4>
+    <h4 class="text-align-left f6">Deadline: <%= @engagement.project.deadline %> day(s)</h4>
     <h4>Project documents:</h4>
     <ul class="list-group">
       <% @engagement.project.project_files.each do |file| %>
