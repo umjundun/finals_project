@@ -1,44 +1,25 @@
-<div class="banner-background minor-banner" id="organization-banner">
-  <div class="banner-text">
-    <h1><%= @organization.name %></h1>
-    <h2><%= @organization.mission %></h2>
-  </div>
-</div>
 
-<div class="section-container">
-  <div class="section-heading">
-    <div class="subsection-title">Active projects:</div>
-  </div>
 
-  <div class="cards-project" >
-    <% @organization.projects.each do |project| %>
-      <%= link_to project_path(project) do %>
-        <div class="card-project">
-          <img src="<%= project.organization.logo %>"/>
-          <div class="card-project-infos">
-            <h2><%= project.title %></h2>
-            <p><strong><%= project.description %></strong></p>
-          </div>
+<div class="major-container">
+  <div class="major-navigation">
+    <div class="nav-title"><%= @organization.name %></div>
+    <div class="nav-subtitle">Our mission</div>
+    <p><%= @organization.mission %></p>
+  </div>
+  <div class="major-white-panel">
+    <div class="major-card">
+      <div class="major-card-content">
+        <div class="major-card-content-box">
+          <h3>Topic 1</h3>
+          <p>Topic details</p>
         </div>
-      <% end %>
-    <% end %>
+        <div class="major-card-content-box">
+          <h3>Topic 1</h3>
+          <p>Topic details</p>
+        </div>
+      </div>
+      <div class="major-side-bar"></div>
+    </div>
   </div>
 </div>
 
-<div class="section-container">
-  <div class="subsection-title">
-    Meet <%= @organization.name %>:
-  </div>
-
-<!--   <div class="card-container organization-card-container">
-    <%# @representatives.each do |rep| %>
-      <p>
-        <%#= rep %>
-        <%# if rep.primary %>
-          <%#= (Organizational focal point) %>
-        <%# end %>
-      </p>
-    <%# end %>
-  </div> -->
-
-</div>
