@@ -3,9 +3,7 @@
 @import "value_cards";
 @import "org_cards";
 
-$card-box-shad-color: rgba(200, 200, 200, 0.3);
-$card-box-shad-v: 4px;
-$card-box-shad-h: 4px;
 
-$box-shadow: $card-box-shad-h $card-box-shad-v 0px $card-box-shad-color;
+$pcard-box-shadow: 1px 1px 1px rgba(200, 200, 200, 0.3);
+$box-shadow: 4px 4px 0px rgba(200, 200, 200, 0.3);
 $border-radius: 6px;
