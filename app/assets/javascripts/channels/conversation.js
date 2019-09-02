@@ -1,13 +1,13 @@
+//= require action_cable
+
 this.App = {};
 
 App.cable = ActionCable.createConsumer();
 
-App.messages = App.cable.subscriptions.create('MessagesChannel', {
-  received: function(data) {
-    return $('#m1').append(this.renderMessage(data));
-  },
+const conversationId = document.querySelector("[data-conversation-id]").dataset.conversationId;
 
-  renderMessage: function(data) {
-    return "<p> <b>" + data.user + ": </b>" + data.message + "</p>";
+App.messages = App.cable.subscriptions.create({ channel: 'MessageChannel', conversation_id: conversationId }, {
+  received: function(data) {
+    document.querySelector("#messages").insertAdjacentHTML("beforeend", data.messageHTML);
   }
 });
