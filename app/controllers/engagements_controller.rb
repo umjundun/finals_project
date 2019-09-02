@@ -12,6 +12,8 @@ class EngagementsController < ApplicationController
   end
 
   def show
+    @project = @engagement.project
+    @organization = @project.organization
     authorize @engagement
   end
 

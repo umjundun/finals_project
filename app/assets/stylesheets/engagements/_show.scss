@@ -1,12 +1,7 @@
-.project-banner {
-  padding: 150px 0;
-  background-size: cover;
-  background-position: center;
-  border-right: rgba(80,80,80,0.5) solid 5px;
-}
-
-.project-content {
-  padding: 12vh 7vw;
+.engagement-content {
+  // padding: 12vh 7vw;
+  display: flex;
+  flex-direction: column;
   background-image: linear-gradient(
                     rgba(255,255,255,0.1),
                     rgba(255,255,255,0.1)),
@@ -19,7 +14,7 @@
   }
 }
 
-.project-content h2 a {
+.project-content-top h2 a {
   margin: 20px 0;
   color: $teal;
 }
@@ -28,6 +23,15 @@
   color: $teal;
   font-weight: bold;
 }
+
+.engagement-content-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
 
 .project-text {
   margin: 20px 0 0 0;

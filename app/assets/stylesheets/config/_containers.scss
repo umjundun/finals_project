@@ -8,7 +8,7 @@ body {
 }
 
 #global-content-container {
-  margin-top: 65px //<-- Testing with hamburger off-click
+  margin-top: 65px; //<-- Testing with hamburger off-click
 }
 
 .full-container {
@@ -28,7 +28,7 @@ body {
   align-items: center;
   justify-content: space-around;
   background-color: white;
-  min-height: 100vh;
+  min-height: calc(100vh - 65px);
 }
 
 .section-container h2 {
@@ -39,7 +39,7 @@ body {
 .split-index-container {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  min-height: calc(100vh - 65px);
   display: flex;
   align-items: top;
   background-color: white;
