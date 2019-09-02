@@ -1,20 +1,27 @@
 .engagement-content {
-  // padding: 12vh 7vw;
+  height: calc(100vh - 65px);
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(
                     rgba(255,255,255,0.1),
                     rgba(255,255,255,0.1)),
-                    url('https://res.cloudinary.com/caitlinsnyder/image/upload/v1567399390/background_2_v026ks.png');
+                    url('https://res.cloudinary.com/caitlinsnyder/image/upload/v1567435677/yellow_fullback_2_guitai.png');
   background-size: cover;
-  background-position: center bottom;
+  background-position: right bottom;
   a {
     margin: 0px;
     text-decoration: none;
   }
 }
 
-.project-content-top h2 a {
+.engagement-content-text {
+  margin: auto 0 auto 10%;
+  padding: 20px;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 6px;
+}
+
+.engagement-content-text h2 a {
   margin: 20px 0;
   color: $teal;
 }
@@ -24,7 +31,7 @@
   font-weight: bold;
 }
 
-.engagement-content-bottom {
+.engagement-chat-text {
   display: flex;
   flex-direction: column;
 }
@@ -33,14 +40,14 @@
 
 
 
-.project-text {
+.engagement-text {
   margin: 20px 0 0 0;
   text-align: left;
   display: flex;
   flex-direction: column;
 }
 
-.project-text .teal-button {
+.engagement-text .teal-button {
   margin: 0px;
   text-align: center;
 }
@@ -53,38 +60,38 @@
 // RESPONSIVENESS
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 768px) {
-  .project-banner {
+  .engagement-banner {
     width: 100vw
   }
-  .project-content {
+  .engagement-content {
     width: 100vw
   }
 }
 // Medium devices (tablets, 768px and up)
 @media (min-width: 769px) and (max-width: 991px) {
-  .project-banner {
+  .engagement-banner {
     width: 100vw
   }
-  .project-content {
+  .engagement-content {
     width: 100vw
   }
 }
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) and (max-width: 1199px) {
-  .project-banner {
+  .engagement-banner {
     width: 50vw
   }
-  .project-content {
+  .engagement-content {
     width: 50vw
   }
 
 }
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-  .project-banner {
+  .engagement-banner {
     width: 50vw
   }
-  .project-content {
+  .engagement-content {
     width: 50vw
   }
 }

@@ -1,13 +1,6 @@
 <div class="split-index-container">
-  <div class="project-banner" style="background-image:
-                                      linear-gradient(
-                                      rgba(255,255,255,0.1),
-                                      rgba(255,255,255,0.1)),
-                                      url(<%= @organization.logo %>)">
-  </div>
-
-  <div class="project-content engagement-content">
-    <div class="engagement-content-top">
+  <div class="engagement-content">
+    <div class="engagement-content-text">
       <h2><%= link_to @engagement.project.title, project_path(@project) %></h2>
       <div class="project-text">
         <p>
@@ -27,31 +20,43 @@
         </ul>
       </div>
     </div>
-    <div class="engagement-content-bottom">
-      <p class="pb3 border-bottom">Last post <%= time_ago_in_words(@engagement.created_at) %> ago</p>
 
-      <% if @engagement.status == "Pending" && current_user.id == @engagement.project.user_id %>
-        <h4>Engagement pending approuval</h4>
-        <%= link_to "Edit engagement", edit_user_engagement_path(@engagement), class: "btnlogin" %>
+  </div>
+  <div class="project-banner" style="background-image:
+                                      linear-gradient(
+                                      rgba(255,255,255,0.1),
+                                      rgba(255,255,255,0.1)),
+                                      url(<%= @organization.logo %>)">
 
-      <% else %>
+      <div class="engagement-chat-text">
+        <p class="pb3 border-bottom">Last post <%= time_ago_in_words(@engagement.created_at) %> ago</p>
 
-        <% if user_signed_in? && current_user.id == @engagement.project.user_id %>
-          <h4 class="text-align-left f6">Currently assigned to: <%= @engagement.user.full_name %></h4>
-          <%= link_to "Message #{@engagement.user.first_name}", conversations_path(sender_id: current_user.id, recipient_id: @engagement.user.id), method: 'POST', class: "btnlogin" %>
-
-        <% elsif user_signed_in? && current_user.id == @engagement.user_id  %>
-          <%= link_to "Conversations", conversations_path %>
+        <% if @engagement.status == "Pending" && current_user.id == @engagement.project.user_id %>
+          <h4>Engagement pending approuval</h4>
           <%= link_to "Edit engagement", edit_user_engagement_path(@engagement), class: "btnlogin" %>
 
         <% else %>
-          <%= link_to "Sign up to message #{@engagement.user.name}", new_user_registration_path %>
 
+          <% if user_signed_in? && current_user.id == @engagement.project.user_id %>
+            <h4 class="text-align-left f6">Currently assigned to: <%= @engagement.user.full_name %></h4>
+            <%= link_to "Message #{@engagement.user.first_name}", conversations_path(sender_id: current_user.id, recipient_id: @engagement.user.id), method: 'POST', class: "btnlogin" %>
+
+          <% elsif user_signed_in? && current_user.id == @engagement.user_id  %>
+            <%= link_to "Conversations", conversations_path %>
+            <%= link_to "Edit engagement", edit_user_engagement_path(@engagement), class: "btnlogin" %>
+
+          <% else %>
+            <%= link_to "Sign up to message #{@engagement.user.name}", new_user_registration_path %>
+
+          <% end %>
         <% end %>
-      <% end %>
 
 
+      </div>
 
-    </div>
+
   </div>
+
+
+
 </div>
