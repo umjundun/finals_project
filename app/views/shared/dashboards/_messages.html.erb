@@ -3,11 +3,6 @@
 
    <div class="modal-content-container">
      <!-- Body -->
-     <h3><% convo.sender.full_name %></h3>
-     <% if @over_ten %>
-       <%= link_to "Show previous", '?m=all', class:'button is-link' %>
-     <% end %>
-
      <section id="messages" class="mb4">
        <% convo.messages.each do |message| %>
          <% if message.body %>

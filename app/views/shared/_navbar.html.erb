@@ -21,6 +21,8 @@
   <div class="nav-right-items">
     <% if user_signed_in? %>
       <%#= render 'shared/menus/notification' %>
+    <!-- Conversation nav button -->
+      <%= render 'shared/menus/convos' %>
     <!-- Hamburger nav button -->
       <%= render 'shared/menus/hamburger' %>
     <!-- User avator dropdown button -->

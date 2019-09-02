@@ -1,8 +1,11 @@
-<article class="message is-dark">
+<article>
   <div class="message-body">
-    <div class="inline-block"><strong><%= message.user.full_name %></strong> <%= message.message_time %></div>
+    <div>
+      <%= cl_image_tag message.user.photo, class: "user-avatar", id: "nav-user-avatar" %>
+      <p><strong><%= message.user.full_name %> <%= message.message_time %></strong></p>
+    </div>
     <div class="block pt4">
-      <div id="m1" class="f4"><%= message.body %></div>
+      <p id="m1" class="f4"><%= message.body %></p>
     </div>
   </div>
 </article>

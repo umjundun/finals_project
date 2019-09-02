@@ -17,24 +17,25 @@
 
   <div class="dash-square-card dash-square-card-msg">
     <h3>Messages</h3>
-    <% current_user.conversations.each do |convo| %>
-      <div data-conversation-id="<%= convo.id %>"></div>
-      <% if convo.recipient == current_user && current_user.engagements.where("dev_status = 'Current (Start Developing 4 Good!)'")
- %>
-        <%# raise %>
+    <% current_user.engagements.each do |engagement| %>
+      <!-- where("dev_status = 'Current (Start Developing 4 Good!)'" -->
+      <% if engagement.dev_status == "Current (Start Developing 4 Good!)" %>
+        <% @convo = engagement.project.user.conversations.find_by_recipient_id(current_user) %>
+        <% raise %>
+        <div data-conversation-id="<%= @convo.id %>"></div>
         <%# if  %>
           <div class="dash-msg-links" id="dash-msg-button">
-              <%= cl_image_tag convo.sender.photo, class: "user-avatar", id: "nav-user-avatar", id: "modal-messages-button" %>
-              <%= convo.sender.first_name %>
-              <%= render "shared/dashboards/messages", convo: convo %>
-              <%#= link_to convo.sender.first_name, conversation_messages_path(convo) %>
+              <%= cl_image_tag @convo.sender.photo, class: "user-avatar", id: "nav-user-avatar", id: "modal-messages-button" %>
+              <%= @convo.sender.first_name %>
+              <%= render "shared/dashboards/messages", convo: @convo %>
+              <%#= link_to @convo.sender.first_name, conversation_messages_path(@convo) %>
           </div>
         <%# end %>
       <% else %>
         <div class="dash-msg-links" id="dash-msg-button">
-            <%= cl_image_tag convo.recipient.photo, class: "user-avatar", id: "nav-user-avatar", id: "modal-messages-button" %>
-            <%= convo.recipient.first_name %>
-            <%= render "shared/dashboards/messages", convo: convo %>
+            <%= cl_image_tag @convo.recipient.photo, class: "user-avatar", id: "nav-user-avatar", id: "modal-messages-button" %>
+            <%= @convo.recipient.first_name %>
+            <%= render "shared/dashboards/messages", convo: @convo %>
             <%#= link_to convo.recipient.first_name, conversation_messages_path(convo) %>
         </div>
       <% end %>
