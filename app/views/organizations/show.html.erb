@@ -1,25 +1,26 @@
-
-
 <div class="major-container">
   <div class="major-navigation">
     <div class="nav-title"><%= @organization.name %></div>
-    <div class="nav-subtitle">Our mission</div>
-    <p><%= @organization.mission %></p>
+    <div class="major-subtitle">OUR MISSION:</div>
+    <div class="nav-content"><%= @organization.mission %></div>
   </div>
   <div class="major-white-panel">
     <div class="major-card">
       <div class="major-card-content">
         <div class="major-card-content-box">
-          <h3>Topic 1</h3>
-          <p>Topic details</p>
+          <div class="major-subtitle">CURRENT PROJECTS</div>
+          <div class="cards-project" >
+            <% @projects.each do |project| %>
+              <%= render 'shared/cards/project_card', project: project %>
+            <% end %>
+          </div>
         </div>
         <div class="major-card-content-box">
-          <h3>Topic 1</h3>
-          <p>Topic details</p>
+          <div class="major-subtitle">PAST PROJECTS</div>
+          <p>empty for now</p>
         </div>
       </div>
       <div class="major-side-bar"></div>
     </div>
   </div>
 </div>
-

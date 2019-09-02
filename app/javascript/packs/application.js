@@ -22,3 +22,6 @@ loginEvent();
 
 import { messagesEvent } from '../modals/modalMessage.js';
 messagesEvent();
+
+import { accordionEvent } from '../menus/accordion.js';
+accordionEvent();

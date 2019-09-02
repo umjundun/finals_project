@@ -1,8 +1,12 @@
 $text-shadow-light: 2px 2px 2px rgba(250,250,250,.3);
 $text-shadow-dark: 2px 2px 2px rgba(150,150,150,.3);
 
+
+$figma-gray: #242827;
+
 h1 {
-  font-size: 1em;
+  color: $figma-gray;
+  font-size: .8em;
 }
 
 // BASIC HEADINGS
@@ -14,10 +18,9 @@ h2 {
 h3 {
   font-size: .28em;
   color: grey;
-  font-weight:200;
 }
 
-p { 
+p {
   font-size: 16px;
 }
 
