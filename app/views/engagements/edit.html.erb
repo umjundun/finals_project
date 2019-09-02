@@ -21,8 +21,8 @@
           </label>
           <div class="input-one-line">
             <select name="engagement[dev_status]" id="dev_status">
-              <option value="current">Check-out project and begin working on task</option>
-              <option value="completed">Submit completed task and push to GitHub</option>
+              <option value="Current task">Check-out project and begin working on task</option>
+              <option value="Completed task">Submit completed task and push to GitHub</option>
             </select>
           </div>
         </div>
@@ -35,16 +35,14 @@
               Please select one of the below options: <abbr project_category="status">*</abbr>
             </label>
             <div class="input-one-line">
-              <select name="engagement[dev_status]" id="status">
-                <option value="accepted">Accept developer for engagement</option>
-                <option value="rejected">Reject developer for engagement</option>
+              <select name="engagement[status]" id="status">
+                <option value="Accepted">Accept developer for engagement</option>
+                <option value="Rejected">Reject developer for engagement</option>
               </select>
             </div>
           </div>
-
-
-
       <% end %>
+
       <%= f.submit "Submit", class: "yellow-button form-button", data: { confirm: "Thank you for your engagement!" } %>
     <% end %>
 
