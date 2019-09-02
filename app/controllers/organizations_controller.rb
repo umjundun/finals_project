@@ -2,7 +2,6 @@ class OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :update, :edit]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-
   def index
     @organizations = policy_scope(Organization).order(created_at: :desc).geocoded
     @markers = @organizations.map do |organization| {
@@ -13,7 +12,6 @@ class OrganizationsController < ApplicationController
     }
     end
   end
-
 
   def show
     authorize @organization
