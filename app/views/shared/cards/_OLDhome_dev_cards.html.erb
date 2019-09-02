@@ -1,0 +1,10 @@
+<div class="section-container">
+  <div class="section-heading">
+    <h2>Meaningful partnerships</h2>
+  </div>
+  <div class="cards-dev">
+    <% @devs.first(3).each do |user| %>
+      <%= render 'shared/cards/dev_card', user: user %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="split-index-container">
+  <div class="project-banner" style="background-image:
+                                      linear-gradient(
+                                      rgba(255,255,255,0.1),
+                                      rgba(255,255,255,0.1)),
+                                      url(<%= @organization.logo %>)">
+  </div>
+  <div class="project-content">
+    <h2><%= link_to @organization.name, organization_path(@organization) %></h2>
+    <div class="project-text">
+      <p>
+        <span class="mission"><span class="element-tag">Mission: </span> </span>
+        <%= @organization.mission %>
+      </p>
+      <p><span class="element-tag">Title:</span> <%= @project.title %></p>
+      <p><span class="element-tag">Description: </span><%= @project.description %></p>
+      <p><span class="element-tag">Category: </span><%= @project.category %></p>
+      <p><span class="element-tag">Deadline: </span><%= @project.deadline %> day(s)</p>
+    </div>
+    <% if user_signed_in? && current_user.id != @project.user_id %>
+      <%= link_to "Apply Now", new_project_engagement_path(params[:id]), class: "teal-button" %>
+    <% elsif user_signed_in? && current_user.id == @project.user_id  %>
+      <%= link_to "Edit project", edit_user_project_path(@project), class: "teal-button" %>
+    <% else %>
+      <%= link_to "Sign up to message #{@engagement.user.name}", new_user_registration_path %>
+    <% end %>
+  </div> 
+</div>
