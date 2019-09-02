@@ -20,9 +20,9 @@ class MessagesController < ApplicationController
   def create
     @message = @conversation.messages.new(message_params)
     if @message.save
-      ActionCable.server.broadcast 'messages', message: @message.body, user: @message.user.full_name
+      ActionCable.server.broadcast "messages_#{@conversation.id}", messageHTML: render_to_string(partial: "messages/show", locals: { message: @message })
 
-      redirect_to conversation_messages_path(@conversation)
+      # redirect_to conversation_messages_path(@conversation)
     end
   end
 

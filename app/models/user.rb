@@ -2,7 +2,6 @@ class User < ApplicationRecord
   has_many :engagements
   has_many :representatives
   has_many :projects
-  has_many :conversations
   has_many :messages
   belongs_to :organization
   has_many :notifications, foreign_key: :recipient_id
@@ -15,6 +14,10 @@ class User < ApplicationRecord
 
   def full_name
     self.first_name + ' ' + self.last_name
+  end
+
+  def conversations
+    Conversation.joins(messages: :user).where(users: { id: self }).distinct
   end
 
 ### FOR NGO DASHBOARD
