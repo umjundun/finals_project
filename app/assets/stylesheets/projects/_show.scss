@@ -18,15 +18,10 @@
     text-decoration: none;
   }
 }
-
+ 
 .project-content h2 a {
   margin: 20px 0;
   color: $teal;
-}
-
-.element-tag {
-  color: $teal;
-  font-weight: bold;
 }
 
 .project-text {
@@ -40,11 +35,6 @@
   margin: 0px;
   text-align: center;
 }
-
-.mission {
-  font-style: italic;
-}
-
 
 // RESPONSIVENESS
 // Small devices (landscape phones, 576px and up)
