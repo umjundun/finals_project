@@ -1,29 +1,52 @@
-<%= simple_form_for [@user, @engagement] do |f| %>
-  <% if @engagement.errors.any? %>
-    <div class="errors-container">
-      <ul>
-        <% @engagement.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="subsection-title"><%= @engagement.project.title %></div>
-    <div class="column is-3 is-offset-1">
-      <% if user_signed_in? && current_user.id == @engagement.user_id %>
-        <div class="bg-light pa3 mb4 border-radius-3">
-          <p class="f6 pb1">Project status:</p>
-          <div class="button-group">
-            <%= f.select :dev_status, ['Approved (Not currently working on this project)', 'Current (Developing 4 Good!)', 'Task Completed (Project pushed to GitHub with detailed commit messages)'] %>
-            <%= f.submit "Submit", class: "btn btn-primary" %>
-          </div>
+<div class="form-container">
+  <div class="form-content-container">
+    <h2><%= @engagement.project.title %></h2>
+    <%= simple_form_for [@user, @engagement] do |f| %>
+      <% if @engagement.errors.any? %>
+        <div class="errors-container">
+          <ul>
+            <% @engagement.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
         </div>
       <% end %>
-      <% if user_signed_in? && current_user.id == @engagement.project.user_id %>
-        <%= f.select :status, ['Accepted', 'Rejected'] %>
-        <%= f.submit "Submit", class: "btn btn-primary" %>
+
+
+      <% if user_signed_in? && current_user.id == @engagement.user_id %>
+
+        <div class="form-item">
+          <label class="inline-label">
+            Please select one of the below options: <abbr project_category="dev_status">*</abbr>
+          </label>
+          <div class="input-one-line">
+            <select name="engagement[dev_status]" id="dev_status">
+              <option value="current">Check-out project and begin working on task</option>
+              <option value="completed">Submit completed task and push to GitHub</option>
+            </select>
+          </div>
+        </div>
+
       <% end %>
-    </div>
+      <!-- NGO APPROVAL -->
+      <% if user_signed_in? && current_user.id == @engagement.project.user_id %>
+          <div class="form-item">
+            <label class="inline-label">
+              Please select one of the below options: <abbr project_category="status">*</abbr>
+            </label>
+            <div class="input-one-line">
+              <select name="engagement[dev_status]" id="status">
+                <option value="accepted">Accept developer for engagement</option>
+                <option value="rejected">Reject developer for engagement</option>
+              </select>
+            </div>
+          </div>
+
+
+
+      <% end %>
+      <%= f.submit "Submit", class: "yellow-button form-button", data: { confirm: "Thank you for your engagement!" } %>
+    <% end %>
+
   </div>
-<% end %>
+</div>
