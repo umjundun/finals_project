@@ -2,8 +2,8 @@ class User < ApplicationRecord
   has_many :engagements
   has_many :representatives
   has_many :projects
-  has_many :conversations
   has_many :messages
+  has_many :conversations, through: :messages
   belongs_to :organization
   has_many :notifications, foreign_key: :recipient_id
   mount_uploader :photo, PhotoUploader
