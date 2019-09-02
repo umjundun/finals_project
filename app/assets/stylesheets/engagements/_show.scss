@@ -1,0 +1,163 @@
+.engagement-content {
+  min-height: calc(100vh - 65px);
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(
+                    rgba(255,255,255,0.1),
+                    rgba(255,255,255,0.1)),
+                    url('https://res.cloudinary.com/caitlinsnyder/image/upload/v1567435677/yellow_fullback_2_guitai.png');
+  background-size: cover;
+  background-position: right bottom;
+  a {
+    margin: 0px;
+    text-decoration: none;
+  }
+}
+
+.engagement-content-text {
+  margin: 20vh 10% auto 10%;
+  padding: 40px 20px;
+  min-height: 55vh;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 6px;
+  text-align: left;
+}
+
+.engagement-content-text h2 a {
+  margin: 20px 0;
+  color: $teal;
+}
+
+.element-tag {
+  color: $teal;
+  font-weight: bold;
+}
+
+.engagement-banner {
+  height: calc(100vh - 65px);
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  border-left: rgba(80,80,80,0.5) solid 5px;
+}
+
+.engagement-chat-text {
+  margin: 20vh 10% auto 10%;
+  padding: 40px 20px;
+  min-height: 55vh;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.engagement-card-header {
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px rgba(80,80,80, 0.2) solid;
+}
+
+.engagement-card-header h2 {
+  margin: 0;
+  padding: 0 0 10px 0;
+  text-align: center;
+  color: $teal;
+}
+
+.engagement-card-header p {
+  margin: 0;
+  font-weight: lighter;
+  color: $light-gray;
+  font-style: italic;
+}
+
+.engagement-content-text .teal-button {
+  margin: 10px 0 0 0px;
+  text-align: center;
+}
+
+.mission {
+  font-style: italic;
+}
+
+
+
+
+// RESPONSIVENESS
+@media (max-width: 575px) {
+  .engagement-banner {
+    width: 100vw
+  }
+  .engagement-content {
+    width: 100vw
+  }
+  .engagement-card-header {
+    flex-direction: column;
+  }
+  .engagement-card-header p {
+    font-size: .3em;
+  }
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 768px) {
+  .engagement-banner {
+    width: 100vw
+  }
+  .engagement-content {
+    width: 100vw
+  }
+  .engagement-card-header {
+    flex-direction: column;
+  }
+  .engagement-card-header p {
+    font-size: .4em;
+  }
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 769px) and (max-width: 991px) {
+  .engagement-banner {
+    width: 100vw
+  }
+  .engagement-content {
+    width: 100vw
+  }
+  .engagement-card-header {
+    flex-direction: row;
+  }
+  .engagement-card-header p {
+    font-size: .3em;
+  }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) {
+  .engagement-banner {
+    width: 50vw
+  }
+  .engagement-content {
+    width: 50vw
+  }
+  .engagement-card-header {
+    flex-direction: row;
+  }
+  .engagement-card-header p {
+    font-size: .2em;
+  }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .engagement-banner {
+    width: 50vw
+  }
+  .engagement-content {
+    width: 50vw
+  }
+  .engagement-card-header {
+    flex-direction: row;
+  }
+  .engagement-card-header p {
+    font-size: .2em;
+  }
+}

@@ -1,35 +1,58 @@
-<div class="subsection-title"><%= @engagement.project.title %></div>
-<div class="section-container">
-  <div class="">
-    <h4 class="text-align-left f6">Description: <%= @engagement.project.description %></h4>
-    <h4 class="text-align-left f6">Category: <%= @engagement.project.category %></h4>
-    <h4>Project documents:</h4>
-    <ul class="list-group">
-      <% @engagement.project.project_files.each do |file| %>
-          <a href="<%= file.file_url %>"> - <%= file.name %><%= file.format %></a>
-      <% end %>
-    </ul>
+<div class="split-index-container">
+  <div class="engagement-content">
+    <div class="engagement-content-text">
+      <div class="engagement-card-header">
+        <h2><%= link_to @engagement.project.title, project_path(@project) %></h2>
+      </div>
+      <div class="project-text">
+        <p>
+          <span class="mission"><span class="element-tag">Mission: </span></span>
+          <%= @organization.mission %>
+        </p>
+        <p><span class="element-tag">Title:</span> <%= @project.title %></p>
+        <p><span class="element-tag">Description: </span><%= @project.description %></p>
+        <p><span class="element-tag">Category: </span><%= @project.category %></p>
+        <p><span class="element-tag">Deadline: </span><%= @project.deadline %> day(s)</p>
+        <p><span class="element-tag">Last submission: </span><%= @project.deadline %> ago</p>
+
+        <% if user_signed_in? && current_user.id == @engagement.project.user_id %>
+          <p><span class="element-tag">Currently assigned to: <%= time_ago_in_words(@engagement.created_at) %> ago</p>
+        <% end %>
+
+        <p><span class="element-tag">Project documents:</span></p>
+        <ul class="list-group">
+          <% @engagement.project.project_files.each do |file| %>
+              <a href="<%= file.file_url %>"> - <%= file.name %><%= file.format %></a>
+          <% end %>
+        </ul>
+        <% if user_signed_in? && current_user.id == @engagement.project.user_id %>
+          <%= link_to "Message #{@engagement.user.first_name}", conversations_path(sender_id: current_user.id, recipient_id: @engagement.user.id), method: 'POST', class: "btnlogin" %>
+        <% elsif user_signed_in? && current_user.id == @engagement.user_id  %>
+          <%= link_to "Edit engagement", edit_user_engagement_path(@engagement), class: "teal-button" %>
+        <% else %>
+          <%= link_to "Sign up to message #{@engagement.user.name}", new_user_registration_path %>
+        <% end %>
+      </div>
+    </div>
+
   </div>
-  <p class="pb3 border-bottom">Last post <%= time_ago_in_words(@engagement.created_at) %> ago</p>
+  <div class="engagement-banner" style="background-image:
+                                      linear-gradient(
+                                      rgba(255,255,255,0.1),
+                                      rgba(255,255,255,0.1)),
+                                      url(<%= @organization.logo %>)">
 
-  <% if @engagement.status == "Pending" && current_user.id == @engagement.project.user_id %>
-    <h4>Engagement pending approuval</h4>
-    <%= link_to "Edit engagement", edit_user_engagement_path(@engagement), class: "btnlogin" %>
+      <!-- <div class="engagement-chat-text">
+        <div class="engagement-card-header">
+          <h2>Conversation history</h2>
+          <p>Last post <%#= time_ago_in_words(@engagement.created_at) %> ago</p>
+        </div> -->
 
-  <% else %>
+      </div>
 
-    <% if user_signed_in? && current_user.id == @engagement.project.user_id %>
-      <h4 class="text-align-left f6">Currently assigned to: <%= @engagement.user.full_name %></h4>
-      <%= button_to "Message #{@engagement.user.first_name}", conversations_path(sender_id: current_user.id, recipient_id: @engagement.user.id), class: "yellow-button", method: :post %>
 
-    <% elsif user_signed_in? && current_user.id == @engagement.user_id  %>
-      <%= link_to "Conversations", conversations_path %>
-      <%= link_to "Edit engagement", edit_user_engagement_path(@engagement), class: "btnlogin" %>
-
-    <% else %>
-      <%= link_to "Sign up to message #{@engagement.user.name}", new_user_registration_path %>
-
-    <% end %>
-  <% end %>
   </div>
+
+
+
 </div>

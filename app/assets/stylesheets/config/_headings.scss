@@ -17,7 +17,7 @@ h3 {
   font-weight:200;
 }
 
-p {
+p { 
   font-size: 16px;
 }
 
@@ -50,4 +50,13 @@ p {
   // font-size: 35px;
   font-weight: bold;
   padding: 5px 0 7px 0;
+}
+
+.element-tag {
+  color: $teal;
+  font-weight: bold;
+}
+
+.mission {
+  font-style: italic;
 }
