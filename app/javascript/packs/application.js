@@ -19,3 +19,6 @@ signUpEvent();
 
 import { loginEvent } from '../modals/modalLogin.js';
 loginEvent();
+
+import { accordionEvent } from '../menus/accordion.js';
+accordionEvent();

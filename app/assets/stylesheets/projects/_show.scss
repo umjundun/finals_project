@@ -6,11 +6,12 @@
 }
 
 .project-content {
-  padding: 12vh 7vw;
+  width: 50vw;
+  padding: 10vh 7vw;
   background-image: linear-gradient(
                     rgba(255,255,255,0.1),
                     rgba(255,255,255,0.1)),
-                    url('https://res.cloudinary.com/caitlinsnyder/image/upload/v1567399390/background_2_v026ks.png');
+                    url('https://res.cloudinary.com/caitlinsnyder/image/upload/v1567111571/export_1_ygcvxa.png');
   background-size: cover;
   background-position: center bottom;
   a {
@@ -18,7 +19,7 @@
     text-decoration: none;
   }
 }
- 
+
 .project-content h2 a {
   margin: 20px 0;
   color: $teal;
@@ -32,7 +33,7 @@
 }
 
 .project-text .teal-button {
-  margin: 0px;
+  margin: 10px 0 0 0px;
   text-align: center;
 }
 
