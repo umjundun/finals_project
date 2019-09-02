@@ -1,14 +1,6 @@
 @import "show";
 @import "map";
 
-.orgs-index-container {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: top;
-  background-color: white;
-}
-
 .orgs-panel {
   padding: 70px 0px 0px 0px;
   flex-grow: 0;
@@ -34,14 +26,9 @@
 
 
 
-
 // RESPONSIVENESS
 // Smallest device
 @media (max-width: 575px) {
-  .org-index-container {
-    font-size: 40px;
-    grid-template-columns: 1fr;
-  }
   #map {
     width: 100vw;
   }
@@ -50,13 +37,8 @@
     grid-template-columns: 1fr;
   }
 }
-
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  .org-index-container {
-    font-size: 40px;
-    flex-direction: column;
-  }
   #map {
     width: 100vw;
   }
@@ -67,10 +49,6 @@
 }
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  .org-index-container {
-    font-size: 45px;
-    flex-direction: column;
-  }
   #map {
     width: 100vw;
   }
@@ -81,7 +59,7 @@
 }
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  .org-index-container {
+  .split-index-container {
     font-size: 55px;
     flex-direction: row;
   }
@@ -95,10 +73,6 @@
 }
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-  .org-index-container {
-    font-size: 55px;
-    flex-direction: row;
-  }
   #map {
     width: 50vw;
   }

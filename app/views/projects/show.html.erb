@@ -1,16 +1,23 @@
-<div class="project-banner">
-  <div class="banner-text">
-    <h1><%= link_to @organization.name, organization_path(@organization) %></h1>
-    <p><%= @organization.mission %></p>
-    <p><%= @project.title %></p>
-    <p><%= @project.description %></p>
-    <p>Category: <%= @project.category %></p>
-    <p>Deadline: <%= @project.deadline %> day(s)</p>
-
+<div class="split-index-container">
+  <div class="project-banner" style="background-image:
+                                      linear-gradient(
+                                      rgba(255,255,255,0.1),
+                                      rgba(255,255,255,0.1)),
+                                      url(<%= @organization.logo %>)">
+  </div>
+  <div class="project-content">
+    <h2><%= link_to @organization.name, organization_path(@organization) %></h2>
+    <div class="project-text">
+      <p><span class="mission">Mission: <%= @organization.mission %></span></p>
+      <p>Title: <%= @project.title %></p>
+      <p>Description: <%= @project.description %></p>
+      <p>Category: <%= @project.category %></p>
+      <p>Deadline: <%= @project.deadline %> day(s)</p>
+    </div>
     <% if user_signed_in? && current_user.id != @project.user_id %>
-      <%= link_to "Apply Now", new_project_engagement_path(params[:id]), class: "btn btn-primary" %>
+      <%= link_to "Apply Now", new_project_engagement_path(params[:id]), class: "teal-button" %>
     <% elsif user_signed_in? && current_user.id == @project.user_id  %>
-      <%= link_to "Edit project", edit_user_project_path(@project), class: "btn btn-primary" %>
+      <%= link_to "Edit project", edit_user_project_path(@project), class: "teal-button" %>
     <% else %>
       <%= link_to "Sign up to message #{@engagement.user.name}", new_user_registration_path %>
     <% end %>
