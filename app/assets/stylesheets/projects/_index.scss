@@ -1,1 +1,12 @@
 @import "show";
+
+#project-index-container {
+  margin: 0px 0 0px 0;
+  background-image: linear-gradient(
+    rgba(255,255,255,0.2),
+    rgba(255,255,255,0.2)),
+    url(https://res.cloudinary.com/caitlinsnyder/image/upload/v1567399396/background1_gkxwyd.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
