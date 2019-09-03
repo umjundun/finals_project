@@ -7,20 +7,20 @@
   <div class="apply-accordion-item">
     <div class="apply-content" style="display: none;">
 
-      Application form here
       <div class="form-content-container">
         <!-- LINK TO ENGAGEMENT FORM -->
-        <%= render "engagements/form", project: project, engagement: @engagement %>
-      </div>
-
         <% if user_signed_in? && current_user.id != project.user_id %>
-          <%= link_to "Submit", new_project_engagement_path(params[:id]), class: "teal-button project-submit-button" %>
+          <%#= render "engagements/form", project: project, engagement: @engagement %>
+          <%#= link_to "Submit", new_project_engagement_path(params[:id]), class: "teal-button project-submit-button" %>
         <% elsif user_signed_in? && current_user.id == project.user_id  %>
-          <%= link_to "Edit project", edit_user_project_path(project), class: "teal-button" %>
+          NEED TO FIX HERE
+          <%#= render "projects/form", project: project %>
+          <%#= link_to "Edit", edit_user_project_path(project), class: "teal-button project-submit-button" %>
         <% else %>
         <% end %>
+      </div>
 
-        </div>
+    </div>
 
 
     <button class="teal-button project-apply-button">
