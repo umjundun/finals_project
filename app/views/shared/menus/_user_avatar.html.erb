@@ -1,3 +1,5 @@
+OUT OF USE
+
 <div id="nav-avatar-block">
 
   <% if current_user.photo.present? %>
@@ -23,13 +25,7 @@
       </div>
     <% end %>
 
-    <!-- ALL USERS CAN SEE ENGAGEMENTS AND SETTINGS AND LOG OUT-->
-    <div class="nav-menu-link">
-      <%= link_to "Engagements", user_engagements_path(current_user), class: "nav-link" %>
-    </div>
-    <div class="nav-menu-link">
-      <%= link_to "Settings", edit_user_registration_path, class: "nav-link" %>
-    </div>
+    <!-- ALL USERS CAN LOG OUT-->
     <div class="nav-menu-link">
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
     </div>

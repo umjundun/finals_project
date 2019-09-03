@@ -1,10 +1,17 @@
-<%= render 'shared/banners/landing_banner' %>
-<%= render 'shared/cards/home_value_cards' %>
-<%= render 'shared/banners/mid_banner' %>
-<%= render 'shared/cards/home_project_cards' %>
+<% if user_signed_in? %>
 
-<%= render 'shared/cards/home_dev_cards' %>
-
-<%= render 'devise/registrations/new' %>
-<%= render 'devise/sessions/new' %>
-
+  <%# WHAT THE DEV and NGO SEE %>
+  <%= render 'pages/user_home' %>
+  <%= render 'devise/registrations/new' %>
+  <%= render 'devise/sessions/new' %>
+<% else %>
+  <%= render 'shared/navbar' %>
+  <%= render 'shared/banners/landing_banner' %>
+  <%= render 'shared/cards/home_value_cards' %>
+  <%= render 'shared/banners/mid_banner' %>
+  <%= render 'shared/cards/home_project_cards' %>
+  <%= render 'shared/cards/home_dev_cards' %>
+  <%= render 'devise/registrations/new' %>
+  <%= render 'devise/sessions/new' %>
+  <%= render 'shared/footer' %>
+<% end %>

@@ -1,0 +1,49 @@
+.message-body {
+// img.right prev style
+  // float: right;
+  // margin: 0px;
+  // padding: 0;
+  // width: 60px;
+  // margin-left: 20px;
+  // margin-right:0;
+  // border-radius: 50%;
+  position: relative;
+  margin: 45px 0 45px 0;
+}
+
+.message-body img {
+  position: absolute;
+  top: -43px;
+  right: 0;
+}
+
+.message-body p {
+  color: black;
+}
+
+.message-container {
+  border: 2px solid #dedede;
+  background-color: #facc33;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.message-container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.message-container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.time-right {
+  float: right;
+  text-align: right;
+  color: #aaa;
+}
+

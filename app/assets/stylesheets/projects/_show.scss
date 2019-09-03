@@ -1,76 +1,66 @@
-.project-banner {
-  padding: 150px 0;
-  background-size: cover;
-  background-position: center;
-  border-right: rgba(80,80,80,0.5) solid 5px;
-}
+// .project-banner {
+//   padding: 150px 0;
+//   background-size: cover;
+//   background-position: center;
+//   border-right: rgba(80,80,80,0.5) solid 5px;
+// }
 
 .project-content {
-  padding: 12vh 7vw;
-  background-image: linear-gradient(
-                    rgba(255,255,255,0.1),
-                    rgba(255,255,255,0.1)),
-                    url('https://res.cloudinary.com/caitlinsnyder/image/upload/v1567399390/background_2_v026ks.png');
-  background-size: cover;
-  background-position: center bottom;
+  padding: 0 0 15px 0;
   a {
     margin: 0px;
     text-decoration: none;
   }
 }
- 
-.project-content h2 a {
-  margin: 20px 0;
-  color: $teal;
-}
 
 .project-text {
-  margin: 20px 0 0 0;
+  margin: 10px 0 0 0;
+  padding: 0 0 20px 0;
   text-align: left;
   display: flex;
   flex-direction: column;
 }
 
 .project-text .teal-button {
-  margin: 0px;
+  margin: 10px 0 0 0px;
   text-align: center;
 }
-
-// RESPONSIVENESS
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) and (max-width: 768px) {
-  .project-banner {
-    width: 100vw
-  }
-  .project-content {
-    width: 100vw
-  }
-}
-// Medium devices (tablets, 768px and up)
-@media (min-width: 769px) and (max-width: 991px) {
-  .project-banner {
-    width: 100vw
-  }
-  .project-content {
-    width: 100vw
-  }
-}
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) and (max-width: 1199px) {
-  .project-banner {
-    width: 50vw
-  }
-  .project-content {
-    width: 50vw
-  }
-
-}
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .project-banner {
-    width: 50vw
-  }
-  .project-content {
-    width: 50vw
-  }
-}
+//
+// // RESPONSIVENESS
+// // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) and (max-width: 768px) {
+//   .project-banner {
+//     width: 100vw
+//   }
+//   .project-content {
+//     width: 100vw
+//   }
+// }
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 769px) and (max-width: 991px) {
+//   .project-banner {
+//     width: 100vw
+//   }
+//   .project-content {
+//     width: 100vw
+//   }
+// }
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) and (max-width: 1199px) {
+//   .project-banner {
+//     width: 50vw
+//   }
+//   .project-content {
+//     width: 50vw
+//   }
+//
+// }
+// // Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+//   .project-banner {
+//     width: 50vw
+//   }
+//   .project-content {
+//     width: 50vw
+//   }
+// }

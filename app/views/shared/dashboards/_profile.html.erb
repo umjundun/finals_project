@@ -1,5 +1,5 @@
 <div class="dash-square-cards">
-  
+
   <div class="dash-square-card">
     <%= cl_image_tag "avatar_k93z6t.jpg", class: "dash-avatar" %>
     <h3><%= @user.first_name %> <%= @user.last_name %></h3>
@@ -17,6 +17,23 @@
 
   <div class="dash-square-card dash-square-card-msg">
     <h3>Messages</h3>
+    <% current_user.conversations.each do |convo| %>
+      <% if current_user == convo.recipient %>
+        <div data-conversation-id="<%= convo.id %>"></div>
+          <div class="dash-msg-links" id="dash-msg-button">
+              <%= cl_image_tag convo.sender.photo, class: "user-avatar", id: "nav-user-avatar", id: "modal-messages-button" %>
+              <%= convo.sender.first_name %>
+              <%= render "shared/dashboards/messages", convo: convo %>
+          </div>
+      <% else %>
+        <div data-conversation-id="<%= convo.id %>"></div>
+          <div class="dash-msg-links" id="dash-msg-button">
+              <%= cl_image_tag convo.recipient.photo, class: "user-avatar", id: "nav-user-avatar", id: "modal-messages-button" %>
+              <%= convo.recipient.first_name %>
+              <%= render "shared/dashboards/messages", convo: convo %>
+          </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
 

@@ -1,4 +1,4 @@
-<%= link_to project_path(project) do %>
+<div class="project-accordion-item">
   <div class="card-project">
     <img src="<%= project.organization.logo %>"/>
     <div class="card-project-infos">
@@ -6,4 +6,8 @@
       <p><strong><%= project.description %></strong></p>
     </div>
   </div>
-<% end %>
+  <div class="project-accordion-content" style="display: none;">
+    FIX FORM RENDER HERE
+    <%= render 'shared/cards/project_card_content', project: project %>
+  </div>
+</div>

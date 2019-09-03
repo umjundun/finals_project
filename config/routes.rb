@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
+  # LANDING PAGE / USER HOME
   root to: 'pages#home'
-  get "/search", to: "pages#search", as: "search"
+
+  # SEARCH FEATURE
+  get "home", to: "pages#home", as: "search"
+
 
   resources :users, only: [:index, :show, :update] do
     member do
@@ -24,7 +28,7 @@ Rails.application.routes.draw do
     resources :engagements, only: [:index, :show, :update]
   end
 
-  resources :projects, only: [:new, :create, :index, :show] do
+  resources :projects, only: [:new, :create, :index, :show, :update] do
     resources :engagements, only: [:update, :new, :create]
   end
 

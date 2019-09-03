@@ -10,7 +10,6 @@ const hamburger = document.getElementById('nav-hamburger-block');
 const messages = document.getElementById('nav-notifications-block');
 
 export const avatarEvent = () => {
-  console.log("avatar");
 
   if (avatar) {
     avatar.addEventListener("click", (event) => {

@@ -15,22 +15,30 @@
         <p><span class="element-tag">Deadline: </span><%= @project.deadline %> day(s)</p>
         <p><span class="element-tag">Last submission: </span><%= @project.deadline %> ago</p>
 
-        <% if user_signed_in? && current_user.id == @engagement.project.user_id %>
-          <p><span class="element-tag">Currently assigned to: <%= time_ago_in_words(@engagement.created_at) %> ago</p>
+        <% if @engagement.status == 'Pending' && current_user.id == @engagement.project.user_id %>
+          <p><span class="element-tag">Engagement pending approval</span></p>
+          <%= link_to "Edit engagement", edit_user_engagement_path(@engagement), class: "teal-button" %>
+        <% elsif @engagement.status == 'Pending' && current_user.id == @engagement.user_id %>
+          <p><span class="element-tag">Engagement pending approval</span></p>
         <% end %>
 
-        <p><span class="element-tag">Project documents:</span></p>
-        <ul class="list-group">
-          <% @engagement.project.project_files.each do |file| %>
+        <% if @engagement.status != 'Pending' && current_user.id == @engagement.project.user_id %>
+          <p><span class="element-tag">Currently assigned to: <%= time_ago_in_words(@engagement.created_at) %> ago</p>
+          <p><span class="element-tag">Project documents:</span></p>
+          <ul class="list-group">
+            <% @engagement.project.project_files.each do |file| %>
               <a href="<%= file.file_url %>"> - <%= file.name %><%= file.format %></a>
-          <% end %>
-        </ul>
-        <% if user_signed_in? && current_user.id == @engagement.project.user_id %>
+            <% end %>
+          </ul>
           <%= link_to "Message #{@engagement.user.first_name}", conversations_path(sender_id: current_user.id, recipient_id: @engagement.user.id), method: 'POST', class: "btnlogin" %>
-        <% elsif user_signed_in? && current_user.id == @engagement.user_id  %>
+        <% elsif @engagement.status != 'Pending' && current_user.id == @engagement.user_id  %>
+          <p><span class="element-tag">Project documents:</span></p>
+          <ul class="list-group">
+            <% @engagement.project.project_files.each do |file| %>
+              <a href="<%= file.file_url %>"> - <%= file.name %><%= file.format %></a>
+            <% end %>
+          </ul>
           <%= link_to "Edit engagement", edit_user_engagement_path(@engagement), class: "teal-button" %>
-        <% else %>
-          <%= link_to "Sign up to message #{@engagement.user.name}", new_user_registration_path %>
         <% end %>
       </div>
     </div>
@@ -47,7 +55,6 @@
           <h2>Conversation history</h2>
           <p>Last post <%#= time_ago_in_words(@engagement.created_at) %> ago</p>
         </div> -->
-
 
       </div>
 

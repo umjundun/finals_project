@@ -1,0 +1,40 @@
+<div class="project-content">
+  <div class="project-text">
+    <p><span class="element-tag">Category: </span><%= project.category %></p>
+    <p><span class="element-tag">Deadline: </span><%= project.deadline %> day(s)</p>
+  </div>
+
+  <div class="apply-accordion-item">
+    <div class="apply-content" style="display: none;">
+
+      <div class="form-content-container">
+        <!-- LINK TO ENGAGEMENT FORM -->
+        <% if user_signed_in? && current_user.id != project.user_id %>
+          <%#= render "engagements/form", project: project, engagement: @engagement %>
+          <%#= link_to "Submit", new_project_engagement_path(params[:id]), class: "teal-button project-submit-button" %>
+        <% elsif user_signed_in? && current_user.id == project.user_id  %>
+          NEED TO FIX HERE
+          <%#= render "projects/form", project: project %>
+          <%#= link_to "Edit", edit_user_project_path(project), class: "teal-button project-submit-button" %>
+        <% else %>
+        <% end %>
+      </div>
+
+    </div>
+
+
+    <button class="teal-button project-apply-button">
+      <% if user_signed_in? && current_user.id != project.user_id %>
+        APPLY NOW
+      <% elsif user_signed_in? && current_user.id == project.user_id  %>
+        EDIT
+      <% else %>
+      <% end %>
+    </button>
+  </div>
+
+
+
+
+
+</div>

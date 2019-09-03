@@ -2,8 +2,13 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @projects = Project.all
-    @devs = User.where("developer = true")
+
+    if params[:query]
+      search
+    else
+      @projects = Project.all
+      @devs = User.where("developer = true")
+    end
   end
 
   def search
@@ -13,6 +18,5 @@ class PagesController < ApplicationController
     @results_projects = @results.select {|result| result.searchable_type == "Project"}
     @results_organizations = @results.select {|result| result.searchable_type == "Organization"}
 
-    #  @results_organizations = PgSearch.multisearch(params[:query])
   end
 end

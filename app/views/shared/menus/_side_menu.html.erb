@@ -1,0 +1,35 @@
+<div class="major-left-side-bar">
+  <!-- Hamburger nav button, click to open -->
+  <div class="user-nav">
+    <i class="fas fa-bars" id="hamburger-nav"></i>
+    <div class="site-name">DEVFORGOOD</div>
+  </div>
+  <!--start modal-->
+  <div class="modal-nav-container" id="modal-nav-window" style="display:none;">
+    <div class="close-nav">
+      <button id="click-to-close">X Close</button>
+    </div>
+     <div class="modal-nav-content">
+        <div class="modal-nav-links">
+          <%= link_to "projects", projects_path, class: "nav-link" %>
+        </div>
+        <div class="modal-nav-links">
+          <%= link_to "developers", users_path, class: "nav-link" %>
+        </div>
+        <div class="modal-nav-links">
+
+          <%= link_to "organizations", organizations_path, class: "nav-link" %>
+        </div>
+        <div class="modal-nav-links">
+          <%= link_to "dashboard", user_path(current_user), class: "nav-link" %>
+        </div>
+        <div class="modal-nav-links">
+          <%= link_to "log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </div>
+     </div>
+
+  </div>
+  <!-- end modal -->
+
+
+</div>
