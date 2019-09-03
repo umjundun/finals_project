@@ -3,11 +3,38 @@
     <p><span class="element-tag">Category: </span><%= project.category %></p>
     <p><span class="element-tag">Deadline: </span><%= project.deadline %> day(s)</p>
   </div>
-  <% if user_signed_in? && current_user.id != project.user_id %>
-    <%= render 'shared/cards/project_card_dev', project: project %>
-  <% elsif user_signed_in? && current_user.id == project.user_id  %>
-    <%= render 'shared/cards/project_card_ngo', project: project %>
-  <% else %>
-    <%= link_to "Sign up to message #{@engagement.user.name}", new_user_registration_path %>
-  <% end %>
+
+  <div class="apply-accordion-item">
+    <div class="apply-content" style="display: none;">
+
+      Application form here
+      <div class="form-content-container">
+        <!-- LINK TO ENGAGEMENT FORM -->
+        <%= render "engagements/form", project: project, engagement: @engagement %>
+      </div>
+
+        <% if user_signed_in? && current_user.id != project.user_id %>
+          <%= link_to "Submit", new_project_engagement_path(params[:id]), class: "teal-button project-submit-button" %>
+        <% elsif user_signed_in? && current_user.id == project.user_id  %>
+          <%= link_to "Edit project", edit_user_project_path(project), class: "teal-button" %>
+        <% else %>
+        <% end %>
+
+        </div>
+
+
+    <button class="teal-button project-apply-button">
+      <% if user_signed_in? && current_user.id != project.user_id %>
+        APPLY NOW
+      <% elsif user_signed_in? && current_user.id == project.user_id  %>
+        EDIT
+      <% else %>
+      <% end %>
+    </button>
+  </div>
+
+
+
+
+
 </div>
