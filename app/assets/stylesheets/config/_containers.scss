@@ -8,6 +8,15 @@ body {
 }
 
 #global-content-container {
+<<<<<<< organization-show
+  margin-top: 65px; //<-- Testing with hamburger off-click
+  background-color:white;
+}
+
+.full-container {
+  margin: 0px auto;
+  // padding-top: 25px;
+=======
   margin: 0px;
   width: 100vw;
   min-height: 100vh;
@@ -37,6 +46,7 @@ body {
   padding: 0vh 0 0 0;
   min-height: calc(100vh - 70px);
   width: 45vw;
+>>>>>>> master
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -67,6 +77,12 @@ body {
   padding: 0 0 7px 0;
   font-size: .3em;
   font-weight: lighter;
+}
+
+.section-container h2 {
+  padding: 5px 0;
+  font-weight:200;
+  font-size: 60px;
 }
 
 .nav-text {

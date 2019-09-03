@@ -1,11 +1,20 @@
 <div id="global-navbar">
 
+  <div class="logo-group">
+    <h1 class="logo-text">DevForGood</h1>
+    <!-- LOGO -->
+    <%= link_to root_path, id: "nav-logo-link" do %>
+      <%= image_tag "logo.png" %>
+    <% end %>
+  </div>
+
+
   <!-- LOGO -->
-  <%= image_tag "logo.png", id: 'nav-logo'%>
-  <a href="#" class="teal-button" id="modal-login-button">
-    Log In
-    <%= render "shared/devise_partials/modal_login" %>
-  </a>
+<!--   <%=# image_tag "logo.png", id: 'nav-logo'%> -->
+<!--   <a href="#" class="teal-button" id="modal-login-button"> -->
+<!--     Log In -->
+<!--     <%=# render "shared/devise_partials/modal_login" %> -->
+<!--   </a> -->
 
 </div>
 
