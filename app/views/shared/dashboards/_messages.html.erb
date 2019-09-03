@@ -1,24 +1,24 @@
 <!--start modal-->
- <div class="modal-container" id="modal-messages-window">
+<div class="modal-container" id="modal-messages-window">
 
-   <div class="modal-content-container">
-     <!-- Body -->
-     <section id="messages" class="mb4">
-       <% convo.messages.each do |message| %>
-         <% if message.body %>
-           <%= render partial: "messages/show", locals: { message: message }%>
-         <% end %>
+ <div class="modal-content-container">
+   <!-- Body -->
+   <section id="messages" class="mb4">
+     <% convo.messages.each do |message| %>
+       <% if message.body %>
+         <%= render partial: "messages/show", locals: { message: message }%>
        <% end %>
-     </section>
-
-     <%= form_for [convo, @message] do |f| %>
-       <%= f.text_area :body, class: "textarea", placeholder: "Message #{convo.recipient.full_name}..." %>
-       <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
-       <div class="text-align-right">
-         <%= f.submit "Send message", class: "yellow-button", id: "message-submit" %>
-       </div>
      <% end %>
-   </div>
+   </section>
 
+   <%= form_for [convo, @message] do |f| %>
+     <%= f.text_area :body, class: "textarea", placeholder: "Type a message..." %>
+     <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+     <div class="text-align-right">
+       <%= f.submit "Send message", class: "yellow-button", id: "message-submit" %>
+     </div>
+   <% end %>
  </div>
+
+</div>
 <!-- end modal -->

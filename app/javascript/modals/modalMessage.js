@@ -1,4 +1,4 @@
-console.log('hello');
+console.log('message hello');
 // Get the modal
 const modal = document.getElementById("modal-messages-window");
 
@@ -25,6 +25,7 @@ export const messagesEvent = () => {
       }
     });
 
+    // Submits new message and reset the input box to blank
     const newMessageForm = document.getElementById("new_message");
     const messageSubmit = document.getElementById("message-submit");
     messageSubmit.addEventListener("click", (event) => {

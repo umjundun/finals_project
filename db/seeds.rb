@@ -12,6 +12,9 @@ ActiveRecord::Base.connection.reset_pk_sequence!(:projects)
 ActiveRecord::Base.connection.reset_pk_sequence!(:representatives)
 ActiveRecord::Base.connection.reset_pk_sequence!(:users)
 ActiveRecord::Base.connection.reset_pk_sequence!(:organizations)
+ActiveRecord::Base.connection.reset_pk_sequence!(:messages)
+ActiveRecord::Base.connection.reset_pk_sequence!(:conversations)
+
 
 #Default Dummy Organization for Admin users
 # ID 1
