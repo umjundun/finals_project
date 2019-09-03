@@ -4,7 +4,7 @@
   </div>
   <h2>Your projects:</h2>
   <div class="cards-project" >
-    <% user.organization.projects.each do |project| %>
+    <% current_user.projects.each do |project| %>
       <%= render 'shared/cards/project_card', project: project %>
     <% end %>
   </div>
