@@ -41,9 +41,11 @@
           <%= render 'shared/dashboards/profile', user: @user %>
         </div>
 
-        <div class="dash-container-column dash-inactive" id="dash-projects-content">
-          <%= render 'shared/dashboards/projects', user: @user %>
-        </div>
+        <% if user.group == "ngo" %>
+          <div class="dash-container-column dash-inactive" id="dash-projects-content">
+            <%= render 'shared/dashboards/projects', user: @user %>
+          </div>
+        <% end %>
 
         <div class="dash-container-column dash-inactive" id="dash-engagements-content">
           <%= render 'shared/dashboards/engagements', user: @user %>
