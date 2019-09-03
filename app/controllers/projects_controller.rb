@@ -30,7 +30,7 @@ class ProjectsController < ApplicationController
     authorize @project
 
     if @project.save
-      redirect_to project_path(@project)
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -43,7 +43,7 @@ class ProjectsController < ApplicationController
   def update
     authorize @project
     if @project.update(project_params)
-      redirect_to root_path(@project)
+      redirect_to user_path(current_user)
     else
       render :edit
     end
