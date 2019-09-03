@@ -104,25 +104,21 @@
 //   right: 20px;
 // }
 
-.nav-menu-link {
-  padding: 0px 0 0px 10px;
-}
+// .nav-menu-link {
+//   padding: 0px 0 0px 10px;
+// }
+//
+// .nav-menu-link:hover {
+//   background-color: red;
+// }
+//
+// .nav-link {
+//   color: $deep-gray;
+//   &:hover {
+//     color: $deep-gray;
+//   }
+// }
 
-.nav-menu-link:hover {
-  background-color: $marigold-trans-2;
-}
-
-.nav-link {
-  color: $deep-gray;
-  &:hover {
-    color: $deep-gray;
-  }
-}
-
-
-#query {
-  height: 80%;
-}
 
 .fa-search{
   color:$marigold;

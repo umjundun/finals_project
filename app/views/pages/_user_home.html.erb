@@ -1,46 +1,26 @@
 <div class="major-container">
-
   <!-- SPACING -->
   <%= render 'shared/menus/side_menu' %>
+
   <div class="major-nav-fixed">
     <div class="major-navigation">
-      <div class="nav-search-container">
 
+      <!-- SEARCH PANEL -->
+      <%= render 'pages/nav_search' %>
 
-        <!-- ORGANIZATION AND LOCATION HERE -->
-        <div class="search-input-group">
-
-          <div class="nav-search-item">
-            <!-- SEARCH LABEL -->
-            <div class="search-label">KEYWORDS:</div>
-              <%= form_tag("/home", method: "get", class: "") do %>
-                <div class="search-box">
-                  <%= text_field_tag :query, params[:query],
-                  class: "nav-search-field ",
-                  placeholder: "Find your next project" %>
-                  <%= button_tag(type: "search", class: "btn btn-default") do %>
-                    <i class="fa fa-search white-icon"></i>
-                  <% end %>
-                </div>
-              <% end %>
-            </div>
-
-        </div>
-
-        <!-- ANY FILTERS HERE -->
-        <div class="search-filters-group">
-
-
-        </div>
+    </div>
+    <div class="major-mid-bar">
+      <div id="map"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
-    <div class="major-mid-bar"></div>
   </div>
 
   <div class="major-white-panel">
-    <div class="major-card">
+    <div class="major-card search-results-height">
       <!-- PAGE CONTENT -->
-      <div class="major-card-content">
+      <div class="major-card-content search-results-height">
 
         <!-- PROJECTS THAT USER SHOULD SEE ON FIRST LOAD -->
         <% if @results_organizations.nil? && @results_projects.nil? %>

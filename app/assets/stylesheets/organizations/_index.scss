@@ -23,60 +23,60 @@
   text-align: center;
 }
 
-
-
-// RESPONSIVENESS
-// Smallest device
-@media (max-width: 575px) {
-  #map {
-    width: 100vw;
-  }
-  .org-cards {
-    width: 100vw;
-    grid-template-columns: 1fr;
-  }
-}
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  #map {
-    width: 100vw;
-  }
-  .org-cards {
-    width: 100vw;
-    grid-template-columns: 1fr;
-  }
-}
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  #map {
-    width: 100vw;
-  }
-  .org-cards {
-    width: 100vw;
-    grid-template-columns: 1fr 1fr;
-  }
-}
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .split-index-container {
-    font-size: 55px;
-    flex-direction: row;
-  }
-  #map {
-    width: 50vw;
-  }
-  .org-cards {
-    width: 50vw;
-    grid-template-columns: 1fr 1fr;
-  }
-}
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  #map {
-    width: 50vw;
-  }
-  .org-cards {
-    width: 50vw;
-    grid-template-columns: 1fr 1fr;
-  }
-}
+//
+//
+// // RESPONSIVENESS
+// // Smallest device
+// @media (max-width: 575px) {
+//   #map {
+//     width: 100vw;
+//   }
+//   .org-cards {
+//     width: 100vw;
+//     grid-template-columns: 1fr;
+//   }
+// }
+// // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) {
+//   #map {
+//     width: 100vw;
+//   }
+//   .org-cards {
+//     width: 100vw;
+//     grid-template-columns: 1fr;
+//   }
+// }
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+//   #map {
+//     width: 100vw;
+//   }
+//   .org-cards {
+//     width: 100vw;
+//     grid-template-columns: 1fr 1fr;
+//   }
+// }
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+//   .split-index-container {
+//     font-size: 55px;
+//     flex-direction: row;
+//   }
+//   #map {
+//     width: 50vw;
+//   }
+//   .org-cards {
+//     width: 50vw;
+//     grid-template-columns: 1fr 1fr;
+//   }
+// }
+// // Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+//   #map {
+//     width: 50vw;
+//   }
+//   .org-cards {
+//     width: 50vw;
+//     grid-template-columns: 1fr 1fr;
+//   }
+// }
