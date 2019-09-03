@@ -17,6 +17,7 @@ class OrganizationsController < ApplicationController
     authorize @organization
     @representatives = Representative.where("organization_id = ?", @organization)
     @projects = Project.where("organization_id = ?", @organization)
+    @engagement = Engagement.new
   end
 
   def new
