@@ -1,15 +1,19 @@
 .modal-nav-container {
-  height: 100vh;
+  margin: 0;
+  padding: 0;
+  height: 200vh;
   width: 100vw;
+  z-index: 3;
   position: absolute;
   top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: flex-start;
   justify-content: flex-start;
   background-color: $marigold;
 }
+
 
 .modal-nav-container button {
   color: white;
@@ -27,18 +31,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   color: white;
 }
 
 .modal-nav-links a {
   margin: 0;
-  padding: 0;
+  padding-bottom: 20px;
   color: white;
+}
+
+.modal-nav-links:first-child {
+  padding-top: 12vh;
 }
 
 .modal-nav-links:last-child {
   border-top: white 2px solid;
+  padding-top: 8px;
 }
 
 
