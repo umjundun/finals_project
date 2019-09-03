@@ -1,0 +1,47 @@
+<div class="major-container">
+
+  <!-- SPACING -->
+  <%= render 'shared/menus/side_menu' %>
+  <div class="major-navigation">
+
+    <!-- NAV TITLE -->
+    <div class="nav-title">
+      <%#= @organization.name %>
+    </div>
+
+    <!-- NAV SUBTITLE -->
+    <div class="major-subtitle">
+      OUR MISSION:
+    </div>
+
+    <!-- NAV CONTENT -->
+    <div class="nav-content">
+      <%#= @organization.mission %>
+    </div>
+  </div>
+
+  <div class="major-white-panel">
+    <div class="major-card">
+      <div class="major-card-content">
+
+        <!-- PAGE CONTENT -->
+        <div class="major-card-content-box">
+
+          <!-- PAGE SUBTITLE -->
+          <div class="major-subtitle">
+            CURRENT PROJECTS
+          </div>
+
+          <div class="cards-project" >
+            <% @projects.each do |project| %>
+              <%#= render 'shared/cards/project_card', project: project %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <!-- SPACING -->
+      <div class="major-right-side-bar"></div>
+    </div>
+  </div>
+</div>

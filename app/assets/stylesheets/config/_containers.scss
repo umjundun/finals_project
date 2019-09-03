@@ -10,20 +10,17 @@ body {
 #global-content-container {
   margin: 0px;
   width: 100vw;
-  min-height: calc(100vh - 70px);
+  min-height: 100vh;
   font-size: 45px;
   color: $figma-gray;
-}
-
-.global-content-container > * {
-  font-size: inherit !important;
+  background-color: white;
 }
 
 .major-container {
   margin: 0;
   padding: 0;
   width: 100%;
-  min-height: calc(100vh - 70px);
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
 }

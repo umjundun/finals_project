@@ -4,7 +4,7 @@
     Application form here
     <div class="form-content-container">
       <!-- LINK TO ENGAGEMENT FORM -->
-      <%#= render "engagements/form", project: project %>
+      <%= render "engagements/form", project: project, engagement: @engagement %>
     </div>
 
     <%= link_to "Submit", new_project_engagement_path(params[:id]), class: "teal-button project-submit-button" %>
