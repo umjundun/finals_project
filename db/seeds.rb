@@ -99,6 +99,9 @@ User.create!(
               developer: true,
               group: "developer",
               remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1566505936/luz9wt7bg6qqzktauf55.jpg",
+              interests: "I like to code",
+              bio: "Batch #281 of Le Wagon Coding Bootcamp!"
+              experience: "None please hire me"
             )
 User.create!(
               email: "dev2@test.com",
