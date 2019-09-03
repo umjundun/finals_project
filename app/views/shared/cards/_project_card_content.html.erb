@@ -1,12 +1,5 @@
 <div class="project-content">
-  <h2><%= link_to @organization.name, organization_path(@organization) %></h2>
   <div class="project-text">
-    <p>
-      <span class="mission"><span class="element-tag">Mission: </span> </span>
-      <%= @organization.mission %>
-    </p>
-    <p><span class="element-tag">Title:</span> <%= project.title %></p>
-    <p><span class="element-tag">Description: </span><%= project.description %></p>
     <p><span class="element-tag">Category: </span><%= project.category %></p>
     <p><span class="element-tag">Deadline: </span><%= project.deadline %> day(s)</p>
   </div>

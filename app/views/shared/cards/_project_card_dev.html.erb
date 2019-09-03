@@ -1,12 +1,15 @@
 <div class="apply-accordion-item">
-  <div class="apply-accordion-content" style="display: none;">
+  <div class="apply-content" style="display: none;">
 
     Application form here
+    <div class="form-content-container">
+      <!-- LINK TO ENGAGEMENT FORM -->
+      <%#= render "engagements/form", project: project %>
+    </div>
 
+    <%= link_to "Submit", new_project_engagement_path(params[:id]), class: "teal-button project-submit-button" %>
   </div>
 
 
-  <div class="apply-button">
-    <%= link_to "Apply Now", new_project_engagement_path(params[:id]), class: "teal-button" %>
-  </div>
+  <button class="teal-button project-apply-button">APPLY NOW</button>
 </div>

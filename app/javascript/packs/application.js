@@ -20,5 +20,8 @@ signUpEvent();
 import { loginEvent } from '../modals/modalLogin.js';
 loginEvent();
 
-import { accordionEvent } from '../menus/accordion.js';
-accordionEvent();
+import { projectAccordionEvent } from '../menus/projectAccordion.js';
+projectAccordionEvent();
+
+import { applyAccordionEvent } from '../menus/applyAccordion.js';
+applyAccordionEvent();

@@ -6,20 +6,15 @@
 // }
 
 .project-content {
-  padding: 10px;
+  padding: 0 0 15px 0;
   a {
     margin: 0px;
     text-decoration: none;
   }
 }
 
-.project-content h2 a {
-  margin: 20px 0;
-  color: $teal;
-}
-
 .project-text {
-  margin: 20px 0 0 0;
+  margin: 10px 0 0 0;
   padding: 0 0 20px 0;
   text-align: left;
   display: flex;

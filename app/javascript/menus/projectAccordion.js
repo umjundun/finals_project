@@ -1,11 +1,8 @@
 const projectCards = document.querySelectorAll(".card-project")
 
-export const accordionEvent = () => {
+export const projectAccordionEvent = () => {
   projectCards.forEach((card) => {
     card.addEventListener("click", (event) => {
-      console.log("current target: " + event.currentTarget);
-
-      console.log("sibling: " + event.currentTarget.nextElementSibling);
 
       let panel = event.currentTarget.nextElementSibling;
       if (panel.style.display === "block") {
