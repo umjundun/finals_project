@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def show
     authorize @user
+    @message = Message.new
     @organization = Organization.where("name = ?", @user.organization.name)
   end
 

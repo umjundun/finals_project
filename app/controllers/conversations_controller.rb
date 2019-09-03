@@ -1,10 +1,10 @@
 class ConversationsController < ApplicationController
   def index
     @conversations = Conversation.all
+    # change this logic to only get all the convos of the current user.
   end
 
   def create
-    raise
     if Conversation.between(params[:sender_id], params[:recipient_id]).present?
       @conversation = Conversation.between(params[:sender_id], params[:recipient_id]).first
     else

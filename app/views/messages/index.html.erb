@@ -21,9 +21,9 @@
 </section>
 
 <%= form_for [@conversation, @message] do |f| %>
-  <%= f.text_area :body, class: "textarea", placeholder: "Inquire about project..." %>
+  <%= f.text_area :body, class: "textarea", placeholder: "Message #{@conversation.recipient.full_name}..." %>
   <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
   <div class="text-align-right">
-    <%= f.submit "Send message", class: "btnlogin" %>
+    <%= f.submit "Send message", class: "yellow-button" %>
   </div>
 <% end %>
