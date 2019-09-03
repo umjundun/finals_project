@@ -1,12 +1,11 @@
 <div id="global-navbar">
-
-  <!-- LOGO -->
-  <%= link_to root_path, id: "nav-logo-link" do %>
-    <%= image_tag "logo.png" %>
-  <% end %>
-
-
-
+  <div class="logo-group">
+    <h1 class="logo-text">DevForGood</h1>
+    <!-- LOGO -->
+    <%= link_to root_path, id: "nav-logo-link" do %>
+      <%= image_tag "logo.png" %>
+    <% end %>
+  </div>
   <!-- NAVIGATION OPTIONS -->
   <div class="nav-right-items">
     <% if user_signed_in? %>

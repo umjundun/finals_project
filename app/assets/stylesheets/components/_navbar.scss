@@ -1,7 +1,7 @@
 #global-navbar {
   margin: 0;
   padding: 0 25px 0 15px;
-  height: 80px;
+  height: 65px;
   width: 100vw;
   z-index: 1;
   position: fixed;
@@ -14,7 +14,15 @@
   background: white;
   box-shadow: $box-shadow;
 }
-
+.logo-group{
+  display:flex;
+  padding-right: 10px;
+}
+.logo-text{
+  font-weight: 700;
+  font-size: 25px;
+  padding-top:15px;
+}
 #nav-logo-link {
   flex-grow: 0;
 }
@@ -45,12 +53,7 @@
   padding: 5px 0px 8px 15px;
 }
 
-#hamburger-icon, #nav-user-avatar {
-  padding: 0px 10px 5px 10px;
-  color: $marigold;
-  font-size: 30px;
-  cursor: pointer;
-}
+ˆ
 
 #hamburger-menu, #nav-user-menu {
   display: none;
