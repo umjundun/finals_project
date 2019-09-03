@@ -1,0 +1,11 @@
+<%= link_to organization_path(organization) do %>
+  <div class="project-accordion-item organization-item">
+    <div class="card-project">
+      <img src="<%= organization.logo %>"/>
+      <div class="card-project-infos">
+        <h2><%= organization.name %></h2>
+        <p><strong><%= organization.mission %></strong></p>
+      </div>
+    </div>
+  </div>
+<% end %>
