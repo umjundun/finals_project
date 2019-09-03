@@ -20,7 +20,7 @@ const initMapbox = () => {
         element.className = 'marker';
         element.style.backgroundImage = `url('${marker.image_url}')`;
         element.style.backgroundColor = `rgba(250,250,250,0.8)`;
-        element.style.backgroundSize = `100% auto`;
+        element.style.backgroundSize = `cover`;
         element.style.backgroundPosition = 'center';
         element.style.backgroundRepeat = "repeat-x"
         element.style.borderRadius = `500%`;

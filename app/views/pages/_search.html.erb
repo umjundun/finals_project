@@ -1,36 +1,37 @@
 
 <div class="search-results" display="none">
 
-  <div class="major-card-content-box">
+  <!-- <div class="major-card-content-box">
     <div class="major-subtitle">ORGANIZATIONS</div>
     <div class="cards-project">
-      <% if @results_organizations.nil? %>
+      <%# if @results_organizations.nil? %>
 
-      <% elsif @results_organizations.empty? %>
+      <#% elsif @results_organizations.empty? %>
         No results
-      <% else %>
-        <% @results_organizations.each do |result| %>
-          <% organization = result.searchable %>
-          <%= render 'shared/cards/organization_card', organization: organization %>
-        <% end %>
-      <% end %>
+      <#% else %>
+        <#% @results_organizations.each do |result| %>
+          <#% organization = result.searchable %>
+          <%#= render 'shared/cards/organization_card', organization: organization %>
+        <#% end %>
+      <#% end %>
     </div>
-  </div>
+  </div> -->
 
-  <div class="major-card-content-box">
-    <div class="major-subtitle">PROJECTS</div>
-    <div class="cards-project">
-      <% if @results_projects.nil? %>
+    <div class="major-card-content-box">
+      <div class="major-subtitle">PROJECTS</div>
+      <div class="cards-project">
+        <% if @results_projects.nil? %>
 
-      <% elsif @results_projects.empty? %>
-        No results
-      <% else %>
-        <% @results_projects.each do |result| %>
-          <% project = result.searchable %>
-          <%= render 'shared/cards/project_card', project: project %>
+        <% elsif @results_projects.empty? %>
+          No results
+        <% else %>
+          <% @results_projects.each do |result| %>
+            <% project = result.searchable %>
+            <%= render 'shared/cards/project_card', project: project %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
-  </div>
+
 
 </div>
