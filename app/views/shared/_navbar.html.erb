@@ -11,14 +11,15 @@
   <div class="nav-right-items">
     <% if user_signed_in? %>
   <!-- SEARCH BAR -->
-  <div class="nav-center-items">
-    <%= form_tag("/search", method: "get", class: "search-bar") do %>
-      <%= text_field_tag :query,
-                          params[:query],
-                          class: "form-control",
-                          placeholder: "Find your next project" %>
-      <%= button_tag(type: "search", class: "btn btn-default") do %>
-       <i class="fa fa-search"></i>
+      <div class="nav-center-items">
+        <%= form_tag("/search", method: "get", class: "search-bar") do %>
+          <%= text_field_tag :query,
+                              params[:query],
+                              class: "form-control",
+                              placeholder: "Find your next project" %>
+          <%= button_tag(type: "search", class: "btn btn-default") do %>
+           <i class="fa fa-search"></i>
+        <% end %>
       <% end %>
     <% end %>
   </div>
@@ -27,6 +28,7 @@
       <%= render 'shared/menus/convos' %>
     <!-- Hamburger nav button -->
       <%= render 'shared/menus/hamburger' %>
+
     <!-- User avator dropdown button -->
       <%= render 'shared/menus/user_avatar' %>
     <% else %>
