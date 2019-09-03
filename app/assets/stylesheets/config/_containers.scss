@@ -36,6 +36,15 @@ body {
   background-color: $marigold;
 }
 
+.site-name {
+  position: absolute;
+  top: 27px;
+  left: 70px;
+  font-size: 13px;
+  font-weight: lighter;
+  color: white;
+}
+
 .nav-title {
   padding: 0 0 15px 0;
   font-size: .6em;
