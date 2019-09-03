@@ -8,7 +8,7 @@
         <a href="<%= user_engagement_path(current_user, eng) %>" class="btn-project">Project info <i class="fas fa-chevron-right"></i></a>
       </div>
     <% else %>
-      <h2>Status: <%= eng.dev_status %></h2>
+      <h2>Status: <%= eng.status %> / <%= eng.dev_status %></h2>
       <div class="card-engagement">
         <h5 class="card-engagement-title"><%= eng.project.title %></h5>
         <p class="card-engagement-description"><%= eng.project.description %></p>
@@ -19,7 +19,7 @@
   <% @user.projects.each do |proj| %>
     <% proj.engagements.each do |eng| %>
       <% if eng.status != "active" && eng.status != "Active" && eng.status != "Closed" %>
-        <h2>Status: <%= eng.status %></h2>
+        <h2>Status: <%= eng.status %> - Dev: <%= eng.user.first_name %> <%= eng.user.last_name %> / <%= eng.dev_status %></h2>
         <div class="card-engagement">
           <h5 class="card-engagement-title"><%= eng.project.title %></h5>
           <p class="card-engagement-description"><%= eng.project.description %></p>

@@ -73,10 +73,6 @@
   background-color: white;
   box-shadow: $box-shadow;
   border-radius: $border-radius;
-  background-image: linear-gradient(
-    rgba(255,255,255,0.6),
-    rgba(255,255,255,0.6)),
-    url(https://res.cloudinary.com/caitlinsnyder/image/upload/v1567086073/img5_fksiak.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -88,17 +84,37 @@
 .modal-content-container h3 {
     padding: 0 0 5px 0;
     text-align: center;
+    font-weight: 200;
+    text-shadow: none;
+    color: grey;
+}
+
+.btn-box{
+  display: flex;
+  align-items: center;
+  text-align:center;
 }
 
 .modal-submit-button {
   margin: 4vh auto 2vh auto;
-  width: 100%;
+  width: 25%;
+  padding: 15px 15px 15px 15px;
 }
 
 #modal-signup-button {
   margin-top: 3vh;
 }
 
+// Remember me checkbox
+
+.form-check-input{
+      margin-top: 0.67rem;
+
+}
+
+.form-check-input{
+   text-transform: none;
+ }
 
 // RESPONSIVENESS
 // Small devices (landscape phones, 576px and up)

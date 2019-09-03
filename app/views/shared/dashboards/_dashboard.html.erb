@@ -15,6 +15,13 @@
             <p>Profile</p>
           </div>
 
+          <% if user.group == "ngo" %>
+            <div class="dash-nav-links" id="dash-projects-button">
+              <i class="fa fa-pencil-square-o"></i>
+              <p>My Projects</p>
+            </div>
+          <% end %>
+
           <div class="dash-nav-links" id="dash-engagements-button">
             <i class="fa fa-pencil-square-o"></i>
             <p>Engagements</p>
@@ -33,6 +40,12 @@
         <div class="dash-container-row dash-active" id="dash-profile-content">
           <%= render 'shared/dashboards/profile', user: @user %>
         </div>
+
+        <% if user.group == "ngo" %>
+          <div class="dash-container-column dash-inactive" id="dash-projects-content">
+            <%= render 'shared/dashboards/projects', user: @user %>
+          </div>
+        <% end %>
 
         <div class="dash-container-column dash-inactive" id="dash-engagements-content">
           <%= render 'shared/dashboards/engagements', user: @user %>
