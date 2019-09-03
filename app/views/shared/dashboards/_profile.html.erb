@@ -21,7 +21,6 @@
       <!-- where("dev_status = 'Current (Start Developing 4 Good!)'" -->
       <% if engagement.dev_status == "Current (Start Developing 4 Good!)" %>
         <% @convo = engagement.project.user.conversations.find_by_recipient_id(current_user) %>
-        <% raise %>
         <div data-conversation-id="<%= @convo.id %>"></div>
         <%# if  %>
           <div class="dash-msg-links" id="dash-msg-button">
