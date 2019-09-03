@@ -17,7 +17,7 @@ class User < ApplicationRecord
   end
 
   def conversations
-    Conversation.joins(messages: :user).where(users: { id: self }).distinct
+    Conversation.joins(:sender, :recipient).where("users.id = :id OR recipients_conversations.id = :id", id: id).distinct
   end
 
 ### FOR NGO DASHBOARD
