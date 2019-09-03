@@ -27,22 +27,27 @@ body {
 
 .major-navigation {
   margin: 0;
-  padding: 20vh 0 0 3vw;
+  padding: 0vh 0 0 0vw;
   min-height: calc(100vh - 70px);
-  min-width: 35vw;
+  width: 40vw;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   flex-grow: 0;
   background-color: $marigold;
 }
 
-.site-name {
-  position: absolute;
-  top: 27px;
-  left: 70px;
-  font-size: 13px;
-  font-weight: lighter;
-  color: white;
+.nav-content-container {
+  margin: 0 auto;
+  padding: 0 0px 15px 0px;
+  width: 30vw;
+  height: 80vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
 }
 
 .nav-title {
@@ -57,7 +62,7 @@ body {
   font-weight: lighter;
 }
 
-.nav-content {
+.nav-text {
   font-size: .4em;
   font-weight: lighter;
 }
@@ -81,16 +86,17 @@ body {
   display: flex;
   flex-direction: row;
   background-color: white;
-  border-radius: 40px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
 }
 
 .major-card-content {
   margin: 0;
-  padding: 20vh 0 0 10%;
+  padding: 10vh 0 0 35px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   flex-grow: 1;
 }
 
@@ -101,12 +107,14 @@ body {
 }
 
 .major-left-side-bar {
-  width: 75px;
+  width: 0px;
   display: flex;
   flex-direction: column;
   align-items: right;
   background-color: $marigold;
 }
+
+
 
 .major-right-side-bar {
   width: 35px;

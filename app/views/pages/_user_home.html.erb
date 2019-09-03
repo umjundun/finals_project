@@ -3,42 +3,53 @@
   <!-- SPACING -->
   <%= render 'shared/menus/side_menu' %>
   <div class="major-navigation">
+    <div class="nav-search-container">
 
-    <!-- NAV TITLE -->
-    <div class="nav-title">
-      <%#= @organization.name %>
-    </div>
 
-    <!-- NAV SUBTITLE -->
-    <div class="major-subtitle">
-      OUR MISSION:
-    </div>
+      <!-- ORGANIZATION AND LOCATION HERE -->
+      <div class="search-input-group">
 
-    <!-- NAV CONTENT -->
-    <div class="nav-content">
-      <%#= @organization.mission %>
+        <div class="nav-search-item">
+          <!-- SEARCH LABEL -->
+          <div class="search-label">KEYWORDS:</div>
+            <%= form_tag("/home", method: "get", class: "") do %>
+              <div class="search-box">
+                <%= text_field_tag :query, params[:query],
+                class: "nav-search-field ",
+                placeholder: "Find your next project" %>
+                <%= button_tag(type: "search", class: "btn btn-default") do %>
+                  <i class="fa fa-search white-icon"></i>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+
+      </div>
+
+      <!-- ANY FILTERS HERE -->
+      <div class="search-filters-group">
+
+
+      </div>
     </div>
   </div>
 
+
   <div class="major-white-panel">
     <div class="major-card">
+      <!-- PAGE CONTENT -->
       <div class="major-card-content">
 
-        <!-- PAGE CONTENT -->
-        <div class="major-card-content-box">
+        <!-- PROJECTS THAT USER SHOULD SEE ON FIRST LOAD -->
+        <% if @results_organizations.nil? && @results_projects.nil? %>
+          <%= render 'pages/default_projects' %>
 
-          <!-- PAGE SUBTITLE -->
-          <div class="major-subtitle">
-            CURRENT PROJECTS
-          </div>
+        <!-- PROJECTS THAT USER SHOULD SEE ON SEARCH RESULTS -->
+        <% else %>
+          <%= render 'pages/search' %>
+        <% end %>
 
-          <div class="cards-project" >
-            <% @projects.each do |project| %>
-              <%#= render 'shared/cards/project_card', project: project %>
-            <% end %>
-          </div>
-        </div>
-      </div>
+    </div>
 
       <!-- SPACING -->
       <div class="major-right-side-bar"></div>

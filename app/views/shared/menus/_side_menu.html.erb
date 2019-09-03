@@ -1,7 +1,9 @@
 <div class="major-left-side-bar">
   <!-- Hamburger nav button, click to open -->
-  <i class="fas fa-bars" id="hamburger-nav"></i>
-
+  <div class="user-nav">
+    <i class="fas fa-bars" id="hamburger-nav"></i>
+    <div class="site-name">DEVFORGOOD</div>
+  </div>
   <!--start modal-->
   <div class="modal-nav-container" id="modal-nav-window" style="display:none;">
     <div class="close-nav">
@@ -22,7 +24,7 @@
           <%= link_to "dashboard", user_path(current_user), class: "nav-link" %>
         </div>
         <div class="modal-nav-links">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          <%= link_to "log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </div>
      </div>
 
