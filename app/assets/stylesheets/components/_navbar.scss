@@ -51,21 +51,27 @@
 .logo-group{
   display:flex;
   padding-right: 10px;
+  justify-content:space-between;
 }
 .logo-text{
   font-weight: 700;
   font-size: 25px;
   padding-top:15px;
 }
-// #nav-logo-link {
 
-#nav-logo {
+  #nav-logo-link {
+    flex-grow: 0;
+  }
+  // #nav-logo-link {
 
-  flex-grow: 0;
-  width: 80px;
-}
+
+  #nav-logo-link img {
+    flex-grow: 0;
+    width: 80px;
+  }
 
 .nav-center-items {
+
   display: flex;
   direction: row;
 }
