@@ -5,14 +5,25 @@
   <!--start modal-->
   <div class="modal-nav-container" id="modal-nav-window" style="display:none;">
     <div class="close-nav">
-      <button class="click-to-close">X Close </button>
+      <button id="click-to-close">X Close</button>
     </div>
      <div class="modal-nav-content">
-        <div class="nav-links">search projects</div>
-        <div class="nav-links">archived projects</div>
-        <div class="nav-links">browse NGOs</div>
-        <div class="nav-links">dashboard</div>
+        <div class="modal-nav-links">
+          <%= link_to "projects", projects_path, class: "nav-link" %>
+        </div>
+        <div class="modal-nav-links">
+          <%= link_to "developers", users_path, class: "nav-link" %>
+        </div>
+        <div class="modal-nav-links">
 
+          <%= link_to "organizations", organizations_path, class: "nav-link" %>
+        </div>
+        <div class="modal-nav-links">
+          <%= link_to "dashboard", user_path(current_user), class: "nav-link" %>
+        </div>
+        <div class="modal-nav-links">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </div>
      </div>
 
   </div>

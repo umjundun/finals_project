@@ -3,9 +3,7 @@ const modal = document.getElementById("modal-nav-window");
 
 // Get the button that opens the modal
 const button = document.getElementById("hamburger-nav");
-
-// Get the <span> element that closes the modal
-// const close = document.getElementById("modal-signup-close");
+const close = document.getElementById("click-to-close");
 
 export const navEvent = () => {
 
@@ -22,6 +20,11 @@ export const navEvent = () => {
         console.log("window clicked");
         modal.style.display = "none";
       }
+    });
+
+    close.addEventListener("click", (event) => {
+      console.log("close clicked");
+      modal.style.display = "none";
     });
   }
 }
