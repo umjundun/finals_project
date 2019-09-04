@@ -1,47 +1,45 @@
-<div class="dash-square-cards">
+<div class="user-card">
 
-  <div class="dash-square-card">
-    <% if @user.photo %>
-      <%= cl_image_tag @user.photo, class: "dash-avatar" %>
-    <% else %>
-      <%= cl_image_tag "avatar_k93z6t.jpg", class: "dash-avatar" %>
-    <% end %>
+  <% if @user.photo %>
+    <div class="user-card-img" style="background-image:
+                                              linear-gradient(
+                                              rgba(255,255,255,0.1),
+                                              rgba(255,255,255,0.1)),
+                                              url(<%= @user.photo %>)">
+    </div>
+  <% end %>
+
+  <div class="user-card-text">
+
     <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+    
     <p class="user-title"><%= @user.job_title %></p>
     <p><%= @user.email %></p>
+
     <div class="dash-social-links">
-      <a href="<%= @user.github %>"><i class="fab fa-github"></i></a>
-      <a href="<%= @user.twitter %>"><i class="fab fa-twitter"></i></a>
-      <a href="<%= @user.linkedin %>"><i class="fab fa-linkedin"></i></a>
-      <a href="https://<%= @user.facebook %>"><i class="fab fa-facebook"></i></a>
+
+      <a href="<%= @user.github %>" class="dash-social-link">
+        <i class="fab fa-github"></i>
+      </a>
+
+      <a href="<%= @user.twitter %>" class="dash-social-link">
+        <i class="fab fa-twitter"></i>
+      </a>
+
+      <a href="<%= @user.linkedin %>" class="dash-social-link">
+        <i class="fab fa-linkedin"></i>
+      </a>
+
+      <a href="https://<%= @user.facebook %>" class="dash-social-link">
+        <i class="fab fa-facebook"></i>
+      </a>
+
     </div>
-  </div>
-
-  <div class="spacer"></div>
-
-  <div class="dash-square-card dash-square-card-msg">
-    <h3>Messages</h3>
-    <% current_user.conversations.each do |convo| %>
-      <% if current_user == convo.recipient %>
-        <div data-conversation-id="<%= convo.id %>"></div>
-          <div class="dash-msg-links" id="dash-msg-button">
-              <%= cl_image_tag convo.sender.photo, class: "user-avatar", id: "nav-user-avatar", id: "modal-messages-button" %>
-              <%= convo.sender.first_name %>
-              <%= render "shared/dashboards/messages", convo: convo %>
-          </div>
-      <% else %>
-        <div data-conversation-id="<%= convo.id %>"></div>
-          <div class="dash-msg-links" id="dash-msg-button">
-              <%= cl_image_tag convo.recipient.photo, class: "user-avatar", id: "nav-user-avatar", id: "modal-messages-button" %>
-              <%= convo.recipient.first_name %>
-              <%= render "shared/dashboards/messages", convo: convo %>
-          </div>
-      <% end %>
-    <% end %>
   </div>
 </div>
 
-<div class="dash-stats-card">
+
+<div class="dash-content-card">
 
   <div class="bookend-item">
     <h5>About me</h5>
