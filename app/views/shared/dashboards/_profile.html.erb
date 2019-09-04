@@ -1,7 +1,11 @@
 <div class="dash-square-cards">
 
   <div class="dash-square-card">
-    <%= cl_image_tag "avatar_k93z6t.jpg", class: "dash-avatar" %>
+    <% if @user.photo %>
+      <%= cl_image_tag @user.photo, class: "dash-avatar" %>
+    <% else %>
+      <%= cl_image_tag "avatar_k93z6t.jpg", class: "dash-avatar" %>
+    <% end %>
     <h3><%= @user.first_name %> <%= @user.last_name %></h3>
     <p class="user-title"><%= @user.job_title %></p>
     <p><%= @user.email %></p>

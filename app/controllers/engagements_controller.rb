@@ -49,7 +49,7 @@ class EngagementsController < ApplicationController
       # elsif @engagement.dev_status.include? "Completed"
       #   @engagement.end_date = Time.now.to_datetime
       # end
-      redirect_to user_engagements_path(current_user)
+      redirect_to user_path(current_user)
     else
       render :edit
     end
