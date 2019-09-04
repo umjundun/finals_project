@@ -1,33 +1,25 @@
-// DASHBOARD HEADINGS
-// .user-dashboard h1 {
-//   font-weight: 100;
-//   letter-spacing: 3px;
-// }
-//
-// .user-dashboard h2 {
-//   font-size: 35px;
-//   line-height: 50px;
-//   color: #3f9bab;
-//   text-transform: uppercase;
-//   font-weight: 100;
-// }
-//
-// .user-dashboard h3 {
-//   color: grey;
-//   font-family: Montsserat, sans-serif;
-// }
-//
-// .user-dashboard h5 {
-//   font-family: Montsserat, sans-serif;
-//   font-weight: 200;
-//   font-size: 15px;
-// }
-//
-// .user-dashboard p {
-//   border: 0;
-//   font-size: 100%;
-//   font-family: Montsserat, sans-serif;
-// }
+.dash-button {
+  margin: 5px 5px 0 0;
+  padding: 7px 7px 7px 16px;
+  width: 25vw;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  background: white;
+  border: $marigold-trans-2 solid 2px;
+  border-radius: 20px;
+  font-style: italic;
+  font-weight: lighter;
+  color: rgba(120,120,120,0.5);
+}
+
+
+
+
+
+
+
 
 // DASHBOARD CONTENT
 .dash-container {
