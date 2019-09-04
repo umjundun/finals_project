@@ -1,0 +1,24 @@
+<%= simple_form_for [project, engagement] do |f| %>
+  <% if @engagement.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @engagement.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-item">
+    <label class="inline-label" for="request">
+      Please tell a little about your qualifications and why you would like to work on this project <abbr request="required">*</abbr>
+    </label>
+    <div class="input-one-line">
+      <textarea class="text required input-circle" required="required" aria-required="true" name="engagement[request]" id="engagement_request">
+      </textarea>
+    </div>
+  </div>
+
+  <%= f.submit "Submit", class: "yellow-button form-button", data: { confirm: "We will notify #{project.organization.name} of your request. Once you've been approuved, you'll be able to start developping for good!" } %>
+
+<% end %>
