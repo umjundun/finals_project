@@ -23,15 +23,15 @@
     </div>
 
     <% if user_signed_in? && current_user.id != project.user_id %>
-      <a href="#" class="teal-button" id="modal-projectApply-button">
+      <a href="#" class="teal-button" id="modal-projectApply-button" data-target='<%= project.id %>'>
         APPLY NOW
-        <%= render "shared/devise_partials/modal_project_apply", project: project, engagement: @engagement %>
       </a>
+      <%= render "shared/devise_partials/modal_project_apply", project: project, engagement: @engagement %>
     <% elsif user_signed_in? && current_user.id == project.user_id  %>
-      <a href="#" class="teal-button" id="modal-projectEdit-button">
+      <a href="#" class="teal-button" id="modal-projectEdit-button" data-target='<%= project.id %>'>
         EDIT
-        <%= render "shared/devise_partials/modal_project_edit", project: project %>
       </a>
+      <%= render "shared/devise_partials/modal_project_edit", project: project %>
     <% else %>
     <% end %>
 
