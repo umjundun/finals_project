@@ -152,7 +152,11 @@ User.create!(
               remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1566505936/luz9wt7bg6qqzktauf55.jpg",
               interests: "I like to code",
               bio: "Batch #281 of Le Wagon Coding Bootcamp!",
+<<<<<<< HEAD
               experience: "None please hire me",
+=======
+              experience: "None please hire me"
+>>>>>>> dashboard-design
             )
 User.create!(
               email: "dev2@test.com",
@@ -251,8 +255,6 @@ Engagement.create(
                 user: User.find_by_email("sam@newdev.com")
                 )
 
-
-#Create engagements
 Engagement.create(
                 status: "Active",
                 project: Project.find(4),

@@ -18,31 +18,29 @@
       <!-- PAGE CONTENT -->
       <div class="major-card-content">
 
-          <div class="dash-panel" style="display: block" id="profile">
-            <%= render 'shared/dashboards/profile', user: @user %>
+        <div class="dash-panel" style="display: flex" id="profile">
+          <%= render 'shared/dashboards/profile', user: @user %>
+        </div>
+
+        <% if user.group == "ngo" %>
+          <div class="dash-panel" style="display: none" id="my_project">
+            <%= render 'shared/dashboards/projects', user: @user %>
           </div>
+        <% end %>
 
-          <% if user.group == "ngo" %>
-            <div class="dash-panel" style="display: none" id="my_project">
-              <%= render 'shared/dashboards/projects', user: @user %>
-            </div>
-          <% end %>
+        <div class="dash-panel" style="display: none" id="engagements">
+          <%= render 'shared/dashboards/engagements', user: @user %>
+        </div>
 
-          <div class="dash-panel" style="display: none" id="engagements">
-            <%= render 'shared/dashboards/engagements', user: @user %>
-          </div>
+        <div class="dash-panel" style="display: none" id="messages">
+          <%= render 'shared/dashboards/messages_consolidate', user: @user %>
+        </div>
 
-          <div class="dash-panel" style="display: none" id="messages">
-            <%= render 'shared/dashboards/messages_consolidate', user: @user %>
-          </div>
+        <div class="dash-panel" style="display: none" id="settings">
+          <%= render 'shared/dashboards/settings', user: @user %>
+        </div>
 
-          <div class="dash-panel" style="display: none" id="settings">
-            <%= render 'shared/dashboards/settings', user: @user %>
-          </div>
-
-
-
-    </div>
+      </div>
 
       <!-- SPACING -->
       <div class="major-right-side-bar"></div>

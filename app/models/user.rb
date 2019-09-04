@@ -46,24 +46,31 @@ class User < ApplicationRecord
   def my_engagements
     if self.group == "ngo"
       self.organization.engagements
+    elsif self.group == "developer"
+      self.engagements
+    else
+      Engagement.all
     end
   end
 
   def my_active_engagements
-    if self.group == "ngo"
-      my_engagements.where("status = 'accepted'")
-    end
+    my_engagements.where("status = 'Active'")
   end
 
   def my_pending_engagements
-    if self.group == "ngo"
-      my_engagements.where("status = 'pending'")
-    end
+    my_engagements.where("status = 'Pending'")
   end
 
+  def my_rejected_engagements
+    my_engagements.where("status = 'Rejected'")
+  end
+
+  def my_archived_engagements
+    my_engagements.where("status = 'Archived'")
+  end
+
+
   def my_engagements_by_project(project)
-    if self.group == "ngo"
-      Engagement.where(project: project, user: self)
-    end
+    Engagement.where(project: project, user: self)
   end
 end
