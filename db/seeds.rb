@@ -242,7 +242,7 @@ p "6 projects created"
 Engagement.create(
                 status: "Reject developer for engagement",
                 project: Project.find(4),
-                user: User.find_by_email("sam@newdev.com")
+                user: User.find_by_email("sam@newdev.com"),
                 )
 
 Engagement.create(
