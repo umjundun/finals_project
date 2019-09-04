@@ -14,10 +14,26 @@ $figma-gray: #242827;
   letter-spacing:2px;
 }
 
+// WHEN LOGED IN THESE HEADINGS APPLY FOR THE WHOLE WEBSITE
+.general-title{
+  color: grey;
+  font-size: 30px;
+  font-weight: 200;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.general-text {
+  color: grey;
+  font-size: 20px;
+  font-weight: 200;
+  text-align: center;
+}
+
+
 .section-heading {
   margin: 30px auto 10px auto;
   padding: 2vh 0 4vh 0;
-
 
 }
 
