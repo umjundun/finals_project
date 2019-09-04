@@ -217,21 +217,21 @@ Project.create(
 Project.create(
               organization: clothes_closet, # Montreal Clothes Closet
               description: "Banner image",
-              title: "Banner image",
+              title: "Banner image with carousel",
               user: clothes_closet_rep,
               active: false
             )
 Project.create(
               organization: clothes_closet, # Montreal Clothes Closet
-              description: "Another project",
-              title: "Another project",
+              description: "Mobile app to help connect to a wider audience",
+              title: "Mobile app",
               user: clothes_closet_rep,
               active: true
             )
 Project.create(
               organization: clothes_closet, # Montreal Clothes Closet
-              description: "A third project",
-              title: "A third project",
+              description: "need to rework our database completely",
+              title: "Database",
               user: clothes_closet_rep,
               active: true
             )
@@ -240,15 +240,15 @@ p "6 projects created"
 
 #Create engagements
 Engagement.create(
-                status: "active",
+                status: "Reject developer for engagement",
                 project: Project.find(4),
-                user: User.find_by_email("dev")
+                user: User.find_by_email("sam@newdev.com"),
                 )
 
 Engagement.create(
-                status: "active",
+                status: "Reject developer for engagement",
                 project: Project.find(5),
-                user: User.find_by_email("dev")
+                user: User.find_by_email("sam@newdev.com")
                 )
 
  p "2 engagements created"
