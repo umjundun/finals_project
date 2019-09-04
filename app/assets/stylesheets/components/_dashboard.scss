@@ -30,20 +30,23 @@
 
 .dash-panel {
   width: 100%;
-  display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .dash-content-card {
-  margin: 0 60px 0 0;
-  width: 80%;
-  padding: 20px;
+  margin: 0 40px 0 0;
+  padding: 20px 0 20px 20px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
   background-color: white;
 }
 
 .user-card {
   margin: 0 40px 0 0;
+  width: 90%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -60,340 +63,400 @@
   border-radius: 5px;
 }
 
-.user-card-text {
+.user-card-text, .engagement-header-text {
   margin: 0;
-  padding: 0 0 0 20px;
+  height: 130px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  border-bottom: 5px solid $marigold;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: flex-end;
+  text-align: right;
+}
+
+.user-card-text {
+  padding: 0 0 0 20px;
+  border-bottom: 5px solid $marigold;
+}
+
+.user-card-name, .user-card-header {
+  padding: 0;
+  font-size: 30px;
+  color: $figma-gray;
+}
+
+.user-card-header {
+  padding-bottom: 10px;
+}
+
+.user-card-title {
+  padding: 0;
+  font-size: 20px;
+  font-weight: lighter;
+  color: $figma-gray;
+}
+
+.user-card-email {
+  padding: 0;
+  font-size: 16px;
+  color: $figma-gray;
 }
 
 .dash-social-links {
-  padding: 0px 0 0 0;
+  padding: 0px 0 5px 0;
   display: flex;
   justify-content: space-around;
-  a {
-    margin: 0;
-    padding: 0;
-    color: $teal;
-  }
 }
 
 .dash-social-link {
-  padding: 0 10px 15px 0;
-}
-
-
-//
-// .dash-tab-container {
-//   margin: 10px 0 20px 0;
-//   padding: 10px 0 0 0;
-//   width: 90vw;
-//   min-height: 60vh;
-//   display: flex;
-// }
-//
-// .dash-tab-container > * {
-//   font-size: inherit !important;
-// }
-
-.dash-card-nav {
+  padding: 0 0 0px 10px;
   margin: 0;
-  padding: 25px 0 0 25px;
-  flex-grow: 0;
-}
-
-.dash-panel-nav {
-  // margin: 0 20px 0 0;
-  // width: 50px;
-  padding: 0;
-  display: flex;
-  align-items: stretch;
-}
-
-.dash-nav-links {
-  margin: 0;
-  padding: 0 0 20px 0;
-  display: flex;
-  align-items: flex-start;
-  position: relative;
-  line-height: .5em;
+  color: $teal;
+  font-size: 25px;
+  cursor: pointer;
   &:hover {
-    cursor: pointer;//fix
     color: $marigold;
   }
 }
 
-.dash-nav-links > *:hover {
-  cursor: pointer;//fix
-  color: $marigold;
-}
-
-.dash-nav-links p {
-  padding: 0;
-  font-size: .30em;
-  color: $teal;
-}
-
-.dash-nav-links i {
-  padding: 0 1.5vw 0 0;
-  color: $teal;
-  font-size: .5em;
-}
-
-.dash-panel-content {
-  min-height: 70vh;
-  flex-grow: 1;
-}
-
-.dash-active {
-  display: flex;
-}
-
-.dash-inactive {
-  display: none;
-}
-
-.dash-container-row {
-  flex-grow: 1;
-}
-
-.dash-container-column {
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  flex-grow: 1;
-}
-
-// PROFILE
-.dash-square-cards {
+.profile-bookend-item, .engage-bookend-item {
+  padding: 0px 18px 10px 15px;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
-  justify-content:space-around;
-  flex-grow: 0;
+  & a {
+    color: $teal;
+    font-weight: normal;
+    font-size: 18px;
+  }
+  & a:hover {
+    color: $marigold;
+    font-style: italic;
+  }
 }
 
-.dash-square-card {
-  margin: auto;
-  padding: 2vw;
-  height: 275px;
-  width: 285px;
-  flex-grow: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content:center;
-  box-shadow: 1px 1px 1px rgba(200, 200, 200, 0.3);
-  background-color: rgba(255,255,255,0.8);
-  border-radius: 10px;
-  font-size: 15px;
-  text-align: center;
+.profile-bookend-item {
+  margin: 40px 0 20px 0;
+  border-right: $marigold 3px solid;
 }
 
-
-
-.dash-square-card-msg {
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.dash-square-cards .spacer {
-  height: 20px;
-}
-
-.user-title {
-  color: grey;
-  font-size: 13px;
-}
-
-.dash-avatar {
-  padding: 0 0 1vw 0;
-  width: 6vw;
-  height: 6vw;
-  object-fit: cover;
-  border-radius: 60%;
-}
-
-.dash-social-links {
-  padding: 0px 0px 0 0;
-  font-size: 1.5em;
-}
-
-.dash-social-links a {
-  padding: 0px 5px;
-}
-
-.dash-stats-card {
-  margin: 0 0 0 20px;
-  padding: 30px 20px 20px 20px;
-  flex-grow: 1;
-  box-shadow: 1px 1px 1px rgba(200, 200, 200, 0.3);
-  font-size: 15px;
-  text-align: center;
-  border-radius: 10px;
-  background-color: rgba(255,255,255,0.8);
-  text-align: left;
-}
-
-// ENGAGEMENTS
-.card-engagement {
-  margin: 0 0 15px 0;
-  padding: 20px 20px 10px 20px;
-  width: 100%;
-  min-height: 80;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
-  box-shadow: 1px 1px 1px rgba(200, 200, 200, 0.3);
-  border-radius: 10px;
-  background-color: rgba(255,255,255,0.8);
-  // font-weight: 200;
-}
-
-.card-engagement-description {
-  padding: 0 15px;
-}
-
-.card-settings {
+.bookend-title {
   margin: 0;
-  padding: 30px 20px 20px 20px;
-  width: 100%;
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  text-align: center;
-  box-shadow: 1px 1px 1px rgba(200, 200, 200, 0.3);
-  border-radius: 10px;
+  padding: 2px 0 0px 0;
+  font-size: 16px;
+  flex-grow: 0;
+  color: $figma-gray;
+  text-align: right;
 }
 
-.btn-project {
+.bookend-subtitle {
   margin: 0;
-  padding : 15px 0px;
-  width: 150px;
-  border-radius: 4px;
-  background-color: $teal;
-  -webkit-transition:
-      background-color 400ms ease, opacity 400ms ease, color 400ms ease;
-      transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
-  color: #fff;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 2px;
-  // font-weight: 100;
-  text-align: center;
-
-  & :hover {
-    text-decoration: none;
-    color: #fff;
-  }
+  padding: 2px 0 0px 0;
+  font-size: 16px;
+  flex-grow: 0;
+  color: rgba(120,120,120, 1);
+  text-align: right;
 }
 
-.bookend-item {
-  margin: 0 0 30px 0;
-  padding: 5px 0 5px 15px;
-  border-left: $marigold 4px solid;
+.bookend-content {
+  padding: 5px 0 0 0;
+  font-size: 12px;
+  color: rgba(120,120,120, 1);
+  text-align: right;
 }
 
 
-// RESPONSIVENESS
-// Smallest device
-@media (max-width: 575px) {
-  .dash-container {
-    font-size: 40px;
-  }
-  .dash-tab-container, .dash-container-row {
-    flex-direction: column;
-  }
-  .dash-panel-nav {
-    padding: 0 0 0 10px;
-    width: 80vw;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .dash-stats-card, .dash-square-card {
-    width: 80vw;
-    margin: 10px auto;
-  }
-  .dash-card-nav {
-    padding: 20px 0 20px 0;
-  }
-}
-// Small devices (landscape phones, 401px and up)
-@media (min-width: 576px) and (max-width: 768px) {
-  .dash-container {
-    font-size: 40px;
-  }
-  .dash-tab-container, .dash-container-row {
-    flex-direction: column;
-  }
-  .dash-panel-nav {
-    margin: 0 auto;
-    width: 80vw;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .dash-card-nav {
-    padding: 20px 0;
-  }
-  .dash-stats-card, .dash-square-card {
-    width: 80vw;
-    margin: 10px auto;
-  }
-}
-// Medium devices (tablets, 768px and up)
-@media (min-width: 769px) and (max-width: 991px) {
-  .dash-container {
-    font-size: 40px;
-  }
-  .dash-tab-container {
-    flex-direction: column;
-  }
-  .dash-container-row {
-    flex-direction: row;
-  }
-  .dash-panel-nav {
-    margin: 0 auto;
-    padding: 0 0 0 10px;
-    width: 80vw;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .dash-card-nav {
-    padding: 20px 0;
-    flex-direction: column;
-  }
-  .dash-square-card {
-    width: 285px;
-  }
-}
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) and (max-width: 1199px) {
-  .dash-container {
-    font-size: 50px;
-  }
-  .dash-tab-container, .dash-container-row {
-    flex-direction: row;
-  }
-  .dash-panel-nav {
-    flex-direction: column;
-    width: 190px;
-  }
-}
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .dash-container {
-    font-size: 60px;
-  }
-  .dash-tab-container, .dash-container-row {
-    flex-direction: row;
-  }
-  .dash-panel-nav {
-    flex-direction: column;
-    width: 190px;
-  }
-}
+
+
+//
+// .dash-card-nav {
+//   margin: 0;
+//   padding: 25px 0 0 25px;
+//   flex-grow: 0;
+// }
+//
+// .dash-panel-nav {
+//   // margin: 0 20px 0 0;
+//   // width: 50px;
+//   padding: 0;
+//   display: flex;
+//   align-items: stretch;
+// }
+//
+// .dash-nav-links {
+//   margin: 0;
+//   padding: 0 0 30px 0;
+//   display: flex;
+//   align-items: flex-start;
+//   position: relative;
+//   line-height: .5em;
+//   &:hover {
+//     cursor: pointer;//fix
+//     color: $marigold;
+//   }
+// }
+//
+// .dash-nav-links > *:hover {
+//   cursor: pointer;//fix
+//   color: $marigold;
+// }
+//
+// .dash-nav-links p {
+//   padding: 0;
+//   font-size: .30em;
+//   color: $teal;
+// }
+//
+// .dash-nav-links i {
+//   padding: 0 1.5vw 0 0;
+//   color: $teal;
+//   font-size: .5em;
+// }
+//
+// .dash-panel-content {
+//   min-height: 70vh;
+//   flex-grow: 1;
+// }
+//
+// .dash-active {
+//   display: flex;
+// }
+//
+// .dash-inactive {
+//   display: none;
+// }
+//
+// .dash-container-row {
+//   flex-grow: 1;
+// }
+//
+// .dash-container-column {
+//   flex-direction: column;
+//   justify-content: space-around;
+//   align-items: center;
+//   flex-grow: 1;
+// }
+//
+// // PROFILE
+// .dash-square-cards {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content:space-around;
+//   flex-grow: 0;
+// }
+//
+// .dash-square-card {
+//   margin: auto;
+//   padding: 2vw;
+//   height: 275px;
+//   width: 285px;
+//   flex-grow: 0;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content:center;
+//   box-shadow: 1px 1px 1px rgba(200, 200, 200, 0.3);
+//   background-color: rgba(255,255,255,0.8);
+//   border-radius: 10px;
+//   font-size: 15px;
+//   text-align: center;
+// }
+
+//
+//
+// .dash-square-card-msg {
+//   align-items: center;
+//   justify-content: flex-start;
+// }
+//
+// .dash-square-cards .spacer {
+//   height: 20px;
+// }
+//
+// .user-title {
+//   color: grey;
+//   font-size: 13px;
+// }
+//
+// .dash-avatar {
+//   padding: 0 0 1vw 0;
+//   width: 6vw;
+//   height: 6vw;
+//   object-fit: cover;
+//   border-radius: 60%;
+// }
+//
+// .dash-social-links {
+//   padding: 0px 0px 0 0;
+//   font-size: 1.5em;
+// }
+//
+// .dash-social-links a {
+//   padding: 0px 5px;
+// }
+//
+// .dash-stats-card {
+//   margin: 0 0 0 20px;
+//   padding: 30px 20px 20px 20px;
+//   flex-grow: 1;
+//   box-shadow: 1px 1px 1px rgba(200, 200, 200, 0.3);
+//   font-size: 15px;
+//   text-align: center;
+//   border-radius: 10px;
+//   background-color: rgba(255,255,255,0.8);
+//   text-align: left;
+// }
+//
+// // ENGAGEMENTS
+// .card-engagement {
+//   margin: 0 0 15px 0;
+//   padding: 20px 20px 10px 20px;
+//   width: 100%;
+//   min-height: 80;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-around;
+//   align-items: flex-start;
+//   box-shadow: 1px 1px 1px rgba(200, 200, 200, 0.3);
+//   border-radius: 10px;
+//   background-color: rgba(255,255,255,0.8);
+//   // font-weight: 200;
+// }
+//
+// .card-engagement-description {
+//   padding: 0 15px;
+// }
+//
+// .card-settings {
+//   margin: 0;
+//   padding: 30px 20px 20px 20px;
+//   width: 100%;
+//   min-height: 50vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: left;
+//   text-align: center;
+//   box-shadow: 1px 1px 1px rgba(200, 200, 200, 0.3);
+//   border-radius: 10px;
+// // }
+//
+// .btn-project {
+//   margin: 0;
+//   padding : 15px 0px;
+//   width: 150px;
+//   border-radius: 4px;
+//   background-color: $teal;
+//   -webkit-transition:
+//       background-color 400ms ease, opacity 400ms ease, color 400ms ease;
+//       transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
+//   color: #fff;
+//   font-size: 14px;
+//   line-height: 20px;
+//   letter-spacing: 2px;
+//   // font-weight: 100;
+//   text-align: center;
+//
+//   & :hover {
+//     text-decoration: none;
+//     color: #fff;
+//   }
+// }
+//
+//
+// // RESPONSIVENESS
+// // Smallest device
+// @media (max-width: 575px) {
+//   .dash-container {
+//     font-size: 40px;
+//   }
+//   .dash-tab-container, .dash-container-row {
+//     flex-direction: column;
+//   }
+//   .dash-panel-nav {
+//     padding: 0 0 0 10px;
+//     width: 80vw;
+//     flex-direction: row;
+//     justify-content: space-between;
+//   }
+//   .dash-stats-card, .dash-square-card {
+//     width: 80vw;
+//     margin: 10px auto;
+//   }
+//   .dash-card-nav {
+//     padding: 20px 0 20px 0;
+//   }
+// }
+// // Small devices (landscape phones, 401px and up)
+// @media (min-width: 576px) and (max-width: 768px) {
+//   .dash-container {
+//     font-size: 40px;
+//   }
+//   .dash-tab-container, .dash-container-row {
+//     flex-direction: column;
+//   }
+//   .dash-panel-nav {
+//     margin: 0 auto;
+//     width: 80vw;
+//     flex-direction: row;
+//     justify-content: space-between;
+//   }
+//   .dash-card-nav {
+//     padding: 20px 0;
+//   }
+//   .dash-stats-card, .dash-square-card {
+//     width: 80vw;
+//     margin: 10px auto;
+//   }
+// }
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 769px) and (max-width: 991px) {
+//   .dash-container {
+//     font-size: 40px;
+//   }
+//   .dash-tab-container {
+//     flex-direction: column;
+//   }
+//   .dash-container-row {
+//     flex-direction: row;
+//   }
+//   .dash-panel-nav {
+//     margin: 0 auto;
+//     padding: 0 0 0 10px;
+//     width: 80vw;
+//     flex-direction: row;
+//     justify-content: space-between;
+//   }
+//   .dash-card-nav {
+//     padding: 20px 0;
+//     flex-direction: column;
+//   }
+//   .dash-square-card {
+//     width: 285px;
+//   }
+// }
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) and (max-width: 1199px) {
+//   .dash-container {
+//     font-size: 50px;
+//   }
+//   .dash-tab-container, .dash-container-row {
+//     flex-direction: row;
+//   }
+//   .dash-panel-nav {
+//     flex-direction: column;
+//     width: 190px;
+//   }
+// }
+// // Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+//   .dash-container {
+//     font-size: 60px;
+//   }
+//   .dash-tab-container, .dash-container-row {
+//     flex-direction: row;
+//   }
+//   .dash-panel-nav {
+//     flex-direction: column;
+//     width: 190px;
+//   }
+// }

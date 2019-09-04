@@ -19,6 +19,9 @@ navEvent();
 import { projectAccordionEvent } from '../menus/projectAccordion.js';
 projectAccordionEvent();
 
+import { engageAccordionEvent } from '../menus/engageAccordion.js';
+engageAccordionEvent();
+
 import { applyAccordionEvent } from '../menus/applyAccordion.js';
 applyAccordionEvent();
 

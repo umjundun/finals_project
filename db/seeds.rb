@@ -100,7 +100,7 @@ User.create!(
               group: "developer",
               remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1566505936/luz9wt7bg6qqzktauf55.jpg",
               interests: "I like to code",
-              bio: "Batch #281 of Le Wagon Coding Bootcamp!"
+              bio: "Batch #281 of Le Wagon Coding Bootcamp!",
               experience: "None please hire me"
             )
 User.create!(
@@ -189,33 +189,33 @@ p "6 projects created"
 
 #Create engagements
 Engagement.create(
-                status: "active",
+                status: "Active",
                 project: Project.find(4),
-                user: User.find_by_email("dev2@test.com")
+                user: User.find_by_email("bob@newdev.com")
                 )
 
 Engagement.create(
-                status: "active",
+                status: "Pending",
                 project: Project.find(5),
-                user: User.find_by_email("dev2@test.com")
+                user: User.find_by_email("bob@newdev.com")
                 )
 
 Engagement.create(
-                status: "active",
+                status: "Active",
                 project: Project.find(3),
-                user: User.find_by_email("dev2@test.com")
+                user: User.find_by_email("bob@newdev.com")
                 )
 
 Engagement.create(
-                status: "active",
+                status: "Archived",
                 project: Project.find(4),
-                user: User.find_by_email("dev2@test.com")
+                user: User.find_by_email("bob@newdev.com")
                 )
 
 Engagement.create(
-                status: "active",
+                status: "Rejected",
                 project: Project.find(5),
-                user: User.find_by_email("dev2@test.com")
+                user: User.find_by_email("bob@newdev.com")
                 )
 
  p "5 engagements created"
