@@ -8,8 +8,12 @@ body {
 }
 
 #global-content-container {
-  // margin-top: 65px; //<-- Testing with hamburger off-click
+  margin: 0;
   background-color:white;
+}
+
+#public-container {
+  margin-top: 65px;
 }
 
 .full-container {
