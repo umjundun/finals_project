@@ -8,7 +8,7 @@ body {
 }
 
 #global-content-container {
-  margin-top: 65px; //<-- Testing with hamburger off-click
+  // margin-top: 65px; //<-- Testing with hamburger off-click
   background-color:white;
 }
 
@@ -149,110 +149,106 @@ body {
 }
 
 
+.full-container {
+  margin: 0px auto;
+  // padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: white;
+}
 
-//
-//
-// .full-container {
-//   margin: 0px auto;
-//   // padding-top: 25px;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: flex-start;
-//   background-color: white;
-// }
-//
-// .section-container {
-//   margin: 0 auto;
-//   padding: 3vh 0 10vh 0;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: space-around;
-//   background-color: white;
-//   min-height: calc(100vh - 65px);
-// }
-//
-// .section-container h2 {
-//   padding: 40px 0;
-//   // font-weight:400;
-// }
-//
-// .split-index-container {
-//   margin: 0;
-//   padding: 0;
-//   min-height: calc(100vh - 65px);
-//   display: flex;
-//   align-items: top;
-//   background-color: white;
-// }
-//
-// .call-to-action-container {
-//   width: 700px;
-//   height: 400px;
-//   background-image: url(https://res.cloudinary.com/caitlinsnyder/image/upload/v1567086072/action_bnrmyg.png);
-//   background-position: center;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
-//
-// .call-to-action-content {
-//   padding : 18px 18px;
-//   width: 400px;
-//   background: white;
-//   border-radius: 4px;
-//   -webkit-box-shadow:2px 5px 16px 0px grey, 5px 5px 6px 3px rgba(250,250,250,0);
-//   box-shadow:2px 5px 16px 0px grey, 5px 5px 6px 3px rgba(250,250,250,0);
-// }
-//
-//
-// // RESPONSIVENESS
-// @media (max-width: 575px) {
-//   .section-container {
-//     font-size: 40px;
-//   }
-//   .split-index-container {
-//     font-size: 40px;
-//     flex-direction: column;
-//   }
-// }
-// // Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) and (max-width: 768px) {
-//   .section-container {
-//     font-size: 40px;
-//   }
-//   .split-index-container {
-//     font-size: 40px;
-//     flex-direction: column;
-//   }
-// }
-// // Medium devices (tablets, 768px and up)
-// @media (min-width: 769px) and (max-width: 991px) {
-//   .section-container {
-//     font-size: 40px;
-//   }
-//   .split-index-container {
-//     font-size: 40px;
-//     flex-direction: column;
-//   }
-// }
-// // Large devices (desktops, 992px and up)
-// @media (min-width: 992px) and (max-width: 1199px) {
-//   .section-container {
-//     font-size: 40px;
-//   }
-//   .split-index-container {
-//     font-size: 45px;
-//     flex-direction: row;
-//   }
-// }
-// // Extra large devices (large desktops, 1200px and up)
-// @media (min-width: 1200px) {
-//   .section-container {
-//     font-size: 60px;
-//   }
-//   .split-index-container {
-//     font-size: 60px;
-//     flex-direction: row;
-//   }
-// }
+.section-container {
+  margin: 0 auto;
+  // padding: 15vh 0 25vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  min-height: calc(100vh - 65px);
+}
+
+.section-container h2 {
+  padding: 40px 0;
+  // font-weight:400;
+}
+
+.split-index-container {
+  margin: 0;
+  padding: 0;
+  min-height: calc(100vh - 65px);
+  display: flex;
+  align-items: top;
+  background-color: white;
+}
+
+.call-to-action-container {
+  width: 700px;
+  height: 400px;
+  background-image: url(https://res.cloudinary.com/caitlinsnyder/image/upload/v1567086072/action_bnrmyg.png);
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.call-to-action-content {
+  padding : 18px 18px;
+  width: 400px;
+  background: white;
+  border-radius: 4px;
+  -webkit-box-shadow:2px 5px 16px 0px grey, 5px 5px 6px 3px rgba(250,250,250,0);
+  box-shadow:2px 5px 16px 0px grey, 5px 5px 6px 3px rgba(250,250,250,0);
+}
+
+// RESPONSIVENESS
+@media (max-width: 575px) {
+  .section-container {
+    font-size: 40px;
+  }
+  .split-index-container {
+    font-size: 40px;
+    flex-direction: column;
+  }
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 768px) {
+  .section-container {
+    font-size: 40px;
+  }
+  .split-index-container {
+    font-size: 40px;
+    flex-direction: column;
+  }
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 769px) and (max-width: 991px) {
+  .section-container {
+    font-size: 40px;
+  }
+  .split-index-container {
+    font-size: 40px;
+    flex-direction: column;
+  }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) {
+  .section-container {
+    font-size: 40px;
+  }
+  .split-index-container {
+    font-size: 45px;
+    flex-direction: row;
+  }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .section-container {
+    font-size: 60px;
+  }
+  .split-index-container {
+    font-size: 60px;
+    flex-direction: row;
+  }
+}
