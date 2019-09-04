@@ -2,7 +2,7 @@
 .mid-banner .banner-text {
   background-color:white;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .banner-background.mid-banner{
@@ -19,12 +19,14 @@
   border-radius: 10px;
 }
 
-
-.mid-banner h1 {
-  font-weight: 200;
+.mid-banner-title {
+  font-weight:100;
   line-height: 1.5;
-  width: 34%;
+  width: 20%;
+  padding: 50px 0;
+  font-size: 60px;
 }
+
 
 .mid-banner strong {
   font-size: 1em;

@@ -7,11 +7,21 @@
 }
 
 
-#landing-banner h1 {
+.landing-banner-title {
   padding: 0 0 10px 0;
-  letter-spacing: 3px;
-  font-weight: bold;
-  font-size: 1em;
+  letter-spacing: 5px;
+  font-weight: 600;
+  font-size:60px;
+}
+
+.landing-banner-subtitle {
+  padding: 0px 0 7px 0;
+  letter-spacing: 2px;
+  font-size: .30em;
+  font-weight: 300;
+  text-align:center;
+  color: #2e2d2d;
+  background-color: transparent;
 }
 
 // NOT USED FOR THE MOMENT

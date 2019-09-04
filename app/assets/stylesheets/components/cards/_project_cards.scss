@@ -1,3 +1,17 @@
+.home-project-card {
+  margin: 0px 0 0px 0;
+  padding: 0px 0 40px 0;
+  margin: auto;
+  position: relative;
+  text-align: center;
+  background-color: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+
 .cards-project {
   margin: 0px 0 0px 0;
   padding: 0px 0 40px 0;
@@ -16,7 +30,7 @@
 
 .card-project {
 
-  margin: 0;
+  margin: 12px;
   height: 120px;
   width: 40vw;
   overflow: hidden;
@@ -26,6 +40,7 @@
   border-radius: 10px;
   justify-content: flex-end;
 }
+
 
 .project-accordion-item {
   margin: 20px 0 0px 0;
@@ -63,25 +78,25 @@
   margin: 0;
   padding: 4px 0px 0px 6px;
   flex-grow:0;
-  font-size: 30px;
-  font-weight: light;
+  font-size: 25px;
+  font-weight: 300;
   color: $teal;
 }
 
 .card-content .card-subtitle {
   margin:0;
   padding: 0px 0px 6px 06px;
-  font-size: 14px;
-  font-weight: lighter;
-  color: rgba(80,80,80,1);
+  font-size: 16px;
+  font-weight: 300;
+  color: grey;
 }
-
 .card-content .card-description {
   margin:0;
   padding: 3px 0px 6px 06px;
-  font-size: 16px;
-  opacity: .7;
+  font-size: 14px;
+  font-weight: 300;
   flex-grow:1;
+  color:grey;
 }
 
 .apply-content {
