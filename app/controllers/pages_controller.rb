@@ -2,6 +2,11 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
+    # OBJECTS CREATED TO RENDER FORMS
+    @engagement = Engagement.new
+    @project = Project.new
+    @organization = Organization.new
+
     unless params[:query]
       @projects = Project.all
 
