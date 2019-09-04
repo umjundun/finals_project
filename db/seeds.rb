@@ -240,15 +240,15 @@ p "6 projects created"
 
 #Create engagements
 Engagement.create(
-                status: "active",
+                status: "Reject developer for engagement",
                 project: Project.find(4),
-                user: User.find_by_email("dev")
+                user: User.find_by_email("sam@newdev.com")
                 )
 
 Engagement.create(
-                status: "active",
+                status: "Reject developer for engagement",
                 project: Project.find(5),
-                user: User.find_by_email("dev")
+                user: User.find_by_email("sam@newdev.com")
                 )
 
  p "2 engagements created"
