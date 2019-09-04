@@ -43,7 +43,55 @@ food_pantry = Organization.create!(
                     address: '561 Bannerman Ave, Winnipeg',
                     logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567176750/Food_Pantry_xqoodw.jpg"
                 )
-p "2 organizations created"
+org3 = Organization.create!(
+                    name: 'Doctors Without Borders',
+                    mission: 'Medical Aid Where It Is Needed Most. Independent. Neutral. Impartial.',
+                    address: '551 Adelaide Street West Toronto, Ontario',
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/doctors_without_borders_la3ij2.jpg"
+                )
+org4 = Organization.create!(
+                    name: 'ACUMEN',
+                    mission: 'Changing the way the world tackles poverty',
+                    address: '40 Worth Street, New York, NY, 10013',
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609245/acumen_qlizvu.png"
+                )
+org5 = Organization.create!(
+                    name: 'Heifer International',
+                    mission: 'What if they had not a cup of milk, but a cow?',
+                    address: '1 World Avenue, Little Rock, AR 72202',
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/Heifer_Logo_pwtr08.png"
+                )
+org6 = Organization.create!(
+                    name: 'Ashoka',
+                    mission: 'Everyone a Changemaker',
+                    address: '1700 North Moore Street, Arlington, VA 22209',
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/AShoka_logo_mza8y6.png"
+                )
+org7 = Organization.create!(
+                    name: 'Cure Violence Global',
+                    mission: "Let's Make the Cure Contagious!",
+                    address: '1329 N. Dearborn Street, Chicago, IL 60612',
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/cure_violence_global-250x354_ahaxi1.png"
+                )
+org8 = Organization.create!(
+                    name: 'BRAC',
+                    mission: 'Creating opportunities for everyone to realize their potential',
+                    address: 'Vancouver, BC',
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/BRAC_logo4.svg_-250x83_rnfqes.png"
+                )
+org9 = Organization.create!(
+                    name: 'WIKIMEDIA FOUNDATION',
+                    mission: 'Helping everyone share in the sum of all knowledge',
+                    address: '149 New Montgomery Street, San Francisco, CA 94105',
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/WIKIMEDIA-FOUNDATION_Logo_li9i7k.png"
+                )
+org10 = Organization.create!(
+                    name: 'Oxfam',
+                    mission: 'The power of people against poverty',
+                    address: '39 McArthur Avenue, Ottawa, ON',
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/oxfam_u8dmno.png"
+                )
+p "10 organizations created"
 
 # Users - Admin
 new_admin = User.create!(
@@ -61,16 +109,19 @@ p "1 admin user created"
 
 # Users - NGO Montreal Clothes Closet
 clothes_closet_rep = User.create!(
-                      email: "becky@clothescloset.org",
+                      email: "caitlin@clothescloset.org",
                       username: "ngo",
                       password: "password",
-                      first_name: "Becky",
-                      last_name: "Test",
+                      first_name: "Caitlin",
+                      last_name: "Snyder",
                       admin: false,
                       organization: clothes_closet,
                       developer: false,
                       group: "ngo",
-                      remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567176925/Screen_Shot_2019-08-30_at_10.55.07_AM_obcjks.png"
+                      remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567176925/Screen_Shot_2019-08-30_at_10.55.07_AM_obcjks.png",
+                      interests: "Putting clothes on the people that need them!",
+                      bio: "NGO Representative helping people less fortunate",
+                      experience: "Working with NGOs for the last 8 years.",
                     )
 
 # Users - NGO The Winnipeg Food Pantry
@@ -89,19 +140,19 @@ p "2 NGO users created"
 
 # Users - Devs
 User.create!(
-              email: "bob@newdev.com",
+              email: "sam@newdev.com",
               username: "dev",
               password: "password",
-              first_name: "Bob",
-              last_name: "Sherman",
+              first_name: "Sam",
+              last_name: "M.-Morin",
               admin: false,
               organization: dev_org,
               developer: true,
               group: "developer",
               remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1566505936/luz9wt7bg6qqzktauf55.jpg",
               interests: "I like to code",
-              bio: "Batch #281 of Le Wagon Coding Bootcamp!"
-              experience: "None please hire me"
+              bio: "Batch #281 of Le Wagon Coding Bootcamp!",
+              experience: "None please hire me",
             )
 User.create!(
               email: "dev2@test.com",
@@ -191,31 +242,13 @@ p "6 projects created"
 Engagement.create(
                 status: "active",
                 project: Project.find(4),
-                user: User.find_by_email("dev2@test.com")
+                user: User.find_by_email("dev")
                 )
 
 Engagement.create(
                 status: "active",
                 project: Project.find(5),
-                user: User.find_by_email("dev2@test.com")
+                user: User.find_by_email("dev")
                 )
 
-Engagement.create(
-                status: "active",
-                project: Project.find(3),
-                user: User.find_by_email("dev2@test.com")
-                )
-
-Engagement.create(
-                status: "active",
-                project: Project.find(4),
-                user: User.find_by_email("dev2@test.com")
-                )
-
-Engagement.create(
-                status: "active",
-                project: Project.find(5),
-                user: User.find_by_email("dev2@test.com")
-                )
-
- p "5 engagements created"
+ p "2 engagements created"

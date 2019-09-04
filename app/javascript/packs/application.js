@@ -6,12 +6,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 initMapbox();
 
-// import { hamburgerEvent } from '../menus/hamburger_menu.js';
-// hamburgerEvent();
-
-// import { avatarEvent } from '../menus/avatar_menu.js';
-// avatarEvent();
-
 
 import { signUpEvent } from '../modals/modalSignUp.js';
 signUpEvent();
@@ -30,3 +24,12 @@ applyAccordionEvent();
 
 import { messagesEvent } from '../modals/modalMessage.js';
 messagesEvent();
+
+import { projectEditEvent } from '../modals/modalProjectEdit.js';
+projectEditEvent();
+
+import { projectApplyEvent } from '../modals/modalProjectApply.js';
+projectApplyEvent();
+
+import { dashButtons } from '../menus/dashButtons.js';
+dashButtons();

@@ -30,7 +30,9 @@ class EngagementsController < ApplicationController
 
     if @engagement.save
       # ActionCable.server.broadcast "notifications:#{@engagement.project.user_id}", project_name: @engagement.project.title, user: current_user.full_name
-
+      unless Conversation.between(sender: @engagement.project.user, recipient: current_user).present?
+        Conversation.create(sender: @engagement.project.user, recipient: current_user)
+      end
       redirect_to user_path(current_user)
     else
       render :new
