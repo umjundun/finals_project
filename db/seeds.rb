@@ -217,21 +217,21 @@ Project.create(
 Project.create(
               organization: clothes_closet, # Montreal Clothes Closet
               description: "Banner image",
-              title: "Banner image",
+              title: "Banner image with carousel",
               user: clothes_closet_rep,
               active: false
             )
 Project.create(
               organization: clothes_closet, # Montreal Clothes Closet
-              description: "Another project",
-              title: "Another project",
+              description: "Mobile app to help connect to a wider audience",
+              title: "Mobile app",
               user: clothes_closet_rep,
               active: true
             )
 Project.create(
               organization: clothes_closet, # Montreal Clothes Closet
-              description: "A third project",
-              title: "A third project",
+              description: "need to rework our database completely",
+              title: "Database",
               user: clothes_closet_rep,
               active: true
             )
