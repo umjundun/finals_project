@@ -59,10 +59,10 @@
   padding-top: 8px;
 }
 
-.modal-container, .modal-form-container {
-  // display: none; /* Hidden by default */
+.modal-container {
+  display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 4; /* Sit on top */
+  z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -87,27 +87,6 @@
 
 .modal-content-container > * {
   font-size: inherit !important;
-}
-
-.modal-form-container {
-  margin: 0;
-  padding: 0;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-form-content-container {
-  margin: 0;
-  padding: 0;
-  width: 50vw;
-  height: 80vh;
-  background: white;
-}
-
-.modal-apply-form-delimiter {
-  margin: 0;
-  padding: 0;
 }
 
 .modal-content-container h3 {
