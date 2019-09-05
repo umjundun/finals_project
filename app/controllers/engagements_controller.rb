@@ -27,14 +27,13 @@ class EngagementsController < ApplicationController
     @engagement.project = @project
     @engagement.user = current_user
     @engagement.status = "Pending"
-
     if @engagement.save
       # ActionCable.server.broadcast "notifications:#{@engagement.project.user_id}", project_name: @engagement.project.title, user: current_user.full_name
 
       Conversation.create(sender_id: @engagement.project.user.id, recipient_id: current_user.id)
       redirect_to user_path(current_user)
     else
-      render :new
+      redirect_to root_path
     end
   end
 
@@ -59,7 +58,7 @@ class EngagementsController < ApplicationController
   private
 
   def engagement_params
-    params.require(:engagement).permit(:status, :request, :dev_status, :ngo_status, :start_date, :end_date)
+    params.require(:engagement).permit(:status, :request, :ngo_status, :start_date, :end_date)
   end
 
   def set_engagement
@@ -75,6 +74,6 @@ class EngagementsController < ApplicationController
   end
 
   def create_notifications
-    Notification.create(recipient: recipient, actor: current_user, action: 'engagement', notifiable: @engagement)
+    # Notification.create(recipient: recipient, actor: current_user, action: 'engagement', notifiable: @engagement)
   end
 end

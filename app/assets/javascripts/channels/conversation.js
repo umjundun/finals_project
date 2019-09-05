@@ -8,6 +8,7 @@ const conversationId = document.querySelector("[data-conversation-id]").dataset.
 
 App.messages = App.cable.subscriptions.create({ channel: 'MessageChannel', conversation_id: conversationId }, {
   received: function(data) {
-    document.querySelector("#messages").insertAdjacentHTML("beforeend", data.messageHTML);
+    debugger;
+    document.querySelector("#messages1").insertAdjacentHTML("beforeend", data.messageHTML);
   }
 });
