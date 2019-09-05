@@ -1,12 +1,12 @@
-<%= link_to user_path(user) do %>
+<%#= link_to user_path(user) do %>
   <div class="card-dev">
     <!-- Card image -->
-    <% cl_image_tag user.photo %>
+    <% user.photo %>
     <img src="<%= user.photo %>">
     <!-- Card content -->
     <div class="card-dev-content">
       <!-- Title -->
-      <h3><%= user.full_name %></h3>
+      <div class="card-dev-name"><%= user.full_name %></div>
     </div>
   </div>
-<% end %>
+<%# end %>

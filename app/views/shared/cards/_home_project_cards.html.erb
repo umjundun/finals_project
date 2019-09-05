@@ -1,10 +1,21 @@
 <div class="section-container projects">
   <div class="section-heading">
-    <h2>Recent projects for good</h2>
+    <div class="homepage-title">Recent projects for good</div>
   </div>
-  <div class="cards-project">
-    <% @projects.first(6).each do |project| %>
-      <%= render 'shared/cards/project_card', project: project %>
-    <% end %>
-  </div>
-</div>
+
+    <div class="home-project-card">
+      <% @projects.first(6).each do |project| %>
+        <div class="card-project" style="background-image:
+                                        linear-gradient(
+                                        rgba(255,255,255,0.4),
+                                        rgba(255,255,255,0.4)),
+                                        url(<%= project.organization.logo %>)">
+          <div class="card-content">
+            <div class="card-title"><%= project.title %></div>
+            <div class="card-subtitle"><%= project.organization.name %></div>
+            <div class="card-description"><%= project.description %></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+

@@ -24,7 +24,8 @@
   height: 250px;
   object-fit: cover;
   object-position:  50% 50%;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .card-dev-content {
@@ -34,29 +35,33 @@
   justify-content: space-around;
 }
 
-.card-dev-content h3 {
-  padding: 30px 20px 10px 20px;
+.card-dev-name {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-}
-
-.card-dev-content p {
-  padding: 8px 0 0 0;
-  text-align: justify;
-}
-
-.card-dev-content  h3, p {
-  color:rgb(110,110,110);
-
-  &:hover {
-    color: rgb(140,140,140);
-    text-decoration: none;
-  }
-}
-
-a:hover {
   text-decoration: none;
+  font-weight: 100;
+  color: grey;
+  padding: 15px 0 0 0;
+  font-size:25px;
 }
+
+// NOT SURE IF WE NEED THIS FOR CARD DEVS
+// .card-dev-content p {
+//   text-align: justify;
+// }
+
+// .card-dev-name  h3, p {
+//   color:rgb(110,110,110);
+
+//   &:hover {
+//     color: rgb(140,140,140);
+//     text-decoration: none;
+//   }
+// }
+
+// a:hover {
+//   text-decoration: none;
+// }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {

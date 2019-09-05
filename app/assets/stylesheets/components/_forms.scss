@@ -14,6 +14,57 @@
   background-repeat: no-repeat;
 }
 
+// #user_hibernate{
+//   margin-top: 5px;
+//   margin-left:8px;
+// }
+// .form-group.boolean.optional{
+
+//   font-size: 20px;
+//   text-align:left;
+//   font-weight:200;
+//   margin-left: 0px;
+// }
+
+.form-text.text-muted{
+  margin-left: 0;
+}
+.form-group.boolean.optional.user_hibernate {
+  text-align:left;
+
+}
+
+.form-check-input{
+  margin: 0;
+}
+// .user_hibernate{
+//   margin-top: 7px;
+// }
+//   text-align:left;
+//   font-size: 1.5em;
+//   font-weight:200;
+//   padding: 0;
+// }
+// .form-check-label.boolean.optional{
+//     margin-bottom: 0.1em;
+// }
+
+// .form-check-input.boolean {
+//   margin-top: 0.1em;
+// //   margin-left: 5px;
+// }
+
+.cancel {
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+
+.cancel a {
+  text-decoration: none;
+  color: red;
+}
+
 .form-content-container {
   margin: 10vh auto 10vh auto;
   padding: 7vh;
@@ -41,7 +92,14 @@
 }
 
 .form-control{
-  border: 1px solid #c1bfbf;
+  border: 1px solid grey;
+}
+
+.form-text {
+ text-align: left;
+ font-weight: 200;
+ font-size: 15px;
+
 }
 
 select {
@@ -52,7 +110,7 @@ select {
 }
 
 label, .inline-label, .label-unit {
-  font-size: .35em;
+  font-size: .65em;
   color: grey;
 }
 
@@ -109,9 +167,14 @@ input, textarea {
   padding: 15px 0 0 0;
   text-align: left;
   display: block;
-  color:grey
+  color:grey;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 300;
 }
-
 .form-control-label {
   text-shadow: none;
 }
