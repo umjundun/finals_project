@@ -17,17 +17,24 @@ ActiveRecord::Base.connection.reset_pk_sequence!(:conversations)
 
 
 #Default Dummy Organization for Admin users
-# ID 1
-admin_org = Organization.create!(
-                    name: "All Together",
-                    mission: "NA"
-)
+# # ID 1
+# admin_org = Organization.create!(
+#                     name: "All Together",
+#                     mission: "Community Fellowship",
+#                     logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567176760/clothes_closet_w4buuo.webp",
+#                     latitude: 50.4585102,
+#                     longitude: -104.7754917  
+# )
 #Default Dummy Organization for Dev users
 # ID 2
 dev_org = Organization.create!(
-                    name: "Hands Up",
-                    mission: "NA"
+                    name: "Farm to Table Together",
+                    mission: "Farmers' co-op",
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567176760/clothes_closet_w4buuo.webp",
+                    latitude: 54.1777568,
+                    longitude: -104.4379119  
                   )
+
 # Organizations for users associated with an organization
 # ID 3
 clothes_closet = Organization.create!(
@@ -47,7 +54,7 @@ food_pantry = Organization.create!(
                     latitude: 49.9297444,
                     longitude: -97.1421969
                 )
-org3 = Organization.create!(
+msf = Organization.create!(
                     name: 'Doctors Without Borders',
                     mission: 'Medical Aid Where It Is Needed Most. Independent. Neutral. Impartial.',
                     address: '551 Adelaide Street West Toronto, Ontario',
@@ -55,7 +62,7 @@ org3 = Organization.create!(
                     latitude: 43.6451346,
                     longitude: -79.4050997  
                 )
-org4 = Organization.create!(
+acumen = Organization.create!(
                     name: 'ACUMEN',
                     mission: 'Changing the way the world tackles poverty',
                     address: '40 Worth Street, New York, NY, 10013',
@@ -71,7 +78,7 @@ org5 = Organization.create!(
                     latitude: 34.7448171,
                     longitude: -92.2584105
                 )
-org6 = Organization.create!(
+ashoka = Organization.create!(
                     name: 'Ashoka',
                     mission: 'Everyone a Changemaker',
                     address: '1700 North Moore Street, Arlington, VA 22209',
@@ -79,7 +86,7 @@ org6 = Organization.create!(
                     latitude: 38.8957412,
                     longitude: -77.0740652  
                 )
-org7 = Organization.create!(
+cure = Organization.create!(
                     name: 'Cure Violence Global',
                     mission: "Let's Make the Cure Contagious!",
                     address: '1329 N. Dearborn Street, Chicago, IL 60612',
@@ -87,7 +94,7 @@ org7 = Organization.create!(
                     latitude: 41.9066849,
                     longitude: -87.6319148 
                 )
-org8 = Organization.create!(
+brac = Organization.create!(
                     name: 'BRAC',
                     mission: 'Creating opportunities for everyone to realize their potential',
                     address: 'Vancouver, BC',
@@ -95,7 +102,7 @@ org8 = Organization.create!(
                     latitude: 49.2578262,
                     longitude: -123.1941154 
                 )
-org9 = Organization.create!(
+wikimedia = Organization.create!(
                     name: 'WIKIMEDIA FOUNDATION',
                     mission: 'Helping everyone share in the sum of all knowledge',
                     address: '149 New Montgomery Street, San Francisco, CA 94105',
@@ -103,7 +110,7 @@ org9 = Organization.create!(
                     latitude: 37.7869487,
                     longitude: -122.4017916  
                 )
-org10 = Organization.create!(
+oxfam = Organization.create!(
                     name: 'Oxfam',
                     mission: 'The power of people against poverty',
                     address: '39 McArthur Avenue, Ottawa, ON',
@@ -113,19 +120,19 @@ org10 = Organization.create!(
                 )
 p "10 organizations created"
 
-# Users - Admin
-new_admin = User.create!(
-                        email: "admin@test.com",
-                        organization: admin_org,
-                        username: "admin",
-                        password: "password",
-                        first_name: "Admin",
-                        last_name: "Test",
-                        group: "admin",
-                        admin: true,
-                        developer: false
-                      )
-p "1 admin user created"
+# # Users - Admin
+# new_admin = User.create!(
+#                         email: "admin@test.com",
+#                         organization: admin_org,
+#                         username: "admin",
+#                         password: "password",
+#                         first_name: "Admin",
+#                         last_name: "Test",
+#                         group: "admin",
+#                         admin: true,
+#                         developer: false
+#                       )
+# p "1 admin user created"
 
 # Users - NGO Montreal Clothes Closet
 clothes_closet_rep = User.create!(
@@ -215,47 +222,51 @@ p "4 devs created"
 # Projects
 Project.create(
               organization: food_pantry, # The Winnipeg Food Pantry
-              description: "Website to get new clients",
-              title: "Food pantry website",
-              user: food_pantry_rep,
-              active: true
-            )
-Project.create(
-              organization: food_pantry, # The Winnipeg Food Pantry
-              description: "Database to organize our inventory",
-              title: "Food pantry database",
+              description: "Real-time app to track inventory"
+              title: "Food-friendly mobile app",
               user: food_pantry_rep,
               active: true
             )
 Project.create(
               organization: clothes_closet, # Montreal Clothes Closet
-              description: "Website to highlight our beautiful clothes",
-              title: "Beautiful clothing website",
-              user: clothes_closet_rep,
+              description: "Help us track our clothing rentals and availability,!"
+              title: "Clothing database",
+              user: food_pantry_rep,
               active: true
             )
+
 Project.create(
-              organization: clothes_closet, # Montreal Clothes Closet
-              description: "Banner image",
-              title: "Banner image with carousel",
-              user: clothes_closet_rep,
-              active: false
-            )
-Project.create(
-              organization: clothes_closet, # Montreal Clothes Closet
-              description: "Mobile app to help connect to a wider audience",
-              title: "Mobile app",
-              user: clothes_closet_rep,
+              organization: wikimedia,
+              description: "Looking for someone to help us improve our site's UX",
+              title: "UX designer wanted!",
+              user: food_pantry_rep,
               active: true
             )
+
 Project.create(
-              organization: clothes_closet, # Montreal Clothes Closet
+              organization: ashoka,
+              description: "Newsletter feature needed for site",
+              title: "Snazzy newsletter",
+              user: food_pantry_rep,
+              active: true
+            )
+
+Project.create(
+              organization: msf,
+              description: "Seeking online graph feature",
+              title: "Do you like data?",
+              user: food_pantry_rep,
+              active: true
+            )
+
+Project.create(
+              organization: acumen,
               description: "need to rework our database completely",
-              title: "Database",
-              user: clothes_closet_rep,
+              title: "UX designer wanted!",
+              user: food_pantry_rep,
               active: true
             )
-p "6 projects created"
+p "4 projects created"
 
 
 #Create engagements
