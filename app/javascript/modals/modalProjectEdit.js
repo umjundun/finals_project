@@ -5,7 +5,6 @@ const closeButtons = document.querySelectorAll("#project-edit-close");
 export const projectEditEvent = () => {
 
   if (buttons.length > 0) {
-
   // When the user clicks the button, open the modal
     buttons.forEach((button) => {
       button.addEventListener("click", (event) => {
