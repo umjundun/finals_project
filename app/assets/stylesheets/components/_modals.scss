@@ -46,12 +46,13 @@
   font-size: 50px;
   color: white;
   &:hover {
-    font-style: italic;
+    font-size:55px;
+    text-decoration:none;
   }
 }
 
 .modal-nav-links:first-child {
-  padding-top: 12vh;
+  padding-top: 3vh;
 }
 
 .modal-nav-links:last-child {
@@ -123,6 +124,45 @@
 .form-check-input{
    text-transform: none;
  }
+
+// RESPONSIVENESS
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .modal-container {
+    font-size: 40px;
+  }
+  .modal-content-container {
+    width: 80vw;
+  }
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .modal-container {
+    font-size: 40px;
+  }
+  .modal-content-container {
+    width: 80vw;
+  }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .modal-container {
+    font-size: 40px;
+  }
+  .modal-content-container {
+    width: 50vw;
+  }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .modal-container {
+    font-size: 40px;
+  }
+  .modal-content-container {
+    width: 50vw;
+  }
+}
+
 //
 // // RESPONSIVENESS
 // // Small devices (landscape phones, 576px and up)
@@ -161,3 +201,4 @@
 //     width: 50vw;
 //   }
 // }
+
