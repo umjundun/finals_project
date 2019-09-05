@@ -1,29 +1,10 @@
 <!--start modal-->
- <div class="modal-form-container" id="modal-form-container-<%= project.id %>" data-target='<%= project.id %>' style="display: none;">
+ <div class="modal-container" id="modal-projectApply-window_<%= project.id %>" style="z-index: 100" >
 
-   <div class="modal-form-content-container">
-     <div id="modal-apply-form-delimiter-<%= project.id %>" data-target='<%= project.id %>'>
-
-       <h3>Apply</h3>
-       <%= render "shared/devise_partials/form_to_project_apply", project: project, engagement: engagement %>
-
-     </div>
-   </div>
-
- </div>
-<!-- end modal -->
-
-
-<!--start modal-->
- <!-- <div class="modal-form-container" id="modal-apply-window-<%#= project.id %>" style="z-index: 100; display: none;" >
-
-   <div class="modal-form-content-container">
-     <div class="modal-form-delimiter">
-
-       <h3>Apply</h3>
-       <%#= render "shared/devise_partials/form_to_project_apply", project: project, engagement: engagement %>
-
-     </div>
+   <div class="modal-content-container">
+     <!-- Body -->
+     <h3>Apply</h3>
+     <%= render "shared/devise_partials/form_to_project_apply", project: project, engagement: engagement %>
    </div>
 
  </div>
