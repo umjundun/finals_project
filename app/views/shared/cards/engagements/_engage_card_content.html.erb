@@ -44,3 +44,5 @@
 <% elsif @user.group == 'developer' && engagement.status == 'Pending' %>
   <div>Engagement pending NGO's approval</div>
 <% end %>
+
+<%= render "shared/devise_partials/modal_engagement_edit", engagement: engagement %>

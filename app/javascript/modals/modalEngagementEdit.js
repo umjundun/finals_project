@@ -5,6 +5,7 @@ const closeButtons = document.querySelectorAll("#engagement-edit-close");
 export const engagementEditEvent = () => {
 
   // When the user clicks the button, open the modal
+
   buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
       let btn = event.currentTarget;

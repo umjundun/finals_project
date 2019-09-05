@@ -40,3 +40,6 @@ projectEditEvent();
 
 import { engagementEditEvent } from '../modals/modalEngagementEdit.js';
 engagementEditEvent();
+
+import { projectNewEvent } from '../modals/modalProjectNew.js';
+projectNewEvent();
