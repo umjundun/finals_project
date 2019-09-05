@@ -40,18 +40,6 @@ class User < ApplicationRecord
     end
   end
 
-
-
-
-
-
-
-
-
-
-
-
-
   def my_engagements
     if self.group == "ngo"
       arr = []
