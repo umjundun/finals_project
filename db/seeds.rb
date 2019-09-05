@@ -253,7 +253,7 @@ Project.create(
 
 Project.create(
               organization: msf,
-              description: "Seeking online graph feature",
+              description: "Seeking online graph for existing dataset",
               title: "Do you like data?",
               user: food_pantry_rep,
               active: true
@@ -261,56 +261,56 @@ Project.create(
 
 Project.create(
               organization: acumen,
-              description: "need to rework our database completely",
-              title: "UX designer wanted!",
+              description: "Hoping that someone out there can automate our manual data download processes.",
+              title: "Can you scrape data faster than us?",
               user: food_pantry_rep,
               active: true
             )
 p "4 projects created"
 
 
-#Create engagements
-Engagement.create(
-                status: "Rejected",
-                project: Project.find(2),
-                user: User.find_by_email("sam@newdev.com"),
-                )
+# #Create engagements
+# Engagement.create(
+#                 status: "Rejected",
+#                 project: Project.find(2),
+#                 user: User.find_by_email("sam@newdev.com"),
+#                 )
 
-Engagement.create(
-                status: "Rejected",
-                project: Project.find(3),
-                user: User.find_by_email("sam@newdev.com")
-                )
+# Engagement.create(
+#                 status: "Rejected",
+#                 project: Project.find(3),
+#                 user: User.find_by_email("sam@newdev.com")
+#                 )
 
-Engagement.create(
-                status: "Active",
-                project: Project.find(3),
-                user: User.find_by_email("sam@newdev.com")
-                )
+# Engagement.create(
+#                 status: "Active",
+#                 project: Project.find(3),
+#                 user: User.find_by_email("sam@newdev.com")
+#                 )
 
-Engagement.create(
-                status: "Pending",
-                project: Project.find(5),
-                user: User.find_by_email("sam@newdev.com")
-                )
+# Engagement.create(
+#                 status: "Pending",
+#                 project: Project.find(5),
+#                 user: User.find_by_email("sam@newdev.com")
+#                 )
 
-Engagement.create(
-                status: "Active",
-                project: Project.find(3),
-                user: User.find_by_email("sam@newdev.com")
-                )
+# Engagement.create(
+#                 status: "Active",
+#                 project: Project.find(3),
+#                 user: User.find_by_email("sam@newdev.com")
+#                 )
 
-Engagement.create(
-                status: "Archived",
-                project: Project.find(4),
-                user: User.find_by_email("sam@newdev.com")
-                )
+# Engagement.create(
+#                 status: "Archived",
+#                 project: Project.find(4),
+#                 user: User.find_by_email("sam@newdev.com")
+#                 )
 
-Engagement.create(
-                status: "Rejected",
-                project: Project.find(5),
-                user: User.find_by_email("sam@newdev.com")
-                )
+# Engagement.create(
+#                 status: "Rejected",
+#                 project: Project.find(5),
+#                 user: User.find_by_email("sam@newdev.com")
+#                 )
 
 
- p "2 engagements created"
+ # p "2 engagements created"
