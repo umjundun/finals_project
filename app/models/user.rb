@@ -52,27 +52,27 @@ class User < ApplicationRecord
   end
 
   def my_active_engagements
-    unless my_engagements.empty?
+    # unless my_engagements.empty?
       my_engagements.where("engagements.status = 'Accepted'")
-    end
+    # end
   end
 
   def my_pending_engagements
-    unless my_engagements.empty?
+    # unless my_engagements.empty?
       my_engagements.where("engagements.status = 'Pending'")
-    end
+    # end
   end
 
   def my_rejected_engagements
-    unless my_engagements.empty?
+    # unless my_engagements.empty?
       my_engagements.where("engagements.status = 'Rejected'")
-    end
+    # end
   end
 
   def my_archived_engagements
-    unless my_engagements.empty?
+    # unless my_engagements.empty?
       my_engagements.where("engagements.status = 'Archived'")
-    end
+    # end
   end
 
 
