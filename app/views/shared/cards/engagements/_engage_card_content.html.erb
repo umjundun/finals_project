@@ -22,7 +22,7 @@
 <% end %>
 
 <% if @user.group == 'ngo' && engagement.status == 'Pending' %>
-  <%= link_to "Edit engagement", edit_user_engagement_path(engagement), class: "teal-button"%>
+  <a href="#" class="teal-button" id="modal-engagementEdit-button" data-target='<%= engagement.id %>'>EDIT</a>
 <% end %>
 
 <% if @user.group == 'developer' && engagement.user == @user %>
@@ -35,7 +35,9 @@
 
   </div>
 <% end %>
-<a href="#" class="teal-button" id="modal-engagementEdit-button" data-target='<%= engagement.id %>'>
-  EDIT
-</a>
-<%= render "shared/devise_partials/modal_engagement_edit", engagement: engagement %>
+
+<% if @user.group == 'developer' && engagement.status == 'Active' %>
+  <a href="#" class="teal-button" id="modal-engagementEdit-button" data-target='<%= engagement.id %>'>EDIT</a>
+<% elsif @user.group == 'developer' && engagement.status == 'Pending' %>
+  <div>Engagement pending NGO's approval</div>
+<% end %>
