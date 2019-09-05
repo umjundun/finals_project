@@ -1,14 +1,8 @@
-// Get the modal
-const modal = document.getElementById("modal-engagementEdit-window");
-
-// Get the buttons that opens the modal
+// Get the button that opens the modal
 const buttons = document.querySelectorAll("#modal-engagementEdit-button");
-
-// Get the buttons that closes the modal
-const cancels = document.querySelectorAll("#modal-engagementEdit-cancel-button");
+const closeButtons = document.querySelectorAll("#engagement-edit-close");
 
 export const engagementEditEvent = () => {
-  console.log('function open')
 
   if (buttons.length > 0) {
   // When the user clicks the button, open the modal
@@ -20,8 +14,11 @@ export const engagementEditEvent = () => {
     })
 
     // When the user clicks anywhere outside of the modal, close it
-    cancels.forEach((cancel) => {
-      cancel.addEventListener("click", (event) => {
+    closeButtons.forEach((close) => {
+      close.addEventListener("click", (event) => {
+        let btn = event.currentTarget;
+        let n = btn.getAttribute('data-target');
+        let modal = document.getElementById(`modal-engagementEdit-window_${n}`);
         modal.style.display = "none";
       });
     })
