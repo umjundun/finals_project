@@ -19,13 +19,13 @@ ActiveRecord::Base.connection.reset_pk_sequence!(:conversations)
 #Default Dummy Organization for Admin users
 # ID 1
 admin_org = Organization.create!(
-                    name: "admin",
+                    name: "All Together",
                     mission: "NA"
 )
 #Default Dummy Organization for Dev users
 # ID 2
 dev_org = Organization.create!(
-                    name: "Independent volunteer",
+                    name: "Hands Up",
                     mission: "NA"
                   )
 # Organizations for users associated with an organization
@@ -43,55 +43,73 @@ food_pantry = Organization.create!(
                     name: 'The Winnipeg Food Pantry',
                     mission: 'Food is a human right!',
                     address: '561 Bannerman Ave, Winnipeg',
-                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567176750/Food_Pantry_xqoodw.jpg"
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567176750/Food_Pantry_xqoodw.jpg",
+                    latitude: 49.9297444,
+                    longitude: -97.1421969
                 )
 org3 = Organization.create!(
                     name: 'Doctors Without Borders',
                     mission: 'Medical Aid Where It Is Needed Most. Independent. Neutral. Impartial.',
                     address: '551 Adelaide Street West Toronto, Ontario',
-                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/doctors_without_borders_la3ij2.jpg"
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/doctors_without_borders_la3ij2.jpg",
+                    latitude: 43.6451346,
+                    longitude: -79.4050997  
                 )
 org4 = Organization.create!(
                     name: 'ACUMEN',
                     mission: 'Changing the way the world tackles poverty',
                     address: '40 Worth Street, New York, NY, 10013',
-                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609245/acumen_qlizvu.png"
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609245/acumen_qlizvu.png",
+                    latitude: 40.7172991,
+                    longitude: -74.0091831
                 )
 org5 = Organization.create!(
                     name: 'Heifer International',
                     mission: 'What if they had not a cup of milk, but a cow?',
                     address: '1 World Avenue, Little Rock, AR 72202',
-                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/Heifer_Logo_pwtr08.png"
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/Heifer_Logo_pwtr08.png",
+                    latitude: 34.7448171,
+                    longitude: -92.2584105
                 )
 org6 = Organization.create!(
                     name: 'Ashoka',
                     mission: 'Everyone a Changemaker',
                     address: '1700 North Moore Street, Arlington, VA 22209',
-                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/AShoka_logo_mza8y6.png"
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/AShoka_logo_mza8y6.png",
+                    latitude: 38.8957412,
+                    longitude: -77.0740652  
                 )
 org7 = Organization.create!(
                     name: 'Cure Violence Global',
                     mission: "Let's Make the Cure Contagious!",
                     address: '1329 N. Dearborn Street, Chicago, IL 60612',
-                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/cure_violence_global-250x354_ahaxi1.png"
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/cure_violence_global-250x354_ahaxi1.png",
+                    latitude: 41.9066849,
+                    longitude: -87.6319148 
                 )
 org8 = Organization.create!(
                     name: 'BRAC',
                     mission: 'Creating opportunities for everyone to realize their potential',
                     address: 'Vancouver, BC',
-                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/BRAC_logo4.svg_-250x83_rnfqes.png"
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/BRAC_logo4.svg_-250x83_rnfqes.png",
+                    latitude: 49.2578262,
+                    longitude: -123.1941154 
                 )
 org9 = Organization.create!(
                     name: 'WIKIMEDIA FOUNDATION',
                     mission: 'Helping everyone share in the sum of all knowledge',
                     address: '149 New Montgomery Street, San Francisco, CA 94105',
-                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/WIKIMEDIA-FOUNDATION_Logo_li9i7k.png"
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/WIKIMEDIA-FOUNDATION_Logo_li9i7k.png",
+                    latitude: 37.7869487,
+                    longitude: -122.4017916  
                 )
 org10 = Organization.create!(
                     name: 'Oxfam',
                     mission: 'The power of people against poverty',
                     address: '39 McArthur Avenue, Ottawa, ON',
-                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/oxfam_u8dmno.png"
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/oxfam_u8dmno.png",
+                    latitude: 45.4312297,
+                    longitude: -75.6689933 
                 )
 p "10 organizations created"
 
@@ -255,7 +273,7 @@ Engagement.create(
 
 Engagement.create(
                 status: "Active",
-                project: Project.find(4),
+                project: Project.find(3),
                 user: User.find_by_email("sam@newdev.com")
                 )
 
