@@ -53,7 +53,7 @@ class User < ApplicationRecord
 
   def my_active_engagements
     unless my_engagements.empty?
-      my_engagements.where("engagements.status = 'Active'")
+      my_engagements.where("engagements.status = 'Accepted'")
     end
   end
 
