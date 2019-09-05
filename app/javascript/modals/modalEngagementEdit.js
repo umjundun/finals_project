@@ -7,9 +7,11 @@ export const engagementEditEvent = () => {
   if (buttons.length > 0) {
   // When the user clicks the button, open the modal
     buttons.forEach((button) => {
-      console.log('button', button)
       button.addEventListener("click", (event) => {
-        document.getElementById(`modal-engagementEdit-window_${event.currentTarget.getAttribute('data-target')}`).style.display = "block";
+        let btn = event.currentTarget;
+        let n = btn.getAttribute('data-target');
+        let modal = document.getElementById(`modal-engagementEdit-window_${n}`);
+        modal.style.display = "block";
       });
     })
 

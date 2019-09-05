@@ -1,6 +1,7 @@
 <!-- CREATE NEW PROJECT -->
 <div class="dash-content-card">
-    <%= link_to "+ New Project", new_project_path, class: "yellow-button" %>
+    <a href="#" class="teal-button" id="modal-projectNew-button">+ New Project</a>
+    <%= render "shared/devise_partials/modal_project_new", project: Project.new %>
 </div>
 
 <!-- ACTIVE PROJECTS -->
@@ -39,3 +40,4 @@
     <% end %>
   <% end %>
 </div>
+
