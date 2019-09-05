@@ -3,9 +3,9 @@
 
    <div class="modal-content-container">
     <!-- Body -->
-    <h3>Edit</h3>
+    <div class="general-title">Edit</h3>
     <%= render "shared/devise_partials/form_to_project_edit", project: project %>
-    <button class="yellow-button form-button" id="project-edit-close" data-target='<%= project.id %>'>
+    <button class="yellow-button form-button cancel-btn" id="project-edit-close" data-target='<%= project.id %>'>
       Cancel
     </button>
    </div>
