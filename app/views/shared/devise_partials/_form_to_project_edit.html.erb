@@ -75,10 +75,11 @@
   </div>
 
   <div class="form-item">
-    <div class="yellow-button form-button" id="upload_widget_opener" style="text-align: center">Upload files</div>
+    <div class="yellow-button form-button" id="upload_widget_opener_<%= project.id %>" style="text-align: center">Upload files</div>
   </div>
 
   <%= f.submit "Submit", class: "yellow-button form-button" %>
+  <%= link_to "Cancel", :back, class: "yellow-button form-button" %>
 
 <% end %>
 
@@ -87,12 +88,15 @@
 <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-  cloudinary.applyUploadWidget(document.getElementById('upload_widget_opener'),
+
+  console.log('hello 23456t')
+  console.log(document.getElementById('upload_widget_opener_<%= project.id %>'))
+  cloudinary.applyUploadWidget(document.getElementById('upload_widget_opener_<%= project.id %>'),
     { cloud_name: 'dev4good', upload_preset: 'z8ork2gk', field_name: 'project[documents]', multiple: true },
       function(error, results) {
         console.log(error, results)
         results.forEach((result, index) => {
-          const form = document.querySelector("#new_project")
+          const form = document.querySelector("#edit_project_<%= project.id %>")
           form.insertAdjacentHTML('beforeend', `<input name="files[${index}][url]" type="hidden" value="${result.secure_url}">`)
           form.insertAdjacentHTML('beforeend', `<input name="files[${index}][name]" type="hidden" value="${result.original_filename}">`)
         })

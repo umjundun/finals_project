@@ -152,7 +152,11 @@ User.create!(
               remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1566505936/luz9wt7bg6qqzktauf55.jpg",
               interests: "I like to code",
               bio: "Batch #281 of Le Wagon Coding Bootcamp!",
+<<<<<<< HEAD
               experience: "None please hire me",
+=======
+              experience: "None please hire me"
+>>>>>>> dashboard-design
             )
 User.create!(
               email: "dev2@test.com",
@@ -217,21 +221,21 @@ Project.create(
 Project.create(
               organization: clothes_closet, # Montreal Clothes Closet
               description: "Banner image",
-              title: "Banner image",
+              title: "Banner image with carousel",
               user: clothes_closet_rep,
               active: false
             )
 Project.create(
               organization: clothes_closet, # Montreal Clothes Closet
-              description: "Another project",
-              title: "Another project",
+              description: "Mobile app to help connect to a wider audience",
+              title: "Mobile app",
               user: clothes_closet_rep,
               active: true
             )
 Project.create(
               organization: clothes_closet, # Montreal Clothes Closet
-              description: "A third project",
-              title: "A third project",
+              description: "need to rework our database completely",
+              title: "Database",
               user: clothes_closet_rep,
               active: true
             )
@@ -240,15 +244,46 @@ p "6 projects created"
 
 #Create engagements
 Engagement.create(
-                status: "active",
-                project: Project.find(4),
-                user: User.find_by_email("dev")
+                status: "Rejected",
+                project: Project.find(2),
+                user: User.find_by_email("sam@newdev.com"),
                 )
 
 Engagement.create(
-                status: "active",
-                project: Project.find(5),
-                user: User.find_by_email("dev")
+                status: "Rejected",
+                project: Project.find(3),
+                user: User.find_by_email("sam@newdev.com")
                 )
+
+Engagement.create(
+                status: "Active",
+                project: Project.find(4),
+                user: User.find_by_email("bob@newdev.com")
+                )
+
+Engagement.create(
+                status: "Pending",
+                project: Project.find(5),
+                user: User.find_by_email("bob@newdev.com")
+                )
+
+Engagement.create(
+                status: "Active",
+                project: Project.find(3),
+                user: User.find_by_email("bob@newdev.com")
+                )
+
+Engagement.create(
+                status: "Archived",
+                project: Project.find(4),
+                user: User.find_by_email("bob@newdev.com")
+                )
+
+Engagement.create(
+                status: "Rejected",
+                project: Project.find(5),
+                user: User.find_by_email("bob@newdev.com")
+                )
+
 
  p "2 engagements created"

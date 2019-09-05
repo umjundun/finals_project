@@ -1,39 +1,40 @@
 <div class="project-content">
   <div class="project-text">
+
     <p><span class="element-tag">Category: </span><%= project.category %></p>
     <p><span class="element-tag">Deadline: </span><%= project.deadline %> day(s)</p>
-  </div>
 
-  <div class="apply-accordion-item">
-    <div class="apply-content" style="display: none;">
+    <% if user_signed_in? %>
 
-      <div class="form-content-container">
-        <!-- LINK TO ENGAGEMENT FORM -->
-        <% if user_signed_in? && current_user.id != project.user_id %>
-          <%= render "engagements/form", project: project, engagement: @engagement %>
-          <%# link_to "Submit", new_project_engagement_path(params[:id]), class: "teal-button project-submit-button" %>
-        <% elsif user_signed_in? && current_user.id == project.user_id  %>
-          NEED TO FIX HERE
-          <%= render "projects/edit", project: project %>
-          <%# link_to "Edit", edit_user_project_path(project), class: "teal-button project-submit-button" %>
-        <% else %>
-        <% end %>
-      </div>
+      <% if current_user.group == "developer" && current_user.id != @engagement.user_id %>
 
-    </div>
-
-    <% if user_signed_in? && current_user.id != project.user_id %>
-      <a href="#" class="teal-button" id="modal-projectApply-button">
-        APPLY NOW
+        <button class="teal-button button-project-apply-modal" data-target='<%= project.id %>'>APPLY NOW</button>
         <%= render "shared/devise_partials/modal_project_apply", project: project, engagement: @engagement %>
-      </a>
-    <% elsif user_signed_in? && current_user.id == project.user_id  %>
-      <a href="#" class="teal-button" id="modal-projectEdit-button">
-        EDIT
+
+
+      <% elsif current_user.group == "ngo" && current_user.id == project.user_id  %>
+
+        <button class="teal-button" id="modal-project-edit-button" data-target='<%= project.id %>'>EDIT</button>
         <%= render "shared/devise_partials/modal_project_edit", project: project %>
-      </a>
-    <% else %>
+
+      <% else %>
+      <% end %>
+
     <% end %>
 
+    <% if user_signed_in? && current_user.id != project.user_id %>
+      <!--<a href="#" class="teal-button" id="modal-projectApply-button" data-target='<%= project.id %>'>
+        APPLY NOW
+      </a>
+      <%#= render "shared/devise_partials/modal_project_apply", project: project, engagement: @engagement %>
+    <% elsif user_signed_in? && current_user.id == project.user_id  %>
+      <a href="#" class="teal-button" id="modal-projectEdit-button" data-target='<%= project.id %>'>
+        EDIT
+      </a>-->
+      <%#= render "shared/devise_partials/modal_project_edit", project: project %>
+    <% else %>
+    <% end %>
   </div>
-</div>
+
+
+  </div>

@@ -1,0 +1,40 @@
+<div class="engagement-tag">Organizational mission</div>
+<div class="engagement-data"><%= engagement.project.organization.mission %></div>
+
+<div class="engagement-tag">Project title</div>
+<div class="engagement-data"><%= engagement.project.title %></div>
+
+<div class="engagement-tag">Description</div>
+<div class="engagement-data"><%= engagement.project.description %></div>
+
+<div class="engagement-tag">Category</div>
+<div class="engagement-data"><%= engagement.project.category %></div>
+
+<div class="engagement-tag">Deadline</div>
+<div class="engagement-data"><%= engagement.project.deadline %> day(s)</div>
+
+<div class="engagement-tag">Previous submission</div>
+<div class="engagement-data"><%= engagement.project.deadline %> ago</div>
+
+<% if @user.group == 'ngo' && engagement.status == 'Active' %>
+  <div class="engagement-tag">Currently checked out by</div>
+  <div class="engagement-data"><%= engagement.user.full_name %></div>
+<% end %>
+
+<% if @user.group == 'ngo' && engagement.status == 'Pending' %>
+  <%= link_to "Edit engagement",
+              edit_user_engagement_path(engagement),
+              class: "teal-button"
+  %>
+<% end %>
+
+<% if @user.group == 'developer' && engagement.user == @user %>
+  <div class="engagement-tag">Project documents</div>
+  <div class="engagement-data">
+
+    <% engagement.project.project_files.each do |file| %>
+      <a href="<%= file.file_url %>"> - <%= file.name %><%= file.format %></a>
+    <% end %>
+
+  </div>
+<% end %>

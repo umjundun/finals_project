@@ -39,17 +39,19 @@
   text-align: center;
 }
 
-.home-value-card-content h3 {
-  font-weight: 400;
+.value-card-title {
+  font-weight: 300;
   text-align: left;
+  font-size: 20px;
   padding-bottom: 20px;
-  color: black;
+  color: grey;
 }
 
-.home-value-card-content p {
+.value-card-text {
   font-size: 12px;
   text-align: left;
-   line-height: 1.8;
+  line-height: 1.8;
+  color: grey;
 }
 
 

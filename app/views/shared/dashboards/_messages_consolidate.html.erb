@@ -1,4 +1,4 @@
-<h3>Messages</h3>
+<div class="general-title">Messages</div>
 <% current_user.conversations.each do |convo| %>
   <% if current_user == convo.recipient %>
     <div data-conversation-id="<%= convo.id %>"></div>

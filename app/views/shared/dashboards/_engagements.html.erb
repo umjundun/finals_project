@@ -1,33 +1,72 @@
-<% if @user.engagements %>
-  <% @user.engagements.each do |eng| %>
-    <% if eng.status == 'Pending' %>
-      <h2>Status: <%= eng.status %></h2>
-      <div class="card-engagement">
-        <h5 class="card-engagement-title"><%= eng.project.title %></h5>
-        <p class="card-engagement-description"><%= eng.project.description %></p>
-        <a href="<%= user_engagement_path(current_user, eng) %>" class="btn-project">Project info <i class="fas fa-chevron-right"></i></a>
-      </div>
-    <% else %>
-      <h2>Status: <%= eng.status %> / <%= eng.dev_status %></h2>
-      <div class="card-engagement">
-        <h5 class="card-engagement-title"><%= eng.project.title %></h5>
-        <p class="card-engagement-description"><%= eng.project.description %></p>
-        <a href="<%= user_engagement_path(current_user, eng) %>" class="btn-project">Project info <i class="fas fa-chevron-right"></i></a>
-      </div>
+
+<!-- ACTIVE ENGAGEMENTS -->
+<div class="engagement-header">
+  <div class="engagement-header-text">
+    <div class="user-card-header">Active engagements</div>
+  </div>
+</div>
+
+<div class="dash-content-card dash-engagement-type">
+  <% if @user.my_active_engagements.count == 0 %>
+    <div class="no-engagements">You have no active engagements at this time.</div>
+  <% else %>
+    <% @user.my_active_engagements.each do |engagement| %>
+      <!-- A SINGLE ENGAGEMENT -->
+      <%= render 'shared/cards/engagements/engage_card', engagement: engagement %>
     <% end %>
   <% end %>
-  <% @user.projects.each do |proj| %>
-    <% proj.engagements.each do |eng| %>
-      <% if eng.status != "active" && eng.status != "Active" && eng.status != "Closed" %>
-        <h2>Status: <%= eng.status %> - Dev: <%= eng.user.first_name %> <%= eng.user.last_name %> / <%= eng.dev_status %></h2>
-        <div class="card-engagement">
-          <h5 class="card-engagement-title"><%= eng.project.title %></h5>
-          <p class="card-engagement-description"><%= eng.project.description %></p>
-          <a href="<%= user_engagement_path(current_user, eng) %>" class="btn-project">Project info <i class="fas fa-chevron-right"></i></a>
-        </div>
-      <% end %>
+</div>
+
+<!-- PENDING ENGAGEMENTS -->
+<div class="engagement-header">
+<div class="engagement-header-text">
+  <div class="user-card-header">Pending engagements</div>
+</div>
+</div>
+
+<div class="dash-content-card dash-engagement-type">
+  <% if @user.my_pending_engagements.count == 0 %>
+    <div class="no-engagements">You have no pending engagements at this time.</div>
+  <% else %>
+    <% @user.my_pending_engagements.each do |engagement| %>
+      <!-- A SINGLE ENGAGEMENT -->
+      <%= render 'shared/cards/engagements/engage_card', engagement: engagement %>
     <% end %>
   <% end %>
-<% else %>
-  <p>You currently have no engagement.</p>
-<% end %>
+</div>
+
+<!-- ARCHIVED ENGAGEMENTS -->
+<div class="engagement-header">
+  <div class="engagement-header-text">
+    <div class="user-card-header">Completed engagements</div>
+  </div>
+</div>
+
+<div class="dash-content-card dash-engagement-type">
+  <% if @user.my_archived_engagements.count == 0 %>
+    <div class="no-engagements">You have no archived engagements at this time.</div>
+  <% else %>
+    <% @user.my_archived_engagements.each do |engagement| %>
+      <!-- A SINGLE ENGAGEMENT -->
+      <%= render 'shared/cards/engagements/engage_card', engagement: engagement %>
+    <% end %>
+  <% end %>
+</div>
+
+<!-- REJECTED ENGAGEMENTS -->
+<div class="engagement-header">
+  <div class="engagement-header-text">
+    <div class="user-card-header">Declined engagements</div>
+  </div>
+</div>
+
+<div class="dash-content-card dash-engagement-type">
+  <% if @user.my_rejected_engagements.count == 0 %>
+    <div class="no-engagements">You have no declined engagements at this time.</div>
+  <% else %>
+    <% @user.my_rejected_engagements.each do |engagement| %>
+      <!-- A SINGLE ENGAGEMENT -->
+      <%= render 'shared/cards/engagements/engage_card', engagement: engagement %>
+    <% end %>
+  <% end %>
+</div>
