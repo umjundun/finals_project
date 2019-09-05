@@ -139,8 +139,8 @@ clothes_closet_rep = User.create!(
                       developer: false,
                       group: "ngo",
                       remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567176925/Screen_Shot_2019-08-30_at_10.55.07_AM_obcjks.png",
-                      interests: "Putting clothes on the people that need them!",
-                      bio: "NGO Representative helping people less fortunate",
+                      interests: "Making rhubarb preserves with my neighbors.",
+                      bio: "Founder of local NGO supporting career-aspiring individuals from low-income communities.",
                       experience: "Working with NGOs for the last 8 years.",
                     )
 
@@ -170,9 +170,9 @@ User.create!(
               developer: true,
               group: "developer",
               remote_photo_url: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1566505936/luz9wt7bg6qqzktauf55.jpg",
-              interests: "I like to code",
+              interests: "Skateboarding while reviewing my Ruby flashcards. Who says you can't combine passions?",
               bio: "Batch #281 of Le Wagon Coding Bootcamp!",
-              experience: "None please hire me",
+              experience: "I built a solid foundation of Ruby on Rails in my Le Wagon bootcamp--now I'm hoping to build my skills with an NGO!",
             )
 User.create!(
               email: "dev2@test.com",
