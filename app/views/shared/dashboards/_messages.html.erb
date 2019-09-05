@@ -1,24 +1,46 @@
-<!--start modal-->
-<div class="modal-container" id="modal-messages-window">
 
- <div class="modal-content-container">
    <!-- Body -->
-   <section id="messages" class="mb4">
-     <% convo.messages.each do |message| %>
-       <% if message.body %>
-         <%= render partial: "messages/show", locals: { message: message }%>
-       <% end %>
+   <% @convo = @user.conversations %>
+   <% if @convo.present? %>
+    <% @convo.each do |convo| %>
+    <div id="<%= convo.id %>" class="modal-messages-button">
+     <% if  convo.sender != current_user %>
+       <%= cl_image_tag convo.sender.photo, class: "user-avatar" %>
+       <%= "Message #{convo.sender.full_name}" %>
+     <% else %>
+       <%= cl_image_tag convo.recipient.photo, class: "user-avatar" %>
+       <%= "Message #{convo.recipient.full_name}" %>
      <% end %>
-   </section>
+    </div>
 
-   <%= form_for [convo, @message] do |f| %>
-     <%= f.text_area :body, class: "textarea", placeholder: "Type a message..." %>
-     <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
-     <div class="text-align-right">
-       <%= f.submit "Send message", class: "yellow-button", id: "message-submit" %>
+  <!--start modal-->
+  <div class="modal-container" id="modal-messages-window">
+
+   <div class="modal-content-container">
+
+     <div data-conversation-id="<%= @convo.first.id %>">
+       <section id="messages1" class="mb4">
+        <% convo.messages.each do |message| %>
+           <%= render "messages/show", message: message %>
+        <% end %>
+       </section>
      </div>
-   <% end %>
- </div>
 
-</div>
-<!-- end modal -->
+       <%= form_for [convo, @message] do |f| %>
+         <%= f.text_area :body, class: "textarea", placeholder: "Type a message..." %>
+         <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+         <div class="text-align-right">
+           <%= f.submit "Send message", class: "yellow-button", id: "message-submit" %>
+         </div>
+       <% end %>
+
+   </div>
+
+  </div>
+  <!-- end modal -->
+    <% end %>
+   <% end %>
+
+
+
+

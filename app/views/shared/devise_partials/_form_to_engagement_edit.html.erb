@@ -1,0 +1,44 @@
+<%= simple_form_for [@user, engagement] do |f| %>
+  <% if engagement.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% engagement.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if user_signed_in? && current_user.id == engagement.user_id %>
+
+    <div class="form-item">
+      <label class="inline-label">
+        Please select one of the below options: <abbr project_category="dev_status">*</abbr>
+      </label>
+      <div class="input-one-line">
+        <select name="engagement[dev_status]" id="dev_status">
+          <option value="Pending dev action">Pending dev action</option>
+          <option value="Current task">Check-out project and begin working on task</option>
+          <option value="Completed task">Submit completed task and push to GitHub</option>
+        </select>
+      </div>
+    </div>
+
+  <% end %>
+  <!-- NGO APPROVAL -->
+  <% if user_signed_in? && current_user.id == engagement.project.user_id %>
+      <div class="form-item">
+        <label class="inline-label">
+          Please select one of the below options: <abbr project_category="status">*</abbr>
+        </label>
+        <div class="input-one-line">
+          <select name="engagement[status]" id="status">
+            <option value="Accepted">Accept developer for engagement</option>
+            <option value="Rejected">Reject developer for engagement</option>
+          </select>
+        </div>
+      </div>
+  <% end %>
+
+  <%= f.submit "Submit", class: "yellow-button form-button", data: { confirm: "Thank you for your engagement!" } %>
+<% end %>
