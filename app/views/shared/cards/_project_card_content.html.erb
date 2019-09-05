@@ -14,8 +14,8 @@
 
       <% elsif current_user.group == "ngo" && current_user.id == project.user_id  %>
 
-        <button class="teal-button" id="modal-project-edit-button" data-target='<%= project.id %>'>EDIT</button>
-        <%= render "shared/devise_partials/modal_project_edit", project: project %>
+        <button class="teal-button button-project-edit-modal" data-target='<%= project.id %>'>EDIT</button>
+        <%= render "shared/devise_partials/modal_project_edit", project: project, project: project %>
 
       <% else %>
       <% end %>
