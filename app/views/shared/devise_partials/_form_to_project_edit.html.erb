@@ -9,12 +9,12 @@
     </div>
   <% end %>
 
-  <h1>Edit project</h1>
+  <div class="general-title">Edit project</div>
 
   <%= f.hidden_field :organization_id, value: current_user.organization_id, required: true %>
 
   <div class="form-item">
-    <label class="inline-label">
+    <label class="inline-label general-text">
       What type of project do you need completed? <abbr project_category="required">*</abbr>
     </label>
     <div class="input-one-line">
@@ -28,7 +28,7 @@
   </div>
 
   <div class="form-item">
-    <label class="label-one-line">
+    <label class="label-one-line general-text">
       For how many days at a time should a developer be allowed to check out your project to work on it?
        <abbr project_deadline="required">*</abbr>
     </label>
@@ -47,7 +47,7 @@
   </div>
 
   <div class="form-item">
-    <label class="label-one-line" for="project_title">
+    <label class="label-one-line general-text" for="project_title">
       What title would you like to give to your project? <abbr title="required">*</abbr>
     </label>
     <div class="input-one-line">
@@ -66,7 +66,7 @@
   </div>
 
   <div class="form-item">
-    <p><span class="element-tag">Project documents:</span></p>
+    <p><span class="element-tag general-title">Project documents:</span></p>
     <ul class="list-group">
       <% project.project_files.each do |file| %>
         <a href="<%= file.file_url %>"> - <%= file.name %><%= file.format %></a>
@@ -77,10 +77,10 @@
   <div class="form-item">
     <div class="yellow-button form-button" id="upload_widget_opener_<%= project.id %>" style="text-align: center">Upload files</div>
   </div>
-
-  <%= f.submit "Submit", class: "yellow-button form-button" %>
-  <%= link_to "Cancel", :back, class: "yellow-button form-button" %>
-
+<div class="btn-form-end">
+  <%= f.submit "Submit", class: "yellow-button" %>
+  <%= link_to "Cancel", :back, class: "cancel-btn" %>
+</div>
 <% end %>
 
 

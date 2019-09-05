@@ -13,7 +13,7 @@
   <!-- PAGE CONTENT ITEM -->
   <div class="major-card-content-box">
     <!-- PAGE SUBTITLE -->
-    <div class="major-subtitle">POPULAR PROJECTS</div>
+    <div class="major-subtitle general-title">POPULAR PROJECTS</div>
     <div class="cards-project" >
       <% @projects.last(2).each do |project| %>
         <%= render 'shared/cards/project_card', project: project %>
