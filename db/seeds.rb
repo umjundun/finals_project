@@ -222,14 +222,14 @@ p "4 devs created"
 # Projects
 Project.create(
               organization: food_pantry, # The Winnipeg Food Pantry
-              description: "Real-time app to track inventory"
+              description: "Real-time app to track inventory",
               title: "Food-friendly mobile app",
               user: food_pantry_rep,
               active: true
             )
 Project.create(
               organization: clothes_closet, # Montreal Clothes Closet
-              description: "Help us track our clothing rentals and availability,!"
+              description: "Help us track our clothing rentals and availability!",
               title: "Clothing database",
               user: food_pantry_rep,
               active: true
