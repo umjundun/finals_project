@@ -6,7 +6,7 @@
     <div class="nav-search-item">
 
       <!-- KEYWORD SEARCH -->
-      <div class="search-label">KEYWORDS:</div>
+      <div class="search-label text-white-left">KEYWORDS:</div>
         <%= form_tag("/home", method: "get", class: "") do %>
           <div class="search-box">
             <%= text_field_tag :query, params[:query],

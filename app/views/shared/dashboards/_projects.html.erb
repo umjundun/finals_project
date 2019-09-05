@@ -15,7 +15,7 @@
   <% if @user.projects.nil? %>
     <div class="no-engagements">You have no active projects at this time.</div>
   <% else %>
-    <% @user.projects.each do |project| %>
+    <% @user.projects.order(updated_at: :desc).each do |project| %>
       <!-- A SINGLE PROJECT -->
       <%= render 'shared/cards/project_card', project: project %>
     <% end %>
@@ -34,7 +34,7 @@
   <% if @user.my_archived_projects.nil? %>
     <div class="no-engagements">You have no completed projects at this time.</div>
   <% else %>
-    <% @user.my_archived_projects.each do |project| %>
+    <% @user.my_archived_projects.order(updated_at: :desc).each do |project| %>
       <!-- A SINGLE PROJECT -->
       <%= render 'shared/cards/project_card', project: project %>
     <% end %>
