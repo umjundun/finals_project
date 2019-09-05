@@ -1,0 +1,106 @@
+<div class="form-container">
+  <div class="form-content-container">
+    <%= simple_form_for(project) do |f| %>
+      <% if project.errors.any? %>
+        <div class="errors-container">
+          <ul>
+            <% project.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <h1>Edit project</h1>
+
+      <%= f.hidden_field :organization_id, value: current_user.organization_id, required: true %>
+
+      <div class="form-item">
+        <label class="inline-label">
+          What type of project do you need completed? <abbr project_category="required">*</abbr>
+        </label>
+        <div class="input-one-line">
+          <select name="project[category]" id="project_category" >
+            <option value="<%= project.category %>"><%= project.category %></option>
+            <option value="Website">Website</option>
+            <option value="Database">Database</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-item">
+        <label class="label-one-line">
+          For how many days at a time should a developer be allowed to check out your project to work on it?
+           <abbr project_deadline="required">*</abbr>
+        </label>
+        <div class="slider-container">
+          <input type="range" min="1" max="7" value="<%= project.deadline %>" class="slider" name="project[deadline]" id="project_deadline">
+          <div class="slider-values">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-item">
+        <label class="label-one-line" for="project_title">
+          What title would you like to give to your project? <abbr title="required">*</abbr>
+        </label>
+        <div class="input-one-line">
+          <input class="string required input-circle" required="required" aria-required="true" type="text" name="project[title]" id="project_title" value="<%= project.title %>"/>
+        </div>
+      </div>
+
+      <div class="form-item">
+        <label class="inline-label" for="project_description">
+          Description <abbr title="required">*</abbr>
+        </label>
+        <div class="input-one-line">
+          <textarea class="text required input-circle" required="required" aria-required="true" name="project[description]" id="project_description"><%= project.description %></textarea>
+          <%# f.input :description, label: false, input_html: { class: "text required input-circle" } %>
+        </div>
+      </div>
+
+      <div class="form-item">
+        <p><span class="element-tag">Project documents:</span></p>
+        <ul class="list-group">
+          <% project.project_files.each do |file| %>
+            <a href="<%= file.file_url %>"> - <%= file.name %><%= file.format %></a>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="form-item">
+        <div class="yellow-button form-button" id="upload_widget_opener">Upload images</div>
+      </div>
+
+      <%= f.submit "Submit", class: "yellow-button form-button" %>
+
+    <% end %>
+
+
+    <!-- MOVE BELOW TO JAVASCRIPT ASSETS
+    <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      cloudinary.applyUploadWidget(document.getElementById('upload_widget_opener'),
+        { cloud_name: 'dev4good', upload_preset: 'z8ork2gk', field_name: 'project[documents]', multiple: true },
+          function(error, results) {
+            console.log(error, results)
+            results.forEach((result, index) => {
+              const form = document.querySelector("#new_project")
+              form.insertAdjacentHTML('beforeend', `<input name="files[${index}][url]" type="hidden" value="${result.secure_url}">`)
+              form.insertAdjacentHTML('beforeend', `<input name="files[${index}][name]" type="hidden" value="${result.original_filename}">`)
+            })
+          });
+    </script>
+
+  </div>
+</div>
+ -->
