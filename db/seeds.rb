@@ -253,7 +253,7 @@ Engagement.create(
 
 Engagement.create(
                 status: "Active",
-                project: Project.find(4),
+                project: Project.find(3),
                 user: User.find_by_email("bob@newdev.com")
                 )
 

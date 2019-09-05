@@ -23,7 +23,7 @@
         </div>
 
         <% if user.group == "ngo" %>
-          <div class="dash-panel" style="display: none" id="my_project">
+          <div class="dash-panel" style="display: none" id="projects">
             <%= render 'shared/dashboards/projects', user: @user %>
           </div>
         <% end %>

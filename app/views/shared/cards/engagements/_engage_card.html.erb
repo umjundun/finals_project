@@ -3,8 +3,10 @@
   <div class="card-engage">
     <div class="engage-bookend-item">
 
-      <div class="engagement-tag" style="font-size: 18px;">
-        <%= engagement.project.organization.name %> - <%= engagement.project.title %>
+      <div class="bookend-link">
+        <!-- <a href="<%= user_engagement_path(current_user, engagement) %>"> -->
+          <%= engagement.project.organization.name %> - <%= engagement.project.title %>
+        <!-- </a> -->
       </div>
 
       <div class="card-description"><%= engagement.project.description %></div>

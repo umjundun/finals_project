@@ -1,11 +1,41 @@
-<div class="section-container">
-  <div class="teal-button">
-    <%= link_to "+ New Project", new_project_path, class: "nav-link" %>
+<!-- CREATE NEW PROJECT -->
+<div class="dash-content-card">
+    <%= link_to "+ New Project", new_project_path, class: "yellow-button" %>
+</div>
+
+<!-- ACTIVE PROJECTS -->
+<div class="engagement-header">
+  <div class="engagement-header-text">
+    <div class="user-card-header">Active projects</div>
   </div>
-  <h2>Your projects:</h2>
-  <div class="cards-project" >
-    <% current_user.projects.order(updated_at: :desc).each do |project| %>
+</div>
+
+<div class="dash-content-card dash-engagement-type">
+  <% if @user.projects.nil? %>
+    <div class="no-engagements">You have no active projects at this time.</div>
+  <% else %>
+    <% @user.projects.each do |project| %>
+      <!-- A SINGLE PROJECT -->
       <%= render 'shared/cards/project_card', project: project %>
     <% end %>
+  <% end %>
+</div>
+
+
+<!-- COMPLETED PROJECTS -->
+<div class="engagement-header">
+  <div class="engagement-header-text">
+    <div class="user-card-header">Completed projects</div>
   </div>
+</div>
+
+<div class="dash-content-card dash-engagement-type">
+  <% if @user.my_archived_projects.nil? %>
+    <div class="no-engagements">You have no completed projects at this time.</div>
+  <% else %>
+    <% @user.my_archived_projects.each do |project| %>
+      <!-- A SINGLE PROJECT -->
+      <%= render 'shared/cards/project_card', project: project %>
+    <% end %>
+  <% end %>
 </div>

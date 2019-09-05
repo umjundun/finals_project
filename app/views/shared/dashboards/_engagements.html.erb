@@ -6,7 +6,7 @@
 </div>
 
 <div class="dash-content-card dash-engagement-type">
-  <% if @user.my_active_engagements.count == 0 %>
+  <% if @user.my_active_engagements.nil? %>
     <div class="no-engagements">You have no active engagements at this time.</div>
   <% else %>
     <% @user.my_active_engagements.each do |engagement| %>
@@ -24,7 +24,7 @@
 </div>
 
 <div class="dash-content-card dash-engagement-type">
-  <% if @user.my_pending_engagements.count == 0 %>
+  <% if @user.my_pending_engagements.nil? %>
     <div class="no-engagements">You have no pending engagements at this time.</div>
   <% else %>
     <% @user.my_pending_engagements.each do |engagement| %>
@@ -42,7 +42,7 @@
 </div>
 
 <div class="dash-content-card dash-engagement-type">
-  <% if @user.my_archived_engagements.count == 0 %>
+  <% if @user.my_archived_engagements.nil? %>
     <div class="no-engagements">You have no archived engagements at this time.</div>
   <% else %>
     <% @user.my_archived_engagements.each do |engagement| %>
@@ -60,7 +60,7 @@
 </div>
 
 <div class="dash-content-card dash-engagement-type">
-  <% if @user.my_rejected_engagements.count == 0 %>
+  <% if @user.my_rejected_engagements.nil? %>
     <div class="no-engagements">You have no declined engagements at this time.</div>
   <% else %>
     <% @user.my_rejected_engagements.each do |engagement| %>

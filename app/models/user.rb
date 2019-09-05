@@ -28,24 +28,39 @@ class User < ApplicationRecord
     end
   end
 
-  # def my_active_projects
-  #   active = [];
-  #   if self.group == "ngo"
-  #     my_projects.each do |project|
-  #       where("active = true")
-  #     end
-  #   end
-  # end
+  def my_active_projects
+    unless my_projects.empty?
+      my_projects.where("status = 'Active'")
+    end
+  end
 
-  # def my_inactive_projects
-  #   if self.group == "ngo"
-  #     self.organization.projects.where("active = false")
-  #   end
-  # end
+  def my_archived_projects
+    unless my_projects.empty?
+      my_projects.where("status = 'Archived'")
+    end
+  end
+
+
+
+
+
+
+
+
+
+
+
+
 
   def my_engagements
     if self.group == "ngo"
-      # self.projects.engagements
+      arr = []
+      self.projects.each do |proj|
+        proj.engagements.each do |eng|
+          arr << eng
+        end
+      end
+      return arr
     elsif self.group == "developer"
       self.engagements
     else
@@ -54,19 +69,27 @@ class User < ApplicationRecord
   end
 
   def my_active_engagements
-    my_engagements.where("status = 'Active'")
+    unless my_engagements.empty?
+      my_engagements.where("status = 'Active'")
+    end
   end
 
   def my_pending_engagements
-    my_engagements.where("status = 'Pending'")
+    unless my_engagements.empty?
+      my_engagements.where("status = 'Pending'")
+    end
   end
 
   def my_rejected_engagements
-    my_engagements.where("status = 'Rejected'")
+    unless my_engagements.empty?
+      my_engagements.where("status = 'Rejected'")
+    end
   end
 
   def my_archived_engagements
-    my_engagements.where("status = 'Archived'")
+    unless my_engagements.empty?
+      my_engagements.where("status = 'Archived'")
+    end
   end
 
 
