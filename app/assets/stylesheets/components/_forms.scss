@@ -1,3 +1,4 @@
+
 .form-container {
   margin: 0px;
   width: 100vw;
@@ -123,8 +124,13 @@ label, .inline-label, .label-unit {
   margin: 0;
   padding: 0;
   font-size: .35em;
-  color:#c1bfbf;
 }
+
+textarea{
+  background-color: #fcfcfc;
+}
+
+
 
 input, textarea {
   width: 40%;
@@ -134,6 +140,7 @@ input, textarea {
   border: 0px;
   background: none;
   border-radius: 2%;
+  border:1px #c1bfbf;
   transition: all .15s ease;
 }
 .form-control{
@@ -156,7 +163,7 @@ input, textarea {
   padding: 25px 20px;
   width: 100%;
   height: 45px;
-  background-color: #ced4da;
+  background-color: #fcfcfc;
   border-bottom-width: 3px;
 }
 
@@ -164,7 +171,6 @@ input, textarea {
 .form-control:focus {
   box-shadow: inset 0 0px 3px #F4F4F4, 0 0px 3px #F4F4F4;
   background-color:#fcfcfc;
-  border: none;
 }
 
 // UDPATE CLASS NAME IF REMOVE BOOTSTRAP
@@ -185,8 +191,8 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-
-  background-color: #fcfcfc;
+  box-shadow: inset 0 0px 3px #F4F4F4, 0 0px 3px #F4F4F4;
+  background-color:#fcfcfc;
 }
 
 .input-circle {
@@ -195,6 +201,8 @@ input:focus, textarea:focus {
 
 .input-circle[type=text]:focus {
   // border: 3px solid $marigold;
+    box-shadow: inset 0 0px 3px #F4F4F4, 0 0px 3px #F4F4F4;
+  background-color:#fcfcfc;
 }
 
 .form-button {
@@ -211,7 +219,12 @@ input:focus, textarea:focus {
   // background-color: red;
 }
 
-
+.btn-end-form {
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  text-align: center;
+}
 
 
 
