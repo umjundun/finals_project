@@ -1,4 +1,3 @@
-console.log('hello');
 // Get the modal
 const modal = document.getElementById("modal-messages-window");
 
