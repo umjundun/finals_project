@@ -1,0 +1,21 @@
+<div class="engagement-accordion-item">
+
+  <div class="card-engage">
+    <div class="engage-bookend-item">
+
+      <div class="bookend-link">
+        <a href="<%= user_engagement_path(current_user, engagement) %>">
+          <%= engagement.project.organization.name %> - <%= engagement.project.title %>
+        </a>
+      </div>
+
+      <div class="card-description"><%= engagement.project.description %></div>
+
+    </div>
+  </div>
+
+  <div class="engagement-accordion-content" style="display: none;">
+    <%= render 'shared/cards/engagements/engage_card_content', engagement: engagement %>
+  </div>
+
+</div>

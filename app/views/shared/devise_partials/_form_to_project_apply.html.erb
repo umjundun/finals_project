@@ -19,6 +19,15 @@
     </div>
   </div>
 
-  <%= f.submit "Submit", class: "yellow-button form-button", data: { confirm: "We will notify #{project.organization.name} of your request. Once you've been approuved, you'll be able to start developping for good!" } %>
+  <%= f.submit "Submit", class: "submitApply yellow-button form-button", id:"button-project-apply-submit" %>
 
 <% end %>
+
+<!-- <script type="text/javascript">
+  $('.submitApply').on('submit', function(){
+      $.alert({
+          title: 'Alert!',
+          content: 'Simple alert!',
+      });
+  });
+</script> -->

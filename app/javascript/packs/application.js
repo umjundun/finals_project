@@ -6,7 +6,20 @@ import { initMapbox } from '../plugins/init_mapbox';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 initMapbox();
 
+// MENUS
+import { dashButtons } from '../menus/dashButtons.js';
+dashButtons();
 
+import { projectAccordionEvent } from '../menus/projectAccordion.js';
+projectAccordionEvent();
+
+import { engageAccordionEvent } from '../menus/engageAccordion.js';
+engageAccordionEvent();
+
+import { applyAccordionEvent } from '../menus/applyAccordion.js';
+applyAccordionEvent();
+
+// MODALS
 import { signUpEvent } from '../modals/modalSignUp.js';
 signUpEvent();
 
@@ -16,20 +29,11 @@ loginEvent();
 import { navEvent } from '../modals/modalNav.js';
 navEvent();
 
-import { projectAccordionEvent } from '../menus/projectAccordion.js';
-projectAccordionEvent();
-
-import { applyAccordionEvent } from '../menus/applyAccordion.js';
-applyAccordionEvent();
-
 import { messagesEvent } from '../modals/modalMessage.js';
 messagesEvent();
 
 import { projectEditEvent } from '../modals/modalProjectEdit.js';
 projectEditEvent();
 
-import { projectApplyEvent } from '../modals/modalProjectApply.js';
-projectApplyEvent();
-
-import { dashButtons } from '../menus/dashButtons.js';
-dashButtons();
+import { applyEvent } from '../modals/modalApply.js';
+applyEvent();
