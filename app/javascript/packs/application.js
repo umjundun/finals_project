@@ -32,11 +32,11 @@ navEvent();
 import { messagesEvent } from '../modals/modalMessage.js';
 messagesEvent();
 
-// import { projectEditEvent } from '../modals/modalProjectEdit.js';
-// projectEditEvent();
-
 import { projectApplyEvent } from '../modals/modalProjectApply.js';
 projectApplyEvent();
 
 import { projectEditEvent } from '../modals/modalProjectEdit.js';
 projectEditEvent();
+
+import { engagementEditEvent } from '../modals/modalEngagementEdit.js';
+engagementEditEvent();
