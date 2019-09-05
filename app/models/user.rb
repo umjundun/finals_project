@@ -20,32 +20,32 @@ class User < ApplicationRecord
     Conversation.joins(:sender, :recipient).where("users.id = :id OR recipients_conversations.id = :id", id: id).distinct
   end
 
-### FOR NGO DASHBOARD
   def my_projects
-    if self.group == "developer"
+    if self.group == "ngo"
       self.projects
-    elsif self.group == "ngo"
-      self.organization.projects
     else
       Project.all
     end
   end
 
-  def my_active_projects
-    if self.group == "ngo"
-      self.organization.projects.where("active = true")
-    end
-  end
+  # def my_active_projects
+  #   active = [];
+  #   if self.group == "ngo"
+  #     my_projects.each do |project|
+  #       where("active = true")
+  #     end
+  #   end
+  # end
 
-  def my_inactive_projects
-    if self.group == "ngo"
-      self.organization.projects.where("active = false")
-    end
-  end
+  # def my_inactive_projects
+  #   if self.group == "ngo"
+  #     self.organization.projects.where("active = false")
+  #   end
+  # end
 
   def my_engagements
     if self.group == "ngo"
-      self.organization.engagements
+      # self.projects.engagements
     elsif self.group == "developer"
       self.engagements
     else
