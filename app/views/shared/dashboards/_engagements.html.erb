@@ -10,7 +10,7 @@
   <% if @user.my_active_engagements.nil? %>
     <div class="no-engagements general-text">You have no active engagements at this time.</div>
   <% else %>
-    <% @user.my_active_engagements.each do |engagement| %>
+    <% @user.my_active_engagements.order(updated_at: :desc).each do |engagement| %>
       <!-- A SINGLE ENGAGEMENT -->
       <%= render 'shared/cards/engagements/engage_card', engagement: engagement %>
     <% end %>
@@ -28,7 +28,7 @@
   <% if @user.my_pending_engagements.nil? %>
     <div class="no-engagements general-text">You have no pending engagements at this time.</div>
   <% else %>
-    <% @user.my_pending_engagements.each do |engagement| %>
+    <% @user.my_pending_engagements.order(updated_at: :desc).each do |engagement| %>
       <!-- A SINGLE ENGAGEMENT -->
       <%= render 'shared/cards/engagements/engage_card', engagement: engagement %>
     <% end %>
@@ -46,7 +46,7 @@
   <% if @user.my_archived_engagements.nil? %>
     <div class="no-engagements general-text">You have no archived engagements at this time.</div>
   <% else %>
-    <% @user.my_archived_engagements.each do |engagement| %>
+    <% @user.my_archived_engagements.order(updated_at: :desc).each do |engagement| %>
       <!-- A SINGLE ENGAGEMENT -->
       <%= render 'shared/cards/engagements/engage_card', engagement: engagement %>
     <% end %>
@@ -64,7 +64,7 @@
   <% if @user.my_rejected_engagements.nil? %>
     <div class="no-engagements general-text">You have no declined engagements at this time.</div>
   <% else %>
-    <% @user.my_rejected_engagements.each do |engagement| %>
+    <% @user.my_rejected_engagements.order(updated_at: :desc).each do |engagement| %>
       <!-- A SINGLE ENGAGEMENT -->
       <%= render 'shared/cards/engagements/engage_card', engagement: engagement %>
     <% end %>
