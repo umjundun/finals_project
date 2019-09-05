@@ -15,10 +15,14 @@
   background-repeat: no-repeat;
 }
 
+a {
+  text-decoration:none;
+}
 
 .form-input{
   width: 75%;
 }
+
 
 // #user_hibernate{
 //   margin-top: 5px;
@@ -40,9 +44,6 @@
 
 }
 
-.form-check-input{
-  margin: 0;
-}
 // .user_hibernate{
 //   margin-top: 7px;
 // }
@@ -116,13 +117,11 @@ select {
 }
 
 label, .inline-label, .label-unit {
-  font-size: .65em;
+  font-size: .35em;
   color: grey;
 }
 
 .label-one-line {
-  margin: 0;
-  padding: 0;
   font-size: .35em;
 }
 
@@ -136,12 +135,14 @@ input, textarea {
   width: 40%;
   font-family: inherit;
   font-size: 16px;
-  font-weight: 300px;
+  font-weight: 100px;
   border: 0px;
   background: none;
   border-radius: 2%;
   border:1px #c1bfbf;
   transition: all .15s ease;
+  padding-top:0;
+  margin-top: 0;
 }
 .form-control{
   color: #c1bfbf;
@@ -149,10 +150,10 @@ input, textarea {
 }
 .input-one-line select {
   margin: 0;
-  padding: 25px 20px;
+  padding: 15px 25px;
   width: 100%;
   height: 55px;
-  border: $marigold-trans solid 3px;
+  border: $marigold solid 3px;
   border-radius: 4px;
   color: #c1bfbf;
   outline: $marigold;
@@ -169,7 +170,7 @@ input, textarea {
 
 // UDPATE CLASS NAME IF REMOVE BOOTSTRAP
 .form-control:focus {
-  box-shadow: inset 0 0px 3px #F4F4F4, 0 0px 3px #F4F4F4;
+  box-shadow: inset 0 0px 3px $marigold, 0 0px 3px $marigold;
   background-color:#fcfcfc;
 }
 

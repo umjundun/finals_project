@@ -1,4 +1,6 @@
 .cancel-btn{
+
+  padding : 17px 35px;
   margin-left: 0px ;
   margin-top: 10px;
   padding : 30px 5px;
@@ -8,13 +10,31 @@
   transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
   color: grey;
   font-size: 15px;
-  line-height: 15px;
+  line-height: 20px;
   letter-spacing: 2px;
   text-decoration:none;
+  text-transform: uppercase;
   font-family: Montserrat, sans-serif;
   font-weight: 100;
-  width: 20vh;
 }
+
+.project-content a.cancel-btn{
+  margin-top: 5px;
+}
+.cancel-btn:hover {
+  background-color: white;
+  box-shadow: 0px 0px 3px 1px rgba(200,200,200,0.1);
+  text-decoration:none;
+  color:grey;
+
+}
+.btn-form-end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 
 .cancel-btn:hover {
   background-color: white;
@@ -48,7 +68,6 @@
   text-decoration:none;
 }
 
-
 /* ***********************SECONDARY BTN *******************/
 .yellow-button {
   margin-left: 10px;
@@ -63,6 +82,7 @@
   text-transform: uppercase;
   font-weight: lighter;
   text-decoration: none;
+  text-align: center;
   line-height: 20px;
   border-bottom: none;
   -webkit-transition:
@@ -83,5 +103,6 @@
 }
 
 .btn-project{
+
   text-decoration:none;
 }

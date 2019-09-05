@@ -16,16 +16,16 @@ $figma-gray: #242827;
 
 // WHEN LOGED IN THESE HEADINGS APPLY FOR THE WHOLE WEBSITE
 .general-title{
-  color: grey;
-  font-size: 30px;
+  color: grey !important;
+  font-size: 30px !important;
   font-weight: 200;
   text-align: center;
   padding-bottom: 10px;
 }
 
 .general-text {
-  color: grey;
-  font-size: 20px;
+  color: grey !important;
+  font-size: 20px !important;
   font-weight: 200;
   text-align: center;
 }
@@ -60,6 +60,14 @@ $figma-gray: #242827;
   // font-size: 35px;
   font-weight: bold;
   padding: 5px 0 7px 0;
+}
+
+
+.text-white-left {
+  text-align: left;
+  color: white;
+  font-size: 20px !important;
+  font-weight: 400 !important;
 }
 
 //

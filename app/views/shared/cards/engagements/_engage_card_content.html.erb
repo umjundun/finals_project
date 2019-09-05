@@ -22,7 +22,10 @@
 <% end %>
 
 <% if @user.group == 'ngo' && engagement.status == 'Pending' %>
-  <a href="#" class="teal-button" id="modal-engagementEdit-button" data-target='<%= engagement.id %>'>EDIT</a>
+    <a href="#" class="teal-button" id="modal-engagementEdit-button" data-target='<%= engagement.id %>'>
+        EDIT
+    </a>
+    <%= render "shared/devise_partials/modal_engagement_edit", engagement: engagement %>
 <% end %>
 
 <% if @user.group == 'developer' && engagement.user == @user %>
