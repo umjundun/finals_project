@@ -4,8 +4,13 @@
    <% if @convo.present? %>
     <% @convo.each do |convo| %>
     <div id="<%= convo.id %>" class="modal-messages-button">
-     <%= cl_image_tag convo.sender.photo, class: "user-avatar" %>
-     <%= "Message #{convo.sender.full_name}" %>
+     <% if  convo.sender != current_user %>
+       <%= cl_image_tag convo.sender.photo, class: "user-avatar" %>
+       <%= "Message #{convo.sender.full_name}" %>
+     <% else %>
+       <%= cl_image_tag convo.recipient.photo, class: "user-avatar" %>
+       <%= "Message #{convo.recipient.full_name}" %>
+     <% end %>
     </div>
 
   <!--start modal-->
