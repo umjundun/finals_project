@@ -254,31 +254,31 @@ Engagement.create(
 Engagement.create(
                 status: "Active",
                 project: Project.find(4),
-                user: User.find_by_email("bob@newdev.com")
+                user: User.find_by_email("sam@newdev.com")
                 )
 
 Engagement.create(
                 status: "Pending",
                 project: Project.find(5),
-                user: User.find_by_email("bob@newdev.com")
+                user: User.find_by_email("sam@newdev.com")
                 )
 
 Engagement.create(
                 status: "Active",
                 project: Project.find(3),
-                user: User.find_by_email("bob@newdev.com")
+                user: User.find_by_email("sam@newdev.com")
                 )
 
 Engagement.create(
                 status: "Archived",
                 project: Project.find(4),
-                user: User.find_by_email("bob@newdev.com")
+                user: User.find_by_email("sam@newdev.com")
                 )
 
 Engagement.create(
                 status: "Rejected",
                 project: Project.find(5),
-                user: User.find_by_email("bob@newdev.com")
+                user: User.find_by_email("sam@newdev.com")
                 )
 
 
