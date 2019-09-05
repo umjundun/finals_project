@@ -10,7 +10,7 @@
   <% end %>
 
   <div class="form-item">
-    <label class="inline-label" for="request">
+    <label class="inline-label general-text" for="request">
       Please tell a little about your qualifications and why you would like to work on this project <abbr request="required">*</abbr>
     </label>
     <div class="input-one-line">
@@ -19,7 +19,10 @@
     </div>
   </div>
 
-  <%= f.submit "Submit", class: "submitApply yellow-button form-button" %>
+<div class="btn-end-form">
+  <%= f.submit "Submit", class: "yellow-button" %>
+  <%= link_to "Cancel", :back, class: "cancel-btn" %>
+</div>
 
 <% end %>
 
