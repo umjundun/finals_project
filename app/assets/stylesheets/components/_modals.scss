@@ -46,12 +46,13 @@
   font-size: 50px;
   color: white;
   &:hover {
-    font-style: italic;
+    font-size:55px;
+    text-decoration:none;
   }
 }
 
 .modal-nav-links:first-child {
-  padding-top: 12vh;
+  padding-top: 3vh;
 }
 
 .modal-nav-links:last-child {
@@ -122,6 +123,10 @@
 
 .form-check-input{
    text-transform: none;
+ }
+
+ .menu-logo{
+
  }
 
 // RESPONSIVENESS

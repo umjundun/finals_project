@@ -20,6 +20,7 @@
   background-color: white;
   color: teal;
   box-shadow: 0px 0px 3px 1px rgba(200,200,200,0.1);
+  text-decoration:none;
 }
 
 
@@ -54,4 +55,9 @@
   background-color: white;
   color: $marigold;
   box-shadow: 0px 0px 3px 1px rgba(200,200,200,0.1);
+  text-decoration: none;
+}
+
+.btn-project{
+  text-decoration:none;
 }
