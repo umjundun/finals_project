@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :engagements
   has_many :representatives
   has_many :projects
+  has_many :ngo_engagements, through: :projects, source: "engagements"
   has_many :messages
   belongs_to :organization
   has_many :notifications, foreign_key: :recipient_id
@@ -40,27 +41,9 @@ class User < ApplicationRecord
     end
   end
 
-
-
-
-
-
-
-
-
-
-
-
-
   def my_engagements
     if self.group == "ngo"
-      arr = []
-      self.projects.each do |proj|
-        proj.engagements.each do |eng|
-          arr << eng
-        end
-      end
-      return arr
+      ngo_engagements
     elsif self.group == "developer"
       self.engagements
     else
@@ -70,25 +53,25 @@ class User < ApplicationRecord
 
   def my_active_engagements
     unless my_engagements.empty?
-      my_engagements.where("status = 'Active'")
+      my_engagements.where("engagements.status = 'Active'")
     end
   end
 
   def my_pending_engagements
     unless my_engagements.empty?
-      my_engagements.where("status = 'Pending'")
+      my_engagements.where("engagements.status = 'Pending'")
     end
   end
 
   def my_rejected_engagements
     unless my_engagements.empty?
-      my_engagements.where("status = 'Rejected'")
+      my_engagements.where("engagements.status = 'Rejected'")
     end
   end
 
   def my_archived_engagements
     unless my_engagements.empty?
-      my_engagements.where("status = 'Archived'")
+      my_engagements.where("engagements.status = 'Archived'")
     end
   end
 

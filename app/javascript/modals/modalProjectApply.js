@@ -1,29 +1,38 @@
-// Get the modal
-const modal = document.getElementById("modal-projectApply-window");
-
 // Get the button that opens the modal
 const buttons = document.querySelectorAll("#modal-projectApply-button");
-
-// Get the <span> element that closes the modal
-// const close = document.getElementById("modal-signup-close");
+const closeButtons = document.querySelectorAll("#project-apply-close");
 
 export const projectApplyEvent = () => {
 
   if (buttons.length > 0) {
+
   // When the user clicks the button, open the modal
     buttons.forEach((button) => {
-      console.log('button', button)
       button.addEventListener("click", (event) => {
-        document.getElementById(`modal-projectApply-window_${event.currentTarget.getAttribute('data-target')}`).style.display = "block";
+        let btn = event.currentTarget;
+        let n = btn.getAttribute('data-target');
+        // document.getElementById(`modal-projectApply-window_${n}`).style.display = "block";
+        let modal = document.getElementById(`modal-projectApply-window_${n}`);
+        modal.style.display = "block";
       });
     })
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.addEventListener("click", (event) => {
-      if (event.target == modal) {
-        console.log("window clicked");
+    closeButtons.forEach((close) => {
+      close.addEventListener("click", (event) => {
+        let btn = event.currentTarget;
+        let n = btn.getAttribute('data-target');
+        console.log(n);
+        let modal = document.getElementById(`modal-projectApply-window_${n}`);
         modal.style.display = "none";
-      }
-    });
+      });
+    })
+
+    // // When the user clicks anywhere outside of the modal, close it
+    // window.addEventListener("click", (event) => {
+    //   if (event.target == modal) {
+    //     console.log("window clicked");
+    //     modal.style.display = "none";
+    //   }
+    // });
   }
 }

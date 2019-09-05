@@ -1,3 +1,4 @@
+
 .form-container {
   margin: 0px;
   width: 100vw;
@@ -14,10 +15,17 @@
   background-repeat: no-repeat;
 }
 
+<<<<<<< HEAD
 a {
   text-decoration:none;
 }
 
+=======
+
+.form-input{
+  width: 75%;
+}
+>>>>>>> 4b4176be77f06c25b10f20bbf28427e5c387a93c
 
 // #user_hibernate{
 //   margin-top: 5px;
@@ -118,8 +126,13 @@ label, .inline-label, .label-unit {
 
 .label-one-line {
   font-size: .35em;
-  color:#c1bfbf;
 }
+
+textarea{
+  background-color: #fcfcfc;
+}
+
+
 
 input, textarea {
   width: 40%;
@@ -129,6 +142,7 @@ input, textarea {
   border: 0px;
   background: none;
   border-radius: 2%;
+  border:1px #c1bfbf;
   transition: all .15s ease;
   padding-top:0;
   margin-top: 0;
@@ -153,7 +167,7 @@ input, textarea {
   padding: 25px 20px;
   width: 100%;
   height: 45px;
-  background-color: #ced4da;
+  background-color: #fcfcfc;
   border-bottom-width: 3px;
 }
 
@@ -161,7 +175,6 @@ input, textarea {
 .form-control:focus {
   box-shadow: inset 0 0px 3px $marigold, 0 0px 3px $marigold;
   background-color:#fcfcfc;
-  border: none;
 }
 
 // UDPATE CLASS NAME IF REMOVE BOOTSTRAP
@@ -182,8 +195,8 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-
-  background-color: #fcfcfc;
+  box-shadow: inset 0 0px 3px #F4F4F4, 0 0px 3px #F4F4F4;
+  background-color:#fcfcfc;
 }
 
 .input-circle {
@@ -192,6 +205,8 @@ input:focus, textarea:focus {
 
 .input-circle[type=text]:focus {
   // border: 3px solid $marigold;
+    box-shadow: inset 0 0px 3px #F4F4F4, 0 0px 3px #F4F4F4;
+  background-color:#fcfcfc;
 }
 
 .form-button {
@@ -208,7 +223,12 @@ input:focus, textarea:focus {
   // background-color: red;
 }
 
-
+.btn-end-form {
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  text-align: center;
+}
 
 
 

@@ -2,10 +2,33 @@
  <div class="modal-container" id="modal-projectEdit-window_<%= project.id %>" style="z-index: 100" >
 
    <div class="modal-content-container">
-     <!-- Body -->
-     <h3>Edit</h3>
-     <%= render "shared/devise_partials/form_to_project_edit", project: project %>
+    <!-- Body -->
+    <h3>Edit</h3>
+    <%= render "shared/devise_partials/form_to_project_edit", project: project %>
+    <button class="yellow-button form-button" id="project-edit-close" data-target='<%= project.id %>'>
+      Cancel
+    </button>
    </div>
+
+
 
  </div>
 <!-- end modal -->
+
+
+
+
+
+
+<!-- start modal
+ <div class="modal-container" id="modal-projectEdit-window_<%= project.id %>" style="z-index: 100" >
+
+   <div class="modal-content-container">
+     Body
+     <h3>Edit</h3>
+     <%#= render "shared/devise_partials/form_to_project_edit", project: project %>
+   </div>
+
+ </div>
+end modal
+ -->

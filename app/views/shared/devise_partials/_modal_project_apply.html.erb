@@ -3,9 +3,19 @@
 
    <div class="modal-content-container">
      <!-- Body -->
+<<<<<<< HEAD
      <div class="general-title">Apply</div>
+=======
+     <div class="general-title">Apply</h3>
+>>>>>>> 4b4176be77f06c25b10f20bbf28427e5c387a93c
      <%= render "shared/devise_partials/form_to_project_apply", project: project, engagement: engagement %>
+      <button class="yellow-button form-button" id="project-apply-close" data-target='<%= project.id %>'>
+        Cancel
+      </button>
+     <%#= link_to "Cancel", :back, class: "yellow-button form-button" %>
    </div>
+
+  
 
  </div>
 <!-- end modal -->
