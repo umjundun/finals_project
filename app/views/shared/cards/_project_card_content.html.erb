@@ -7,14 +7,17 @@
     <% if user_signed_in? %>
 
       <% if current_user.group == "developer" && current_user.id != @engagement.user_id %>
-
-        <button class="teal-button button-project-apply-modal" id ="modal-projectApply-button" data-target='<%= project.id %>'>APPLY NOW</button>
+        <a href="#" class="teal-button" id="modal-projectApply-button" data-target='<%= project.id %>'>
+          APPLY NOW
+        </a>  
         <%= render "shared/devise_partials/modal_project_apply", project: project, engagement: @engagement %>
 
 
       <% elsif current_user.group == "ngo" && current_user.id == project.user_id  %>
 
-        <button class="teal-button button-project-edit-modal" id ="modal-projectEdit-button" data-target='<%= project.id %>'>EDIT</button>
+        <a href="#" class="teal-button" id="modal-projectEdit-button" data-target='<%= project.id %>'>
+          EDIT
+        </a>
         <%= render "shared/devise_partials/modal_project_edit", project: project, project: project %>
 
       <% else %>
