@@ -5,7 +5,13 @@
      <!-- Body -->
      <h3>Apply</h3>
      <%= render "shared/devise_partials/form_to_project_apply", project: project, engagement: engagement %>
+      <button class="yellow-button form-button" id="project-apply-close" data-target='<%= project.id %>'>
+        Cancel
+      </button>
+     <%#= link_to "Cancel", :back, class: "yellow-button form-button" %>
    </div>
+
+  
 
  </div>
 <!-- end modal -->

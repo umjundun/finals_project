@@ -34,7 +34,9 @@ clothes_closet = Organization.create!(
                     name: 'Montreal Clothes Closet',
                     mission: 'To help everyone dress for success',
                     address: "5505 St Laurent Blvd, Montreal",
-                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567176760/clothes_closet_w4buuo.webp"
+                    logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567176760/clothes_closet_w4buuo.webp",
+                    latitude: 45.5259952,
+                    longitude: -73.5998071  
                   )
 # ID 4
 food_pantry = Organization.create!(
