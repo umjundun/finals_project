@@ -6,7 +6,7 @@ Rails.application.configure do
 
   #REDISTOGO FOR HEROKU
   config.web_socket_server_url = "wss://dev4good.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = ['https://dev4good.herokuapp.com', 'http://www.dev4good.co', 'http://dev4good.herokuapp.com']
+  config.action_cable.allowed_request_origins = [/https:\/\/dev4good.herokuapp.com\/user\d/, /http:\/\/www.dev4good.co\/user\d/, /http:\/\/dev4good.herokuapp.com\/user\d/]
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
