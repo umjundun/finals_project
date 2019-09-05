@@ -4,36 +4,19 @@
     <p><span class="element-tag">Category: </span><%= project.category %></p>
     <p><span class="element-tag">Deadline: </span><%= project.deadline %> day(s)</p>
 
-    <% if user_signed_in? %>
-
-      <% if current_user.group == "developer" && current_user.id != @engagement.user_id %>
-
-        <button class="teal-button button-project-apply-modal" data-target='<%= project.id %>'>APPLY NOW</button>
-        <%= render "shared/devise_partials/modal_project_apply", project: project, engagement: @engagement %>
-
-
-      <% elsif current_user.group == "ngo" && current_user.id == project.user_id  %>
-
-        <button class="teal-button button-project-edit-modal" data-target='<%= project.id %>'>EDIT</button>
-        <%= render "shared/devise_partials/modal_project_edit", project: project, project: project %>
-
-      <% else %>
-      <% end %>
-
-    <% end %>
-
     <% if user_signed_in? && current_user.id != project.user_id %>
-      <!--<a href="#" class="teal-button" id="modal-projectApply-button" data-target='<%= project.id %>'>
+      <a href="#" class="teal-button" id="modal-projectApply-button" data-target='<%= project.id %>'>
         APPLY NOW
       </a>
-      <%#= render "shared/devise_partials/modal_project_apply", project: project, engagement: @engagement %>
+      <%= render "shared/devise_partials/modal_project_apply", project: project, engagement: @engagement %>
     <% elsif user_signed_in? && current_user.id == project.user_id  %>
       <a href="#" class="teal-button" id="modal-projectEdit-button" data-target='<%= project.id %>'>
         EDIT
-      </a>-->
-      <%#= render "shared/devise_partials/modal_project_edit", project: project %>
+      </a>
+      <%= render "shared/devise_partials/modal_project_edit", project: project %>
     <% else %>
     <% end %>
+
   </div>
 
 
