@@ -9,7 +9,7 @@
     </div>
   <% end %>
 
-  <div class="general-title">Edit project</div>
+ <!--  <div class="general-title">Edit project</div> -->
 
   <%= f.hidden_field :organization_id, value: current_user.organization_id, required: true %>
 
@@ -77,17 +77,16 @@
   <div class="form-item">
     <div class="yellow-button form-button" id="upload_widget_opener_<%= project.id %>" style="text-align: center">Upload files</div>
   </div>
-<<<<<<< HEAD
+
 <div class="btn-form-end">
   <%= f.submit "Submit", class: "yellow-button" %>
-  <%= link_to "Cancel", :back, class: "cancel-btn" %>
+  <%#= link_to "Cancel", :back, class: "cancel-btn"  %>
 </div>
-=======
 
-  <%= f.submit "Submit", class: "yellow-button form-button" %>
+
+  <%#= f.submit "Submit", class: "yellow-button form-button" %>
   <%#= link_to "Cancel", :back, class: "yellow-button form-button" %>
 
->>>>>>> 4b4176be77f06c25b10f20bbf28427e5c387a93c
 <% end %>
 
 
