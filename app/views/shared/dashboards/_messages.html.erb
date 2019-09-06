@@ -1,30 +1,40 @@
+<!-- MESSAGE HEADER -->
+<div class="engagement-header">
+  <div class="engagement-header-text">
+    <div class="user-card-header general-title">Current focal point</div>
+  </div>
+</div>
 
-   <!-- Body -->
-   <% @convo = @user.conversations %>
-   <% if @convo.present? %>
-    <% @convo.each do |convo| %>
+
+<div class="dash-content-card" style="text-align: right;">
+ <!-- Body -->
+  <% @convo = @user.conversations %>
+  <% if @convo.present? %>
+  <% @convo.each do |convo| %>
     <div id="<%= convo.id %>" class="modal-messages-button">
      <% if  convo.sender != current_user %>
-       <%= cl_image_tag convo.sender.photo, class: "user-avatar" %>
-       <%= "Message #{convo.sender.full_name}" %>
+      <div class="general-text" style="text-align: right;"><%= "Message #{convo.sender.full_name}   " %>
+        <%= cl_image_tag convo.sender.photo, class: "user-avatar", id: "avatar-margin" %>
+        </div>
      <% else %>
-       <%= cl_image_tag convo.recipient.photo, class: "user-avatar" %>
-       <%= "Message #{convo.recipient.full_name}" %>
+        <div class="general-text" style="text-align: right;"><%= "Message #{convo.recipient.full_name}   " %>
+          <%= cl_image_tag convo.recipient.photo, class: "user-avatar", id: "avatar-margin" %>
+        </div>
      <% end %>
     </div>
 
-  <!--start modal-->
-  <div class="modal-container" id="modal-messages-window">
+    <!--start modal-->
+    <div class="modal-container" id="modal-messages-window">
 
-   <div class="modal-content-container">
+     <div class="modal-content-container">
 
-     <div data-conversation-id="<%= @convo.first.id %>">
-       <section id="messages1" class="mb4">
-        <% convo.messages.each do |message| %>
-           <%= render "messages/show", message: message %>
-        <% end %>
-       </section>
-     </div>
+       <div data-conversation-id="<%= @convo.first.id %>">
+         <section id="messages1" class="mb4">
+          <% convo.messages.each do |message| %>
+             <%= render "messages/show", message: message %>
+          <% end %>
+         </section>
+       </div>
 
        <%= form_for [convo, @message] do |f| %>
          <%= f.text_area :body, class: "textarea", placeholder: "Type a message..." %>
@@ -34,12 +44,13 @@
          </div>
        <% end %>
 
-   </div>
+     </div>
 
-  </div>
-  <!-- end modal -->
-    <% end %>
-   <% end %>
+    </div>
+    <!-- end modal -->
+  <% end %>
+  <% end %>
+</div>
 
 
 
