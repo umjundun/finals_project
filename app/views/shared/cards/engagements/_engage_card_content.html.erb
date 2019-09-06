@@ -13,8 +13,8 @@
 <div class="engagement-tag">Deadline</div>
 <div class="engagement-data"><%= engagement.project.deadline %> day(s)</div>
 
-<div class="engagement-tag">Previous submission</div>
-<div class="engagement-data"><%= engagement.project.deadline %> ago</div>
+<!-- <div class="engagement-tag">Previous submission</div> -->
+<!-- <div class="engagement-data"><%#= engagement.project.deadline %> ago</div> -->
 
 <% if @user.group == 'ngo' && engagement.status == 'Active' %>
   <div class="engagement-tag">Currently checked out by</div>
