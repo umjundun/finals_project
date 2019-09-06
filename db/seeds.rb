@@ -83,8 +83,8 @@ ashoka = Organization.create!(
                     mission: 'Everyone a Changemaker',
                     address: '1700 North Moore Street, Arlington, VA 22209',
                     logo: "https://res.cloudinary.com/caitlinsnyder/image/upload/v1567609246/AShoka_logo_mza8y6.png",
-                    latitude: 38.8957412,
-                    longitude: -77.0740652  
+                    latitude: 46.9748031,
+                    longitude: -72.2101118 
                 )
 cure = Organization.create!(
                     name: 'Cure Violence Global',
