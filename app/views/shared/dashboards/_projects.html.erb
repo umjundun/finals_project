@@ -12,10 +12,10 @@
 </div>
 
 <div class="dash-content-card dash-engagement-type">
-  <% if @user.projects.empty? %>
+  <% if @user.my_active_projects.nil? %>
     <div class="no-engagements general-text">You have no active projects at this time.</div>
   <% else %>
-    <% @user.projects.order(updated_at: :desc).each do |project| %>
+    <% @user.my_active_projects.order(updated_at: :desc).each do |project| %>
       <!-- A SINGLE PROJECT -->
       <%= render 'shared/cards/project_card', project: project %>
     <% end %>
