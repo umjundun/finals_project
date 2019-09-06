@@ -117,12 +117,15 @@ select {
 }
 
 label, .inline-label, .label-unit {
-  font-size: .35em;
-  color: grey;
+  font-size: 20px;
+  color: $teal;
+  font-weight: 200;
 }
 
 .label-one-line {
-  font-size: .35em;
+  font-size: 20px;
+  color: $teal;
+  font-weight: 200;
 }
 
 textarea{
@@ -145,7 +148,7 @@ textarea{
    margin-top: 0;
  }
 .form-control{
-  color: #c1bfbf;
+  color: $teal;
   background-color:#fcfcfc;
 }
 .input-one-line select {
@@ -155,7 +158,7 @@ textarea{
   height: 55px;
   border: $marigold solid 3px;
   border-radius: 4px;
-  color: #c1bfbf;
+  color: $teal;
   outline: $marigold;
 }
 
@@ -216,7 +219,10 @@ input:focus, textarea:focus {
   border: 0;
 }
 
-#upload_widget_opener {
+.cloudinary-button {
+  background-color: $teal !important;
+  font-size: 14px !important;
+
   // background-color: red;
 }
 
