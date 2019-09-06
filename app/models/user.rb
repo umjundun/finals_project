@@ -31,13 +31,13 @@ class User < ApplicationRecord
 
   def my_active_projects
     unless my_projects.empty?
-      my_projects.where("status = 'Active'")
+      my_projects.where("active = true")
     end
   end
 
   def my_archived_projects
     unless my_projects.empty?
-      my_projects.where("status = 'Archived'")
+      my_projects.where("active = false")
     end
   end
 
