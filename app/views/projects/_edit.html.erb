@@ -11,7 +11,7 @@
         </div>
       <% end %>
 
-      <h1>Edit project</h1>
+      <div class="general-title">Edit project</div>
 
       <%= f.hidden_field :organization_id, value: current_user.organization_id, required: true %>
 
@@ -30,7 +30,7 @@
       </div>
 
       <div class="form-item">
-        <label class="label-one-line">
+        <label class="label-one-line general-text">
           For how many days at a time should a developer be allowed to check out your project to work on it?
            <abbr project_deadline="required">*</abbr>
         </label>
@@ -49,7 +49,7 @@
       </div>
 
       <div class="form-item">
-        <label class="label-one-line" for="project_title">
+        <label class="label-one-line general-text" for="project_title">
           What title would you like to give to your project? <abbr title="required">*</abbr>
         </label>
         <div class="input-one-line">
@@ -58,7 +58,7 @@
       </div>
 
       <div class="form-item">
-        <label class="inline-label" for="project_description">
+        <label class="inline-label general-text" for="project_description">
           Description <abbr title="required">*</abbr>
         </label>
         <div class="input-one-line">
@@ -68,7 +68,7 @@
       </div>
 
       <div class="form-item">
-        <p><span class="element-tag">Project documents:</span></p>
+        <p><span class="element-tag general-text">Project documents:</span></p>
         <ul class="list-group">
           <% project.project_files.each do |file| %>
             <a href="<%= file.file_url %>"> - <%= file.name %><%= file.format %></a>

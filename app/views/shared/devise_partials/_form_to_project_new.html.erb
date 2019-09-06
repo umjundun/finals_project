@@ -9,12 +9,12 @@
     </div>
   <% end %>
 
-  <h1>Create a new project</h1>
+  <div class="general-title">Create a new project</div>
 
   <%= f.hidden_field :organization_id, value: current_user.organization_id, required: true %>
 
   <div class="form-item">
-    <label class="inline-label">
+    <label class="inline-label general-text">
       What type of project do you need completed? <abbr project_category="required">*</abbr>
     </label>
     <div class="input-one-line">
@@ -67,9 +67,9 @@
   <div class="form-item">
     <div class="yellow-button form-button" id="upload_widget_opener">Upload images</div>
   </div>
-
+<div class="btn-form-end">
   <%= f.submit "Submit", class: "yellow-button form-button" %>
-
+</div>
 <% end %>
 
 

@@ -131,19 +131,19 @@ textarea{
 
 
 
-input, textarea {
-  width: 40%;
+ input, textarea {
+//   width: 40%;
   font-family: inherit;
   font-size: 16px;
-  font-weight: 100px;
-  border: 0px;
-  background: none;
-  border-radius: 2%;
-  border:1px #c1bfbf;
-  transition: all .15s ease;
+  font-weight: 300px !important;
+   border: 0px;
+   background: none;
+   border-radius: 2%;
+   border:1px #c1bfbf;
+   transition: all .15s ease;
   padding-top:0;
-  margin-top: 0;
-}
+   margin-top: 0;
+ }
 .form-control{
   color: #c1bfbf;
   background-color:#fcfcfc;
@@ -160,13 +160,13 @@ input, textarea {
 }
 
 .input-one-line input, textarea {
-  margin: 0;
-  padding: 25px 20px;
-  width: 100%;
-  height: 45px;
-  background-color: #fcfcfc;
-  border-bottom-width: 3px;
-}
+   margin: 0;
+//   padding: 25px 20px;
+   width: 100%;
+   height: 45px;
+   background-color: #fcfcfc;
+   border-bottom-width: 3px;
+ }
 
 // UDPATE CLASS NAME IF REMOVE BOOTSTRAP
 .form-control:focus {
@@ -207,7 +207,7 @@ input:focus, textarea:focus {
 }
 
 .form-button {
-  width: 100%;
+  width: 40%;
 }
 
 .form-button:hover {

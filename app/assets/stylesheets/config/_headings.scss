@@ -9,22 +9,23 @@ $figma-gray: #242827;
   text-align:center;
   padding: 5px 0;
   font-weight:200;
-  color:grey;
+  color:#333D51;
   font-size: 50px;
   letter-spacing:2px;
 }
 
 // WHEN LOGED IN THESE HEADINGS APPLY FOR THE WHOLE WEBSITE
 .general-title{
-  color: grey !important;
+  color:  #333D51 !important;
   font-size: 30px !important;
   font-weight: 200;
   text-align: center;
   padding-bottom: 10px;
 }
 
+
 .general-text {
-  color: grey !important;
+   color: #333D51 !important;
   font-size: 20px !important;
   font-weight: 200;
   text-align: center;
@@ -53,6 +54,9 @@ $figma-gray: #242827;
   text-align: center;
 }
 
+.mid-banner-title{
+   color: #333D51 !important;
+}
 .mid-title h2 {
   color: rgb(70,70,70);
   letter-spacing: 2px;
@@ -62,13 +66,17 @@ $figma-gray: #242827;
   padding: 5px 0 7px 0;
 }
 
-
+.landing-banner-subtitle{
+  color: #333D51 !important;
+}
 .text-white-left {
   text-align: left;
   color: white;
-  font-size: 20px !important;
+  font-size: 13px !important;
   font-weight: 400 !important;
+  margin-left: 5px ;
 }
+
 
 //
 // p {
