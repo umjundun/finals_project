@@ -7,13 +7,13 @@
 <!-- ACTIVE PROJECTS -->
 <div class="engagement-header">
   <div class="engagement-header-text">
-    <div class="user-card-header">Active projects</div>
+    <div class="user-card-header general-title">Active projects</div>
   </div>
 </div>
 
 <div class="dash-content-card dash-engagement-type">
-  <% if @user.projects.nil? %>
-    <div class="no-engagements">You have no active projects at this time.</div>
+  <% if @user.projects.empty? %>
+    <div class="no-engagements general-text">You have no active projects at this time.</div>
   <% else %>
     <% @user.projects.order(updated_at: :desc).each do |project| %>
       <!-- A SINGLE PROJECT -->
@@ -24,7 +24,7 @@
 
 
 <!-- COMPLETED PROJECTS -->
-<div class="engagement-header">
+<div class="engagement-header general-title">
   <div class="engagement-header-text">
     <div class="user-card-header">Completed projects</div>
   </div>
@@ -32,7 +32,7 @@
 
 <div class="dash-content-card dash-engagement-type">
   <% if @user.my_archived_projects.nil? %>
-    <div class="no-engagements">You have no completed projects at this time.</div>
+    <div class="no-engagements general-text">You have no completed projects at this time.</div>
   <% else %>
     <% @user.my_archived_projects.order(updated_at: :desc).each do |project| %>
       <!-- A SINGLE PROJECT -->

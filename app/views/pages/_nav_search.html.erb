@@ -1,5 +1,9 @@
 <div class="nav-search-container">
- <div class="welcome-msg">Welcome back <%= current_user.first_name %>, find your next project !</div>
+  <% if current_user.group == "developer" %>
+    <div class="welcome-msg">Welcome back <%= current_user.first_name %>, find your next project!</div>
+  <% elsif current_user.group == "ngo" %>
+    <div class="welcome-msg">Welcome back <%= current_user.first_name %>!</div>
+  <% end %>
   <!-- ORGANIZATION AND LOCATION HERE -->
   <div class="search-input-group">
 

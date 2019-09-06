@@ -1,10 +1,29 @@
-<!-- ACTIVE ENGAGEMENTS -->
-<div class="engagement-header">
-  <div class="engagement-header-text">
-   <!--  <img src="https://res.cloudinary.com/caitlinsnyder/image/upload/v1567695053/assignment2_lkixgn.png" align="left"> -->
+<div class="user-card">
+
+  <% if @user.photo %>
+    <div class="user-card-img" style="">
+       <img src="https://res.cloudinary.com/caitlinsnyder/image/upload/v1567695053/assignment2_lkixgn.png" align="left">
+    </div>
+  <% end %>
+
+  <div class="user-card-text">
     <div class="user-card-header general-title">Active engagements</div>
   </div>
 </div>
+
+
+
+
+
+
+<!-- ACTIVE ENGAGEMENTS -->
+  <!-- div class="engagement-header">
+    <div class="engage-icon-img">
+      <img src="https://res.cloudinary.com/caitlinsnyder/image/upload/v1567695053/assignment2_lkixgn.png" align="left">
+    </div>
+  <div class="engagement-header-text">
+    <div class="user-card-header general-title">Active engagements</div>
+  </div> -->
 
 <div class="dash-content-card dash-engagement-type">
   <% if @user.my_active_engagements.empty? %>
