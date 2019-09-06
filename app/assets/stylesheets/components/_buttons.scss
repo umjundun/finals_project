@@ -129,3 +129,54 @@
 
   text-decoration:none;
 }
+
+.send-message-button {
+  margin-left: 10px;
+  padding : 15px 32px;
+  height: 100%;
+  border-radius: 4px;
+  background-color: $marigold;
+  font-family: Montserrat, sans-serif;
+  font-size: 17px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  text-decoration: none;
+  text-align: center;
+  line-height: 20px;
+  border-bottom: none;
+  -webkit-transition:
+    background-color 400ms ease,
+    opacity 400ms ease,
+    color 400ms ease;
+  transition:
+    background-color 400ms ease,
+    opacity 400ms ease,
+    color 400ms ease;
+}
+
+.send-message-button:focus {
+  outline: none;
+  margin-left: 10px;
+  padding : 15px 32px;
+  height: 100%;
+  border-radius: 4px;
+  background-color: $marigold;
+  font-family: Montserrat, sans-serif;
+  font-size: 17px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  text-decoration: none;
+  text-align: center;
+  line-height: 20px;
+  border-bottom: none;
+  -webkit-transition:
+    background-color 400ms ease,
+    opacity 400ms ease,
+    color 400ms ease;
+  transition:
+    background-color 400ms ease,
+    opacity 400ms ease,
+    color 400ms ease;
+}

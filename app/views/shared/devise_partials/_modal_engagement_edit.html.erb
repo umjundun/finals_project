@@ -5,9 +5,9 @@
     <!-- Body -->
     <div class="general-title">Edit</div>
     <%= render "shared/devise_partials/form_to_engagement_edit", engagement: engagement %>
-    <button class="yellow-button form-button" id="engagement-edit-close" data-target='<%= engagement.id %>'>
+    <div class="cancel-center"><button class="form-button cancel-btn" id="engagement-edit-close" data-target='<%= engagement.id %>'>
       Cancel
-    </button>
+    </button></div>
    </div>
 
 

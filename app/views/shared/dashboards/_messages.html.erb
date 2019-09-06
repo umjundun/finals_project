@@ -29,8 +29,8 @@
        <%= form_for [convo, @message] do |f| %>
          <%= f.text_area :body, class: "textarea", placeholder: "Type a message..." %>
          <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
-         <div class="text-align-right">
-           <%= f.submit "Send message", class: "yellow-button", id: "message-submit" %>
+         <div class="btn-form-end">
+           <%= f.submit "Send message", class: "form-button send-message-button", id: "message-submit" %>
          </div>
        <% end %>
 
