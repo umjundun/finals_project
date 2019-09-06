@@ -1,17 +1,17 @@
 <div class="nav-search-container">
-
+ <div class="welcome-msg">Welcome back <%= current_user.first_name %>, find your next project !</div>
   <!-- ORGANIZATION AND LOCATION HERE -->
   <div class="search-input-group">
 
     <div class="nav-search-item">
 
       <!-- KEYWORD SEARCH -->
-      <div class="search-label text-white-left">KEYWORDS:</div>
+     <!--  <div class="search-label text-white-left">KEYWORDS:</div> -->
         <%= form_tag("/home", method: "get", class: "") do %>
           <div class="search-box">
             <%= text_field_tag :query, params[:query],
                           class: "nav-search-field ",
-                          placeholder: "Find your next project" %>
+                          placeholder: "search" %>
             <%= button_tag(type: "search", class: "btn btn-default") do %>
               <i class="fa fa-search white-icon"></i>
             <% end %>
@@ -22,7 +22,7 @@
       </div>
   </div>
 
+      <div class="white-logo">DevForGood</div>
+
   <!-- ANY FILTERS HERE -->
-  <div class="search-filters-group">
-  </div>
 </div>

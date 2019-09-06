@@ -11,13 +11,13 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  background-color: $marigold;
+  background-color: $teal;
 }
 
 #click-to-close {
   padding: 20px 0 0 20px;
   color: white;
-  background-color: $marigold;
+  background-color: $teal;
   font-size: 15px;
   border: none;
   text-decoration: none;
@@ -48,11 +48,12 @@
   &:hover {
     font-size:55px;
     text-decoration:none;
+    transition: .3s;
   }
 }
 
 .modal-nav-links:first-child {
-  padding-top: 3vh;
+  padding-top: 13vh;
 }
 
 .modal-nav-links:last-child {
@@ -125,6 +126,18 @@
    text-transform: none;
  }
 
+.modal-nav-content{
+  position:relative;
+}
+.white-logo-menu{
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 910px;
+  left: 15px;
+
+}
 // RESPONSIVENESS
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
