@@ -31,6 +31,17 @@
   }
 }
 
+#modal-projectNew-button, #modal-projectApply-button {
+  text-align: right;
+}
+
+.user-card-img img {
+  height: 200px;
+  z-index: 2;
+  position: absolute;
+  top: 70px;
+}
+
 .dash-panel {
   width: 100%;
   flex-direction: column;
