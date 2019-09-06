@@ -232,7 +232,7 @@ Project.create(
               organization: clothes_closet, # Montreal Clothes Closet
               description: "Help us track our clothing rentals and availability!",
               title: "Clothing database",
-              user: food_pantry_rep,
+              user: clothes_closet_rep,
               active: true,
               category: "Database"
             )
