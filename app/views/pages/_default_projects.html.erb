@@ -1,21 +1,11 @@
 <div class="project-cards-default" display="">
-  <!-- PAGE CONTENT ITEM -->
-  <!-- <div class="major-card-content-box"> -->
-    <!-- PAGE SUBTITLE -->
-    <!-- <div class="major-subtitle">LATEST PROJECTS</div> -->
-    <!-- <div class="cards-project"> -->
-      <%# @projects.first(2).each do |project| %>
-        <%#= render 'shared/cards/project_card', project: project %>
-      <%# end %>
-    <!-- </div>
-  </div> -->
 
   <!-- PAGE CONTENT ITEM -->
   <div class="major-card-content-box">
     <!-- PAGE SUBTITLE -->
     <div class="major-subtitle general-title">POPULAR PROJECTS</div>
     <div class="cards-project" >
-      <% @projects.last(2).each do |project| %>
+      <% @projects.first(2).each do |project| %>
         <%= render 'shared/cards/project_card', project: project %>
       <% end %>
     </div>

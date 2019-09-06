@@ -22,11 +22,11 @@ class PagesController < ApplicationController
       end
     else
       search
-      @markers = @results_organizations.map do |organization| {
-        lat: organization.searchable.latitude,
-        lng: organization.searchable.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { organization: organization.searchable }),
-        image_url: organization.searchable.logo
+      @markers = @results_projects.map do |project| {
+        lat: project.organization.latitude,
+        lng: project.organization.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { organization: project.organization }),
+        image_url: project.organization.logo
         }
       end
     end
@@ -38,7 +38,9 @@ class PagesController < ApplicationController
     PgSearch::Multisearch.rebuild(Project)
     @results = PgSearch.multisearch(params[:query])
     @results_projects = @results.select {|result| result.searchable_type == "Project"}
+    @results_projects = Project.where(category: Project.find(@results.first.searchable_id).category)
     @results_organizations = @results.select {|result| result.searchable_type == "Organization"}
-
+    # @results_projects = Project.where(category: @results.first.searchable_type)
+    # @results_category = @results.select {|result| result.searchable_type == "Category"}
   end
 end
