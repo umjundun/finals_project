@@ -225,14 +225,16 @@ Project.create(
               description: "Real-time app to track inventory",
               title: "Food-friendly mobile app",
               user: food_pantry_rep,
-              active: true
+              active: true,
+              category: "Mobile app"
             )
 Project.create(
               organization: clothes_closet, # Montreal Clothes Closet
               description: "Help us track our clothing rentals and availability!",
               title: "Clothing database",
               user: food_pantry_rep,
-              active: true
+              active: true,
+              category: "Database"
             )
 
 Project.create(
@@ -240,15 +242,17 @@ Project.create(
               description: "Looking for someone to help us improve our site's UX",
               title: "UX designer wanted!",
               user: food_pantry_rep,
-              active: true
+              active: true,
+              category: "UX"
             )
 
 Project.create(
               organization: ashoka,
-              description: "Newsletter feature needed for site",
-              title: "Snazzy newsletter",
+              description: "Website for partner organization",
+              title: "Calling all snazzy web developers",
               user: food_pantry_rep,
-              active: true
+              active: true,
+              category: "Website"
             )
 
 Project.create(
@@ -256,7 +260,8 @@ Project.create(
               description: "Seeking online graph for existing dataset",
               title: "Do you like data?",
               user: food_pantry_rep,
-              active: true
+              active: true,
+              category: "Data visualization"
             )
 
 Project.create(
@@ -264,7 +269,8 @@ Project.create(
               description: "Hoping that someone out there can automate our manual data download processes.",
               title: "Can you scrape data faster than us?",
               user: food_pantry_rep,
-              active: true
+              active: true,
+              category: "Data analysis"
             )
 p "4 projects created"
 

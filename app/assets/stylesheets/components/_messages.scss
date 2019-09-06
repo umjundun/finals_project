@@ -8,13 +8,14 @@
   // margin-right:0;
   // border-radius: 50%;
   position: relative;
-  margin: 45px 0 45px 0;
+  display: flex;
+  justify-content: flex-end;
+  margin: -10px 0 20px 0;
 }
 
 .message-body img {
-  position: absolute;
-  top: -43px;
-  right: 0;
+  position: relative;
+  margin: 10px 0 0 0;
 }
 
 .message-body p {
@@ -27,7 +28,7 @@
   background-color: #facc33;
   border-radius: 5px;
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px;
 }
 
 .message-container::after {
