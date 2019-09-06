@@ -1,3 +1,4 @@
+
 <%= simple_form_for [@user, engagement] do |f| %>
   <% if engagement.errors.any? %>
     <div class="errors-container">
@@ -42,3 +43,4 @@
 
   <%= f.submit "Submit", class: "yellow-button form-button", data: { confirm: "Thank you for your engagement!" } %>
 <% end %>
+
